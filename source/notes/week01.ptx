@@ -41,15 +41,15 @@
       <cell>Average Velocity <m>(m/s)</m></cell>
     </row>
     <row>
-      <cell><m>3&lt;q t &lt;q 3.01</m></cell>
+      <cell><m>3&lt; t &lt; 3.01</m></cell>
       <cell>29.449</cell>
     </row>
     <row>
-     <cell><m>3&lt;q t &lt;q 3.001</m></cell>
+     <cell><m>3&lt; t &lt; 3.001</m></cell>
       <cell>29.4049</cell>
     </row>
     <row>
-     <cell><m>3&lt;q t &lt;q 3.0001</m></cell>
+     <cell><m>3&lt; t &lt; 3.0001</m></cell>
       <cell>29.40049</cell>
     </row>
   </tabular>
@@ -162,7 +162,7 @@
 
 <figure>
       <caption>A tangent line to a curve</caption>
-      <image source="desmos-graph (39)(1).png" width="50%">
+      <image source="desmos-graph (39) (1).png" width="50%">
         <description>A picture of a cubic function with a tangent line.</description>
       </image>
     </figure>

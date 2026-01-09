@@ -6,18 +6,20 @@
   <xi:include href="./docinfo.ptx" />
   <!-- By creating a PreTeXt "book" for the course, we can split components into "chapters" -->
   <book>
-    <title>Course Name (change me)</title>
+    <title>Advanced Calculus II</title>
 
-    <subtitle>MATH xxx Semester 20xx</subtitle>
+    <subtitle>MTH 428/528 Spring 2026</subtitle>
 
     <!-- Optional: include frontmatter with author info and date -->
     <xi:include href="./frontmatter.ptx" />
 
     <chapter xml:id="course-documents">
       <title>Course Documents</title>
-
+          <p>
+            To be added later
+          </p>
       <!-- Course syllabus -->
-      <xi:include href="./syllabus/syllabus.ptx" />
+     <!-- <xi:include href="./syllabus/syllabus.ptx" /> -->
 
       <!-- Other documents could go here, like a schedule, project description, etc. -->
 
@@ -40,36 +42,36 @@
     </chapter>
 
 
-    <chapter xml:id="activities">
-      <title>In-Class Activities</title>
+   <!-- <chapter xml:id="activities">-->
+     <!-- <title>In-Class Activities</title> -->
 
-      <introduction>
-        <p>
-          These are copies of the in-class activities distributed during the semester.
-        </p>
-      </introduction>
+     <!-- <introduction> -->
+       <!-- <p> -->
+        <!--  These are copies of the in-class activities distributed during the semester. -->
+      <!--  </p> -->
+     <!-- </introduction> -->
 
       <!-- Remove the example and replace with your own activities -->
-      <xi:include href="./activities/00-sample-activity.ptx"/>
+     <!-- <xi:include href="./activities/00-sample-activity.ptx"/> -->
 
       <!-- Add more xi:include files here to include them in the main course -->
-    </chapter>
+   <!-- </chapter> -->
 
-    <chapter xml:id="handouts">
-      <title>Handouts</title>
+   <!-- <chapter xml:id="handouts"> -->
+    <!--  <title>Handouts</title> -->
 
       <!-- Remove or comment out the sample and replace with your own handouts -->
       <!-- You can also comment out the entire chapter on Handouts until you are ready to include them -->
-      <xi:include href="./handouts/sample-handout.ptx"/>
-    </chapter>
+    <!--  <xi:include href="./handouts/sample-handout.ptx"/> -->
+    <!-- </chapter> -->
 
-    <chapter xml:id="homework">
-      <title>Homework</title>
+   <!-- <chapter xml:id="homework"> -->
+    <!--  <title>Homework</title> -->
 
       <!-- Remove or comment out the sample and replace with your own homework -->
-      <xi:include href="./homework/sample-homework.ptx"/>
+    <!--  <xi:include href="./homework/sample-homework.ptx"/> -->
 
-    </chapter>
+   <!-- </chapter> -->
 
     <!-- Include additional chapters for other categories -->
 

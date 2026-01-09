@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="notes-week-01">
-  <title>Week 1</title>
+  <title>Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</title>
 
   <introduction>
     <p>
@@ -10,26 +10,617 @@
   </introduction>
 
   <!-- Can also be <handout> instead of <subsection> to get a printable version -->
-  <subsection>
-    <title>Monday 8/22</title>
+  <subsection xml:id="subsection-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>A Brief History of the Derivative</title>
+    <p>In the 17th century, Galileo discovered that the distance traveled by a falling object is proportional to the square of the time it has been falling. More precisely, if the distance fallen after <m>t</m> seconds is denoted <m>s(t)</m> and measured in meters, then</p>
+    <me> s(t) = 4.9t^2 </me>
+    <p> From this we can find the average velocity of a falling object over any time interval using the formula </p>
+    <me> \text{Average Velocity} = \dfrac{\text{Change in Position}}{\text{Change in Time}} </me>
+    
+    <p>
+      Suppose however, that we wanted to find the instantaneous velocity of an object 3 seconds after we drop it.
+    </p>
 
     <p>
+      The difficulty here is that we have a single instance of time instead of a time interval.
     </p>
-  </subsection>
-
-
-  <subsection>
-    <title>Wednesday 8/24</title>
 
     <p>
+      Isaac Newton's approach to this problem was to approximate the instantaneous velocity by calculating the average velocity over smaller and smaller intervals.
     </p>
-  </subsection>
-
-
-  <subsection>
-    <title>Friday 8/26</title>
 
     <p>
+      The following table shows the average velocity over successively smaller time intervals.
     </p>
-  </subsection>
+
+    <table>
+  <title>Average Velocity</title>
+  <tabular halign="center">
+    <row header="yes" bottom="minor" >
+      <cell>Time Interval </cell>
+      <cell>Average Velocity <m>(m/s)</m></cell>
+    </row>
+    <row>
+      <cell><m>3&lt;q t &lt;q 3.01</m></cell>
+      <cell>29.449</cell>
+    </row>
+    <row>
+     <cell><m>3&lt;q t &lt;q 3.001</m></cell>
+      <cell>29.4049</cell>
+    </row>
+    <row>
+     <cell><m>3&lt;q t &lt;q 3.0001</m></cell>
+      <cell>29.40049</cell>
+    </row>
+  </tabular>
+
+</table>
+
+<p>
+  It appears that as the time intervals get shorter, the average velocities get closer and closer to 29.4. Newton gave the following argument for why 29.4 is in fact the exact instantaneous velocity.
+</p>
+
+<p>
+  Let <m>h</m> be a small positive number. Then the average velocity of the falling object during the time interval <m>[3,3+h]</m> is
+</p>
+
+<md>
+  <mrow> \frac{s(3+h)-s(3)}{3+h-3} \amp = \frac{4.9(3+h)^2-4.9(3)^2}{h} </mrow>
+  <mrow> \amp = \frac{4.9[9+6h+h^2-9]}{h} </mrow>
+  <mrow> \amp = \frac{29.4h+4.9h^2}{h}</mrow>
+  <mrow> \amp = 29.4+4.9h</mrow>
+</md>
+
+<p>
+  Newton then argued that since <m>h</m> is an arbitrarily small positive number, terms ``multiplied by it will be nothing in respect to the rest'' and thus the exact instantaneous velocity is <m>29.4</m> <m>m/s</m>.
+</p>
+
+<p>
+  Newton used the term ``fluxion'' for what we now call the derivative. He wrote a book called <em>The Method of Fluxions</em> in 1671 but it wasn't published until 1736.
+</p>
+
+<p>
+  In 1734 the philosopher George Berkeley criticized Newton's argument in his book <em>The Analyst</em> (subtitled <em>A Discourse Addressed to an Infidel Mathematician: Wherein It Is Examined Whether the Object, Principles, and Inferences of the Modern Analysis Are More Distinctly Conceived, or More Evidently Deduced, Than Religious Mysteries and Points of Faith</em>)
+</p>
+
+<p>
+  Berkeley's main objection to Newton's argument was that Newton treated the infinitesimal quantity <m>h</m> as though it were both zero (by removing the <m>4.9h</m> term) and nonzero (by dividing by <m>h</m>).
+</p>
+
+<p>
+  ``And what are these fluxions? The velocities of evanescent increments. And what are these same evanescent increments? They are neither finite quantities, nor quantities infinitely small, nor yet nothing. May we not call them ghosts of departed quantities?''
+</p>
+
+<p>
+  In response to Berkeley's criticisms a number of mathematicians worked to find a more rigorous definition of the derivative.
+</p>
+
+<p>
+  In 1823 Cauchy gave a definition of derivative that used the concepts of limits to handle Berkeley's objection. His definition is basically the same as the modern definition of the derivative.
+</p>
+
+<p>
+  During the 1960's Abraham Robinson developed the theory of nonstandard analysis which provides a rigorous definition of infinitesimals and allows for the derivative to be defined in the same spirit of Newton and Leibniz.
+</p>
+    
+</subsection>   
+
+<subsection xml:id="section-derivative" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Derivative</title>
+  
+  <p>
+    The modern definition of the derivative is defined as follows.
+  </p>
+
+  <definition>
+    <statement>
+    <p>
+      Let <m>g:A \to \mathbf{R}</m> be a function defined on an interval <m>A</m>. Given <m>c\in A</m> the derivative of <m>g</m> at <m>c</m> is given by
+    </p>
+ 
+
+  <md>
+    g'(c) = \lim_{x\to c} \frac{g(x)-g(c)}{x-c}
+  </md>
+
+  <p>
+    provided this limit exists. In this case we say <m>g</m> is differentiable at <m>c</m>. If <m>g'</m> exists for all points <m>c \in A</m> we say that <m>g</m> is differentiable on <m>A</m>.
+  </p>
+  </statement>
+   </definition>
+  
+<p>
+  Hidden in this definition is the <m>\epsilon</m>-<m>\delta</m> relationship that comes from the way that the limit is defined. The <m>\epsilon</m>-<m>\delta</m> definition of the derivative looks like this.
+</p>
+<definition>
+<statement>
+  <p>
+  Let <m>g:A \to \mathbf{R}</m> be a function defined on an interval <m>A</m>. Then the derivative of <m>g</m> at <m>c \in A</m> is <m>L</m> if for every <m>\epsilon>0</m>, there exists <m>\delta>0</m> such that 
+</p>
+
+<md>
+ \left| \frac{g(x)-g(c)}{x-c}-L \right| &lt; \epsilon
+</md>
+
+<p>
+  whenever <m>|x-c| &lt; \delta</m>
+</p>
+
+<p>
+  Note that by letting <m>x = c+h</m> the derivative can be rewritten as 
+</p>
+
+<md>
+  \lim_{h\to 0} \frac{g(c+h)-g(c)}{h}
+</md>
+</statement>
+</definition>
+
+<p>
+  In geometry a tangent line to a curve is a line that touches the curve and follows the same direction as the curve at the point of contact.
+</p>
+
+<figure>
+      <caption>A tangent line to a curve</caption>
+      <image source="desmos-graph (39).png" width="50%">
+        <description>A picture of a cubic function with a tangent line.</description>
+      </image>
+    </figure>
+
+  <p>
+    A secant line to a curve is a line that passes through 2 points on a curve.
+  </p>
+
+  <p>
+    The slope of the secant line on the curve <m>f(x)</m> that passes through points <m>(a,f(a))</m> and <m>(b,f(b))</m> is given by
+  </p>
+
+  <md>
+    \frac{f(a)-f(b)}{a-b}
+  </md>
+
+  <p>
+    As we take the limit as <m>a</m> approaches <m>b</m>, the secant line comes closer and closer to the tangent line at <m>b</m>. Thus the slope of the tangent line at <m>(b,f(b))</m> is
+  </p>
+
+<md>
+  \lim_{a\to b} \frac{f(a)-f(b)}{a-b} = f'(b)
+</md>
+
+<p>
+  The example with the absolute value function shows that a continuous function may fail to be differentiable; however, every differentiable function must be continuous.
+</p>
+
+<theorem xml:id="thm-diff-implies-cont2">
+  <statement>
+    <p>
+      If <m>g: A \to \mathbf{R}</m> is differentiable at a point <m>c \in A</m>, then <m>g</m> is continuous at <m>c</m> as well.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Since <m>g</m> is differentiable at <m>c</m>,
+
+    <md>
+      g'(c) = \lim_{x\to c} \frac{g(x)-g(c)}{x-c}
+    </md>
+    
+    exists.
+  </p>
+
+  <p>
+    We want to show <m>\displaystyle \lim_{x\to c} g(x) = g(c)</m>. By the Algebraic Limit Theorem for functional limits
+
+    <md>
+      \lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} &lt;ft( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
+    </md>
+    
+  </p>
+    
+    
+  <p>
+    It follows that 
+    <md>
+      \lim_{x\to c} g(x) = g(c).
+    </md>
+  </p>
+
+</proof>
+
+<p>
+A differentiable function must be continuous, but does the derivative, when viewed as a function of <m>x</m> have to be continuous?
+</p>  
+
+<p>
+During the 1870's French Mathematician Jules Houel was writing a calculus textbook and asked his friend Gaston Darboux to look it over. Darboux was unhappy with some of Houel's proofs and came up with the following <q> monster function </q> as a counterexample.
+<md>
+f(x) = \begin{cases} 
+      \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+  \end{cases}
+</md>
+</p>
+
+<p>
+ Here is the graph of Darboux's function. 
+</p>  
+
+<figure>
+      <caption>The graph of Darboux's function</caption>
+      <image source="desmos-graph - 2022-12-06T202928.958.png" width="50%">
+        <description>A picture of a function that oscilates between positive and negative values and tends to 0 as x approaches 0 .</description>
+      </image>
+    </figure>
+
+<p>
+  <em>Go on then and explain to me a little, I beg you, why it is that when one uses the rule for composition functions, the derivative of <m>y = x^2 \sin(1/x)</m> is found to be <m>-\cos(1/x) + 2x \sin(1/x)</m> which is indeterminate for <m>x=0</m> even though the true value is <m>\lim y/x = 0</m></em> -- excerpt from a letter from Darboux to Houel
+</p>
+
+<p>
+  Let's verify Darboux's claim about the derivative of this function using the chain rule.
+</p>
+
+<p>
+  The derivative of Darboux's function is 
+  <md>
+f(x) = \begin{cases} 
+      \hfill  2x \sin(1/x) - \cos(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+  \end{cases}
+</md>
+</p>
+
+  
+<p>
+  Here is the graph of the derivative of Darboux's function.
+</p>
+
+<figure>
+      <caption>The graph of the derivative of Darboux's function</caption>
+      <image source="desmos-graph - 2022-12-06T204150.873.png" width="50%">
+        <description>A picture of a function that oscilates between positive and negative values but does not tend to a single value as x approaches 0 .</description>
+      </image>
+</figure>
+
+<p>
+  Darboux's function is continuous and differentiable everywhere; however its derivative is not continuous at $0$. Thus a derivative does not need to be a continuous function.
+</p>
+
+<p>
+  The discontinuity of Darboux's function is an essential discontinuity, meaning that the one sided limits do not exist. In general this is the type of discontinuity that a derivative must have.
+
+</p>
+
+
+
+</subsection>
+
+
+<subsection xml:id="section-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Combinations of differentiable functions</title>
+
+  <theorem xml:id="thm-Chain-Rule">
+    <statement>
+      <p>
+        Let <m>f: A \to \mathbf{R}</m> and <m>g: B \to \mathbf{R}</m> satisfy <m>f(A) \subseteq B</m> so that the composition <m>g \circ f</m> is defined. If <m>f</m> is differentiable at <m>c \in A</m> and if <m>g</m> is differentiable at <m>f(c) \in B</m>, then <m>g \circ f</m> is differentiable at <m>c</m> with <m>(g \circ f)'(c) = g'(f(c)) \cdot f'(c)</m>
+      </p>
+    </statement>
+  </theorem>
+  
+
+  <p>
+    Almost Proof:
+<md>
+  <mrow> (g\circ f)'(c) \amp = \lim_{x\to c} \frac{g(f(x))-g(f(c))}{x-c} </mrow>
+  <mrow> \amp =\lim_{x\to c} \frac{g(f(x))-g(f(c))}{f(x)-f(c)} \cdot \frac{f(x)-f(c)}{x-c} </mrow>
+  <mrow> \amp =g'(f(c))\cdot f'(c)</mrow>
+</md>
+
+  </p>
+
+  <p>
+    The reason that the <q>almost proof</q> doesn't work as a rigorous proof is that it may be the case that in every <m>\delta</m> neighborhood of <m>c</m> there is an <m>x</m> such that <m>f(x) = f(c)</m> which causes division by zero. The proof will need to remedy this. 
+  </p>
+
+  <p>
+    We will need the following result as a preliminary lemma for proving the Chain rule.
+  </p>
+
+<theorem xml:id="thm-caratheodory">
+  <title>Caratheodory's Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f</m> be defined on an interval <m>I</m> containing the point <m>c</m>. Then <m>f</m> is differentiable at <m>c</m> if and only if there exists a function <m>\phi</m> on <m>I</m> that is continuous at <m>c</m> and satisfies
+      <md>
+        f(x) - f(c) = \phi(x) (x-c)
+      </md>
+      for <m>x \in I</m>. In this case we have <m>\phi(c) = f'(c)</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    For the forward direction, if <m>f'(c)</m> exists define <m>\phi(x)</m> by
+    <md>
+\phi(x) = \begin{cases} 
+      \hfill  \frac{f(x)-f(c)}{x-c} /amp \text{ if $x \neq c$} \\
+      \hfill  f'(c) \hfill /amp \text{ if $x =c $} \\
+</md>
+  </p>
+
+
+  <p>
+    <m>\phi(x)</m> is continuous because <md>
+  f'(c) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c}
+</md>
+  </p>
+
+  <p>
+    Also <m>f(x) - f(c) = \phi(x) (x-c)</m> for all <m>x \in I</m>. Thus the forward direction is proved.
+  </p>
+
+  <p>
+    For the reverse direction, suppose that a function <m>\phi</m> exists that is continuous and <m>f(x) - f(c) = \phi(x) (x-c)</m> for all <m>x \in I</m>.
+  </p>
+
+  <p>
+    Then since <m>\phi</m> is continuous
+
+    <md>
+      \phi(c) = \lim_{x\to c} \phi(x) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c} = f'(c)
+    </md>
+  </p>
+
+  <p>
+    Thus <m>f'(c)</m> exists and <m>f'(c) = \phi(c)</m>.
+  </p>
+
+</proof>
+
+<p>
+  We are now ready to present the proof of the chain rule.
+</p>
+
+<proof>
+  <p>
+    Since <m>f'(c)</m> exists Caratheodory's Theorem gives that there exists <m>\phi(x)</m> such that <m>\phi</m> is continuous at <m>c</m> and <m>f(x)-f(c) = \phi(x)(x-c)</m>, where <m>\phi(c) = f'(c)</m>
+  </p>
+
+  <p>
+    Since <m>g'(f(c))</m> exists Caratheodory's Theorem gives that there exists <m>\psi(x)</m> such that <m>\psi</m> is continuous at <m>d = f(c)</m> and <m>g(y)-g(d) = \psi(y)(y-d)</m> for <m>y \in I</m> where <m>\psi(d) = g'(d)</m>.
+  </p>
+
+  <p>
+    Now substitute <m>y = f(x)</m> and <m>d=f(c)</m> to obtain
+    <md>
+      g(f(x))-g(f(c)) = \psi(f(x)) (f(x)-f(c)) = \psi(f(x)) \phi(x) (x-c)
+    </md>
+    
+  </p>
+
+  <p>
+    The function <m>\psi(f(x)) \phi(x)</m> is continuous at <m>c</m>. Hence by Caratheodory's Theorem <m>g(f(x))</m> is differentiable at <m>c</m>.
+  </p>
+
+  <p>
+    Moreover, <m>\psi(f(c)) \phi(c) = g'(f(c) f'(c)</m> and hence <m>(g \circ f)'(x) = g'(f(c)) f'(c)</m>.
+  </p>
+
+</proof>
+
+<theorem xml:id="thm-algebraic-differentiability">
+  <title>Algebraic Differentiability Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f</m> and <m>g</m> be functions defined on an interval <m>A</m> and assume both are differentiable at some point <m>c \in A</m>. Then 
+      <ol>
+        <li>
+          <p>
+          <md>
+            (f \pm g)'(c) = f'(c) \pm g'(c)
+          </md>
+        </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              (kf)'(c) = kf'(c) \text{ for all } k \in \mathbf{R}
+            </md>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              (fg)'(c) = f'(c)g(c)+f(c)g'(c)
+            </md>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              (\frac{f}{g})'(c) = \frac{g(c)f'(c)-f(c)g'(c)}{g(c)^2}
+            </md>
+            
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The proof is left as homework.
+</p>
+
+
+</subsection>
+
+<subsection xml:id="subsec-4">
+  <title>The Intermediate Value Property</title>
+  
+  <p>
+    Recall the Intermediate Value Theorem for continuous functions.
+  </p>
+
+  <p>
+    Let <m>f: [a,b] \to \mathbf{R}</m> be continuous. If <m>L</m> is a real number satisfying <m>f(a)&lt; L &lt; f(b)</m> or <m>f(a)\ge L \ge f(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>f(c) = L</m>.
+  </p>
+
+  <p>
+    We say that a function <m>g(x)</m> (not necessarily continuous) satisfies the Intermediate Value Property if whenever <m>L</m> is a real number satisfying <m>g(a)&lt; L &lt; g(b)</m> or <m>g(a)\ge L \ge g(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>g(c) = L</m>.
+  </p>
+
+  <p>
+    Example: Darboux's function
+    <md>
+      f(x) = \begin{cases} 
+      \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+  \end{cases}
+    </md>
+
+    is continuous and hence satisfies the Intermediate Value Property.
+    
+  </p>
+
+  <p>
+    The derivative of Darboux's function is not continuous at <m>0</m>; however, it still satisfies the Intermediate Value Property.
+  </p>
+
+  <p>
+    In fact, Darboux proved that every derivative satisfies the Intermediate Value Property.
+  </p>
+
+  <p>
+    The proof that every derivative satisfies the Intermediate Value Property follows from one of the most important uses of the derivative, determining the maximum or minimum values of a function.
+  </p>
+
+<theorem xml:id="thm-interior-extremum">
+  <title>Interior Extremum Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f</m> be differentiable on an open interval <m>(a,b)</m>. If <m>f</m> attains a maximum value at some point <m>c \in (a,b)</m> (i.e., <m>f(c)\geq f(x)</m> for all <m>x \in (a,b)</m>) then <m>f'(c) = 0</m>. The same is true if <m>f(c)</m> is a minimum value.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Since <m>c</m> is a maximum, <m>f(x)-f(c) &lt;q 0</m> and hence
+    <md>
+      \lim_{x\to c^+} \frac{f(x)-f(c)}{x-c} &lt;q 0
+    </md>
+
+    while
+
+    <md>
+      \lim_{x\to c^-} \frac{f(x)-f(c)}{x-c} \geq 0.
+    </md>
+    
+    
+  </p>
+
+  <p>
+    Since <m>f'(c)</m> exists, both one sided limits exist and equal <m>f'(c)</m>. Hence <m>f'(c) = 0</m>. The proof when <m>c</m> is a minimum is similar.
+  </p>
+</proof>
+
+<p>
+  We need one more lemma before we are ready to prove that derivatives possess the Intermediate Value Property.
+</p>
+
+<lemma xml:id="lem-not-in-book">
+  <title>(Not In Book)</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>I \subset \mathbf{R}</m> be an interval, let <m>c \in I</m> and suppose that <m>f</m> has a derivative at <m>c</m>. Then
+    </p>
+    <ol>
+      <li>
+        <p>
+          If <m>f'(c) &lt; 0</m> there exists <m>\delta>0</m> such that <m>f(x) &lt; f(c)</m> for <m>x \in I</m> such that <m>c &lt; x &lt; c+\delta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f'(c)>0</m>, then there is a number <m>\delta>0</m> such that <m>f(x) &lt; f(c)</m> for <m>x \in I</m> such that <m>c-\delta &lt; x &lt; c</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+</lemma>
+
+<proof>
+  <p>
+    (1) Since 
+
+ <md>
+     \lim_{x\to c} \frac{f(x)-f(c)}{x-c} = f'(c) &lt; 0
+ </md>
+
+ there exists <m>\delta &gt; 0</m> such that if <m>x\in I</m> and <m>0 &lt; |x-c| &lt; \delta</m>, then 
+
+<md>
+    \frac{f(x)-f(c)}{x-c} &lt; 0
+</md>
+  </p>
+
+  <p>
+    If <m>c &lt; x</m> then the denominator is positive and hence <m>f(x)-f(c) &lt; 0</m> so <m>f(x) &lt; f(c)</m> if <m>c &lt; x &lt; c+\delta</m>.
+  </p>
+</proof>
+
+<theorem xml:id="thm-Darboux">
+  <title>Darboux's Theorem (AKA IVT for derivatives)</title>
+  
+  
+  <statement>
+    <p>
+      If <m>f</m> is differentiable on an interval <m>[a,b]</m> and if <m>\alpha</m> satisfies <m>f'(a) &lt; \alpha &lt; f'(b)</m> (or <m>f'(b) &lt; \alpha &lt; f'(a)</m>), then there exists a point <m>c \in (a,b)</m> where <m>f'(c) = \alpha</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Let <m>g(x) =f(x)- \alpha x</m>. Then <m>g</m> is differentiable on <m>[a,b]</m> and <m>g'(x) = f'(x)-\alpha</m>. Also <m>g'(a) &lt; 0 &lt; g'(b)</m> and we want to show that there exists <m>c \in (a,b)</m> where <m>g'(c) = 0</m>.
+  </p>
+
+  <p>
+    Since <m>g'(a) &lt; 0</m>, it follows from the lemma that the minimum of <m>g</m> does not occur at <m>a</m>. Likewise since <m>g'(b) &gt; 0</m> it also follows that the minimum of <m>g</m> does not occur at <m>b</m>.
+  </p>
+
+  <p>
+    Thus it must be that the minimum of <m>g</m> occurs at <m>c\in (a,b)</m>. Hence by the interior extremum theorem <m>f'(c) = 0</m> and this completes the proof.
+  </p>
+</proof>
+
+<example>
+  <p>
+    Recall Dirichlet's function is defined by 
+    <md>
+      g(x) = \begin{cases} 
+      \hfill  1  \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q} $} \\
+  \end{cases}
+    </md>
+    Because this function doesn't satisfy the Intermediate Value Property, it cannot be the derivative of another function. Thus Dirichlet's function does not have an antiderivative.
+  </p>
+</example>
+
+
+</subsection>
 </section>

@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="notes-week-02">
-  <title>Week 2</title>
+  <title>Week 2: The Mean Value Theorems (5.3)</title>
 
   <subsection>
-    <title>Monday</title>
+    <title>The Mean Value Theorem</title>
 
     <p>
+      Imagine that you are going to sail to Ireland. You could choose to sail in a straight line path or you could choose a curvier route, but no matter what route you choose, at some point you have to head in the same direction as the straight line path.
     </p>
+
+    <p>
+      This observation is expressed mathematically by a result known as the Mean Value Theorem, which states that for a differentiable function the slope of the secant line between <m>x=a</m> and <m>x=b</m> is equal to the slope of the tangent line at some point between <m>a</m> and <m>b</m>
+    </p>
+
+    <figure>
+      <caption>Different Paths to sail across the Atlantic Ocean</caption>
+      <image source="atlantic.png" width="50%">
+        <description>A picture of the Atlantic Ocean with two paths starting at New York and ending at Ireland. One path is a straight line, while the other bends and curves.</description>
+      </image>
+    </figure>
   </subsection>
 
 

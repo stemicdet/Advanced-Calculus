@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 2: The Mean Value Theorems (5.3)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Calculus II">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced Calculus II</span> <span class="subtitle">MTH 428/528 Spring 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-01.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-01.html" class="internal"><span class="title">Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsection-1" class="internal"><span class="title">A Brief History of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-derivative" class="internal"><span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-3" class="internal"><span class="title">Combinations of differentiable functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsec-4" class="internal"><span class="title">The Intermediate Value Property</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: The Mean Value Theorems (5.3)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-2" class="internal"><span class="title">The Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-3" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-4" class="internal"><span class="title">The Generalized Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#subsec-Intermediate-Forms-and-LHopitals-Rule" class="internal"><span class="title">Intermediate Forms and L’Hopital’s Rule</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-02"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 2: The Mean Value Theorems (5.3)</span>
+</h2>
+<section class="subsection" id="notes-week-02-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Mean Value Theorem</span>
+</h3>
+<div class="para" id="notes-week-02-2-2">Imagine that you are going to sail to Ireland. You could choose to sail in a straight line path or you could choose a curvier route, but no matter what route you choose, at some point you have to head in the same direction as the straight line path.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-3">This observation is expressed mathematically by a result known as the Mean Value Theorem, which states that for a differentiable function the slope of the secant line between <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\)</span> is equal to the slope of the tangent line at some point between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="notes-week-02-2-4"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/atlantic.png" class="contained" alt="A picture of the Atlantic Ocean with two paths starting at New York and ending at Ireland. One path is a straight line, while the other bends and curves."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Different Paths to sail across the Atlantic Ocean<div class="autopermalink" data-description="Figure 15"><a href="#notes-week-02-2-4" title="Copy heading and permalink for Figure 15" aria-label="Copy heading and permalink for Figure 15">🔗</a></div></figcaption></figure><article class="theorem theorem-like" id="thm-MVT"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mean Value Theorem.</span>
+</h4>
+<div class="para" id="thm-MVT-2-1">If <span class="process-math">\(f:[a,b] \to \mathbf{R}\)</span> be continuous on <span class="process-math">\([a,b]\)</span> and differentiable on <span class="process-math">\((a,b)\text{.}\)</span> If <span class="process-math">\(f(a) = f(b)\text{,}\)</span> then there exists a point <span class="process-math">\(c \in (a,b)\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#thm-MVT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-MVT-2-2">
+\begin{equation*}
+f'(c) = \frac{f(b)-f(a)}{b-a}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Theorem 16: Mean Value Theorem"><a href="#thm-MVT" title="Copy heading and permalink for Theorem 16: Mean Value Theorem" aria-label="Copy heading and permalink for Theorem 16: Mean Value Theorem">🔗</a></div></article><div class="para" id="notes-week-02-2-6">The importance of the Mean Value Theorem goes beyond its immediate geometric interpretation. The MVT is significant because it relates the value of the derivative of a function to the value of the function itself.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-7">Several proofs of the Mean Value Theorem have been given. The first proof of the modern form of the MVT is due to Cauchy in 1823.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-8">In 1882 Camille Jordan published a calculus textbook with an erroneous proof of the MVT. The error was pointed out by Giuseppe Peano, who noted in a letter to Jordan that his proof implicitly assumed the continuity of the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="notes-week-02-2-9">
+<div class="para">Peano also showed that Jordan’s proof would not work for the function</div>
+<div class="displaymath process-math" id="notes-week-02-2-9-1">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+\hfill  0 \hfill \amp \text{ if $x =0 $} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-10">We will prove the MVT by first proving the following special case first noted by Michel Rolle in 1690.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Rolle"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rolle’s Theorem.</span>
+</h4>
+<div class="para" id="thm-Rolle-2-1">Let <span class="process-math">\(f:[a,b]\to \mathbf{R}\)</span> be continuous on <span class="process-math">\([a,b]\)</span> and differentiable on <span class="process-math">\((a,b)\text{.}\)</span> If <span class="process-math">\(f(a) = f(b)\text{,}\)</span> then there exists a point <span class="process-math">\(c \in (a,b)\)</span> such that <span class="process-math">\(f'(c) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Rolle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 17: Rolle’s Theorem"><a href="#thm-Rolle" title="Copy heading and permalink for Theorem 17: Rolle’s Theorem" aria-label="Copy heading and permalink for Theorem 17: Rolle’s Theorem">🔗</a></div></article><details id="notes-week-02-2-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="notes-week-02-2-12-1">Since <span class="process-math">\(f\)</span> is a continuous function on a compact set, <span class="process-math">\(f\)</span> contains both a minimum and a maximum. If these occur at the endpoints, then the function is constant and we are done.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-12-2">If not, there is either a maximum or minimum at <span class="process-math">\(c \in (a,b)\text{.}\)</span> Thus <span class="process-math">\(f'(c) = 0\)</span> by the Interior Extremum Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#notes-week-02-2-12" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="notes-week-02-2-13">We will prove the MVT by reducing it to Rolle’s Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="notes-week-02-2-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="notes-week-02-2-14-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="notes-week-02-2-14-1-1">
+\begin{equation*}
+d(x) = f(x)- \left[ \left( \frac{f(b)-f(a)}{b-a} \right)(x-a)+ f(a) \right]
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-14-2">The term in the bracket is the equation of the line between <span class="process-math">\((a, f(a))\)</span> and <span class="process-math">\((b, f(b))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-14-3">d(x) is continuous on <span class="process-math">\([a,b]\text{,}\)</span> differentiable on <span class="process-math">\((a,b)\)</span> and <span class="process-math">\(d(a) = d(b) = 0\text{.}\)</span> Thus <span class="process-math">\(d(x)\)</span> satisfies the hypotheses of Rolle’s Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="notes-week-02-2-14-4">
+<div class="para">it follows that</div>
+<div class="displaymath process-math" id="notes-week-02-2-14-4-1">
+\begin{equation*}
+0 = d'(c) = f'(c)-  \frac{f(b)-f(a)}{b-a}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-14-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-2-14-5">Hence <span class="process-math">\(f'(c) = \frac{f(b)-f(a)}{b-a}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-14-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#notes-week-02-2-14" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="notes-week-02-2-15">As an illustration of the power of the MVT we will prove the following results about derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-MVT1"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="cor-MVT1-1-1">If <span class="process-math">\(g: A \to \mathbf{R}\)</span> is differentiable on an interval <span class="process-math">\(A\)</span> and satisfies <span class="process-math">\(g'(x) = 0\)</span> for all <span class="process-math">\(x \in A\text{,}\)</span> then <span class="process-math">\(g(x)=k\)</span> for some constant <span class="process-math">\(k \in \mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-MVT1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 18"><a href="#cor-MVT1" title="Copy heading and permalink for Corollary 18" aria-label="Copy heading and permalink for Corollary 18">🔗</a></div></article><article class="corollary theorem-like" id="cor-MVT2"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="cor-MVT2-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are differentiable on an interval <span class="process-math">\(A\)</span> and satisfy <span class="process-math">\(f'(x) = g'(x)\)</span> for all <span class="process-math">\(x \in A\)</span> then <span class="process-math">\(f(x) = g(x) +k\)</span> for some constant <span class="process-math">\(k \in \mathbf{R}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-MVT2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 19"><a href="#cor-MVT2" title="Copy heading and permalink for Corollary 19" aria-label="Copy heading and permalink for Corollary 19">🔗</a></div></article><div class="autopermalink" data-description="Subsection: The Mean Value Theorem"><a href="#notes-week-02-2" title="Copy heading and permalink for Subsection: The Mean Value Theorem" aria-label="Copy heading and permalink for Subsection: The Mean Value Theorem">🔗</a></div></section><section class="subsection" id="notes-week-02-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Increasing and Decreasing</span>
+</h3>
+<div class="para" id="notes-week-02-3-2">Recall that a function is increasing on an interval <span class="process-math">\((a,b)\)</span> if <span class="process-math">\(f(x)\leq f(y)\)</span> whenever <span class="process-math">\(x &lt; y\)</span> in <span class="process-math">\((a,b)\text{.}\)</span> Likewise a function is decreasing on an interval <span class="process-math">\((a,b)\)</span> if <span class="process-math">\(f(x)\geq f(y)\)</span> whenever <span class="process-math">\(x &lt; y\)</span> in <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-3-3">It is taught in Calculus class that a function is increasing whenever the derivative is positive and decreasing whenever the derivative is negative, but this is not quite right.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="notes-week-02-3-4">
+<div class="para">Consider the function</div>
+<div class="displaymath process-math" id="notes-week-02-3-4-1">
+\begin{equation*}
+g(x) = \begin{cases} 
+\hfill \frac{x}{2}+ x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+\hfill  0 \hfill \amp \text{ if $x =0 $} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="notes-week-02-3-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/desmos-graph%20(18)%20(1).png" class="contained" alt="A graph of a function that resembles a straight line away from 0, but near 0 oscillates wildly."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph of <span class="process-math">\(g(x)\)</span><div class="autopermalink" data-description="Figure 20"><a href="#notes-week-02-3-5" title="Copy heading and permalink for Figure 20" aria-label="Copy heading and permalink for Figure 20">🔗</a></div></figcaption></figure><div class="para" id="notes-week-02-3-6">Let <span class="process-math">\(y = \frac{x}{2}+ x^2 \sin(1/x)\text{.}\)</span> Then <span class="process-math">\(g'(0) = \displaystyle \lim_{x\to 0} \frac{y}{x} = \frac{1}{2}&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-3-7">Let <span class="process-math">\(k\)</span> be a positive integer. Then <span class="process-math">\(g(\frac{1}{2\pi k}) = \frac{1}{2\cdot 2\pi k}\)</span> but <span class="process-math">\(g(\frac{1}{2 \pi k + \frac{\pi}{2}}) = \frac{1}{2\cdot 2\pi k + \pi}+ \frac{1}{(2 \pi k + \frac{\pi}{2})^2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-3-8">
+<span class="process-math">\(\frac{1}{2\cdot 2\pi k}-\frac{1}{2\cdot 2\pi k + \pi} = \frac{\pi}{(4\pi k)^2 }\)</span> but <span class="process-math">\(\frac{1}{(2 \pi k + \frac{\pi}{2})^2}&gt;\frac{1}{(3\pi k)^2 }\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="notes-week-02-3-9">When <span class="process-math">\(k\)</span> is large <span class="process-math">\(\frac{1}{(3\pi k)^2 } &gt; \frac{\pi}{(4\pi k)^2 }\)</span> and hence <span class="process-math">\(g(\frac{1}{2\pi k}) &lt; g(\frac{1}{2 \pi k + \frac{\pi}{2}})\)</span> but <span class="process-math">\(\frac{1}{2 \pi k + \frac{\pi}{2}} &lt; \frac{1}{2\pi k} \text{.}\)</span> Therefore <span class="process-math">\(f\)</span> is non-increasing on every neighborhood of <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Increasing-Decreasing"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="thm-Increasing-Decreasing-1-1">
+<div class="para">Suppose <span class="process-math">\(f: (a,b) \to \mathbf{R}\text{.}\)</span>
+</div>
+<ol class="decimal" id="thm-Increasing-Decreasing-1-1-2">
+<li id="thm-Increasing-Decreasing-1-1-2-1">
+<div class="para" id="thm-Increasing-Decreasing-1-1-2-1-1">If <span class="process-math">\(f'(x) &gt; 0\)</span> on <span class="process-math">\((a,b)\)</span> then <span class="process-math">\(f(x)\)</span> is increasing on <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Increasing-Decreasing-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-Increasing-Decreasing-1-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-Increasing-Decreasing-1-1-2-2">
+<div class="para" id="thm-Increasing-Decreasing-1-1-2-2-1">If <span class="process-math">\(f'(x) &lt; 0\)</span> on <span class="process-math">\((a,b)\)</span> then <span class="process-math">\(f(x)\)</span> is decreasing on <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Increasing-Decreasing-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-Increasing-Decreasing-1-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Increasing-Decreasing-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 21"><a href="#thm-Increasing-Decreasing" title="Copy heading and permalink for Theorem 21" aria-label="Copy heading and permalink for Theorem 21">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Increasing and Decreasing"><a href="#notes-week-02-3" title="Copy heading and permalink for Subsection: Increasing and Decreasing" aria-label="Copy heading and permalink for Subsection: Increasing and Decreasing">🔗</a></div></section><section class="subsection" id="notes-week-02-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Generalized Mean Value Theorem</span>
+</h3>
+<div class="para" id="notes-week-02-4-2">There is a more general statement of the MVT, whose proof is also due to Cauchy. For this reason it is often referred to as Cauchy’s Mean Value Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-GMVT"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Generalized Mean Value Theorem.</span>
+</h4>
+<div class="para logical" id="thm-GMVT-2-1">
+<div class="para">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are continuous on the closed interval <span class="process-math">\([a,b]\)</span> and differentiable on the open interval <span class="process-math">\((a,b)\)</span> then there exists a point <span class="process-math">\(c\in(a,b)\)</span> where</div>
+<div class="displaymath process-math" id="thm-GMVT-2-1-6">
+\begin{equation*}
+[f(b)-f(a)]g'(c) = [g(b)-g(a)]f'(c).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-GMVT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 22: Generalized Mean Value Theorem"><a href="#thm-GMVT" title="Copy heading and permalink for Theorem 22: Generalized Mean Value Theorem" aria-label="Copy heading and permalink for Theorem 22: Generalized Mean Value Theorem">🔗</a></div></article><div class="para logical" id="notes-week-02-4-4">
+<div class="para">If <span class="process-math">\(g'\)</span> is never zero on <span class="process-math">\((a,b)\)</span> then the conclusion can be stated as</div>
+<div class="displaymath process-math" id="notes-week-02-4-4-3">
+\begin{equation*}
+\frac{f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="notes-week-02-4-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="notes-week-02-4-5-1">We will apply the MVT to the function <span class="process-math">\(h(x) = [f(b)-f(a)]g(x)-[g(b)-g(a)]f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-4-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#notes-week-02-4-5" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: The Generalized Mean Value Theorem"><a href="#notes-week-02-4" title="Copy heading and permalink for Subsection: The Generalized Mean Value Theorem" aria-label="Copy heading and permalink for Subsection: The Generalized Mean Value Theorem">🔗</a></div></section><section class="subsection" id="subsec-Intermediate-Forms-and-LHopitals-Rule"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Intermediate Forms and L’Hopital’s Rule</span>
+</h3>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-2">
+<div class="para">Consider the following limits.</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-2-1">
+\begin{equation*}
+\lim_{x\to 1} \frac{\ln(x)}{x-1}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-2-2">
+\begin{equation*}
+\lim_{x\to 0^+} \frac{\ln(x)}{\csc(x)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-3">If we try to evaluate the first limit we end up with both numerator and denominator going to <span class="process-math">\(0\text{.}\)</span> This is called an indeterminate form of type <span class="process-math">\(\frac{0}{0}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-4">If we try to evaluate the second limit we end up with the numerator going to <span class="process-math">\(-\infty\)</span> and the denominator going to <span class="process-math">\(\infty\text{.}\)</span> This is called an indeterminate form of type <span class="process-math">\(\frac{\infty}{\infty}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-5">Before proceeding, let’s formally define what is meant for a limit to be <span class="process-math">\(\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def--1-1">Given <span class="process-math">\(g:A \to \mathbf{R}\)</span> and a limit point <span class="process-math">\(c\)</span> of <span class="process-math">\(A\text{,}\)</span> we say that <span class="process-math">\(\displaystyle \lim_{x\to c} g(x) = \infty\)</span> if for every <span class="process-math">\(M &gt; 0\)</span> there exists <span class="process-math">\(\delta &gt; 0\)</span> such that whenever <span class="process-math">\(0 &lt; |x-c| &lt; \delta\)</span> it follows that <span class="process-math">\(g(x) \geq M\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def--1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 23"><a href="#def-" title="Copy heading and permalink for Definition 23" aria-label="Copy heading and permalink for Definition 23">🔗</a></div></article><div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-7">The definition for <span class="process-math">\(\displaystyle \lim_{x\to c} g(x) = -\infty\)</span> is similar.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Lhopital"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">L’hopital’s Rule (<span class="process-math">\(\frac{0}{0}\)</span> case).</span>
+</h4>
+<div class="para logical" id="thm-Lhopital-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be continuous on an interval containing <span class="process-math">\(a\)</span> and suppose <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are differentiable on this interval with the possible exception of the point <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\(f(a) = g(a) = 0\)</span> and <span class="process-math">\(g'(x) \neq 0\)</span> for all <span class="process-math">\(x \neq a\)</span> then</div>
+<div class="displaymath process-math" id="thm-Lhopital-2-1-10">
+\begin{equation*}
+\lim_{x\to a} \frac{f'(x)}{g'(x)} = L \textnormal{ implies } \lim_{x\to a} \frac{f(x)}{g(x)} = L
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lhopital-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 24: L’hopital’s Rule (\frac{0}{0} case)"><a href="#thm-Lhopital" title="Copy heading and permalink for Theorem 24: L’hopital’s Rule (\frac{0}{0} case)" aria-label="Copy heading and permalink for Theorem 24: L’hopital’s Rule (\frac{0}{0} case)">🔗</a></div></article><article class="theorem theorem-like" id="thm-Lhopital2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">L’hopital’s Rule (<span class="process-math">\(\frac{\infty}{\infty}\)</span> case).</span>
+</h4>
+<div class="para logical" id="thm-Lhopital2-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be differentiable on an interval containing <span class="process-math">\(a\)</span> with the possible exception of the point <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\(\displaystyle \lim_{x\to a} = \infty\)</span> (or <span class="process-math">\(-\infty)\)</span> and <span class="process-math">\(g'(x) \neq 0\)</span> for all <span class="process-math">\(x \neq a\)</span> then</div>
+<div class="displaymath process-math" id="thm-Lhopital2-2-1-9">
+\begin{equation*}
+\lim_{x\to a} \frac{f'(x)}{g'(x)} = L \textnormal{ implies } \lim_{x\to a} \frac{f(x)}{g(x)} = L
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lhopital2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 25: L’hopital’s Rule (\frac{\infty}{\infty} case)"><a href="#thm-Lhopital2" title="Copy heading and permalink for Theorem 25: L’hopital’s Rule (\frac{\infty}{\infty} case)" aria-label="Copy heading and permalink for Theorem 25: L’hopital’s Rule (\frac{\infty}{\infty} case)">🔗</a></div></article><div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-10">L’Hospital’s rule works because if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are two differentiable functions whose graph approaches <span class="process-math">\(0\)</span> as <span class="process-math">\(x \to a\)</span> then the tangent lines to the graphs at <span class="process-math">\(a\)</span> are close to the functions themselves, so we can replace the functions by their tangent lines at <span class="process-math">\(a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-11">
+<div class="para">Recall that <span class="process-math">\(f'(a)\)</span> is the slope of the tangent line to <span class="process-math">\(f\)</span> and <span class="process-math">\(g'(a)\)</span> is the slope of the tangent line to <span class="process-math">\(g\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-11-5">
+\begin{equation*}
+\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x) (x-a) }{g'(x) (x-a)} = \lim_{x\to a} \frac{f'(x)  }{g'(x)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="subsec-Intermediate-Forms-and-LHopitals-Rule-12"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external/desmos-graph%20-%202022-09-21T203738.264.png" class="contained" alt="described in detail following the image" aria-describedby="subsec-Intermediate-Forms-and-LHopitals-Rule-12-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="subsec-Intermediate-Forms-and-LHopitals-Rule-12-2-description">A graph of a parabola and a square root function which intersects it at the point <span class="process-math">\((1,0)\text{.}\)</span> A tangent line to the parabola and a tangent line to the square root function are shown intersecting at the point <span class="process-math">\((1,0)\)</span>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">26<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>L’hopital’s Rule works because the slopes of the tangent lines to <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(g(a)\)</span> are almost the same as the slopes of the functions themselves<div class="autopermalink" data-description="Figure 26"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-12" title="Copy heading and permalink for Figure 26" aria-label="Copy heading and permalink for Figure 26">🔗</a></div></figcaption></figure><div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-13">The first proof of L’Hospitals’s rule appeared in L’Hospital’s 1696 book \textit{Infinitesimal Analysis to Understand Curved Lines}, which was the first ever calculus textbook; however, the proof of L’Hospital’s rule was due to Johann Bernoulli.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-14">L’Hospital had earlier made the following proposition to Bernoulli. <em class="emphasis">I will be happy to give you a retainer of 300 pounds, beginning with the first of January of this year. ... I promise shortly to increase this retainer, which I know is very modest, as soon as my affairs are somewhat straightened out. ... I am not so unreasonable as to demand in return all of your time, but I will ask you to give me at intervals some hours of your time to work on what I request and also to communicate to me your discoveries, at the same time asking you not to disclose any of them to others.</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-15">We will first prove the <span class="process-math">\(\frac{0}{0}\)</span> case using the Generalized MVT<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Intermediate-Forms-and-LHopitals-Rule-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-16-1">
+<div class="para">Consider the interval <span class="process-math">\((a,x)\text{.}\)</span> By the Generalized MVT for each <span class="process-math">\(x\)</span> there exists <span class="process-math">\(x^* \in (a,x)\)</span> such that</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-16-1-4">
+\begin{equation*}
+\frac{f'(x^*)}{g'(x^*)} = \frac{f(x)-f(a)}{g(x)-g(a)} = \frac{f(x)}{g(x)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-16-2">
+<div class="para">Taking the limit as <span class="process-math">\(x \to a^+\)</span> yields</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-16-2-2">
+\begin{equation*}
+\lim_{x\to a^+}  \frac{f'(x)}{g'(x)} = \lim_{x\to a^+} \frac{f(x)}{g(x)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-16-3">The limit as <span class="process-math">\(x \to a^-\)</span> is similar.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-16" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-17">Now we will prove the <span class="process-math">\(\frac{\infty}{\infty}\)</span> case of L’Hospital’s rule<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Intermediate-Forms-and-LHopitals-Rule-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-1">
+<div class="para">Let <span class="process-math">\(\epsilon&gt;0\text{.}\)</span> Then since <span class="process-math">\(\displaystyle \lim_{x\to a} \frac{f'(x)}{g'(x)} = L\text{,}\)</span> there exists <span class="process-math">\(\delta_1&gt;0\)</span> such that</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-1-4">
+\begin{equation*}
+\left| \frac{f'(x)}{g'(x)}-L \right| &lt; \frac{\epsilon}{2}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a &lt; x &lt; a+\delta_1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-2">Let <span class="process-math">\(t = a+\delta_1\text{.}\)</span> Note that <span class="process-math">\(t\)</span> is a fixed number throughout the remainder of the proof.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-3">
+<div class="para">For any <span class="process-math">\(x \in (a,t)\)</span> the Generalized MVT yields</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-3-2">
+\begin{equation*}
+\frac{f(x)-f(t)}{g(x)-g(t)} = \frac{f'(c)}{g'(c)}
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(c \in (x,t)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-4">
+<div class="para">It thus follows from the choice of <span class="process-math">\(t\)</span> that</div>
+<div class="displaymath process-math" id="eqn-lh">
+\begin{equation}
+L- \frac{\epsilon}{2} &lt; \frac{f(x)-f(t)}{g(x)-g(t)} &lt; L+ \frac{\epsilon}{2}\tag{0}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-5">
+<div class="para">Our goal is to show that</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-5-1">
+\begin{equation*}
+L- \epsilon &lt; \frac{f(x)}{g(x)} &lt; L + \epsilon
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-6">To achieve this from what we have, we want to multiply <a href="notes-week-02.html#eqn-lh" class="internal" title="Equation 0">(0)</a> by <span class="process-math">\((g(x)-g(t))/g(x)\text{.}\)</span> To make sure that this quantity is positive note that since <span class="process-math">\(\displaystyle \lim_{x\to a} g(x) = \infty\text{,}\)</span> we can choose <span class="process-math">\(\delta_2\)</span> so that <span class="process-math">\(g(x) &gt; g(t)\)</span> for all <span class="process-math">\(a &lt; x &lt; a +\delta_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-7">
+<div class="para">Performing the desired multiplication results in</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-7-1">
+\begin{equation*}
+\left(L - \frac{\epsilon}{2} \right)\left(1-\frac{g(t)}{g(x)}\right) &lt; \frac{f(x)-f(t)}{g(x)} &lt; \left(L + \frac{\epsilon}{2} \right)\left(1-\frac{g(t)}{g(x)}\right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-8">
+<div class="para">After some algebra this reduces to</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-8-1">
+\begin{equation*}
+L- \frac{\epsilon}{2} + \frac{-Lg(t)+\frac{\epsilon}{2}g(t)+f(t)}{g(x)} &lt; \frac{f(x)}{g(x)} &lt; L+ \frac{\epsilon}{2} + \frac{-Lg(t)-\frac{\epsilon}{2}g(t)+f(t)}{g(x)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-9">Since <span class="process-math">\(t\)</span> is fixed and <span class="process-math">\(\displaystyle \lim_{x\to a} g(x) = \infty\)</span> there exists <span class="process-math">\(\delta_3 &gt; 0\)</span> such that for <span class="process-math">\(a &lt; x &lt; a+\delta_3\text{,}\)</span> <span class="process-math">\(\frac{-Lg(t)+\frac{\epsilon}{2}g(t)+f(t)}{g(x)}\)</span> and <span class="process-math">\(\frac{-Lg(t)-\frac{\epsilon}{2}g(t)+f(t)}{g(x)}\)</span> are both less than <span class="process-math">\(\frac{\epsilon}{2}\)</span> in absolute value.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-10">
+<div class="para">If <span class="process-math">\(\delta = \min \{\delta_1, \delta_2, \delta_3 \}\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Intermediate-Forms-and-LHopitals-Rule-18-10-2">
+\begin{equation*}
+\left|\frac{f(x)}{g(x)} -L \right| &lt; \epsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a &lt; x &lt; a+\delta\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule-18" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Intermediate Forms and L’Hopital’s Rule"><a href="#subsec-Intermediate-Forms-and-LHopitals-Rule" title="Copy heading and permalink for Subsection: Intermediate Forms and L’Hopital’s Rule" aria-label="Copy heading and permalink for Subsection: Intermediate Forms and L’Hopital’s Rule">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 2: The Mean Value Theorems (5.3)"><a href="#notes-week-02" title="Copy heading and permalink for Section: Week 2: The Mean Value Theorems (5.3)" aria-label="Copy heading and permalink for Section: Week 2: The Mean Value Theorems (5.3)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-01.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

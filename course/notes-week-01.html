@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Calculus II">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced Calculus II</span> <span class="subtitle">MTH 428/528 Spring 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="course-notes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="notes-week-02.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-01.html" class="internal"><span class="title">Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsection-1" class="internal"><span class="title">A Brief History of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-derivative" class="internal"><span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-3" class="internal"><span class="title">Combinations of differentiable functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsec-4" class="internal"><span class="title">The Intermediate Value Property</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: The Mean Value Theorems (5.3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-2" class="internal"><span class="title">The Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-3" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-4" class="internal"><span class="title">The Generalized Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#subsec-Intermediate-Forms-and-LHopitals-Rule" class="internal"><span class="title">Intermediate Forms and L’Hopital’s Rule</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-01"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</span>
+</h2>
+<section class="introduction" id="notes-week-01-2"><div class="para" id="notes-week-01-2-1">This is an outline of the topics we covered in the first week of class.<div class="autopermalink" data-description="Paragraph"><a href="#notes-week-01-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Brief History of the Derivative</span>
+</h3>
+<div class="para" id="subsection-1-2">In the 17th century, Galileo discovered that the distance traveled by a falling object is proportional to the square of the time it has been falling. More precisely, if the distance fallen after <span class="process-math">\(t\)</span> seconds is denoted <span class="process-math">\(s(t)\)</span> and measured in meters, then<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsection-1-3">
+\begin{equation*}
+s(t) = 4.9t^2 
+\end{equation*}
+</div>
+<div class="para" id="subsection-1-4">From this we can find the average velocity of a falling object over any time interval using the formula<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsection-1-5">
+\begin{equation*}
+\text{Average Velocity} = \dfrac{\text{Change in Position}}{\text{Change in Time}} 
+\end{equation*}
+</div>
+<div class="para" id="subsection-1-6">Suppose however, that we wanted to find the instantaneous velocity of an object 3 seconds after we drop it.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-7">The difficulty here is that we have a single instance of time instead of a time interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-8">Isaac Newton’s approach to this problem was to approximate the instantaneous velocity by calculating the average velocity over smaller and smaller intervals.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-9">The following table shows the average velocity over successively smaller time intervals.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="subsection-1-10"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Average Velocity<div class="autopermalink" data-description="Table 1: Average Velocity"><a href="#subsection-1-10" title="Copy heading and permalink for Table 1: Average Velocity" aria-label="Copy heading and permalink for Table 1: Average Velocity">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines">Time Interval</th>
+<th scope="col" class="c m b1 r0 l0 t0 lines">Average Velocity <span class="process-math">\((m/s)\)</span>
+</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3&lt; t &lt; 3.01\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">29.449</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3&lt; t &lt; 3.001\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">29.4049</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3&lt; t &lt; 3.0001\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">29.40049</td>
+</tr>
+</table></div></figure><div class="para" id="subsection-1-11">It appears that as the time intervals get shorter, the average velocities get closer and closer to 29.4. Newton gave the following argument for why 29.4 is in fact the exact instantaneous velocity.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-12">Let <span class="process-math">\(h\)</span> be a small positive number. Then the average velocity of the falling object during the time interval <span class="process-math">\([3,3+h]\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsection-1-13">
+\begin{align*}
+\frac{s(3+h)-s(3)}{3+h-3} \amp = \frac{4.9(3+h)^2-4.9(3)^2}{h} \\
+\amp = \frac{4.9[9+6h+h^2-9]}{h} \\
+\amp = \frac{29.4h+4.9h^2}{h}\\
+\amp = 29.4+4.9h
+\end{align*}
+</div>
+<div class="para" id="subsection-1-14">Newton then argued that since <span class="process-math">\(h\)</span> is an arbitrarily small positive number, terms ``multiplied by it will be nothing in respect to the rest’’ and thus the exact instantaneous velocity is <span class="process-math">\(29.4\)</span> <span class="process-math">\(m/s\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-15">Newton used the term ``fluxion’’ for what we now call the derivative. He wrote a book called <em class="emphasis">The Method of Fluxions</em> in 1671 but it wasn’t published until 1736.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-16">In 1734 the philosopher George Berkeley criticized Newton’s argument in his book <em class="emphasis">The Analyst</em> (subtitled <em class="emphasis">A Discourse Addressed to an Infidel Mathematician: Wherein It Is Examined Whether the Object, Principles, and Inferences of the Modern Analysis Are More Distinctly Conceived, or More Evidently Deduced, Than Religious Mysteries and Points of Faith</em>)<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-17">Berkeley’s main objection to Newton’s argument was that Newton treated the infinitesimal quantity <span class="process-math">\(h\)</span> as though it were both zero (by removing the <span class="process-math">\(4.9h\)</span> term) and nonzero (by dividing by <span class="process-math">\(h\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-18">``And what are these fluxions? The velocities of evanescent increments. And what are these same evanescent increments? They are neither finite quantities, nor quantities infinitely small, nor yet nothing. May we not call them ghosts of departed quantities?’’<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-19">In response to Berkeley’s criticisms a number of mathematicians worked to find a more rigorous definition of the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-20">In 1823 Cauchy gave a definition of derivative that used the concepts of limits to handle Berkeley’s objection. His definition is basically the same as the modern definition of the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-1-21">During the 1960’s Abraham Robinson developed the theory of nonstandard analysis which provides a rigorous definition of infinitesimals and allows for the derivative to be defined in the same spirit of Newton and Leibniz.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-1-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: A Brief History of the Derivative"><a href="#subsection-1" title="Copy heading and permalink for Subsection: A Brief History of the Derivative" aria-label="Copy heading and permalink for Subsection: A Brief History of the Derivative">🔗</a></div></section><section class="subsection" id="section-derivative"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Derivative</span>
+</h3>
+<div class="para" id="section-derivative-2">The modern definition of the derivative is defined as follows.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="section-derivative-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="section-derivative-3-1-1">Let <span class="process-math">\(g:A \to \mathbf{R}\)</span> be a function defined on an interval <span class="process-math">\(A\text{.}\)</span> Given <span class="process-math">\(c\in A\)</span> the derivative of <span class="process-math">\(g\)</span> at <span class="process-math">\(c\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="section-derivative-3-1-2">
+\begin{equation*}
+g'(c) = \lim_{x\to c} \frac{g(x)-g(c)}{x-c}
+\end{equation*}
+</div>
+<div class="para" id="section-derivative-3-1-3">provided this limit exists. In this case we say <span class="process-math">\(g\)</span> is differentiable at <span class="process-math">\(c\text{.}\)</span> If <span class="process-math">\(g'\)</span> exists for all points <span class="process-math">\(c \in A\)</span> we say that <span class="process-math">\(g\)</span> is differentiable on <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2"><a href="#section-derivative-3" title="Copy heading and permalink for Definition 2" aria-label="Copy heading and permalink for Definition 2">🔗</a></div></article><div class="para" id="section-derivative-4">Hidden in this definition is the <span class="process-math">\(\epsilon\)</span>-<span class="process-math">\(\delta\)</span> relationship that comes from the way that the limit is defined. The <span class="process-math">\(\epsilon\)</span>-<span class="process-math">\(\delta\)</span> definition of the derivative looks like this.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="section-derivative-5"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="section-derivative-5-1-1">Let <span class="process-math">\(g:A \to \mathbf{R}\)</span> be a function defined on an interval <span class="process-math">\(A\text{.}\)</span> Then the derivative of <span class="process-math">\(g\)</span> at <span class="process-math">\(c \in A\)</span> is <span class="process-math">\(L\)</span> if for every <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> there exists <span class="process-math">\(\delta&gt;0\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="section-derivative-5-1-2">
+\begin{equation*}
+\left| \frac{g(x)-g(c)}{x-c}-L \right| &lt; \epsilon
+\end{equation*}
+</div>
+<div class="para" id="section-derivative-5-1-3">whenever <span class="process-math">\(|x-c| &lt; \delta\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="section-derivative-5-1-4">Note that by letting <span class="process-math">\(x = c+h\)</span> the derivative can be rewritten as<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-5-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="section-derivative-5-1-5">
+\begin{equation*}
+\lim_{h\to 0} \frac{g(c+h)-g(c)}{h}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Definition 3"><a href="#section-derivative-5" title="Copy heading and permalink for Definition 3" aria-label="Copy heading and permalink for Definition 3">🔗</a></div></article><div class="para" id="section-derivative-6">In geometry a tangent line to a curve is a line that touches the curve and follows the same direction as the curve at the point of contact.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="section-derivative-7"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/desmos-graph%20(39)%20(1).png" class="contained" alt="A picture of a cubic function with a tangent line."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A tangent line to a curve<div class="autopermalink" data-description="Figure 4"><a href="#section-derivative-7" title="Copy heading and permalink for Figure 4" aria-label="Copy heading and permalink for Figure 4">🔗</a></div></figcaption></figure><div class="para" id="section-derivative-8">A secant line to a curve is a line that passes through 2 points on a curve.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-derivative-9">The slope of the secant line on the curve <span class="process-math">\(f(x)\)</span> that passes through points <span class="process-math">\((a,f(a))\)</span> and <span class="process-math">\((b,f(b))\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="section-derivative-10">
+\begin{equation*}
+\frac{f(a)-f(b)}{a-b}
+\end{equation*}
+</div>
+<div class="para" id="section-derivative-11">As we take the limit as <span class="process-math">\(a\)</span> approaches <span class="process-math">\(b\text{,}\)</span> the secant line comes closer and closer to the tangent line at <span class="process-math">\(b\text{.}\)</span> Thus the slope of the tangent line at <span class="process-math">\((b,f(b))\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="section-derivative-12">
+\begin{equation*}
+\lim_{a\to b} \frac{f(a)-f(b)}{a-b} = f'(b)
+\end{equation*}
+</div>
+<div class="para" id="section-derivative-13">The example with the absolute value function shows that a continuous function may fail to be differentiable; however, every differentiable function must be continuous.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-diff-implies-cont2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-diff-implies-cont2-1-1">If <span class="process-math">\(g: A \to \mathbf{R}\)</span> is differentiable at a point <span class="process-math">\(c \in A\text{,}\)</span> then <span class="process-math">\(g\)</span> is continuous at <span class="process-math">\(c\)</span> as well.<div class="autopermalink" data-description="Paragraph"><a href="#thm-diff-implies-cont2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5"><a href="#thm-diff-implies-cont2" title="Copy heading and permalink for Theorem 5" aria-label="Copy heading and permalink for Theorem 5">🔗</a></div></article><details id="section-derivative-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="section-derivative-15-1">
+<div class="para">Since <span class="process-math">\(g\)</span> is differentiable at <span class="process-math">\(c\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="section-derivative-15-1-3">
+\begin{equation*}
+g'(c) = \lim_{x\to c} \frac{g(x)-g(c)}{x-c}
+\end{equation*}
+</div>
+<div class="para">exists.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-derivative-15-2">
+<div class="para">We want to show <span class="process-math">\(\displaystyle \lim_{x\to c} g(x) = g(c)\text{.}\)</span> By the Algebraic Limit Theorem for functional limits</div>
+<div class="displaymath process-math" id="section-derivative-15-2-2">
+\begin{equation*}
+\lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} &lt;ft( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-derivative-15-3">
+<div class="para">It follows that</div>
+<div class="displaymath process-math" id="section-derivative-15-3-1">
+\begin{equation*}
+\lim_{x\to c} g(x) = g(c).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#section-derivative-15" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="section-derivative-16">A differentiable function must be continuous, but does the derivative, when viewed as a function of <span class="process-math">\(x\)</span> have to be continuous?<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-derivative-17">
+<div class="para">During the 1870’s French Mathematician Jules Houel was writing a calculus textbook and asked his friend Gaston Darboux to look it over. Darboux was unhappy with some of Houel’s proofs and came up with the following “monster function” as a counterexample.</div>
+<div class="displaymath process-math" id="section-derivative-17-2">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+\hfill  0 \hfill \amp \text{ if $x =0 $} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-derivative-18">Here is the graph of Darboux’s function.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="section-derivative-19"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/desmos-graph%20-%202022-12-06T202928.958.png" class="contained" alt="A picture of a function that oscilates between positive and negative values and tends to 0 as x approaches 0 ."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph of Darboux’s function<div class="autopermalink" data-description="Figure 6"><a href="#section-derivative-19" title="Copy heading and permalink for Figure 6" aria-label="Copy heading and permalink for Figure 6">🔗</a></div></figcaption></figure><div class="para" id="section-derivative-20">
+<em class="emphasis">Go on then and explain to me a little, I beg you, why it is that when one uses the rule for composition functions, the derivative of <span class="process-math">\(y = x^2 \sin(1/x)\)</span> is found to be <span class="process-math">\(-\cos(1/x) + 2x \sin(1/x)\)</span> which is indeterminate for <span class="process-math">\(x=0\)</span> even though the true value is <span class="process-math">\(\lim y/x = 0\)</span></em> -- excerpt from a letter from Darboux to Houel<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-derivative-21">Let’s verify Darboux’s claim about the derivative of this function using the chain rule.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-derivative-22">
+<div class="para">The derivative of Darboux’s function is</div>
+<div class="displaymath process-math" id="section-derivative-22-1">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  2x \sin(1/x) - \cos(1/x) \amp \text{ if $x \neq 0$} \\
+\hfill  0 \hfill \amp \text{ if $x =0 $} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-derivative-23">Here is the graph of the derivative of Darboux’s function.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="section-derivative-24"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/desmos-graph%20-%202022-12-06T204150.873.png" class="contained" alt="A picture of a function that oscilates between positive and negative values but does not tend to a single value as x approaches 0 ."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph of the derivative of Darboux’s function<div class="autopermalink" data-description="Figure 7"><a href="#section-derivative-24" title="Copy heading and permalink for Figure 7" aria-label="Copy heading and permalink for Figure 7">🔗</a></div></figcaption></figure><div class="para" id="section-derivative-25">Darboux’s function is continuous and differentiable everywhere; however its derivative is not continuous at $0$. Thus a derivative does not need to be a continuous function.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-derivative-26">The discontinuity of Darboux’s function is an essential discontinuity, meaning that the one sided limits do not exist. In general this is the type of discontinuity that a derivative must have.<div class="autopermalink" data-description="Paragraph"><a href="#section-derivative-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Derivative"><a href="#section-derivative" title="Copy heading and permalink for Subsection: The Derivative" aria-label="Copy heading and permalink for Subsection: The Derivative">🔗</a></div></section><section class="subsection" id="section-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Combinations of differentiable functions</span>
+</h3>
+<article class="theorem theorem-like" id="thm-Chain-Rule"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-Chain-Rule-1-1">Let <span class="process-math">\(f: A \to \mathbf{R}\)</span> and <span class="process-math">\(g: B \to \mathbf{R}\)</span> satisfy <span class="process-math">\(f(A) \subseteq B\)</span> so that the composition <span class="process-math">\(g \circ f\)</span> is defined. If <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(c \in A\)</span> and if <span class="process-math">\(g\)</span> is differentiable at <span class="process-math">\(f(c) \in B\text{,}\)</span> then <span class="process-math">\(g \circ f\)</span> is differentiable at <span class="process-math">\(c\)</span> with <span class="process-math">\((g \circ f)'(c) = g'(f(c)) \cdot f'(c)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Chain-Rule-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 8"><a href="#thm-Chain-Rule" title="Copy heading and permalink for Theorem 8" aria-label="Copy heading and permalink for Theorem 8">🔗</a></div></article><div class="para logical" id="section-3-3">
+<div class="para">Almost Proof:</div>
+<div class="displaymath process-math" id="section-3-3-1">
+\begin{align*}
+(g\circ f)'(c) \amp = \lim_{x\to c} \frac{g(f(x))-g(f(c))}{x-c} \\
+\amp =\lim_{x\to c} \frac{g(f(x))-g(f(c))}{f(x)-f(c)} \cdot \frac{f(x)-f(c)}{x-c} \\
+\amp =g'(f(c))\cdot f'(c)
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-4">The reason that the “almost proof” doesn’t work as a rigorous proof is that it may be the case that in every <span class="process-math">\(\delta\)</span> neighborhood of <span class="process-math">\(c\)</span> there is an <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x) = f(c)\)</span> which causes division by zero. The proof will need to remedy this.<div class="autopermalink" data-description="Paragraph"><a href="#section-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-5">We will need the following result as a preliminary lemma for proving the Chain rule.<div class="autopermalink" data-description="Paragraph"><a href="#section-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-caratheodory"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Caratheodory’s Theorem.</span>
+</h4>
+<div class="para logical" id="thm-caratheodory-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> be defined on an interval <span class="process-math">\(I\)</span> containing the point <span class="process-math">\(c\text{.}\)</span> Then <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(c\)</span> if and only if there exists a function <span class="process-math">\(\phi\)</span> on <span class="process-math">\(I\)</span> that is continuous at <span class="process-math">\(c\)</span> and satisfies</div>
+<div class="displaymath process-math" id="thm-caratheodory-2-1-9">
+\begin{equation*}
+f(x) - f(c) = \phi(x) (x-c)
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(x \in I\text{.}\)</span> In this case we have <span class="process-math">\(\phi(c) = f'(c)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-caratheodory-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 9: Caratheodory’s Theorem"><a href="#thm-caratheodory" title="Copy heading and permalink for Theorem 9: Caratheodory’s Theorem" aria-label="Copy heading and permalink for Theorem 9: Caratheodory’s Theorem">🔗</a></div></article><details id="section-3-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="section-3-7-1">
+<div class="para">For the forward direction, if <span class="process-math">\(f'(c)\)</span> exists define <span class="process-math">\(\phi(x)\)</span> by</div>
+<div class="displaymath process-math" id="section-3-7-1-3">
+\begin{equation*}
+\phi(x) = \begin{cases} 
+\hfill  \frac{f(x)-f(c)}{x-c} /amp \text{ if $x \neq c$} \\
+\hfill  f'(c) \hfill /amp \text{ if $x =c $} \\
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-3-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-3-7-2">
+<div class="para">
+<span class="process-math">\(\phi(x)\)</span> is continuous because</div>
+<div class="displaymath process-math" id="section-3-7-2-2">
+\begin{equation*}
+f'(c) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-3-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-7-3">Also <span class="process-math">\(f(x) - f(c) = \phi(x) (x-c)\)</span> for all <span class="process-math">\(x \in I\text{.}\)</span> Thus the forward direction is proved.<div class="autopermalink" data-description="Paragraph"><a href="#section-3-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-7-4">For the reverse direction, suppose that a function <span class="process-math">\(\phi\)</span> exists that is continuous and <span class="process-math">\(f(x) - f(c) = \phi(x) (x-c)\)</span> for all <span class="process-math">\(x \in I\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-3-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-3-7-5">
+<div class="para">Then since <span class="process-math">\(\phi\)</span> is continuous</div>
+<div class="displaymath process-math" id="section-3-7-5-2">
+\begin{equation*}
+\phi(c) = \lim_{x\to c} \phi(x) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c} = f'(c)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-3-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-7-6">Thus <span class="process-math">\(f'(c)\)</span> exists and <span class="process-math">\(f'(c) = \phi(c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-3-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#section-3-7" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="section-3-8">We are now ready to present the proof of the chain rule.<div class="autopermalink" data-description="Paragraph"><a href="#section-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="section-3-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="section-3-9-1">Since <span class="process-math">\(f'(c)\)</span> exists Caratheodory’s Theorem gives that there exists <span class="process-math">\(\phi(x)\)</span> such that <span class="process-math">\(\phi\)</span> is continuous at <span class="process-math">\(c\)</span> and <span class="process-math">\(f(x)-f(c) = \phi(x)(x-c)\text{,}\)</span> where <span class="process-math">\(\phi(c) = f'(c)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-3-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-9-2">Since <span class="process-math">\(g'(f(c))\)</span> exists Caratheodory’s Theorem gives that there exists <span class="process-math">\(\psi(x)\)</span> such that <span class="process-math">\(\psi\)</span> is continuous at <span class="process-math">\(d = f(c)\)</span> and <span class="process-math">\(g(y)-g(d) = \psi(y)(y-d)\)</span> for <span class="process-math">\(y \in I\)</span> where <span class="process-math">\(\psi(d) = g'(d)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-3-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="section-3-9-3">
+<div class="para">Now substitute <span class="process-math">\(y = f(x)\)</span> and <span class="process-math">\(d=f(c)\)</span> to obtain</div>
+<div class="displaymath process-math" id="section-3-9-3-3">
+\begin{equation*}
+g(f(x))-g(f(c)) = \psi(f(x)) (f(x)-f(c)) = \psi(f(x)) \phi(x) (x-c)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#section-3-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-9-4">The function <span class="process-math">\(\psi(f(x)) \phi(x)\)</span> is continuous at <span class="process-math">\(c\text{.}\)</span> Hence by Caratheodory’s Theorem <span class="process-math">\(g(f(x))\)</span> is differentiable at <span class="process-math">\(c\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-3-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-3-9-5">Moreover, <span class="process-math">\(\psi(f(c)) \phi(c) = g'(f(c) f'(c)\)</span> and hence <span class="process-math">\((g \circ f)'(x) = g'(f(c)) f'(c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#section-3-9-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#section-3-9" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-algebraic-differentiability"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebraic Differentiability Theorem.</span>
+</h4>
+<div class="para logical" id="thm-algebraic-differentiability-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be functions defined on an interval <span class="process-math">\(A\)</span> and assume both are differentiable at some point <span class="process-math">\(c \in A\text{.}\)</span> Then</div>
+<ol class="decimal" id="thm-algebraic-differentiability-2-1-5">
+<li id="thm-algebraic-differentiability-2-1-5-1">
+<div class="para logical" id="thm-algebraic-differentiability-2-1-5-1-1">
+<div class="displaymath process-math" id="thm-algebraic-differentiability-2-1-5-1-1-1">
+\begin{equation*}
+(f \pm g)'(c) = f'(c) \pm g'(c)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-algebraic-differentiability-2-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-algebraic-differentiability-2-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-algebraic-differentiability-2-1-5-2">
+<div class="para logical" id="thm-algebraic-differentiability-2-1-5-2-1">
+<div class="displaymath process-math" id="thm-algebraic-differentiability-2-1-5-2-1-1">
+\begin{equation*}
+(kf)'(c) = kf'(c) \text{ for all } k \in \mathbf{R}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-algebraic-differentiability-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-algebraic-differentiability-2-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-algebraic-differentiability-2-1-5-3">
+<div class="para logical" id="thm-algebraic-differentiability-2-1-5-3-1">
+<div class="displaymath process-math" id="thm-algebraic-differentiability-2-1-5-3-1-1">
+\begin{equation*}
+(fg)'(c) = f'(c)g(c)+f(c)g'(c)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-algebraic-differentiability-2-1-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-algebraic-differentiability-2-1-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="thm-algebraic-differentiability-2-1-5-4">
+<div class="para logical" id="thm-algebraic-differentiability-2-1-5-4-1">
+<div class="displaymath process-math" id="thm-algebraic-differentiability-2-1-5-4-1-1">
+\begin{equation*}
+(\frac{f}{g})'(c) = \frac{g(c)f'(c)-f(c)g'(c)}{g(c)^2}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-algebraic-differentiability-2-1-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#thm-algebraic-differentiability-2-1-5-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-algebraic-differentiability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 10: Algebraic Differentiability Theorem"><a href="#thm-algebraic-differentiability" title="Copy heading and permalink for Theorem 10: Algebraic Differentiability Theorem" aria-label="Copy heading and permalink for Theorem 10: Algebraic Differentiability Theorem">🔗</a></div></article><div class="para" id="section-3-11">The proof is left as homework.<div class="autopermalink" data-description="Paragraph"><a href="#section-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Combinations of differentiable functions"><a href="#section-3" title="Copy heading and permalink for Subsection: Combinations of differentiable functions" aria-label="Copy heading and permalink for Subsection: Combinations of differentiable functions">🔗</a></div></section><section class="subsection" id="subsec-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Intermediate Value Property</span>
+</h3>
+<div class="para" id="subsec-4-2">Recall the Intermediate Value Theorem for continuous functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-3">Let <span class="process-math">\(f: [a,b] \to \mathbf{R}\)</span> be continuous. If <span class="process-math">\(L\)</span> is a real number satisfying <span class="process-math">\(f(a)&lt; L &lt; f(b)\)</span> or <span class="process-math">\(f(a)\ge L \ge f(b)\text{,}\)</span> then there exists a point <span class="process-math">\(c \in (a,b)\)</span> such that <span class="process-math">\(f(c) = L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-4">We say that a function <span class="process-math">\(g(x)\)</span> (not necessarily continuous) satisfies the Intermediate Value Property if whenever <span class="process-math">\(L\)</span> is a real number satisfying <span class="process-math">\(g(a)&lt; L &lt; g(b)\)</span> or <span class="process-math">\(g(a)\ge L \ge g(b)\text{,}\)</span> then there exists a point <span class="process-math">\(c \in (a,b)\)</span> such that <span class="process-math">\(g(c) = L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-4-5">
+<div class="para">Example: Darboux’s function</div>
+<div class="displaymath process-math" id="subsec-4-5-1">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+\hfill  0 \hfill \amp \text{ if $x =0 $} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">is continuous and hence satisfies the Intermediate Value Property.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-6">The derivative of Darboux’s function is not continuous at <span class="process-math">\(0\text{;}\)</span> however, it still satisfies the Intermediate Value Property.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-7">In fact, Darboux proved that every derivative satisfies the Intermediate Value Property.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-8">The proof that every derivative satisfies the Intermediate Value Property follows from one of the most important uses of the derivative, determining the maximum or minimum values of a function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-interior-extremum"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interior Extremum Theorem.</span>
+</h4>
+<div class="para" id="thm-interior-extremum-2-1">Let <span class="process-math">\(f\)</span> be differentiable on an open interval <span class="process-math">\((a,b)\text{.}\)</span> If <span class="process-math">\(f\)</span> attains a maximum value at some point <span class="process-math">\(c \in (a,b)\)</span> (i.e., <span class="process-math">\(f(c)\geq f(x)\)</span> for all <span class="process-math">\(x \in (a,b)\)</span>) then <span class="process-math">\(f'(c) = 0\text{.}\)</span> The same is true if <span class="process-math">\(f(c)\)</span> is a minimum value.<div class="autopermalink" data-description="Paragraph"><a href="#thm-interior-extremum-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 11: Interior Extremum Theorem"><a href="#thm-interior-extremum" title="Copy heading and permalink for Theorem 11: Interior Extremum Theorem" aria-label="Copy heading and permalink for Theorem 11: Interior Extremum Theorem">🔗</a></div></article><details id="subsec-4-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-4-10-1">
+<div class="para">Since <span class="process-math">\(c\)</span> is a maximum, <span class="process-math">\(f(x)-f(c) &lt;q 0\)</span> and hence</div>
+<div class="displaymath process-math" id="subsec-4-10-1-3">
+\begin{equation*}
+\lim_{x\to c^+} \frac{f(x)-f(c)}{x-c} &lt;q 0
+\end{equation*}
+</div>
+<div class="para">while</div>
+<div class="displaymath process-math" id="subsec-4-10-1-4">
+\begin{equation*}
+\lim_{x\to c^-} \frac{f(x)-f(c)}{x-c} \geq 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-10-2">Since <span class="process-math">\(f'(c)\)</span> exists, both one sided limits exist and equal <span class="process-math">\(f'(c)\text{.}\)</span> Hence <span class="process-math">\(f'(c) = 0\text{.}\)</span> The proof when <span class="process-math">\(c\)</span> is a minimum is similar.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-4-10" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-4-11">We need one more lemma before we are ready to prove that derivatives possess the Intermediate Value Property.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-not-in-book"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">(Not In Book).</span>
+</h4>
+<div class="para" id="lem-not-in-book-2-1">Let <span class="process-math">\(I \subset \mathbf{R}\)</span> be an interval, let <span class="process-math">\(c \in I\)</span> and suppose that <span class="process-math">\(f\)</span> has a derivative at <span class="process-math">\(c\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#lem-not-in-book-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="lem-not-in-book-2-2">
+<li id="lem-not-in-book-2-2-1">
+<div class="para" id="lem-not-in-book-2-2-1-1">If <span class="process-math">\(f'(c) &lt; 0\)</span> there exists <span class="process-math">\(\delta&gt;0\)</span> such that <span class="process-math">\(f(x) &lt; f(c)\)</span> for <span class="process-math">\(x \in I\)</span> such that <span class="process-math">\(c &lt; x &lt; c+\delta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-not-in-book-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#lem-not-in-book-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="lem-not-in-book-2-2-2">
+<div class="para" id="lem-not-in-book-2-2-2-1">If <span class="process-math">\(f'(c)&gt;0\text{,}\)</span> then there is a number <span class="process-math">\(\delta&gt;0\)</span> such that <span class="process-math">\(f(x) &lt; f(c)\)</span> for <span class="process-math">\(x \in I\)</span> such that <span class="process-math">\(c-\delta &lt; x &lt; c\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-not-in-book-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#lem-not-in-book-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Lemma 12: (Not In Book)"><a href="#lem-not-in-book" title="Copy heading and permalink for Lemma 12: (Not In Book)" aria-label="Copy heading and permalink for Lemma 12: (Not In Book)">🔗</a></div></article><details id="subsec-4-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-4-13-1">
+<div class="para">(1) Since</div>
+<div class="displaymath process-math" id="subsec-4-13-1-1">
+\begin{equation*}
+\lim_{x\to c} \frac{f(x)-f(c)}{x-c} = f'(c) &lt; 0
+\end{equation*}
+</div>
+<div class="para">there exists <span class="process-math">\(\delta &gt; 0\)</span> such that if <span class="process-math">\(x\in I\)</span> and <span class="process-math">\(0 &lt; |x-c| &lt; \delta\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="subsec-4-13-1-5">
+\begin{equation*}
+\frac{f(x)-f(c)}{x-c} &lt; 0
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-13-2">If <span class="process-math">\(c &lt; x\)</span> then the denominator is positive and hence <span class="process-math">\(f(x)-f(c) &lt; 0\)</span> so <span class="process-math">\(f(x) &lt; f(c)\)</span> if <span class="process-math">\(c &lt; x &lt; c+\delta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-4-13" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-Darboux"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Darboux’s Theorem (AKA IVT for derivatives).</span>
+</h4>
+<div class="para" id="thm-Darboux-2-1">If <span class="process-math">\(f\)</span> is differentiable on an interval <span class="process-math">\([a,b]\)</span> and if <span class="process-math">\(\alpha\)</span> satisfies <span class="process-math">\(f'(a) &lt; \alpha &lt; f'(b)\)</span> (or <span class="process-math">\(f'(b) &lt; \alpha &lt; f'(a)\)</span>), then there exists a point <span class="process-math">\(c \in (a,b)\)</span> where <span class="process-math">\(f'(c) = \alpha\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Darboux-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 13: Darboux’s Theorem (AKA IVT for derivatives)"><a href="#thm-Darboux" title="Copy heading and permalink for Theorem 13: Darboux’s Theorem (AKA IVT for derivatives)" aria-label="Copy heading and permalink for Theorem 13: Darboux’s Theorem (AKA IVT for derivatives)">🔗</a></div></article><details id="subsec-4-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-4-15-1">Let <span class="process-math">\(g(x) =f(x)- \alpha x\text{.}\)</span> Then <span class="process-math">\(g\)</span> is differentiable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(g'(x) = f'(x)-\alpha\text{.}\)</span> Also <span class="process-math">\(g'(a) &lt; 0 &lt; g'(b)\)</span> and we want to show that there exists <span class="process-math">\(c \in (a,b)\)</span> where <span class="process-math">\(g'(c) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-15-2">Since <span class="process-math">\(g'(a) &lt; 0\text{,}\)</span> it follows from the lemma that the minimum of <span class="process-math">\(g\)</span> does not occur at <span class="process-math">\(a\text{.}\)</span> Likewise since <span class="process-math">\(g'(b) &gt; 0\)</span> it also follows that the minimum of <span class="process-math">\(g\)</span> does not occur at <span class="process-math">\(b\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-4-15-3">Thus it must be that the minimum of <span class="process-math">\(g\)</span> occurs at <span class="process-math">\(c\in (a,b)\text{.}\)</span> Hence by the interior extremum theorem <span class="process-math">\(f'(c) = 0\)</span> and this completes the proof.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-4-15" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><details id="subsec-4-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-4-16-1">
+<div class="para">Recall Dirichlet’s function is defined by</div>
+<div class="displaymath process-math" id="subsec-4-16-1-1">
+\begin{equation*}
+g(x) = \begin{cases} 
+\hfill  1  \amp \text{ if $x \in \mathbf{Q}$} \\
+\hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q} $} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Because this function doesn’t satisfy the Intermediate Value Property, it cannot be the derivative of another function. Thus Dirichlet’s function does not have an antiderivative.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-4-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 14"><a href="#subsec-4-16" title="Copy heading and permalink for Example 14" aria-label="Copy heading and permalink for Example 14">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: The Intermediate Value Property"><a href="#subsec-4" title="Copy heading and permalink for Subsection: The Intermediate Value Property" aria-label="Copy heading and permalink for Subsection: The Intermediate Value Property">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)"><a href="#notes-week-01" title="Copy heading and permalink for Section: Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)" aria-label="Copy heading and permalink for Section: Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="course-notes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="notes-week-02.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -20,21 +20,333 @@
         <description>A picture of the Atlantic Ocean with two paths starting at New York and ending at Ireland. One path is a straight line, while the other bends and curves.</description>
       </image>
     </figure>
+
+    <theorem xml:id="thm-MVT">
+      <title>Mean Value Theorem</title>
+      
+      
+      <statement>
+        <p>
+          If <m>f:[a,b] \to \mathbf{R}</m> be continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. If <m>f(a) = f(b)</m>, then there exists a point <m>c \in (a,b)</m> where 
+        </p>
+
+        <md>
+          f'(c) = \frac{f(b)-f(a)}{b-a}
+        </md>
+        
+      </statement>
+    </theorem>
+
+    <p>
+      The importance of the Mean Value Theorem goes beyond its immediate geometric interpretation. The MVT is significant because it relates the value of the derivative of a function to the value of the function itself.
+    </p>
+    
+    <p>
+      Several proofs of the Mean Value Theorem have been given. The first proof of the modern form of the MVT is due to Cauchy in 1823.
+    </p>
+
+    <p>
+      In 1882 Camille Jordan published a calculus textbook with an erroneous proof of the MVT. The error was pointed out by Giuseppe Peano, who noted in a letter to Jordan that his proof implicitly assumed the continuity of the derivative.
+    </p>
+
+    <p>
+      Peano also showed that Jordan's proof would not work for the function 
+      <md>
+        f(x) = \begin{cases} 
+      \hfill  x^2 \sin(1/x) \amp \text{ if <m>x \neq 0</m>} \\
+      \hfill  0 \hfill \amp \text{ if <m>x =0 </m>} \\
+  \end{cases}
+      </md>
+      
+    </p>
+
+    <p>
+      We will prove the MVT by first proving the following special case first noted by Michel Rolle in 1690.
+    </p>
+
+    <theorem xml:id="thm-Rolle">
+      <title>Rolle's Theorem</title>
+      
+      
+      <statement>
+        <p>
+          Let <m>f:[a,b]\to \mathbf{R}</m> be continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. If <m>f(a) = f(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>f'(c) = 0</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Since <m>f</m> is a continuous function on a compact set, <m>f</m> contains both a minimum and a maximum. If these occur at the endpoints, then the function is constant and we are done.
+      </p>
+
+      <p>
+        If not, there is either a maximum or minimum at <m>c \in (a,b)</m>. Thus <m>f'(c) = 0</m> by the Interior Extremum Theorem.
+      </p>
+    </proof>
+
+    <p>
+      We will prove the MVT by reducing it to Rolle's Theorem.
+    </p>
+    
+    <proof>
+      <p>
+        Let <md>
+          d(x) = f(x)- \left[ \left( \frac{f(b)-f(a)}{b-a} \right)(x-a)+ f(a) \right]
+        </md>
+        
+      </p>
+
+      <p>
+        The term in the bracket is the equation of the line between <m>(a, f(a))</m> and <m>(b, f(b))</m>.
+      </p>
+
+      <p>
+        d(x) is continuous on <m>[a,b]</m>, differentiable on <m>(a,b)</m> and <m>d(a) = d(b) = 0</m>. Thus <m>d(x)</m> satisfies the hypotheses of Rolle's Theorem.
+      </p>
+
+      <p>
+        it follows that <md>
+           0 = d'(c) = f'(c)-  \frac{f(b)-f(a)}{b-a}
+        </md>
+        
+      </p>
+
+      <p>
+        Hence <m>f'(c) = \frac{f(b)-f(a)}{b-a}</m>.
+      </p>
+    </proof>
+
+    <p>
+      As an illustration of the power of the MVT we will prove the following results about derivatives.
+    </p>
+
+<corollary xml:id="cor-MVT1">
+  <statement>
+    <p>
+      If <m>g: A \to \mathbf{R}</m> is differentiable on an interval <m>A</m> and satisfies <m>g'(x) = 0</m> for all <m>x \in A</m>, then <m>g(x)=k</m> for some constant <m>k \in \mathbf{R}</m>.
+    </p>
+  </statement>
+</corollary>
+
+<corollary xml:id="cor-MVT2">
+  <statement>
+    <p>
+      If <m>f</m> and <m>g</m> are differentiable on an interval <m>A</m> and satisfy <m>f'(x) = g'(x)</m> for all <m>x \in A</m> then <m>f(x) = g(x) +k</m> for some constant <m>k \in \mathbf{R}</m>
+    </p>
+  </statement>
+</corollary>
+
   </subsection>
 
 
   <subsection>
-    <title>Wednesday</title>
+    <title>Increasing and Decreasing</title>
 
     <p>
+      Recall that a function is increasing on an interval <m>(a,b)</m> if <m>f(x)\leq f(y)</m> whenever <m>x &lt; y</m> in <m>(a,b)</m>. Likewise a function is decreasing on an interval <m>(a,b)</m> if <m>f(x)\geq f(y)</m> whenever <m>x &lt; y</m> in <m>(a,b)</m>.
     </p>
+
+    <p>
+      It is taught in Calculus class that a function is increasing whenever the derivative is positive and decreasing whenever the derivative is negative, but this is not quite right.
+    </p>
+
+    <p>
+      Consider the function <md>
+        g(x) = \begin{cases} 
+      \hfill \frac{x}{2}+ x^2 \sin(1/x) \amp \text{ if <m>x \neq 0</m>} \\
+      \hfill  0 \hfill \amp \text{ if <m>x =0 </m>} \\
+      </md>
+      
+    </p>
+
+    <figure>
+      <caption>The graph of <m>g(x)</m></caption>
+      <image source="desmos-graph (18).png" width="50%">
+        <description>A graph of a function that resembles a straight line away from 0, but near 0 oscillates wildly.</description>
+      </image>
+    </figure>
+
+    <p>
+      Let <m>y = \frac{x}{2}+ x^2 \sin(1/x)</m>. Then <m>g'(0) = \displaystyle \lim_{x\to 0} \frac{y}{x} = \frac{1}{2}>0</m>.
+    </p>
+
+    <p>
+      Let <m>k</m> be a positive integer. Then <m>g(\frac{1}{2\pi k}) = \frac{1}{2\cdot 2\pi k}</m> but <m>g(\frac{1}{2 \pi k + \frac{\pi}{2}}) = \frac{1}{2\cdot 2\pi k + \pi}+ \frac{1}{(2 \pi k + \frac{\pi}{2})^2}</m>
+    </p>
+
+    <p>
+      <m>\frac{1}{2\cdot 2\pi k}-\frac{1}{2\cdot 2\pi k + \pi} = \frac{\pi}{(4\pi k)^2 }</m> but <m>\frac{1}{(2 \pi k + \frac{\pi}{2})^2}>\frac{1}{(3\pi k)^2 }</m>
+    </p>
+
+    <p>
+      When <m>k</m> is large <m>\frac{1}{(3\pi k)^2 } &gt; \frac{\pi}{(4\pi k)^2 }</m> and hence <m>g(\frac{1}{2\pi k}) &lt; g(\frac{1}{2 \pi k + \frac{\pi}{2}})</m> but <m>\frac{1}{2 \pi k + \frac{\pi}{2}} &lt; \frac{1}{2\pi k} </m>. Therefore <m>f</m> is non-increasing on every neighborhood of <m>0</m>.
+    </p>
+
+    <theorem xml:id="thm-Increasing-Decreasing">
+      <statement>
+        <p>
+          Suppose <m>f: (a,b) \to \mathbf{R}</m>. 
+          <ol>
+            <li>
+              <p>
+                If <m>f'(x) &gt; 0</m> on <m>(a,b)</m> then <m>f(x)</m> is increasing on <m>(a,b)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>f'(x) &lt; 0</m> on <m>(a,b)</m> then <m>f(x)</m> is decreasing on <m>(a,b)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    
+    
+
   </subsection>
 
 
   <subsection>
-    <title>Friday</title>
+    <title>The Generalized Mean Value Theorem</title>
 
     <p>
+      There is a more general statement of the MVT, whose proof is also due to Cauchy. For this reason it is often referred to as Cauchy's Mean Value Theorem.
     </p>
+
+    <theorem xml:id="thm-GMVT">
+      <title>Generalized Mean Value Theorem</title>
+      
+      
+      <statement>
+        <p>
+          If <m>f</m> and <m>g</m> are continuous on the closed interval <m>[a,b]</m> and differentiable on the open interval <m>(a,b)</m> then there exists a point <m>c\in(a,b)</m> where
+          <md>
+            [f(b)-f(a)]g'(c) = [g(b)-g(a)]f'(c).
+          </md>
+          
+        </p>
+
+      
+      </statement>
+    </theorem>
+
+    <p>
+      If <m>g'</m> is never zero on <m>(a,b)</m> then the conclusion can be stated as 
+      <md>
+        \frac{f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}
+      </md>
+      
+    </p>
+
+    <proof>
+      <p>
+        We will apply the MVT to the function <m>h(x) = [f(b)-f(a)]g(x)-[g(b)-g(a)]f(x)</m>.
+      </p>
+    </proof>
+
+    
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Intermediate-Forms-and-LHopitals-Rule">
+    <title>Intermediate Forms and L'Hopital's Rule</title>
+    
+
+    <p>
+       Consider the following limits. <md>
+        \lim_{x\to 1} \frac{\ln(x)}{x-1}
+       </md>
+       
+       <md>
+        \lim_{x\to 0^+} \frac{\ln(x)}{\csc(x)}
+       </md>
+       
+    </p>
+
+    <p>
+      If we try to evaluate the first limit we end up with both numerator and denominator going to <m>0</m>. This is called an indeterminate form of type <m>\frac{0}{0}</m>
+    </p>
+
+    <p>
+      If we try to evaluate the second limit we end up with the numerator going to <m>-\infty</m> and the denominator going to <m>\infty</m>. This is called an indeterminate form of type <m>\frac{\infty}{\infty}</m>
+    </p>
+
+    <p>
+      Before proceeding, let's formally define what is meant for a limit to be <m>\infty</m>.
+    </p>
+
+    <definition xml:id="def-">
+      <statement>
+        <p>
+          Given <m>g:A \to \mathbf{R}</m> and a limit point <m>c</m> of <m>A</m>, we say that <m>\displaystyle \lim_{x\to c} g(x) = \infty</m> if for every <m>M &gt; 0</m> there exists <m>\delta &gt; 0</m> such that whenever <m>0 &lt; |x-c| &lt; \delta</m> it follows that <m>g(x) \geq M</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The definition for <m>\displaystyle \lim_{x\to c} g(x) = -\infty</m> is similar.
+    </p>
+
+    <theorem xml:id="thm-Lhopital">
+      <title>L'hopital's Rule (<m>\frac{0}{0}</m> case)</title>
+      
+      
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> be continuous on an interval containing <m>a</m> and suppose <m>f</m> and <m>g</m> are differentiable on this interval with the possible exception of the point <m>a</m>. If <m>f(a) = g(a) = 0</m> and <m>g'(x) \neq 0</m> for all <m>x \neq a</m> then 
+          <md>
+            \lim_{x\to a} \frac{f'(x)}{g'(x)} = L \textnormal{ implies } \lim_{x\to a} \frac{f(x)}{g(x)} = L
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-Lhopital2">
+      <title>L'hopital's Rule (<m>\frac{\infty}{\infty}</m> case)</title>
+      
+      
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> be differentiable on an interval containing <m>a</m> with the possible exception of the point <m>a</m>. If <m>\displaystyle \lim_{x\to a} = \infty</m> (or <m>-\infty)</m> and <m>g'(x) \neq 0</m> for all <m>x \neq a</m> then 
+          <md>
+            \lim_{x\to a} \frac{f'(x)}{g'(x)} = L \textnormal{ implies } \lim_{x\to a} \frac{f(x)}{g(x)} = L
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+    
+    <p>
+      L'Hospital's rule works because if <m>f</m> and <m>g</m> are two differentiable functions whose graph approaches <m>0</m> as <m>x \to a</m> then the tangent lines to the graphs at <m>a</m> are close to the functions themselves, so we can replace the functions by their tangent lines at <m>a</m>.
+    </p>
+
+    <p>
+      Recall that <m>f'(a)</m> is the slope of the tangent line to <m>f</m> and <m>g'(a)</m> is the slope of the tangent line to <m>g</m>. Thus
+      <md>
+        \lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x) (x-a) }{g'(x) (x-a)} = \lim_{x\to a} \frac{f'(x)  }{g'(x)}
+      </md>
+      
+    </p>
+
+    <figure>
+      <caption>L'hopital's Rule works because the slopes of the tangent lines to <m>f(a)</m> and <m>g(a)</m> are almost the same as the slopes of the functions themselves</caption>
+      <image source="desmos-graph - 2022-09-21T203738.264.png" width="50%">
+        <description>A graph of a parabola and a square root function which intersects it at the point <m>(1,0)</m>. A tangent line to the parabola and a tangent line to the square root function are shown intersecting at the point <m>(1,0)</m></description>
+      </image>
+    </figure>
+
+    <p>
+      The first proof of L'Hospitals's rule appeared in L'Hospital's 1696 book \textit{Infinitesimal Analysis to Understand Curved Lines}, which was the first ever calculus textbook; however, the proof of L'Hospital's rule was due to Johann Bernoulli.
+    </p>
+
+    <p>
+      L'Hospital had earlier made the following proposition to Bernoulli. \textit{I will be happy to give you a retainer of 300 pounds, beginning with the first of January of this year. ... I promise shortly to increase this retainer, which I know is very modest, as soon as my affairs are somewhat straightened out. ... I am not so unreasonable as to demand in return all of your time, but I will ask you to give me at intervals some hours of your time to work on what I request and also to communicate to me your discoveries, at the same time asking you not to disclose any of them to others.} 
+    </p>
+
+    
+    
   </subsection>
 </section>

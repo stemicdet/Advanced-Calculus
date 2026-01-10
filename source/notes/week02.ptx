@@ -53,8 +53,8 @@
       Peano also showed that Jordan's proof would not work for the function 
       <md>
         f(x) = \begin{cases} 
-      \hfill  x^2 \sin(1/x) \amp \text{ if <m>x \neq 0</m>} \\
-      \hfill  0 \hfill \amp \text{ if <m>x =0 </m>} \\
+      \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
   \end{cases}
       </md>
       
@@ -154,15 +154,16 @@
     <p>
       Consider the function <md>
         g(x) = \begin{cases} 
-      \hfill \frac{x}{2}+ x^2 \sin(1/x) \amp \text{ if <m>x \neq 0</m>} \\
-      \hfill  0 \hfill \amp \text{ if <m>x =0 </m>} \\
+      \hfill \frac{x}{2}+ x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+      \end{cases}
       </md>
       
     </p>
 
     <figure>
       <caption>The graph of <m>g(x)</m></caption>
-      <image source="desmos-graph (18).png" width="50%">
+      <image source="desmos-graph (18) (1).png" width="50%">
         <description>A graph of a function that resembles a straight line away from 0, but near 0 oscillates wildly.</description>
       </image>
     </figure>
@@ -343,10 +344,116 @@
     </p>
 
     <p>
-      L'Hospital had earlier made the following proposition to Bernoulli. \textit{I will be happy to give you a retainer of 300 pounds, beginning with the first of January of this year. ... I promise shortly to increase this retainer, which I know is very modest, as soon as my affairs are somewhat straightened out. ... I am not so unreasonable as to demand in return all of your time, but I will ask you to give me at intervals some hours of your time to work on what I request and also to communicate to me your discoveries, at the same time asking you not to disclose any of them to others.} 
+      L'Hospital had earlier made the following proposition to Bernoulli. <em>I will be happy to give you a retainer of 300 pounds, beginning with the first of January of this year. ... I promise shortly to increase this retainer, which I know is very modest, as soon as my affairs are somewhat straightened out. ... I am not so unreasonable as to demand in return all of your time, but I will ask you to give me at intervals some hours of your time to work on what I request and also to communicate to me your discoveries, at the same time asking you not to disclose any of them to others.</em> 
     </p>
 
+    <p>
+      We will first prove the <m>\frac{0}{0}</m> case using the Generalized MVT
+    </p>
+
+    <proof>
+      <p>
+        Consider the interval <m>(a,x)</m>. By the Generalized MVT for each <m>x</m> there exists <m>x^* \in (a,x)</m> such that 
+        <md>
+          \frac{f'(x^*)}{g'(x^*)} = \frac{f(x)-f(a)}{g(x)-g(a)} = \frac{f(x)}{g(x)}
+        </md>
+        
+      </p>
+
+      <p>
+        Taking the limit as <m>x \to a^+</m> yields
+        <md>
+          \lim_{x\to a^+}  \frac{f'(x)}{g'(x)} = \lim_{x\to a^+} \frac{f(x)}{g(x)}
+        </md>
+        
+      </p>
+
+      <p>
+        The limit as <m>x \to a^-</m> is similar.
+      </p>
+    </proof>
+
+    <p>
+      Now we will prove the <m>\frac{\infty}{\infty}</m> case of L'Hospital's rule
+    </p>
+
+    <proof>
+      <p>
+        Let <m>\epsilon>0</m>. Then since <m>\displaystyle \lim_{x\to a} \frac{f'(x)}{g'(x)} = L</m>, there exists <m>\delta_1>0</m> such that 
+        <md>
+          \left| \frac{f'(x)}{g'(x)}-L \right| &lt; \frac{\epsilon}{2}
+        </md>
+        
+        for all <m>a &lt; x &lt; a+\delta_1</m>.
+      </p>
+
+      <p>
+        Let <m>t = a+\delta_1</m>. Note that <m>t</m> is a fixed number throughout the remainder of the proof.
+      
     
+      </p>
+
+
+      <p>
+        For any <m>x \in (a,t)</m> the Generalized MVT yields
+        <md>
+          \frac{f(x)-f(t)}{g(x)-g(t)} = \frac{f'(c)}{g'(c)}
+        </md>
+        for some <m>c \in (x,t)</m>.
+      </p>
+
+      <p>
+        It thus follows from the choice of <m>t</m> that
+
+        <md xml:id="eqn-lh" number="yes">
+          L- \frac{\epsilon}{2} &lt; \frac{f(x)-f(t)}{g(x)-g(t)} &lt; L+ \frac{\epsilon}{2}
+        </md>
+        
+      </p>
+
+      <p>
+        Our goal is to show that 
+        <md>
+          L- \epsilon &lt; \frac{f(x)}{g(x)} &lt; L + \epsilon
+        </md>
+        
+      </p>
+
+      <p>
+        To achieve this from what we have, we want to multiply <xref ref="eqn-lh"/> by <m>(g(x)-g(t))/g(x)</m>. To make sure that this quantity is positive note that since <m>\displaystyle \lim_{x\to a} g(x) = \infty</m>, we can choose <m>\delta_2</m> so that <m>g(x) &gt; g(t)</m> for all <m>a &lt; x &lt; a +\delta_2</m>. 
+      </p>
+
+      <p>
+        Performing the desired multiplication results in
+        <md>
+          \left(L - \frac{\epsilon}{2} \right)\left(1-\frac{g(t)}{g(x)}\right) &lt; \frac{f(x)-f(t)}{g(x)} &lt; \left(L + \frac{\epsilon}{2} \right)\left(1-\frac{g(t)}{g(x)}\right)
+        </md>
+        
+      </p>
+
+      <p>
+        After some algebra this reduces to 
+        <md>
+          L- \frac{\epsilon}{2} + \frac{-Lg(t)+\frac{\epsilon}{2}g(t)+f(t)}{g(x)} &lt; \frac{f(x)}{g(x)} &lt; L+ \frac{\epsilon}{2} + \frac{-Lg(t)-\frac{\epsilon}{2}g(t)+f(t)}{g(x)}
+        </md>
+        
+      </p>
+
+      <p>
+        Since <m>t</m> is fixed and <m>\displaystyle \lim_{x\to a} g(x) = \infty</m> there exists <m>\delta_3 &gt; 0</m> such that for <m>a &lt; x &lt; a+\delta_3</m>, <m>\frac{-Lg(t)+\frac{\epsilon}{2}g(t)+f(t)}{g(x)}</m> and <m>\frac{-Lg(t)-\frac{\epsilon}{2}g(t)+f(t)}{g(x)}</m> are both less than <m>\frac{\epsilon}{2}</m> in absolute value.
+      </p>
+
+      <p>
+        If <m>\delta = \min \{\delta_1, \delta_2, \delta_3 \}</m> then
+        <md>
+          \left|\frac{f(x)}{g(x)} -L \right| &lt; \epsilon
+        </md>
+        
+        for all <m>a &lt; x &lt; a+\delta</m>.
+      </p>
+
+    </proof>
+
     
   </subsection>
 </section>

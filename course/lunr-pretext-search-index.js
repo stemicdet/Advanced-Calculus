@@ -359,6 +359,15 @@ var ptx_lunr_docs = [
   "number": "2",
   "title": "",
   "body": " Let . Then since , there exists such that for all .  Let . Note that is a fixed number throughout the remainder of the proof.  For any the Generalized MVT yields for some .  It thus follows from the choice of that   Our goal is to show that   To achieve this from what we have, we want to multiply by . To make sure that this quantity is positive note that since , we can choose so that for all .  Performing the desired multiplication results in   After some algebra this reduces to   Since is fixed and there exists such that for , and are both less than in absolute value.  If then for all .  "
+},
+{
+  "id": "hw1",
+  "level": "1",
+  "url": "hw1.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 1 Due January 22",
+  "body": " MTH 428\/528 Homework 1 Due January 22     Supply proofs for parts (i) and (ii) of Theorem 5.2.4 (Algebraic Differentiation Theorem)    Use the definition of the derivative to show that the derivative of is when .    (Power Rule:) Consider , where , and let be an arbitrary point in . Show that .   Hint: The algebraic identity will be useful here.    Determine whether each conjecture is true or false. Provide an argument for those that are true and a counterexample for each one that is false.   If exists on an interval and is not constant, then must take on some irrational values.    If is differentiable on an interval containing zero then .       Let be defined on an interval and let .   Explain why in Definition 5.2.1 could have been given by     Suppose is open. If is differentiable at , show         "
 }
 ]
 

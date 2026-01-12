@@ -65,13 +65,13 @@
     <!--  <xi:include href="./handouts/sample-handout.ptx"/> -->
     <!-- </chapter> -->
 
-   <!-- <chapter xml:id="homework"> -->
-    <!--  <title>Homework</title> -->
+    <chapter xml:id="homework"> 
+      <title>Homework</title> 
 
       <!-- Remove or comment out the sample and replace with your own homework -->
-    <!--  <xi:include href="./homework/sample-homework.ptx"/> -->
+      <xi:include href="./homework/Homework1"/> 
 
-   <!-- </chapter> -->
+    </chapter> 
 
     <!-- Include additional chapters for other categories -->
 

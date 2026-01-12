@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw1">
+  <title>MTH 428/528 Homework 1 Due January 22</title>
+
+  <p>
+    <ol marker="(1)">
+      <li>
+        <p>
+          Supply proofs for parts (i) and (ii) of Theorem 5.2.4 (Algebraic Differentiation Theorem)
+        </p>
+      </li>
+      <li>
+<p>
+  Use the <m>\epsilon-\delta</m> definition of the derivative to show that the derivative of <m>f(x) = x^2+3x</m> is <m>5</m> when <m>x =1</m>.
+</p>
+</li>
+<li>
+  <p>
+    (Power Rule:) Consider <m>f(x) = x^n</m>, where <m>n \in \mathbf{N}</m>, and let <m>c</m> be an arbitrary point in <m>\mathbf{R}</m>. Show that <m>f'(c) = n c^{n-1}</m>.
+  </p>
+  <p>
+    <em>Hint:</em> The algebraic identity
+    <md>
+       x^n-c^n = (x-c)(x^{n-1} + cx^{n-2} + c^2 x^{n-3} + \ldots + c^{n-1})
+    </md>
+    will be useful here.
+  </p>
+</li>
+<li>
+  <p>
+Determine whether each conjecture is true or false. Provide an argument for those that are true and a counterexample for each one that is false.
+<ol marker="(A)">
+  <li>
+    <p>
+      If <m>f'</m> exists on an interval and is not constant, then <m>f'</m> must take on some irrational values.
+    </p>
+  </li>
+  <li>
+    <p>
+      If <m>f</m> is differentiable on an interval containing zero then <md> \lim_{x\to 0} f'(x) = f'(0)</md>.
+    </p>
+  </li>
+</ol>
+  </p>
+</li>
+<li>
+  <p>
+  Let <m>g</m> be defined on an interval <m>A</m> and let <m>c \in A</m>.
+  <ol marker="(A)">
+<li>
+  <p>
+    Explain why <m>g'(c)</m> in Definition 5.2.1 could have been given by
+    <md>
+      g'(c) = \lim_{h\to 0} \frac{g(c)-g(c-h)}{h}
+    </md>
+  </p>
+</li>
+<li>
+  <p>
+    Suppose <m>A</m> is open. If <m>g</m> is differentiable at <m>c \in A</m>, show
+    <md>
+      g'(c) = \lim_{h\to 0} \frac{g(c+h)-g(c-h)}{2h}
+    </md>
+  </p>
+</li>
+  </ol>
+  </p>
+</li>
+    </ol>
+  </p>
+  
+  
+  
+
+
+    
+</worksheet>

@@ -214,7 +214,7 @@
     We want to show <m>\displaystyle \lim_{x\to c} g(x) = g(c)</m>. By the Algebraic Limit Theorem for functional limits
 
     <md>
-      \lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} &lt;ft( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
+      \lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} \left( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
     </md>
     
   </p>

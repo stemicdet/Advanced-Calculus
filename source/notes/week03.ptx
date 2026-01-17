@@ -126,11 +126,206 @@
     </p>
 
     <figure>
-      <caption> The first 3 partial sums of <m>g(x)</m>.</caption>
+      <caption> The first 3 terms of <m>g(x)</m>.</caption>
       <image source="desmos-graph (20) (1).png" width="50%">
         <description>A picture of the graphs of three functions. The first in orange is the graph of <m>h_0</m>. It looks like a triangle starting at <m>(0,0)</m>, which rises up to <m>(1,1)</m> before falling down to <m>(2,0)</m>. Then it repeats indefinitely. The second graph in green is the graph of <m>h_1</m>. It looks like a triangle starting at <m>(0,0)</m> that rises up to <m>(\frac{1}{2}, \frac{1}{2})</m> before falling down to <m>(1,0)</m>. Then it repeats this pattern indefinitely. The final graph in blue is the graph of <m>h_2</m>. It is a triangle that starts at <m>(0,0)</m> and rises to <m>(\frac{1}{4}, \frac{1}{4})</m> before falling to <m>(\frac{1}{2},0)</m>. The it repeats indefinitely </description>
       </image>
     </figure>
 
   </subsection>
+
+  <subsubsection xml:id="subsubsec-3-2">
+    <title>Continuity of <m>g(x)</m></title>
+    
+
+    <p>
+      We first need to show that <m>g(x)</m> is well defined for all <m>x \in \mathbf{R}</m> by showing that the infinite sum converges for all <m>x</m>.
+    </p>
+
+    <p>
+      Since <m>|h(x)|\leq 1</m>, <m>\frac{1}{2^n}h(2^n x) \leq \frac{1}{2^n}</m>. Hence by the comparison test
+      <md>
+        g(x)=   \sum_{n=0}^{\infty}\frac{1}{2^n}h(2^nx) \leq \sum_{n=0}^{\infty}\frac{1}{2^n} = 2
+      </md>
+      Thus <m>g(x)</m> is defined for all <m>x \in \mathbf{R}</m>.
+    </p>
+
+    <p>
+      Since <m>h(x)</m> is continuous it follows from the algebraic limit theorem that the finite sum
+      <md>
+        g_m(x) = \sum_{n=0}^m \frac{1}{2^n}h(2^n x)
+      </md>
+      is continuous.
+    </p>
+
+    <p>
+      It is not necessarily the case that an infinite sum of continuous functions will still be continuous. Determining when the limit of a sequence of continuous functions or an infinite sum of functions is continuous will be one of the main goals of Chapter 6.
+    </p>
+
+    <p>
+      After that chapter we will see that this particular sum is in fact continuous on all <m>\mathbf{R}</m>
+    </p>
+
+  </subsubsection>
+
+  <subsubsection xml:id="subsubsec-3-3">
+    <title>Non-differentiability of <m>g(x)</m></title>
+
+    <p>
+      We will first show that <m>g(x)</m> is not differentiable at <m>0</m>. Consider the sequence <m>x_m = 1/2^m</m>, where <m>m = 0, 1, 2, \ldots</m>
+    </p>
+
+    <p>
+      It follows from the definition of the derivative that if <m>g(x)</m> is differentiable at <m>0</m> then
+      <md>
+        g'(0) = \lim_{m\to \infty} \frac{g(x_m)-g(0)}{x_m - 0} = \lim_{m\to \infty} \frac{\displaystyle \sum_{n=0}^{\infty} 2^{-n}h(2^{n-m})}{2^{-m}}
+      </md>
+      
+    </p>
+
+    <p>
+      There are three cases to consider:
+      <ol>
+        <li>
+          <p>
+            <m>m &lt; n</m>: Then <m>2^{n-m}</m> is a multiple of 2 and thus <m>h(2^{m-n})=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Case 2: <m>m=n</m>: Then <m>2^{n-m} = 1</m> so <m>h(2^{m-n}) = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Case 3: <m>m>n</m>: Then <m>2^{n-m} &lt; 1</m> and hence <m>h(2^{m-n}) = 2^{m-n}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    
+
+    <p>
+      Putting this all together we get
+      <md>
+        <mrow> g'(0) \amp = \lim_{m\to \infty} \frac{\displaystyle \sum_{n=0}^{m-1} 2^{-n}h(2^{n-m}) + 2^{-m} + \sum_{n=m+1}^{\infty} 2^{-n}h(2^{n-m})}{2^{-m}}</mrow>
+        <mrow> \amp =\lim_{m\to \infty} 2^m \left(\sum_{n=0}^{m-1} 2^{-m} + 2^{-m} \right)</mrow>
+        <mrow> \amp =\lim_{m\to \infty} m+1</mrow>
+      </md>
+    </p>
+
+    <p>
+      Since the limit is undefined, <m>g'(0)</m> does not exist and <m>g</m> is not differentiable at <m>0</m>.
+    </p>
+
+    <p>
+      A similar argument shows that <m>g'(x)</m> does not exist whenever <m>x</m> is a rational number of the form <m>\frac{p}{2^k}</m> where <m>p</m> is an integer and <m>k</m> is a positive integer.
+    </p>
+
+    <p>
+      These points are called dyadic points. Because the dyadic points are dense in the real numbers there is reason to suppose that <m>g(x)</m> is non-differentiable at every real number.
+    </p>
+
+    <p>
+      Suppose that <m>x</m> is not a dyadic number. Then for a fixed value of <m>m</m> <m>x</m> lies between 2 adjacent dyadic points
+      <md>
+        \frac{p_m}{2^m} &lt; x &lt; \frac{p_m+1}{2^m}
+      </md>
+      
+    </p>
+
+    <p>
+      Set <m>x_m = \frac{p_m}{2^m}</m> and <m>y_m = \frac{p_m+1}{2^m}</m>. Repeating this for each <m>m</m> yields sequences <m>(x_m)</m> and <m>(y_m)</m> such that <m>\lim x_m = \lim y_m = x</m> and <m>x_m &lt; x &lt; y_m</m>
+    </p>
+
+   <lemma xml:id="lem-nondiff">
+    <statement>
+      <p>
+        If <m>(a_n)</m> and <m>(b_n)</m> are sequences satisfying <m>a_n &lt; a &lt; b_n</m> and <m>\lim a_n = \lim b_n = a</m> then 
+        <md>
+          f'(a) = \lim_{n \to \infty} \frac{f(b_n)-f(a_n)}{b_n - a_n}.
+        </md>
+        
+      </p>
+    </statement>
+   </lemma>
+
+   <proof>
+    <p>
+      <md>
+        f'(a) = \lim_{x\to a} \frac{f(x)-f(a)}{x - a} 
+      </md>
+      
+    </p>
+
+    <p>
+      Let <m>x = b_n</m>. Then <m>x\to a</m> as <m>n \to \infty</m> so
+      <md>
+        f'(a) = \lim_{n\to \infty} \frac{f(b_n)-f(a)}{b_n - a}
+      </md>
+
+      f'(a) = \lim_{n\to \infty} \frac{f(b_n)-f(a)}{b_n - a}
+      <md>
+        f'(a) = \lim_{n \to \infty} \frac{f(b_n)-f(a_n)}{b_n - a_n}.
+      </md>
+      
+      
+    </p>
+   </proof>
+
+   <p>
+    We will use the lemma to show that <m>g'(x)</m> can't exist for all <m>x</m>. Recall that <m>x_m = \frac{p_m}{2^m}</m> and <m>y_m = \frac{p_m+1}{2^m}</m> are sequences such that <m>\lim x_m = \lim y_m = x</m> and <m>x_m &lt; x &lt; y_m</m>.
+   </p>
+
+   <p>
+    Thus if <m>g'(x)</m> exists then by the lemma 
+    <md>
+      g'(x) = \lim_{m \to \infty} \frac{g(y_m)-g(x_m)}{y_m-x_m} = \lim_{m \to \infty} \frac{g(\frac{p_m+1}{2^m})-g(\frac{p_m}{2^m})}{2^{-m}}
+    </md>
+    
+   </p>
+
+   <p>
+    Now
+    <md>
+      g(\frac{p_m}{2^m}) = \sum_{n=0}^{m-1} 2^{-n}h(\frac{2^n p_m}{2^m}) + 2^{-m}h(p_m) + \sum_{n=m+1}^{\infty} 2^{-n}h(\frac{2^n p_m}{2^m})
+    </md>
+    
+   </p>
+
+   <p>
+    If <m>n &gt; m</m>, then <m>h(\frac{2^n p_m}{2^m}) = h(2^{n-m}p_m)= 0</m>.
+   </p>
+
+   <p>
+    If <m>n &lt;m</m> then <m>h(\frac{2^n p_m}{2^m}) = \pm 1</m>, where the sign depends on whether <m>\frac{2^n p_m}{2^m}</m> lies on a line segment with positive slope or negative slope.
+   </p>
+
+   <p>
+    Finally <m>h(p_m)</m> = <m>1</m> if <m>p_m</m> is odd and <m>0</m> if <m>p_m</m> is even.
+   </p>
+
+   <p>
+    For <m>g(\frac{p_m+1}{2^m})</m> everything is the same except that <m>h(p_m+1) = 0</m> if <m>p_m</m> is odd and <m>1</m> if <m>p_m</m> is even.
+   </p>
+
+   <p>
+    Thus <m>g(\frac{p_m+1}{2^m})-g(\frac{p_m}{2^m}) = 2^{-m}</m> if <m>p_m</m> is even and <m>-2^{-m}</m> if <m>p_m</m> is odd.
+   </p>
+
+   <p>
+    Therefore 
+    <md>
+      g'(x) = \lim_{m \to \infty} \frac{g(\frac{p_m+1}{2^m})-g(\frac{p_m}{2^m})}{2^{-m}} = \lim_{m \to \infty}  \frac{\pm 2^{-m}}{2^{-m}}
+    </md>
+
+    where the sign is positive if <m>p_m</m> is even and negative if <m>p_m</m> is odd.
+    
+   </p>
+
+   <p>
+    Since this sequence alternates between <m>-1</m> and <m>1</m>, the limit doesn't exist and thus <m>g</m> is not differentiable at <m>x</m>. Since <m>x</m> was arbitrary, this shows that <m>g</m> is nowhere differentiable.
+   </p>
+
+  </subsubsection>
 </section>

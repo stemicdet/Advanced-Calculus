@@ -21,5 +21,13 @@
     It is possible to construct a continuous function that is nondifferentiable at infinitely many points. Let $h(x) = |x|$ on the interval $[-1,1]$ and then extend $h(x)$ to all $\mathbf{R}$ through the relation $h(x+2) = h(x)$. This function is nondifferentiable at all the integers.
 </p>
 
+<figure>
+      <caption>A tangent line to a curve</caption>
+      <image source="desmos-graph (19) (1).png" width="50%">
+        <description>A picture of a cubic function with a tangent line.</description>
+      </image>
+    </figure>
+
+
   </subsection>
 </section>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-03">
+  <title>Week 3: A Continuous Nowhere Differentiable Function (5.4)</title>
+
+ 
+
+  <!-- Can also be <handout> instead of <subsection> to get a printable version -->
+  <subsection xml:id="subsection-3-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title> Non-differentiability</title>
+
+<p>
+    We saw that the absolute value function fails to be differentiable at $0$ because of the sharp corner at $0$.
+</p>
+
+<p>
+    Given a finite set of points, it is possible to construct a continuous function with a sharp corner at each point and thus we have a continuous function that fails to be differentiable at a finite set of points.
+</p>
+
+<p>
+    It is possible to construct a continuous function that is nondifferentiable at infinitely many points. Let $h(x) = |x|$ on the interval $[-1,1]$ and then extend $h(x)$ to all $\mathbf{R}$ through the relation $h(x+2) = h(x)$. This function is nondifferentiable at all the integers.
+</p>
+
+  </subsection>
+</section>

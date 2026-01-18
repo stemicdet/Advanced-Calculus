@@ -361,6 +361,60 @@ var ptx_lunr_docs = [
   "body": " Let . Then since , there exists such that for all .  Let . Note that is a fixed number throughout the remainder of the proof.  For any the Generalized MVT yields for some .  It thus follows from the choice of that   Our goal is to show that   To achieve this from what we have, we want to multiply by . To make sure that this quantity is positive note that since , we can choose so that for all .  Performing the desired multiplication results in   After some algebra this reduces to   Since is fixed and there exists such that for , and are both less than in absolute value.  If then for all .  "
 },
 {
+  "id": "notes-week-03",
+  "level": "1",
+  "url": "notes-week-03.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 3: A Continuous Nowhere Differentiable Function (5.4)",
+  "body": " Week 3: A Continuous Nowhere Differentiable Function (5.4)    Non-differentiability  We saw that the absolute value function fails to be differentiable at because of the sharp corner at .  Given a finite set of points, it is possible to construct a continuous function with a sharp corner at each point and thus we have a continuous function that fails to be differentiable at a finite set of points.  It is possible to construct a continuous function that is nondifferentiable at infinitely many points. Let on the interval and then extend to all through the relation . This function is nondifferentiable at all the integers.   A continuous function that is non-differentiable at infinitely many points.   A picture of a continuous function that is non-differentiable at infinitely many points. The function looks like an infinitely long row of teeth and is not differentiable at the point of each tooth.    Is it possible to construct a function that is continuous everywhere but that is non-differentiable at uncountably many points?  Around 1830 Bernard Bolzano constructed a function that is continuous everywhere but fails to be differentiable at every point in ; however, he never published this result.  About 1860 Charles Cellerier constructed another function that is everywhere continuous but nowhere differentiable. He also never published his result.  The first published example of a function that is everywhere continuous and nowhere differentiable is due to Karl Weierstrass in 1872.   Weierstrass' example of a function that is everywhere continuous but nowhere differentiable.   A picture of the graph of a function that consists entirely of jagged edges. One of the edges is zoomed in to show that inside the edges the function has the same shape as the entire graph, which demonstrates the fractal nature of this graph.    Quotes about the Weierstrass Function:    An outrage against common sense -- Henri Poincare     I turn with terror and horror from this lamentable scourge of functions with no derivatives. -- Charles Hermite     [Up to that time] one would have said that a continuous function is essentially capable of being represented by a curve, and that a curve has always a tangent. Such reasoning has no mathematical value whatever; it is founded on intuition, or rather on a visible representation. ... By the discovery of this striking example Weierstrass has accordingly given us a useful reminder, and has taught us better to appreciate the faultless and purely arithmetical methods with which he more than any one has enriched our science. -- Henri Poincare     Although nowhere differentiable continuous functions were created to challenge previously held beliefs in mathematics, they do have important physical applications.  In 1905 Albert Einstein published a paper which demonstrated the existence of atoms. In this paper Einstein showed that atoms exhibit Brownian Motion which means that they follow a random path because they are constantly bombarded by other particles which changes their direction of motion.  Because of this randomness, the path of an object that exhibits Brownian motion can't be modeled by a smooth curve. One must use a continuous non-differentiable function to model Brownian motion.  Weierstrass' original function was the function where and are carefully chosen real numbers.  The Weierstrass function is an example of a Fourier series, which is an infinite sum of sines and cosines.  Remarkably the Weierstrass function is nowhere differentiable despite the fact that the functions in the sum are infinitely differentiable everywhere.  We will give another example of an everywhere continuous nowhere differentiable function. Recall that on and is extended to all by the functional equation .  Let .  Let   We will show that is continuous on all but differentiable nowhere.  The graph below shows in orange, in green and in blue.   The first 3 terms of .   A picture of the graphs of three functions. The first in orange is the graph of . It looks like a triangle starting at , which rises up to before falling down to . Then it repeats indefinitely. The second graph in green is the graph of . It looks like a triangle starting at that rises up to before falling down to . Then it repeats this pattern indefinitely. The final graph in blue is the graph of . It is a triangle that starts at and rises to before falling to . The it repeats indefinitely      Continuity of  We first need to show that is well defined for all by showing that the infinite sum converges for all .  Since , . Hence by the comparison test Thus is defined for all .  Since is continuous it follows from the algebraic limit theorem that the finite sum is continuous.  It is not necessarily the case that an infinite sum of continuous functions will still be continuous. Determining when the limit of a sequence of continuous functions or an infinite sum of functions is continuous will be one of the main goals of Chapter 6.  After that chapter we will see that this particular sum is in fact continuous on all     Non-differentiability of  We will first show that is not differentiable at . Consider the sequence , where   It follows from the definition of the derivative that if is differentiable at then   There are three cases to consider:    : Then is a multiple of 2 and thus     Case 2: : Then so .    Case 3: : Then and hence .     Putting this all together we get   Since the limit is undefined, does not exist and is not differentiable at .  A similar argument shows that does not exist whenever is a rational number of the form where is an integer and is a positive integer.  These points are called dyadic points. Because the dyadic points are dense in the real numbers there is reason to suppose that is non-differentiable at every real number.  Suppose that is not a dyadic number. Then for a fixed value of  lies between 2 adjacent dyadic points   Set and . Repeating this for each yields sequences and such that and     If and are sequences satisfying and then         Let . Then as so But . Thus    We will use the lemma to show that can't exist for all . Recall that and are sequences such that and .  Thus if exists then by the lemma   Now   If , then .  If then , where the sign depends on whether lies on a line segment with positive slope or negative slope.  Finally = if is odd and if is even.  For everything is the same except that if is odd and if is even.  Thus if is even and if is odd.  Therefore where the sign is positive if is even and negative if is odd.  Since this sequence alternates between and , the limit doesn't exist and thus is not differentiable at . Since was arbitrary, this shows that is nowhere differentiable.   "
+},
+{
+  "id": "subsection-3-1-5",
+  "level": "2",
+  "url": "notes-week-03.html#subsection-3-1-5",
+  "type": "Figure",
+  "number": "27",
+  "title": "",
+  "body": " A continuous function that is non-differentiable at infinitely many points.   A picture of a continuous function that is non-differentiable at infinitely many points. The function looks like an infinitely long row of teeth and is not differentiable at the point of each tooth.   "
+},
+{
+  "id": "subsection-3-1-10",
+  "level": "2",
+  "url": "notes-week-03.html#subsection-3-1-10",
+  "type": "Figure",
+  "number": "28",
+  "title": "",
+  "body": " Weierstrass' example of a function that is everywhere continuous but nowhere differentiable.   A picture of the graph of a function that consists entirely of jagged edges. One of the edges is zoomed in to show that inside the edges the function has the same shape as the entire graph, which demonstrates the fractal nature of this graph.   "
+},
+{
+  "id": "subsection-3-1-23",
+  "level": "2",
+  "url": "notes-week-03.html#subsection-3-1-23",
+  "type": "Figure",
+  "number": "29",
+  "title": "",
+  "body": " The first 3 terms of .   A picture of the graphs of three functions. The first in orange is the graph of . It looks like a triangle starting at , which rises up to before falling down to . Then it repeats indefinitely. The second graph in green is the graph of . It looks like a triangle starting at that rises up to before falling down to . Then it repeats this pattern indefinitely. The final graph in blue is the graph of . It is a triangle that starts at and rises to before falling to . The it repeats indefinitely   "
+},
+{
+  "id": "lem-nondiff",
+  "level": "2",
+  "url": "notes-week-03.html#lem-nondiff",
+  "type": "Lemma",
+  "number": "30",
+  "title": "",
+  "body": "  If and are sequences satisfying and then    "
+},
+{
+  "id": "subsubsec-3-3-12",
+  "level": "2",
+  "url": "notes-week-03.html#subsubsec-3-3-12",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": "    Let . Then as so But . Thus   "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",
@@ -368,6 +422,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 1 Due January 22",
   "body": " MTH 428\/528 Homework 1 Due January 22     Supply proofs for parts (i) and (ii) of Theorem 5.2.4 (Algebraic Differentiation Theorem)    Use the definition of the derivative to show that the derivative of is when .    (Power Rule:) Consider , where , and let be an arbitrary point in . Show that .   Hint: The algebraic identity will be useful here.    Determine whether each conjecture is true or false. Provide an argument for those that are true and a counterexample for each one that is false.   If exists on an interval and is not constant, then must take on some irrational values.    If is differentiable on an interval containing zero then .       Let be defined on an interval and let .   Explain why in Definition 5.2.1 could have been given by     Suppose is open. If is differentiable at , show         "
+},
+{
+  "id": "hw2",
+  "level": "1",
+  "url": "hw2.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 2 Due January 29",
+  "body": " MTH 428\/528 Homework 2 Due January 29     Suppose that is continuous on and differentiable on . Also suppose that for all . If , what are the largest and smallest possible values for ?    Let and suppose that but . Show that     Let be differentiable on an interval .    If on show that is one-to-one on .    Provide an example to show that the converse statement need not be true.      Suppose that and are both continuous on and differentiable on . Also suppose that and for all . Show that .    A fixed point of a function is a value where . Show that if is differentiable on an interval with , then can have at most one fixed point.     "
 }
 ]
 

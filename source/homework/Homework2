@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw2">
+  <title>MTH 428/528 Homework 2 Due January 29</title>
+
+  <p>
+    <ol marker="(1)">
+      <li>
+        <p>
+          Suppose that <m>f</m> is continuous on <m>[1,5]</m> and differentiable on <m>(1,5)</m>. Also suppose that <m>-2 &lt; f'(x) &lt; 10</m> for all <m>x \in (1,5)</m>. If <m>f(1) = 4</m>, what are the largest and smallest possible values for <m>f(5)</m>?
+        </p>
+      </li>
+      <li>
+<p>
+  Let <m>n \in \mathbf{N}</m> and suppose that <m>\displaystyle \lim_{x\to 0} f(x) = \lim_{x\to 0} f'(x) = \lim_{x\to 0} f''(x) = \ldots = \lim_{x\to 0} f^{(n-1)}(x)=0</m> but <m>\displaystyle \lim_{x\to 0} f^{(n)}(x)=1</m>. Show that
+  <md>
+    \lim_{x\to 0} \frac{xf'(x)}{f(x)} = n .
+  </md>
+</p>
+</li>
+<li>
+  <p>
+     Let <m>f</m> be differentiable on an interval <m>A</m>.
+  </p>
+  <ol marker="(A)">
+    <li>
+    <p>
+      If <m>f'(x) \neq 0</m> on <m>A</m> show that <m>f</m> is one-to-one on <m>A</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Provide an example to show that the converse statement need not be true.
+    </p>
+  </li>
+  </ol>
+</li>
+<li>
+  <p>
+Suppose that <m>f</m> and <m>g</m> are both continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Also suppose that <m>f(a) = g(a)</m> and <m>f'(x) &lt; g'(x)</m> for all <m>x \in (a,b)</m>. Show that <m>f(b) &lt; g(b)</m>.
+  </p>
+</li>
+<li>
+  <p>
+  A <em>fixed point</em> of a function <m>f</m> is a value <m>x</m> where <m>f(x) = x</m>. Show that if <m>f</m> is differentiable on an interval with <m>f'(x)\neq 1</m>, then <m>f</m> can have at most one fixed point.
+  </p>
+</li>
+    </ol>
+  </p>
+  
+  
+  
+
+
+    
+</worksheet>

@@ -71,6 +71,7 @@
 
       <!-- Remove or comment out the sample and replace with your own homework -->
       <xi:include href="./homework/Homework1"/> 
+      <xi:include href="./homework/Homework2"/> 
 
     </chapter> 
 

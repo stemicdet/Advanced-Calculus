@@ -264,7 +264,7 @@
         f'(a) = \lim_{n\to \infty} \frac{f(b_n)-f(a)}{b_n - a}
       </md>
 
-      f'(a) = \lim_{n\to \infty} \frac{f(b_n)-f(a)}{b_n - a}
+      But <m>a = \displaystyle \lim_{n\to \infty} a_n </m>. Thus
       <md>
         f'(a) = \lim_{n \to \infty} \frac{f(b_n)-f(a_n)}{b_n - a_n}.
       </md>

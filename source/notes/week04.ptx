@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-04">
+  <title>Week 4: Uniform Convergence of a sequence of functions (6.1-6.2)</title>
+
+  <subsection>
+    <title>Function Approximation</title>
+
+    <p>
+        Given a relatively complicated function we might wish to approximate it by simpler functions such as polynomials, rational functions, trigonometric functions or exponential functions. This way we could simplify calculations involving the more complicated function. 
+    </p>
+
+    <p>
+        There are several noteworthy results which show how a large number of functions can be approximated by relatively simple functions.
+        <ol>
+            <li>
+                <p>
+                    Taylor series: Given a function <m>f</m> that is infinitely differentiable at a point <m>x_0</m> there is a sequence of polynomials that approximates <m>f</m> near <m>x_0</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Fourier series: Similar to a Taylor series but with sines and cosines (or complex exponentials) used as approximants instead of polynomials.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Runge's Theorem (1885): If <m>K</m> is a compact subset of the complex plane then every function that is analytic (i.e. complex differentiable) in a neighborhood of <m>K</m> can be uniformly approximated by a sequence of rational functions.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Weierstrass Approximation Theorem (1885): Every continuous function on <m>\mathbf{R}</m> can be uniformly approximated by polynomials.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Mergelyan's Theorem (1951): Let <m>K</m> be a compact subset of the complex plane such that <m>K^c</m> is connected. Then every function analytic on a neighborhood of <m>K</m> can be uniformly approximated by polynomials.
+                </p>
+            </li>
+        </ol>
+    </p>
+
+    <p>
+        A function <m>f</m> can be approximated by polynomials (rational functions) if there is a sequence <m>(f_n)</m> of polynomials (rational functions) that converges to <m>f</m>.
+    </p>
+
+    <p>
+        Given one of these approximations, we might ask which properties of the approximating functions extend to the limit functions. For example
+        <ol>
+            <li>
+                <p>
+                    If <m>f(x)</m> is the limit of a Fourier series, is <m>f(x)</m> a continuous function?
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>g(x)</m> is the limit of a sequence of polynomials, is <m>g(x)</m> necessarily a differentiable?
+                </p>
+            </li>
+            <li>
+                <p>
+                    In this chapter, we will investigate these and other questions concerning approximation.
+                </p>
+            </li>
+        </ol>
+    </p>
+
+    </subsection>
+
+    <subsection xml:id="subsec-Pointwise-Convergence">
+        <title>Pointwise Convergence</title>
+
+        <p>
+            The first thing we need to do to build up a theory of function approximation is to define what it means for a sequence of functions to converge. 
+        </p>
+
+        <p>
+            As it turns out, there are multiple different ways that we can define what it means for a sequence of functions to converge. We will start by extending the notion of converge of a sequence from last semester.
+        </p>
+
+        <definition xml:id="def-pointwise">
+            <statement>
+                <p>
+                    For each <m>n \in \mathbf{N}</m> let <m>f_n</m> be a function defined on a set <m>A \subseteq \mathbf{R}</m>. The sequence <m>(f_n)</m> <em> converges pointwise on <m>A</m></em> to a function <m>f</m> if for all <m>x \in A</m>, the sequence of real numbers <m>f_n(x)</m> converges to <m>f(x)</m>.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            In this case we write <m>f_n \to f</m>, <m>\lim f_n = f</m>, or <m>\displaystyle \lim_{n\to \infty} f_n(x) = f(x)</m>
+        </p>
+
+        <p>
+            The questions that we've raised about whether the limit of a sequence of continuous (or differentiable) functions is itself continuous (or differentiable) is really a question about when we are allowed to interchange limits.
+        </p>
+
+        <p>
+            Suppose <m>f_n \to f</m> and each <m>f_n</m> is continuous at <m>c</m>. For <m>f</m> to be continuous at <m>c</m>, we must show that 
+            <md>
+                \lim_{x\to c} f(x) = f(c).
+            </md>
+            
+        </p>
+
+        <p>
+            Note that
+            <md>
+                \lim_{x\to c} f(x) = \lim_{x\to c} \lim_{n \to \infty} f_n(x) = \lim_{n \to \infty} \lim_{x\to c} f_n(x) = \lim_{n \to \infty} f_n(c) = f(c)
+            </md>
+
+            but only if the interchange of limits is justified.
+            
+        </p>
+        
+    </subsection>
+    </section>

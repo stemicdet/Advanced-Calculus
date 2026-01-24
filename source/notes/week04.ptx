@@ -222,6 +222,54 @@
 </image>
 
 
+<p>
+Let $h_n(x) = x \cdot x^{\frac{1}{2n-1}}$ on the interval $[-1,1]$. Then for a fixed $x$ in $[-1,1]$, $\lim h_n(x) = |x|$.
+</p>
+
+<p>
+    Note that this example is a sequence of differentiable functions that converge to a function which is not differentiable at $0$.
+</p>
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-sequence2">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=x^(2)</definition>
+  <definition>f2(x)=x^(1/3)</definition>
+  <definition>f3(x)=x^(1.2)</definition>
+  <definition>f4(x)=x^(8/7)</definition>
+  <definition>f5(x)=x^(10/9)</definition>
+    <definition>f20(x)=x^(21/20)</definition>
+  <coordinates bbox="(-1,-1,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions h1, h2, h3, h4, h5, and h20">
+        <annotation ref="graph1" text="The graph of the function h1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function h2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function h3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function h4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function h5" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function h20" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+
         
     </subsection>
+
+
     </section>

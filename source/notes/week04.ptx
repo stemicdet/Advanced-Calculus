@@ -112,6 +112,116 @@
             but only if the interchange of limits is justified.
             
         </p>
+
+        
+    </subsection>
+
+    <subsection xml:id="subsec-Examples">
+        <title>Examples</title>
+
+        <p>
+            Let <m>f_n(x) = \frac{x}{n}</m>. For each <m>x</m>, <m>\displaystyle \lim_{n\to \infty} \frac{x}{n} = 0</m>. Thus <m>f_n(x)</m> converges pointwise to <m>0</m>.
+        </p>
+
+        <p>
+           The graph shows <m>f_1</m>, <m>f_2</m>, <m>f_3</m>, <m>f_4</m>, <m>f_5</m>, and <m>f_{20}</m>. 
+        </p>
+
+        <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-rectangle">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=x</definition>
+  <definition>f2(x)=x/2</definition>
+  <definition>f3(x)=x/3</definition>
+  <definition>f4(x)=x/4</definition>
+  <definition>f5(x)=x/5</definition>
+    <definition>f20(x)=x/20</definition>
+  <coordinates bbox="(-5,-5,5,5)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions f1, f2, f3, f4, f5, and f20">
+        <annotation ref="graph1" text="The graph of the function f1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function f2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function f3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function f4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function f5" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function f20" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+
+<p>
+    Let <m>g_n(x) = x^n</m> on the interval <m>[0,1]</m>. If <m>0\leq x &lt; 1</m> then <m>x^n \to 0</m> as <m>n \to \infty</m>, but if <m>x=1</m> then <m>x^n \to 1</m> as <m>x \to \infty</m>.
+</p>
+
+<p>
+    Thus <m>g_n(x)</m> converges pointwise to the piecewise function
+    <md>
+        g(x) = \begin{cases} 
+      \hfill 0 \amp \text{ if $ 0 \leq x &lt; 1$} \\
+      \hfill  1 \hfill \amp \text{ if $x = 1$} \\
+  \end{cases}
+    </md>
+    
+</p>
+
+<p>
+    Note that this example is a sequence of continuous functions that converge to a function which is discontinuous at <m>1</m>.
+</p>
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-sequence">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=x</definition>
+  <definition>f2(x)=x^2</definition>
+  <definition>f3(x)=x^3</definition>
+  <definition>f4(x)=x^4</definition>
+  <definition>f5(x)=x^5</definition>
+    <definition>f20(x)=x^(20)</definition>
+  <coordinates bbox="(0,0,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions g1, g2, g3, g4, g5, and g20">
+        <annotation ref="graph1" text="The graph of the function g1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function g2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function g3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function g4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function g5" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function g20" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+
         
     </subsection>
     </section>

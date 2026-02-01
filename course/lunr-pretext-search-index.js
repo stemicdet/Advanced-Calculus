@@ -415,6 +415,51 @@ var ptx_lunr_docs = [
   "body": "    Let . Then as so But . Thus   "
 },
 {
+  "id": "notes-week-04",
+  "level": "1",
+  "url": "notes-week-04.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 4: Uniform Convergence of a sequence of functions (6.1-6.2)",
+  "body": " Week 4: Uniform Convergence of a sequence of functions (6.1-6.2)   Function Approximation  Given a relatively complicated function we might wish to approximate it by simpler functions such as polynomials, rational functions, trigonometric functions or exponential functions. This way we could simplify calculations involving the more complicated function.  There are several noteworthy results which show how a large number of functions can be approximated by relatively simple functions.   Taylor series: Given a function that is infinitely differentiable at a point there is a sequence of polynomials that approximates near .    Fourier series: Similar to a Taylor series but with sines and cosines (or complex exponentials) used as approximants instead of polynomials.    Runge's Theorem (1885): If is a compact subset of the complex plane then every function that is analytic (i.e. complex differentiable) in a neighborhood of can be uniformly approximated by a sequence of rational functions.    Weierstrass Approximation Theorem (1885): Every continuous function on can be uniformly approximated by polynomials.    Mergelyan's Theorem (1951): Let be a compact subset of the complex plane such that is connected. Then every function analytic on a neighborhood of can be uniformly approximated by polynomials.     A function can be approximated by polynomials (rational functions) if there is a sequence of polynomials (rational functions) that converges to .  Given one of these approximations, we might ask which properties of the approximating functions extend to the limit functions. For example   If is the limit of a Fourier series, is a continuous function?    If is the limit of a sequence of polynomials, is necessarily a differentiable?    In this chapter, we will investigate these and other questions concerning approximation.       Pointwise Convergence  The first thing we need to do to build up a theory of function approximation is to define what it means for a sequence of functions to converge.  As it turns out, there are multiple different ways that we can define what it means for a sequence of functions to converge. We will start by extending the notion of converge of a sequence from last semester.    For each let be a function defined on a set . The sequence  converges pointwise on to a function if for all , the sequence of real numbers converges to .    In this case we write , , or   The questions that we've raised about whether the limit of a sequence of continuous (or differentiable) functions is itself continuous (or differentiable) is really a question about when we are allowed to interchange limits.  Suppose and each is continuous at . For to be continuous at , we must show that   Note that but only if the interchange of limits is justified.    Examples  Let . For each , . Thus converges pointwise to .  The graph shows , , , , , and .     f1(x)=x  f2(x)=x\/2  f3(x)=x\/3  f4(x)=x\/4  f5(x)=x\/5  f20(x)=x\/20                          Let on the interval . If then as , but if then as .  Thus converges pointwise to the piecewise function   Note that this example is a sequence of continuous functions that converge to a function which is discontinuous at .     f1(x)=x  f2(x)=x^2  f3(x)=x^3  f4(x)=x^4  f5(x)=x^5  f20(x)=x^(20)                          Let on the interval . Then for a fixed in , .  Note that this example is a sequence of differentiable functions that converge to a function which is not differentiable at .     f1(x)=x^(2)  f2(x)=cbrt(x)^4  f3(x)=cbrt(cbrt(cbrt(cbrt(x))))^(96)  f4(x)=cbrt(cbrt(cbrt(cbrt(cbrt(x)))))^(280)  f5(x)=cbrt(cbrt(x))^(10)  f20(x)=cbrt(cbrt(cbrt(cbrt(cbrt(cbrt(x))))))^(760)                            Uniform Convergence and Continuity  In the two examples of sequences of continuous functions that converge to a limit function that is not continuous, the convergence has been pointwise convergence but not uniform convergence. In fact, if a sequence of continuous functions converges uniformly, then the limit function will also be continuous.   Continuous Limit Theorem   Let be a sequence of functions defined on that converges uniformly on to a function . If each is continuous at , then is continuous at .     Let be fixed and let . It follows from the definition of uniform continuity that there exists such that whenever .  Because is continuous at , there exists such that whenever .  We want to show that can be made arbitrarily small by choosing sufficiently small.  Putting this all together we get that if    Since can be made arbitrarily small, so can and thus is continuous at .   Something to consider: If convergence is only pointwise, where does the proof break down?    Cauchy Criterion  There is a Cauchy criterion for uniform convergence similar to the one for sequences.    A sequence of functions converges uniformly on if and only if for every there exists such that whenever and .     "
+},
+{
+  "id": "def-pointwise",
+  "level": "2",
+  "url": "notes-week-04.html#def-pointwise",
+  "type": "Definition",
+  "number": "31",
+  "title": "",
+  "body": "  For each let be a function defined on a set . The sequence  converges pointwise on to a function if for all , the sequence of real numbers converges to .   "
+},
+{
+  "id": "thm-Continuous-Limit",
+  "level": "2",
+  "url": "notes-week-04.html#thm-Continuous-Limit",
+  "type": "Theorem",
+  "number": "32",
+  "title": "Continuous Limit Theorem.",
+  "body": " Continuous Limit Theorem   Let be a sequence of functions defined on that converges uniformly on to a function . If each is continuous at , then is continuous at .   "
+},
+{
+  "id": "subsec-Uniform-Convergence-and-Continuity-4",
+  "level": "2",
+  "url": "notes-week-04.html#subsec-Uniform-Convergence-and-Continuity-4",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Let be fixed and let . It follows from the definition of uniform continuity that there exists such that whenever .  Because is continuous at , there exists such that whenever .  We want to show that can be made arbitrarily small by choosing sufficiently small.  Putting this all together we get that if    Since can be made arbitrarily small, so can and thus is continuous at .  "
+},
+{
+  "id": "thm-Cauchy-Criterion",
+  "level": "2",
+  "url": "notes-week-04.html#thm-Cauchy-Criterion",
+  "type": "Theorem",
+  "number": "33",
+  "title": "",
+  "body": "  A sequence of functions converges uniformly on if and only if for every there exists such that whenever and .   "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",

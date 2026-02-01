@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-05">
+  <title>Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)</title>
+
+  <subsection>
+    <title>Convergence of Derivatives</title>
+
+    <p>
+        Suppose <m>(f_n)</m> is a sequence of functions that converges (in some sense) to a limit function <m>f</m>. Under what conditions will the sequence of derivatives <m>(f_n'(x))</m> converge to <m>f'(x)</m>?
+    </p>
+
+    <p>
+        This is an important problem in approximation theory If we are approximating a function by polynomials we want to be sure that the derivatives of the polynomials will be close to the derivative of the limit function.
+    </p>
+
+    <p>
+        As an example, let <m>f_n(x) = \frac{\sin(nx)}{n}</m>. Verify that <m>f_n(x)</m> converges uniformly to <m>0</m>, but <m>\lim f_n'(x)</m> is undefined.
+    </p>
+
+    <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-sine">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=sin(x)</definition>
+  <definition>f2(x)=sin(2*x)/2</definition>
+  <definition>f3(x)=sin(3*x)/3</definition>
+  <definition>f4(x)=sin(4*x)/4</definition>
+  <definition>f5(x)=sin(5*x)/5</definition>
+    <definition>f20(x)=sin(20*x)/20</definition>
+  <coordinates bbox="(-5,-2,5,2)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions f1, f2, f3, f4, f5, and f20">
+        <annotation ref="graph1" text="The graph of the function f1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function f2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function f3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function f4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function f5" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function f20" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+    <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-sine-derivative">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=cos(x)</definition>
+  <definition>f2(x)=cos(2*x)</definition>
+  <definition>f3(x)=cos(3*x)</definition>
+  <definition>f4(x)=cos(4*x)</definition>
+  <definition>f5(x)=cos(5*x)</definition>
+    <definition>f20(x)=cos(20*x)</definition>
+  <coordinates bbox="(-5,-2,5,2)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the derivatives of first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions f1', f2', f3', f4', f5', and f20'">
+        <annotation ref="graph1" text="The graph of the function f1'" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function f2'" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function f3'" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function f4'" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function f5'" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function f20'" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+<p>
+    For another example, let<m>g_n(x) = \frac{x^n}{n}</m> on the interval <m>[0,1]</m>. Verify that <m>g_n(x)</m> converges uniformly to a limit function <m>g(x)</m> on <m>[0,1]</m>, and that <m>g_n'(x)</m> converges pointwise to a limit function <m>h(x)</m> on <m>[0,1]</m>, but <m>g'(x) \neq h(x)</m>.
+</p>
+
+    <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-polynomial">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=x</definition>
+  <definition>f2(x)=x^2/2</definition>
+  <definition>f3(x)=x^3/3</definition>
+  <definition>f4(x)=x^4/4</definition>
+  <definition>f5(x)=x^5/5</definition>
+    <definition>f20(x)=x^(20)/20</definition>
+  <coordinates bbox="(0,0,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions g1, g2, g3, g4, g5, and g20">
+        <annotation ref="graph1" text="The graph of the function g1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function g2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function g3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function g4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function g5" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function g20" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+    <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-xn-derivative">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=1</definition>
+  <definition>f2(x)=x</definition>
+  <definition>f3(x)=x^2</definition>
+  <definition>f4(x)=x^3</definition>
+  <definition>f5(x)=x^4</definition>
+    <definition>f20(x)=x^(19)</definition>
+  <coordinates bbox="(0,0,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the derivatives of first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions g1', g2', g3', g4', g5', and g20'">
+        <annotation ref="graph1" text="The graph of the function g1'" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function g2'" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function g3'" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function g4'" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function g5'" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function g20'" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+    </subsection>
+
+    <subsection xml:id="subsec-Differentiable-Limit">
+        <title>Differentiable Limit Theorem</title>
+        
+<p>
+    These examples show that in order for the sequence of derivatives to converge to the derivative of the limit function, it is not enough that the sequence of functions converges uniformly to the limit function. It is not even enough that the sequence of functions converges uniformly to the limit function and the sequence of derivatives converges pointwise.
+</p>
+
+<theorem xml:id="thm-Differentiable-Limit">
+    <title>Differentiable Limit Theorem</title>
+    
+    
+    <statement>
+        <p>
+            Let <m>f_n \to f</m> pointwise on the closed interval <m>[a,b]</m> and assume that each <m>f_n</m> is differentiable. If <m>(f_n')</m> converges uniformly on <m>[a,b]</m> to a function <m>g</m>, then the function <m>f</m> is differentiable and <m>f'=g</m>.
+        </p>
+    </statement>
+</theorem>
+
+<proof>
+    <p>
+        Choose <m>c \in [a,b]</m> and let <m>\epsilon &gt;0</m>. We want to show that <m>f'(c)</m> exists and equals <m>g(c)</m>.
+    </p>
+
+    <p>
+        This means we must find <m>\delta &gt; 0</m> such that whenever <m>|x-c| &lt; \delta</m>, 
+        <md>
+            \left| \frac{f(x)-f(c)}{x-c} - g(c) \right| &lt; \epsilon
+        </md>
+        
+    </p>
+
+    <p>
+        The triangle inequality implies that 
+        <md>
+             \left| \frac{f(x)-f(c)}{x-c} - g(c) \right| \leq \left|\frac{f(x)-f(c)}{x-c} - \frac{f_n(x)-f_n(c)}{x-c} \right| + \left|\frac{f_n(x)-f_n(c)}{x-c} - f_n'(c) \right| + |f_n'(c)-g(c)|
+        </md>
+    </p>
+
+    <p>
+        The first term on the right can be made arbitrarily small because <m>f_n</m> converges to <m>f</m>. The second term can be made arbitrarily small because <m>f_n'(c)</m> is the derivative of <m>f_n</m> at <m>c</m>. The last term can be made arbitrarily small because <m>f_n'(c)</m> converges uniformly to <m>g</m>.
+    </p>
+
+    <p>
+        We'll start with bounding the last term. By uniform convergence, there exists <m>N_1</m> such that 
+        <md xml:id="eq1" number="yes">
+            |f_m'(c)-g(c)| &lt; \frac{\epsilon}{3}
+        </md>
+        for all <m>m \geq N_1 </m>.
+    </p>
+
+    <p>
+        In addition using the Cauchy criterion for uniform convergence we have that there exists <m>N_2</m> such that when <m>m,n\geq N_2</m>,
+        <md>
+            |f_m'(x) -f_n'(x)| &lt; \frac{\epsilon}{3}
+        </md>
+        for all <m>x \in [a,b]</m>.
+    </p>
+
+    <p>
+        Let <m>N = N_1+N_2</m>.
+    </p>
+
+    <p>
+        Now let's bound the middle term. The function <m>f_N</m> is differentiable at <m>c</m> and hence there exists <m>\delta &gt; 0</m> such that whenever <m>0 &lt;|x-c| &lt; \delta</m>,
+        <md xml:id="eq2" number="yes">
+            \left|\frac{f_N(x)-f_N(c)}{x-c} - f_N'(c) \right| &lt; \frac{\epsilon}{3}.
+        </md>
+        
+    </p>
+
+    <p>
+        Now fix <m>x</m> satisfying <m>0 &lt;|x-c| &lt; \delta</m>. It just remains to bound the first term which we will do with the help of the Mean Value Theorem.
+    </p>
+    <p>
+        Applying the MVT to the function <m>f_m-f_N</m> on the interval <m>[c,x]</m> (or <m>[x,c]</m>) yields that there exists <m>\alpha</m> in the interval such that
+        <md>
+            f_m'(\alpha)-f_N'(\alpha) = \frac{(f_m(x)-f_N(x))-(f_m(c)-f_N(c))}{x-c}
+        </md>
+        
+    </p>
+
+    <p>
+        Since <m>m,N > N_2</m>, <m>|f_m'(\alpha)-f_N'(\alpha)|&lt; \frac{\epsilon}{3}</m>. Hence
+        <md>
+            \left|\frac{(f_m(x)-f_N(x))-(f_m(c)-f_N(c))}{x-c}\right| &lt; \frac{\epsilon}{3}
+        </md>
+        
+    </p>
+
+    <p>
+        Therefore
+        <md>
+            \left|\frac{f_m(x)-f_m(c)}{x-c} - \frac{f_N(x)-f_N(c)}{x-c}\right| &lt; \frac{\epsilon}{3}
+        </md>
+        
+    </p>
+    <p>
+        Since <m>f_m</m> converges to <m>f</m> taking the limit as <m>m \to \infty</m> yields
+        <md xml:id="eq3" number="yes">
+            \left|\frac{f(x)-f(c)}{x-c} - \frac{f_N(x)-f_N(c)}{x-c}\right| &lt; \frac{\epsilon}{3}
+        </md>
+        
+    </p>
+
+    <p>
+        Finally combining <xref ref="eq1"/>, <xref ref="eq2"/> and <xref ref="eq3"/> gives that for <m>0 &lt; |x-c|&lt; \delta</m>
+        <md>
+            \left|\frac{f(x)-f(c)}{x-c}- g(c)\right| &lt; \frac{\epsilon}{3} + \frac{\epsilon}{3}+ \frac{\epsilon}{3} = \epsilon.
+        </md>
+        
+    </p>
+</proof>
+
+<p>
+    In the statement of the Differentiable Limit Theorem, it is not necessary to have that <m>(f_n)</m> converges pointwise to <m>g</m> on all <m>[a,b]</m>; it is just enough for it to converge at a single point.
+</p>
+
+<theorem xml:id="thm-differentiable-limit-2">
+    <statement>
+        <p>
+             Let <m>(f_n)</m> be a sequence of differentiable functions defined on the closed interval <m>[a,b]</m> and suppose <m>(f_n')</m> converges uniformly to a function <m>[a,b]</m>. If there exists a point <m>x_0 \in [a,b]</m> for which <m>f_n(x_0)</m> is convergent, then <m>(f_n)</m> converges uniformly. Moreover the limit function <m>f = \lim f_n</m> is differentiable and satisfies <m>f' = g</m>.
+        </p>
+    </statement>
+</theorem>
+
+
+
+    </subsection>
+
+    </section>

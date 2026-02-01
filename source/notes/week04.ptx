@@ -223,11 +223,11 @@
 
 
 <p>
-Let $h_n(x) = x \cdot x^{\frac{1}{2n-1}}$ on the interval $[-1,1]$. Then for a fixed $x$ in $[-1,1]$, $\lim h_n(x) = |x|$.
+Let <m>h_n(x) = x \cdot x^{\frac{1}{2n-1}}</m> on the interval <m>[-1,1]</m>. Then for a fixed <m>x</m> in <m>[-1,1]</m>, <m>\lim h_n(x) = |x|</m>.
 </p>
 
 <p>
-    Note that this example is a sequence of differentiable functions that converge to a function which is not differentiable at $0$.
+    Note that this example is a sequence of differentiable functions that converge to a function which is not differentiable at <m>0</m>.
 </p>
 
 <image width="60%">
@@ -235,11 +235,11 @@ Let $h_n(x) = x \cdot x^{\frac{1}{2n-1}}$ on the interval $[-1,1]$. Then for a f
              label="prefigure-sequence2">
     <diagram dimensions="(300,300)" margins="5">
   <definition>f1(x)=x^(2)</definition>
-  <definition>f2(x)=x^(1/3)</definition>
-  <definition>f3(x)=x^(1.2)</definition>
-  <definition>f4(x)=x^(8/7)</definition>
-  <definition>f5(x)=x^(10/9)</definition>
-    <definition>f20(x)=x^(21/20)</definition>
+  <definition>f2(x)=cbrt(x)^4</definition>
+  <definition>f3(x)=cbrt(cbrt(cbrt(cbrt(x))))^(96)</definition>
+  <definition>f4(x)=cbrt(cbrt(cbrt(cbrt(cbrt(x)))))^(280)</definition>
+  <definition>f5(x)=cbrt(cbrt(x))^(10)</definition>
+    <definition>f20(x)=cbrt(cbrt(cbrt(cbrt(cbrt(cbrt(x))))))^(760)</definition>
   <coordinates bbox="(-1,-1,1,1)">
     <grid-axes xlabel="x" ylabel="y"/>
     <graph at="graph1" function="f1" stroke = "blue"/>
@@ -268,6 +268,74 @@ Let $h_n(x) = x \cdot x^{\frac{1}{2n-1}}$ on the interval $[-1,1]$. Then for a f
 </image>
 
 
+        
+    </subsection>
+
+    <subsection xml:id="subsec-Uniform-Convergence-and-Continuity">
+        <title>Uniform Convergence and Continuity</title>
+        <p>
+            In the two examples of sequences of continuous functions that converge to a limit function that is not continuous, the convergence has been pointwise convergence but not uniform convergence. In fact, if a sequence of continuous functions converges uniformly, then the limit function will also be continuous.
+        </p>
+
+        <theorem xml:id="thm-Continuous-Limit">
+            <title>Continuous Limit Theorem</title>
+            
+            
+            <statement>
+                <p>
+                    Let <m>(f_n)</m> be a sequence of functions defined on <m>A \subseteq \mathbf{R}</m> that converges uniformly on <m>A</m> to a function <m>f</m>. If each <m>f_n</m> is continuous at <m>c \in A</m>, then <m>f</m> is continuous at <m>c</m>.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                Let <m>c \in A</m> be fixed and let <m>\epsilon &gt;0</m>. It follows from the definition of uniform continuity that there exists <m>N(\epsilon)\in \mathbf{N}</m> such that <m>|f_n(x)-f(x)| &lt; \epsilon</m> whenever <m>n \geq N</m>.
+            </p>
+
+            <p>
+                Because <m>f_N</m> is continuous at <m>c</m>, there exists <m>\delta &gt; 0</m> such that <m>|f_N(x)-f_N(c)| &lt; \epsilon</m> whenever <m>|x-c| &lt;\delta</m>.
+            </p>
+
+            <p>
+                We want to show that <m>|f(x)-f(c)|</m> can be made arbitrarily small by choosing <m>|x-c|</m> sufficiently small.
+            </p>
+
+            <p>
+                Putting this all together we get that if <m>|x-c| &lt; \delta</m>
+                <md>
+                    <mrow> |f(x)-f(c)| \amp = |f(x)-f_N(x) + f_N(x) -f_N(c)+f_N(c)-f(c)|</mrow>
+                    <mrow> \amp \leq |f(x)-f_N(x)| + |f_N(x)-f_N(c)| + |f_N(c)-f(c)| </mrow>
+                    <mrow> \amp &lt; \epsilon + \epsilon + \epsilon = 3\epsilon</mrow>
+                </md>
+            </p>
+
+            <p>
+                Since <m>\epsilon</m> can be made arbitrarily small, so can <m>3\epsilon</m> and thus <m>f(x)</m> is continuous at <m>c</m>.
+            </p>
+        </proof>
+
+        <p>
+            Something to consider: If convergence is only pointwise, where does the proof break down?
+        </p>
+        
+    </subsection>
+
+    <subsection xml:id="subsec-Cauchy">
+        <title>Cauchy Criterion</title>
+
+        <p>
+            There is a Cauchy criterion for uniform convergence similar to the one for sequences.
+        </p>
+
+        <theorem xml:id="thm-Cauchy-Criterion">
+            <statement>
+                <p>
+                    A sequence of functions <m>(f_n)</m> converges uniformly on <m>A</m> if and only if for every <m>\epsilon>0</m> there exists <m>N(\epsilon) \in \mathbf{N}</m> such that <m>|f_n(x)-f_m(x)| &lt; \epsilon</m> whenever <m>m,n \geq N</m> and <m>x \in A</m>.
+                </p>
+            </statement>
+        </theorem>
+        
         
     </subsection>
 

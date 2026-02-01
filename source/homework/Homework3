@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw3">
+  <title>MTH 428/528 Homework 3 Due February 12</title>
+
+  <p>
+    <ol marker="(1)">
+      <li>
+        <p>
+          Let <md>f_n(x) = \frac{nx}{1+nx^2}</md>
+        </p>
+        <ol marker="(A)">
+          <li>
+            <p>
+              Find the pointwise limit of <m>(f_n)</m> for all <m>x \in (0, \infty)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Is the convergence uniform on <m>(0,\infty)</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Is the convergence uniform on <m>(0,1)</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Is the convergence uniform on <m>(1,\infty)?</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+<p>
+  Let <m>(g_n)</m> be a sequence of continuous functions that converges uniformly to <m>g</m> on a compact set <m>K</m>. If <m>g(x) \neq 0</m> on <m>K</m>, show <m>\left(\frac{1}{g_n}\right)</m> converges uniformly to <m>\frac{1}{g}</m>
+</p>
+</li>
+<li>
+  <p>
+    Suppose <m>(f_n)</m> and <m>(g_n)</m> are uniformly convergent sequences of functions.
+    <ol marker="(A)">
+      <li>
+        <p>
+          Show that <m>(f_n+g_n)</m> is a uniformly convergent sequence of functions.
+        </p>
+      </li>
+      <li>
+        <p>
+          Give an example to show that the product <m>(f_n g_n)</m> may not converge uniformly.
+        </p>
+      </li>
+    </ol>
+  </p>
+</li>
+<li>
+  <p>
+Suppose that <m>f_n \to f</m> uniformly on a set <m>A</m>. Show that if each <m>f_n</m> is bounded, then <m>f</m> is also bounded.
+  </p>
+</li>
+<li>
+  <p>
+  Suppose that <m>f_n \to f</m> uniformly on a set <m>A</m>. Show that if each <m>f_n</m> is uniformly continuous, then <m>f</m> is also uniformly continuous.
+  </p>
+  </li>
+  </ol>
+  </p>
+  
+
+
+    
+</worksheet>

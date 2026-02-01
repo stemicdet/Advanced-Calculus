@@ -460,6 +460,42 @@ var ptx_lunr_docs = [
   "body": "  A sequence of functions converges uniformly on if and only if for every there exists such that whenever and .   "
 },
 {
+  "id": "notes-week-05",
+  "level": "1",
+  "url": "notes-week-05.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)",
+  "body": " Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)   Convergence of Derivatives  Suppose is a sequence of functions that converges (in some sense) to a limit function . Under what conditions will the sequence of derivatives converge to ?  This is an important problem in approximation theory If we are approximating a function by polynomials we want to be sure that the derivatives of the polynomials will be close to the derivative of the limit function.  As an example, let . Verify that converges uniformly to , but is undefined.     f1(x)=sin(x)  f2(x)=sin(2*x)\/2  f3(x)=sin(3*x)\/3  f4(x)=sin(4*x)\/4  f5(x)=sin(5*x)\/5  f20(x)=sin(20*x)\/20                             f1(x)=cos(x)  f2(x)=cos(2*x)  f3(x)=cos(3*x)  f4(x)=cos(4*x)  f5(x)=cos(5*x)  f20(x)=cos(20*x)                          For another example, let on the interval . Verify that converges uniformly to a limit function on , and that converges pointwise to a limit function on , but .     f1(x)=x  f2(x)=x^2\/2  f3(x)=x^3\/3  f4(x)=x^4\/4  f5(x)=x^5\/5  f20(x)=x^(20)\/20                             f1(x)=1  f2(x)=x  f3(x)=x^2  f4(x)=x^3  f5(x)=x^4  f20(x)=x^(19)                            Differentiable Limit Theorem  These examples show that in order for the sequence of derivatives to converge to the derivative of the limit function, it is not enough that the sequence of functions converges uniformly to the limit function. It is not even enough that the sequence of functions converges uniformly to the limit function and the sequence of derivatives converges pointwise.   Differentiable Limit Theorem   Let pointwise on the closed interval and assume that each is differentiable. If converges uniformly on to a function , then the function is differentiable and .     Choose and let . We want to show that exists and equals .  This means we must find such that whenever ,   The triangle inequality implies that   The first term on the right can be made arbitrarily small because converges to . The second term can be made arbitrarily small because is the derivative of at . The last term can be made arbitrarily small because converges uniformly to .  We'll start with bounding the last term. By uniform convergence, there exists such that for all .  In addition using the Cauchy criterion for uniform convergence we have that there exists such that when , for all .  Let .  Now let's bound the middle term. The function is differentiable at and hence there exists such that whenever ,   Now fix satisfying . It just remains to bound the first term which we will do with the help of the Mean Value Theorem.  Applying the MVT to the function on the interval (or ) yields that there exists in the interval such that   Since , . Hence   Therefore   Since converges to taking the limit as yields   Finally combining , and gives that for     In the statement of the Differentiable Limit Theorem, it is not necessary to have that converges pointwise to on all ; it is just enough for it to converge at a single point.    Let be a sequence of differentiable functions defined on the closed interval and suppose converges uniformly to a function . If there exists a point for which is convergent, then converges uniformly. Moreover the limit function is differentiable and satisfies .     "
+},
+{
+  "id": "thm-Differentiable-Limit",
+  "level": "2",
+  "url": "notes-week-05.html#thm-Differentiable-Limit",
+  "type": "Theorem",
+  "number": "34",
+  "title": "Differentiable Limit Theorem.",
+  "body": " Differentiable Limit Theorem   Let pointwise on the closed interval and assume that each is differentiable. If converges uniformly on to a function , then the function is differentiable and .   "
+},
+{
+  "id": "subsec-Differentiable-Limit-4",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Differentiable-Limit-4",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Choose and let . We want to show that exists and equals .  This means we must find such that whenever ,   The triangle inequality implies that   The first term on the right can be made arbitrarily small because converges to . The second term can be made arbitrarily small because is the derivative of at . The last term can be made arbitrarily small because converges uniformly to .  We'll start with bounding the last term. By uniform convergence, there exists such that for all .  In addition using the Cauchy criterion for uniform convergence we have that there exists such that when , for all .  Let .  Now let's bound the middle term. The function is differentiable at and hence there exists such that whenever ,   Now fix satisfying . It just remains to bound the first term which we will do with the help of the Mean Value Theorem.  Applying the MVT to the function on the interval (or ) yields that there exists in the interval such that   Since , . Hence   Therefore   Since converges to taking the limit as yields   Finally combining , and gives that for    "
+},
+{
+  "id": "thm-differentiable-limit-2",
+  "level": "2",
+  "url": "notes-week-05.html#thm-differentiable-limit-2",
+  "type": "Theorem",
+  "number": "35",
+  "title": "",
+  "body": "  Let be a sequence of differentiable functions defined on the closed interval and suppose converges uniformly to a function . If there exists a point for which is convergent, then converges uniformly. Moreover the limit function is differentiable and satisfies .   "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",
@@ -476,6 +512,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 2 Due January 29",
   "body": " MTH 428\/528 Homework 2 Due January 29     Suppose that is continuous on and differentiable on . Also suppose that for all . If , what are the largest and smallest possible values for ?    Let and suppose that but . Show that     Let be differentiable on an interval .    If on show that is one-to-one on .    Provide an example to show that the converse statement need not be true.      Suppose that and are both continuous on and differentiable on . Also suppose that and for all . Show that .    A fixed point of a function is a value where . Show that if is differentiable on an interval with , then can have at most one fixed point.     "
+},
+{
+  "id": "hw3",
+  "level": "1",
+  "url": "hw3.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 3 Due February 12",
+  "body": " MTH 428\/528 Homework 3 Due February 12     Let     Find the pointwise limit of for all .    Is the convergence uniform on ?    Is the convergence uniform on ?    Is the convergence uniform on       Let be a sequence of continuous functions that converges uniformly to on a compact set . If on , show converges uniformly to     Suppose and are uniformly convergent sequences of functions.   Show that is a uniformly convergent sequence of functions.    Give an example to show that the product may not converge uniformly.       Suppose that uniformly on a set . Show that if each is bounded, then is also bounded.    Suppose that uniformly on a set . Show that if each is uniformly continuous, then is also uniformly continuous.     "
 }
 ]
 

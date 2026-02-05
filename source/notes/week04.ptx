@@ -173,8 +173,8 @@
     Thus <m>g_n(x)</m> converges pointwise to the piecewise function
     <md>
         g(x) = \begin{cases} 
-      \hfill 0 \amp \text{ if $ 0 \leq x &lt; 1$} \\
-      \hfill  1 \hfill \amp \text{ if $x = 1$} \\
+      \hfill 0 \amp \text{ if $ 0 \leq x &lt; 1$ } \\
+      \hfill  1 \hfill \amp \text{ if $x = 1$ } \\
   \end{cases}
     </md>
     
@@ -271,6 +271,143 @@ Let <m>h_n(x) = x \cdot x^{\frac{1}{2n-1}}</m> on the interval <m>[-1,1]</m>. Th
         
     </subsection>
 
+    <subsection xml:id="subsec-Uniform-Convergence">
+        <title>Uniform Convergence</title>
+        
+        <p>
+            The second example shows that if a sequence of continuous functions converges pointwise to a limit function, the limit function is not necessarily a continuous function.
+        </p>
+
+        <p>
+            Cauchy 1821: Theorem that if a sum of continuous functions converges then the limit function is continuous.
+        </p>
+
+        <p>
+            Abel 1826: Cauchy's theorem admits exceptions such as <m>\sin \phi -\frac{1}{2} \sin 2\phi + \frac{1}{3} \sin 3\phi - \ldots</m> , which is discontinuous at every value of <m>(2m+1)\pi</m> , where <m>m</m>  is an integer.
+        </p>
+
+        <p>
+            It has been argued; however, that Cauchy's theorem is not wrong and that Cauchy knew about Abel's exception but it is not a counterexample to his theorem.
+        </p>
+
+        <p>
+            The issue involves what did Cauchy mean by a convergent sum. Abel interpreted Cauchy's theorem as pointwise convergence, which is false as his exception shows.
+        </p>
+
+        <p>
+            However, Cauchy may have meant for convergence to mean a stronger type than pointwise convergence, which today is called uniform convergence.
+        </p>
+
+        <p>
+            Abel's exception is not uniformly convergent and thus would not be a counterexample to Cauchy's theorem. In fact, Cauchy's theorem is correct if the convergence is uniform convergence.
+        </p>
+
+        <p>
+            Before introducing the definition of uniform convergence, let's restate the definition of pointwise convergence in terms of <m>\epsilon</m> .
+        </p>
+
+        <definition xml:id="def-pointwise-convergence-epsilon">
+            <statement>
+                <p>
+                    Let <m>(f_n)</m>  be a sequence of functions defined on a set <m>A \subseteq \mathbf{R}</m> . Then <m>(f_n)</m>  converges pointwise on <m>A</m>  to a limit <m>f</m>  defined on <m>A</m>  if, for every <m>\epsilon &gt; 0</m>  and <m>x \in A</m> , there exists <m>N(\epsilon,x) \in \mathbf{N}</m>  (perhaps dependent on <m>x</m> ) such that <m>|f_n(x)-f(x)| &lt; \epsilon</m>  whenever <m>n \geq N</m> .
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+         Notice that the choice of <m>N</m>  may depend on the point <m>x</m> .
+        </p>
+
+        <definition xml:id="def-uniform-convergence">
+            <statement>
+                <p>
+                    Let <m>(f_n)</m>  be a sequence of functions on a set <m>A \subseteq \mathbf{R}</m> . Then <m>(f_n)</m>  converges uniformly  on <m>A</m>  to a limit function defined on <m>A</m>  if for every <m>\epsilon &gt; 0</m>  there exists <m>N(\epsilon) \in \mathbf{N}</m>  such that <m>|f_n(x)-f(x)|&lt; \epsilon</m>  whenever <m>n \geq N</m>  and <m>x \in A</m> .
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            The difference between uniform and convergence and pointwise convergence is that in uniform convergence for each <m>\epsilon>0</m>  a single <m>N</m>  must work for all <m>x \in A</m>  while in pointwise convergence for each <m>\epsilon &gt;0</m>  and <m>x \in A</m>  different choices of <m>N</m>  may be used.
+        </p>
+
+        <p>
+            Let <m>f_n(x) = \frac{\sin(x)}{n}</m> . Show that <m>f_n(x)</m>  converges uniformly to <m>0</m>  on <m>\mathbf{R}</m> .
+        </p>
+
+                <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-sine-sequence">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=sin(x)</definition>
+  <definition>f2(x)=sin(x)/2</definition>
+  <definition>f3(x)=sin(x)/3</definition>
+  <definition>f4(x)=sin(x)/4</definition>
+  <definition>f5(x)=sin(x)/5</definition>
+    <definition>f20(x)=sin(x)/20</definition>
+  <coordinates bbox="(-5,-5,5,5)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions f1, f2, f3, f4, f5, and f20">
+        <annotation ref="graph1" text="The graph of the function f1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function f2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function f3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function f4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function f5" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function f20" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+<p>
+            We saw that the sequence <m>g_n(x) = x^n</m>  converges pointwise on <m>[0,1]</m>  to
+            <md>
+                g(x) = \begin{cases} 
+      \hfill 0 \amp \text{ if $ 0 \leq x &lt; 1$ } \\
+      \hfill  1 \hfill \amp \text{ if $x = 1$ }
+                        \end{cases} 
+            </md>
+            
+        </p>
+
+        <p>
+            Let's show that this sequence does not converge uniformly on <m>[0,1]</m> . For this, suppose <m>0 &lt; x &lt; 1</m>  and <m>0 &lt; \epsilon &lt; 1</m> .
+        </p>
+
+        <p>
+            If the convergence was uniform then we would be able to find <m>N(\epsilon) \in \mathbf{N}</m>  depending only on <m>\epsilon</m>  such that <m>|g_n(x)-g(x)| &lt; \epsilon</m>  when <m>n \geq N</m> . But
+            <md>
+                |g_n(x)-g(x)| = |x^n-0| = x^n
+            </md>
+            
+        </p>
+
+        <p>
+            If <m>x^n &lt; \epsilon</m>  then
+            <md>
+                <mrow> \ln(x^n) &lt; \amp \ln(\epsilon)</mrow>
+                <mrow> n \ln(x) &lt; \amp \ln(\epsilon) </mrow>
+                <mrow> n &gt; \amp \frac{\ln(\epsilon)}{\ln(x)} </mrow>
+            </md>
+        </p>
+
+        <p>
+            But this means that <m>n</m>  depends on the choice of <m>x</m>  (note that as <m>x\to 1^-</m> , <m>n \to \infty</m> ) and thus the convergence is not uniform.
+        </p>
+    </subsection>
+
     <subsection xml:id="subsec-Uniform-Convergence-and-Continuity">
         <title>Uniform Convergence and Continuity</title>
         <p>
@@ -318,6 +455,8 @@ Let <m>h_n(x) = x \cdot x^{\frac{1}{2n-1}}</m> on the interval <m>[-1,1]</m>. Th
         <p>
             Something to consider: If convergence is only pointwise, where does the proof break down?
         </p>
+
+        
         
     </subsection>
 

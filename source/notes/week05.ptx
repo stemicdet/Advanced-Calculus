@@ -324,7 +324,7 @@
     </p>
 
     <p>
-      In Indian mathematics at the time the jiva referred to the function $r \sin \theta$ where $r$ is a fixed radius of a circle.
+      In Indian mathematics at the time the jiva referred to the function <m>r \sin \theta</m> where <m>r</m> is a fixed radius of a circle.
     </p>
 
     <p>
@@ -332,11 +332,11 @@
       <md>
         \sin(x) = \sum_{n=0}^{\infty} (-1)^n\dfrac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\ldots
       </md>
-      where $n!$ is the product of $n$, $n-1$, \ldots 1.
+      where <m>n!</m> is the product of <m>n</m>, <m>n-1</m>, \ldots 1.
     </p>
 
     <p>
-      Another remarkable formula due to Madhava is a method for calculating the arctangent function. In the passage below sine and cosine refer to the Indian sine ($r \sin \theta$) and Indian cosine ($r\cos \theta)$
+      Another remarkable formula due to Madhava is a method for calculating the arctangent function. In the passage below sine and cosine refer to the Indian sine (<m>r \sin \theta</m>) and Indian cosine (<m>r\cos \theta)</m>
       <blockquote>
         <p>
           "The first term is the product of the given sine and radius of the desired arc divided by the cosine of the arc. The succeeding terms are obtained by a process of iteration when the first term is repeatedly multiplied by the square of the sine and divided by the square of the cosine. All the terms are then divided by the odd numbers 1, 3, 5, .... The arc is obtained by adding and subtracting respectively the terms of odd rank and those of even rank. It is laid down that the sine of the arc or that of its complement whichever is the smaller should be taken here as the given sine. Otherwise the terms obtained by this above iteration will not tend to the vanishing magnitude"
@@ -353,7 +353,7 @@
     </p>
 
     <p>
-      By letting $x=1$ Madhava came up with a formula for calculating $\frac{\pi}{4}$
+      By letting <m>x=1</m> Madhava came up with a formula for calculating <m>\frac{\pi}{4}</m>
       <md>
         \frac{\pi}{4} = 1-\frac{1}{3}+ \frac{1}{5}- \frac{1}{7} + \ldots
       </md>
@@ -380,7 +380,7 @@
         </li>
         <li>
           <p>
-            Are we justified in substituting $x=1$ into Madhava's series for $\arctan(x)$ to get a formula for $\frac{\pi}{4}$?
+            Are we justified in substituting <m>x=1</m> into Madhava's series for <m>\arctan(x)</m> to get a formula for <m>\frac{\pi}{4}</m>?
           </p>
         </li>
       </ol>
@@ -399,22 +399,22 @@
     <definition xml:id="def-series-convergence">
       <statement>
         <p>
-          For each $n \in \mathbf{N}$, let $f_n$ and $f$ be functions defined on a set $A \subseteq \mathbf{R}$. The infinite series 
+          For each <m>n \in \mathbf{N}</m>, let <m>f_n</m> and <m>f</m> be functions defined on a set <m>A \subseteq \mathbf{R}</m>. The infinite series 
           <md>
             \sum_{n=1}^{\infty} f_n(x) = f_1(x) + f_2(x) + f_3(x) + \ldots 
           </md>
-          converges pointwise on $A$ to $f(x)$ if the sequence $s_k(x)$ of partial sums defined by
+          converges pointwise on <m>A</m> to <m>f(x)</m> if the sequence <m>s_k(x)</m> of partial sums defined by
 
           <md>
             s_k(x) = f_1(x) + f_2(x) + \ldots + f_k(x)
           </md>
           
-          converges pointwise to $f(x)$.
+          converges pointwise to <m>f(x)</m>.
 
         </p>
 
         <p>
-          The series converges uniformly on $A$ to $f(x)$ if the sequence $s_k(x)$ converges uniformly on $A$ to $f(x)$.
+          The series converges uniformly on <m>A</m> to <m>f(x)</m> if the sequence <m>s_k(x)</m> converges uniformly on <m>A</m> to <m>f(x)</m>.
         </p>
 
         <p>
@@ -432,11 +432,11 @@
     </definition>
 
 <p>
-  Example: Show that $\displaystyle \sum_{n=0}^{\infty} \frac{x}{2^n}$ converges uniformly to $f(x) = 2x$ on the interval $[-1,1]$.
+  Example: Show that <m>\displaystyle \sum_{n=0}^{\infty} \frac{x}{2^n}</m> converges uniformly to <m>f(x) = 2x</m> on the interval <m>[-1,1]</m>.
 </p>
 
 <p>
-  The following image shows the graph of $s_k(x)$
+  The following image shows the graph of <m>s_k(x)</m>
 </p>
 
 <image width="60%">
@@ -449,7 +449,7 @@
   <definition>f4(x)=x+x/2+x/4+x/8</definition>
   <definition>f5(x)=x+x/2+x/4+x/8+x/16</definition>
     <definition>f20(x)=2x</definition>
-  <coordinates bbox="(-2,4,-2,4)">
+  <coordinates bbox="(-4,-4,4,4)">
     <grid-axes xlabel="x" ylabel="y"/>
     <graph at="graph1" function="f1" stroke = "blue"/>
     <graph at="graph2" function="f2" stroke = "red"/>
@@ -475,6 +475,141 @@
 </diagram>
   </prefigure>
 </image>
+
+<p>
+Show that <m>\displaystyle \sum_{n=0}^{\infty} x^n</m> converges pointwise to <m>f(x) = \frac{1}{1-x}</m> on the interval <m>(-1,1)</m>, but the convergence is not uniform.
+</p>
+
+<p>
+The following graph shows the partial sums <m>S_k(x)</m> for different values of <m>k</m> as well as <m>f(x) = \frac{1}{1-x}</m>
+</p>
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-xn-series-2">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=1</definition>
+  <definition>f2(x)=1+x</definition>
+  <definition>f3(x)=1+x+x^2</definition>
+  <definition>f4(x)=1+x+x^2+x^3</definition>
+  <definition>f5(x)=1+x+x^2+x^3+x^4</definition>
+    <definition>f20(x)=1+x+x^2+x^3+x^4+x^5+x^6+x^7+x^8+x^9+x^(10)+x^(11)+x^(12)+x^(13)+x^(14)+x^(15)+x^(16)+x^(17)+x^(18)+x^(19)</definition>
+  <definition>f(x) = 1/(1-x)</definition>
+    <coordinates bbox="(-1,-1,1,20)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+    <graph at="graph" function="f" stroke = "black"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few partial sums of the series">
+      <annotation ref="graph-group" text="The graph of the partial sums s0, s1, s2, s3, s4, and s19 as well as the limit f(x)">
+        <annotation ref="graph1" text="The graph of the function s0" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function s1" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function s2" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function s3" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function s4" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function s19" sonify="yes"/>
+        <annotation ref="graph" text="The graph of the function f(x)" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+<p>
+Since series convergence is defined by convergence of partial sums, the theorems that we proved for the continuity and differentiability of limits of sequences of functions also hold for series of functions.
+</p>
+
+<theorem xml:id="thm-term-by-term-continuity">
+  <title>Term-by-term Continuity Theorem</title>
+  
+  
+  <statement>
+    <p>
+       Let <m>f_n</m> be continuous functions defined on a set <m>A \subseteq \mathbf{R}</m> and suppose <m>\displaystyle \sum_{n=1}^{\infty}f_n </m> conveges uniformly on <m>A</m> to a function <m>f</m>. Then <m>f</m> is continuous on <m>A</m>.
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-term-by-term-differeniability">
+  <title>Term-by-term Differentiability Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f_n</m> be differentiable functions defined on an interval <m>A</m> and suppose <m>\displaystyle \sum_{n=1}^{\infty} f_n'(x)</m> converges uniformly to a limit <m>g(x)</m> on <m>A</m>. If there exists a point <m>x_0 \in [a,b]</m> where <m>\displaystyle \sum_{n=1}^{\infty} f_n(x_0)</m> converges, then the series <m>\displaystyle \sum_{n=1}^{\infty} f_n(x)</m> converges uniformly to a differentiable function <m>f(x)</m> satisfying <m>f'(x) = g(x)</m> on <m>A</m>. In other words,
+      <md>
+        f(x) = \sum_{n=1}^{\infty} f_n(x) \textnormal{ and } f'(x) = \sum_{n=1}^{\infty} f_n'(x).
+      </md>
+      
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-cauchy-criterion-uniform">
+  <title>Cauchy Criterion for Uniform C0nvergence of Series</title>
+  
+  
+  <statement>
+    <p>
+      A series <m>\displaystyle \sum_{n=1}^{\infty} f_n</m> converges uniformly on <m>A \subseteq \mathbf{R}</m> if and only if for every <m>\epsilon>0</m> there exists an <m>N \in \mathbf{N}</m> such that
+      <md>
+        |f_{m+1}(x) + f_{m+2}(x)+ f_{m+3}(x) + \ldots + f_n(x)| &lt; \epsilon
+      </md>
+      whenever <m>n>m \geq N</m> and <m>x \in A</m>
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-M-test">
+  <title>Weierstrass M-test</title>
+  
+  
+  <statement>
+    <p>
+      For each <m>n \in \mathbf{N}</m>, let <m>f_n</m> be a function defined on a set <m>A \subseteq \mathbf{R}</m>, and let <m>M_n>0</m> be a real number satisfying
+      <md>
+        |f_n(x)| \leq M_n
+      </md>
+      for all <m>x \in A</m>. If <md> \sum_{n=1}^{\infty} M_n</md> converges then <md> \sum_{n=1}^{\infty} f_n </md> converges uniformly on <m>A</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Choose <m>\epsilon>0</m>. Because <m>\sum_{n=1}^{\infty} M_n</m> converges and all terms are positive, it follows from the Cauchy criterion that there exists <m>N \in \mathbf{N}</m> such that for <m>n &gt; m \geq N</m>
+    <md>
+      M_{m+1} + M_{m+2} + \ldots + M_n &lt; \epsilon
+    </md>
+    
+  </p>
+
+  <p>
+    But by the triangle inequality for <m>n &gt; m\geq M</m>
+<md>
+  <mrow> |f_{m+1}(x)+ f_{m+2}(x) + \ldots + f_n(x)| \amp \leq   |f_{m+1}(x)|+ |f_{m+2}(x)| + \ldots + |f_n(x)| </mrow>
+  <mrow> \amp \leq  M_{m+1} + M_{m+2} + \ldots + M_n  </mrow>
+  <mrow> \amp &lt; \epsilon.</mrow>
+</md>
+  </p>
+
+  <p>
+    Hence by the Cauchy criterion <m>\displaystyle \sum_{n=1}^{\infty} f_n</m> converges uniformly on <m>A</m>.
+  </p>
+
+</proof>
+
+
+
 
    </subsection>
 

@@ -102,7 +102,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.12';
+eBookConfig.runestone_version = '7.11.13';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -186,6 +186,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#notes-week-04-2" class="internal"><span class="title">Function Approximation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Pointwise-Convergence" class="internal"><span class="title">Pointwise Convergence</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence-and-Continuity" class="internal"><span class="title">Uniform Convergence and Continuity</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Cauchy" class="internal"><span class="title">Cauchy Criterion</span></a></div></li>
 </ul>
@@ -195,6 +196,8 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#notes-week-05-2" class="internal"><span class="title">Convergence of Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Differentiable-Limit" class="internal"><span class="title">Differentiable Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Kerala-School" class="internal"><span class="title">The Kerala School of Astronomy and Mathematics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-series-of-functions" class="internal"><span class="title">Series of Functions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -608,11 +611,11 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="subsec-Differentiable-Limit-2">These examples show that in order for the sequence of derivatives to converge to the derivative of the limit function, it is not enough that the sequence of functions converges uniformly to the limit function. It is not even enough that the sequence of functions converges uniformly to the limit function and the sequence of derivatives converges pointwise.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Differentiable-Limit-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-Differentiable-Limit"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiable Limit Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiable Limit Theorem.</span>
 </h4>
 <div class="para" id="thm-Differentiable-Limit-2-1">Let <span class="process-math">\(f_n \to f\)</span> pointwise on the closed interval <span class="process-math">\([a,b]\)</span> and assume that each <span class="process-math">\(f_n\)</span> is differentiable. If <span class="process-math">\((f_n')\)</span> converges uniformly on <span class="process-math">\([a,b]\)</span> to a function <span class="process-math">\(g\text{,}\)</span> then the function <span class="process-math">\(f\)</span> is differentiable and <span class="process-math">\(f'=g\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Differentiable-Limit-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 34: Differentiable Limit Theorem"><a href="#thm-Differentiable-Limit" title="Copy heading and permalink for Theorem 34: Differentiable Limit Theorem" aria-label="Copy heading and permalink for Theorem 34: Differentiable Limit Theorem">🔗</a></div></article><details id="subsec-Differentiable-Limit-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Differentiable-Limit-4-1">Choose <span class="process-math">\(c \in [a,b]\)</span> and let <span class="process-math">\(\epsilon &gt;0\text{.}\)</span> We want to show that <span class="process-math">\(f'(c)\)</span> exists and equals <span class="process-math">\(g(c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Differentiable-Limit-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 36: Differentiable Limit Theorem"><a href="#thm-Differentiable-Limit" title="Copy heading and permalink for Theorem 36: Differentiable Limit Theorem" aria-label="Copy heading and permalink for Theorem 36: Differentiable Limit Theorem">🔗</a></div></article><details id="subsec-Differentiable-Limit-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Differentiable-Limit-4-1">Choose <span class="process-math">\(c \in [a,b]\)</span> and let <span class="process-math">\(\epsilon &gt;0\text{.}\)</span> We want to show that <span class="process-math">\(f'(c)\)</span> exists and equals <span class="process-math">\(g(c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Differentiable-Limit-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Differentiable-Limit-4-2">
 <div class="para">This means we must find <span class="process-math">\(\delta &gt; 0\)</span> such that whenever <span class="process-math">\(|x-c| &lt; \delta\text{,}\)</span>
@@ -721,11 +724,413 @@ f_m'(\alpha)-f_N'(\alpha) = \frac{(f_m(x)-f_N(x))-(f_m(c)-f_N(c))}{x-c}
 <div class="autopermalink" data-description="Proof 1"><a href="#subsec-Differentiable-Limit-4" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Differentiable-Limit-5">In the statement of the Differentiable Limit Theorem, it is not necessary to have that <span class="process-math">\((f_n)\)</span> converges pointwise to <span class="process-math">\(g\)</span> on all <span class="process-math">\([a,b]\text{;}\)</span> it is just enough for it to converge at a single point.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Differentiable-Limit-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-differentiable-limit-2"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="thm-differentiable-limit-2-1-1">Let <span class="process-math">\((f_n)\)</span> be a sequence of differentiable functions defined on the closed interval <span class="process-math">\([a,b]\)</span> and suppose <span class="process-math">\((f_n')\)</span> converges uniformly to a function <span class="process-math">\([a,b]\text{.}\)</span> If there exists a point <span class="process-math">\(x_0 \in [a,b]\)</span> for which <span class="process-math">\(f_n(x_0)\)</span> is convergent, then <span class="process-math">\((f_n)\)</span> converges uniformly. Moreover the limit function <span class="process-math">\(f = \lim f_n\)</span> is differentiable and satisfies <span class="process-math">\(f' = g\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-differentiable-limit-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 35"><a href="#thm-differentiable-limit-2" title="Copy heading and permalink for Theorem 35" aria-label="Copy heading and permalink for Theorem 35">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Differentiable Limit Theorem"><a href="#subsec-Differentiable-Limit" title="Copy heading and permalink for Subsection: Differentiable Limit Theorem" aria-label="Copy heading and permalink for Subsection: Differentiable Limit Theorem">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)"><a href="#notes-week-05" title="Copy heading and permalink for Section: Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)" aria-label="Copy heading and permalink for Section: Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Theorem 37"><a href="#thm-differentiable-limit-2" title="Copy heading and permalink for Theorem 37" aria-label="Copy heading and permalink for Theorem 37">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Differentiable Limit Theorem"><a href="#subsec-Differentiable-Limit" title="Copy heading and permalink for Subsection: Differentiable Limit Theorem" aria-label="Copy heading and permalink for Subsection: Differentiable Limit Theorem">🔗</a></div></section><section class="subsection" id="subsec-Kerala-School"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Kerala School of Astronomy and Mathematics</span>
+</h3>
+<div class="para" id="subsec-Kerala-School-2">Kerala is a region of southwest India. During the 14th century A.D. a group of astronomers and mathematicians led by Madhava of Sangamagrama founded a school which today is known as the Kerala School of Astronomy and Mathematics.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Kerala-School-3">While they were focused on solving astronomical problems, they discovered a number of important mathematical results including formulas for calculating sines and cosines.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Kerala-School-4">The remarkable feature of these formulas is that they involve infinite sums.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Kerala-School-5">Madhava (died 1425 A.D.) gave the following instructions for calculating the sine function. <blockquote class="blockquote" id="subsec-Kerala-School-5-1">
+<div class="para" id="subsec-Kerala-School-5-1-1">"Multiply the arc by the square of the arc, and take the result of repeating that (any number of times). Divide (each of the above numerators) by the squares of the successive even numbers increased by that number and multiplied by the square of the radius. Place the arc and the successive results so obtained one below the other, and subtract each from the one above. These together give the jiva, as collected together in the verse beginning with "vidvan" etc."<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Quotation"><a href="#subsec-Kerala-School-5-1" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Kerala-School-6">In Indian mathematics at the time the jiva referred to the function <span class="process-math">\(r \sin \theta\)</span> where <span class="process-math">\(r\)</span> is a fixed radius of a circle.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Kerala-School-7">
+<div class="para">In modern mathematical notation, Madhava’s formula is as follows.</div>
+<div class="displaymath process-math" id="subsec-Kerala-School-7-1">
+\begin{equation*}
+\sin(x) = \sum_{n=0}^{\infty} (-1)^n\dfrac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\ldots
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(n!\)</span> is the product of <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(n-1\text{,}\)</span> \ldots 1.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Kerala-School-8">Another remarkable formula due to Madhava is a method for calculating the arctangent function. In the passage below sine and cosine refer to the Indian sine (<span class="process-math">\(r \sin \theta\)</span>) and Indian cosine (<span class="process-math">\(r\cos \theta)\)</span> <blockquote class="blockquote" id="subsec-Kerala-School-8-3">
+<div class="para" id="subsec-Kerala-School-8-3-1">"The first term is the product of the given sine and radius of the desired arc divided by the cosine of the arc. The succeeding terms are obtained by a process of iteration when the first term is repeatedly multiplied by the square of the sine and divided by the square of the cosine. All the terms are then divided by the odd numbers 1, 3, 5, .... The arc is obtained by adding and subtracting respectively the terms of odd rank and those of even rank. It is laid down that the sine of the arc or that of its complement whichever is the smaller should be taken here as the given sine. Otherwise the terms obtained by this above iteration will not tend to the vanishing magnitude"<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Quotation"><a href="#subsec-Kerala-School-8-3" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Kerala-School-9">
+<div class="para">In modern notation this would be written as</div>
+<div class="displaymath process-math" id="subsec-Kerala-School-9-1">
+\begin{equation*}
+\arctan(x) = \sum_{n=0}^{\infty} \frac{(-1)^nx^{2n+1}}{2n+1} = x-\frac{x^3}{3}+ \frac{x^5}{5}-\frac{x^7}{7} + \ldots
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Kerala-School-10">
+<div class="para">By letting <span class="process-math">\(x=1\)</span> Madhava came up with a formula for calculating <span class="process-math">\(\frac{\pi}{4}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Kerala-School-10-3">
+\begin{equation*}
+\frac{\pi}{4} = 1-\frac{1}{3}+ \frac{1}{5}- \frac{1}{7} + \ldots
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Kerala-School-11">
+<div class="para">Madhava’s formula’s demonstrate that a series of simple functions can be a powerful tool for approximating more complicated functions. However, there are a number of issues that we need to address.</div>
+<ol class="decimal" id="subsec-Kerala-School-11-1">
+<li id="subsec-Kerala-School-11-1-1">
+<div class="para" id="subsec-Kerala-School-11-1-1-1">In what sense do Madhava’s series converge to the desired function?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-11-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Kerala-School-11-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Kerala-School-11-1-2">
+<div class="para" id="subsec-Kerala-School-11-1-2-1">In general, if a series of continuous functions converges, is the limit function also continuous?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-11-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Kerala-School-11-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-Kerala-School-11-1-3">
+<div class="para" id="subsec-Kerala-School-11-1-3-1">In general, if a series of differentiable functions converges, is the limit function also differentiable?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-11-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-Kerala-School-11-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-Kerala-School-11-1-4">
+<div class="para" id="subsec-Kerala-School-11-1-4-1">Are we justified in substituting <span class="process-math">\(x=1\)</span> into Madhava’s series for <span class="process-math">\(\arctan(x)\)</span> to get a formula for <span class="process-math">\(\frac{\pi}{4}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-11-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#subsec-Kerala-School-11-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Kerala-School-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Kerala School of Astronomy and Mathematics"><a href="#subsec-Kerala-School" title="Copy heading and permalink for Subsection: The Kerala School of Astronomy and Mathematics" aria-label="Copy heading and permalink for Subsection: The Kerala School of Astronomy and Mathematics">🔗</a></div></section><section class="subsection" id="subsec-series-of-functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Series of Functions</span>
+</h3>
+<div class="para" id="subsec-series-of-functions-2">We start our investigation into series of functions by defining what it means for a series of functions to converge.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-series-convergence"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">38</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-series-convergence-1-1">
+<div class="para">For each <span class="process-math">\(n \in \mathbf{N}\text{,}\)</span> let <span class="process-math">\(f_n\)</span> and <span class="process-math">\(f\)</span> be functions defined on a set <span class="process-math">\(A \subseteq \mathbf{R}\text{.}\)</span> The infinite series</div>
+<div class="displaymath process-math" id="def-series-convergence-1-1-5">
+\begin{equation*}
+\sum_{n=1}^{\infty} f_n(x) = f_1(x) + f_2(x) + f_3(x) + \ldots 
+\end{equation*}
+</div>
+<div class="para">converges pointwise on <span class="process-math">\(A\)</span> to <span class="process-math">\(f(x)\)</span> if the sequence <span class="process-math">\(s_k(x)\)</span> of partial sums defined by</div>
+<div class="displaymath process-math" id="def-series-convergence-1-1-9">
+\begin{equation*}
+s_k(x) = f_1(x) + f_2(x) + \ldots + f_k(x)
+\end{equation*}
+</div>
+<div class="para">converges pointwise to <span class="process-math">\(f(x)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-series-convergence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-series-convergence-1-2">The series converges uniformly on <span class="process-math">\(A\)</span> to <span class="process-math">\(f(x)\)</span> if the sequence <span class="process-math">\(s_k(x)\)</span> converges uniformly on <span class="process-math">\(A\)</span> to <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-series-convergence-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="def-series-convergence-1-3">
+<div class="para">In either case we write</div>
+<div class="displaymath process-math" id="def-series-convergence-1-3-1">
+\begin{equation*}
+f = \sum_{n=1}^{\infty} f_n
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" id="def-series-convergence-1-3-2">
+\begin{equation*}
+f(x) = \sum_{n=1}^{\infty} f_n(x)
+\end{equation*}
+</div>
+<div class="para">always being explicit about the type of convergence involved.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-series-convergence-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 38"><a href="#def-series-convergence" title="Copy heading and permalink for Definition 38" aria-label="Copy heading and permalink for Definition 38">🔗</a></div></article><div class="para" id="subsec-series-of-functions-4">Example: Show that <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} \frac{x}{2^n}\)</span> converges uniformly to <span class="process-math">\(f(x) = 2x\)</span> on the interval <span class="process-math">\([-1,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-series-of-functions-5">The following image shows the graph of <span class="process-math">\(s_k(x)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-xn-series-1.svg" data-cml="generated/prefigure/prefigure-xn-series-1-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<div class="para" id="subsec-series-of-functions-7">Show that <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} x^n\)</span> converges pointwise to <span class="process-math">\(f(x) = \frac{1}{1-x}\)</span> on the interval <span class="process-math">\((-1,1)\text{,}\)</span> but the convergence is not uniform.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-series-of-functions-8">The following graph shows the partial sums <span class="process-math">\(S_k(x)\)</span> for different values of <span class="process-math">\(k\)</span> as well as <span class="process-math">\(f(x) = \frac{1}{1-x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-xn-series-2.svg" data-cml="generated/prefigure/prefigure-xn-series-2-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<div class="para" id="subsec-series-of-functions-10">Since series convergence is defined by convergence of partial sums, the theorems that we proved for the continuity and differentiability of limits of sequences of functions also hold for series of functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-term-by-term-continuity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">39</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Term-by-term Continuity Theorem.</span>
+</h4>
+<div class="para" id="thm-term-by-term-continuity-2-1">Let <span class="process-math">\(f_n\)</span> be continuous functions defined on a set <span class="process-math">\(A \subseteq \mathbf{R}\)</span> and suppose <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}f_n \)</span> conveges uniformly on <span class="process-math">\(A\)</span> to a function <span class="process-math">\(f\text{.}\)</span> Then <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-term-by-term-continuity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 39: Term-by-term Continuity Theorem"><a href="#thm-term-by-term-continuity" title="Copy heading and permalink for Theorem 39: Term-by-term Continuity Theorem" aria-label="Copy heading and permalink for Theorem 39: Term-by-term Continuity Theorem">🔗</a></div></article><article class="theorem theorem-like" id="thm-term-by-term-differeniability"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">40</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Term-by-term Differentiability Theorem.</span>
+</h4>
+<div class="para logical" id="thm-term-by-term-differeniability-2-1">
+<div class="para">Let <span class="process-math">\(f_n\)</span> be differentiable functions defined on an interval <span class="process-math">\(A\)</span> and suppose <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} f_n'(x)\)</span> converges uniformly to a limit <span class="process-math">\(g(x)\)</span> on <span class="process-math">\(A\text{.}\)</span> If there exists a point <span class="process-math">\(x_0 \in [a,b]\)</span> where <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} f_n(x_0)\)</span> converges, then the series <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} f_n(x)\)</span> converges uniformly to a differentiable function <span class="process-math">\(f(x)\)</span> satisfying <span class="process-math">\(f'(x) = g(x)\)</span> on <span class="process-math">\(A\text{.}\)</span> In other words,</div>
+<div class="displaymath process-math" id="thm-term-by-term-differeniability-2-1-12">
+\begin{equation*}
+f(x) = \sum_{n=1}^{\infty} f_n(x) \textnormal{ and } f'(x) = \sum_{n=1}^{\infty} f_n'(x).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-term-by-term-differeniability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 40: Term-by-term Differentiability Theorem"><a href="#thm-term-by-term-differeniability" title="Copy heading and permalink for Theorem 40: Term-by-term Differentiability Theorem" aria-label="Copy heading and permalink for Theorem 40: Term-by-term Differentiability Theorem">🔗</a></div></article><article class="theorem theorem-like" id="thm-cauchy-criterion-uniform"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">41</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cauchy Criterion for Uniform C0nvergence of Series.</span>
+</h4>
+<div class="para logical" id="thm-cauchy-criterion-uniform-2-1">
+<div class="para">A series <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} f_n\)</span> converges uniformly on <span class="process-math">\(A \subseteq \mathbf{R}\)</span> if and only if for every <span class="process-math">\(\epsilon&gt;0\)</span> there exists an <span class="process-math">\(N \in \mathbf{N}\)</span> such that</div>
+<div class="displaymath process-math" id="thm-cauchy-criterion-uniform-2-1-5">
+\begin{equation*}
+|f_{m+1}(x) + f_{m+2}(x)+ f_{m+3}(x) + \ldots + f_n(x)| &lt; \epsilon
+\end{equation*}
+</div>
+<div class="para">whenever <span class="process-math">\(n&gt;m \geq N\)</span> and <span class="process-math">\(x \in A\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-criterion-uniform-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 41: Cauchy Criterion for Uniform C0nvergence of Series"><a href="#thm-cauchy-criterion-uniform" title="Copy heading and permalink for Theorem 41: Cauchy Criterion for Uniform C0nvergence of Series" aria-label="Copy heading and permalink for Theorem 41: Cauchy Criterion for Uniform C0nvergence of Series">🔗</a></div></article><article class="theorem theorem-like" id="thm-M-test"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">42</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Weierstrass M-test.</span>
+</h4>
+<div class="para logical" id="thm-M-test-2-1">
+<div class="para">For each <span class="process-math">\(n \in \mathbf{N}\text{,}\)</span> let <span class="process-math">\(f_n\)</span> be a function defined on a set <span class="process-math">\(A \subseteq \mathbf{R}\text{,}\)</span> and let <span class="process-math">\(M_n&gt;0\)</span> be a real number satisfying</div>
+<div class="displaymath process-math" id="thm-M-test-2-1-5">
+\begin{equation*}
+|f_n(x)| \leq M_n
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(x \in A\text{.}\)</span> If</div>
+<div class="displaymath process-math" id="thm-M-test-2-1-7">
+\begin{equation*}
+\sum_{n=1}^{\infty} M_n
+\end{equation*}
+</div>
+<div class="para">converges then</div>
+<div class="displaymath process-math" id="thm-M-test-2-1-8">
+\begin{equation*}
+\sum_{n=1}^{\infty} f_n 
+\end{equation*}
+</div>
+<div class="para">converges uniformly on <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-M-test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 42: Weierstrass M-test"><a href="#thm-M-test" title="Copy heading and permalink for Theorem 42: Weierstrass M-test" aria-label="Copy heading and permalink for Theorem 42: Weierstrass M-test">🔗</a></div></article><details id="subsec-series-of-functions-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-series-of-functions-15-1">
+<div class="para">Choose <span class="process-math">\(\epsilon&gt;0\text{.}\)</span> Because <span class="process-math">\(\sum_{n=1}^{\infty} M_n\)</span> converges and all terms are positive, it follows from the Cauchy criterion that there exists <span class="process-math">\(N \in \mathbf{N}\)</span> such that for <span class="process-math">\(n &gt; m \geq N\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-series-of-functions-15-1-5">
+\begin{equation*}
+M_{m+1} + M_{m+2} + \ldots + M_n &lt; \epsilon
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-series-of-functions-15-2">
+<div class="para">But by the triangle inequality for <span class="process-math">\(n &gt; m\geq M\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-series-of-functions-15-2-2">
+\begin{align*}
+|f_{m+1}(x)+ f_{m+2}(x) + \ldots + f_n(x)| \amp \leq   |f_{m+1}(x)|+ |f_{m+2}(x)| + \ldots + |f_n(x)| \\
+\amp \leq  M_{m+1} + M_{m+2} + \ldots + M_n  \\
+\amp &lt; \epsilon.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-series-of-functions-15-3">Hence by the Cauchy criterion <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} f_n\)</span> converges uniformly on <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-series-of-functions-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-series-of-functions-15" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Series of Functions"><a href="#subsec-series-of-functions" title="Copy heading and permalink for Subsection: Series of Functions" aria-label="Copy heading and permalink for Subsection: Series of Functions">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)"><a href="#notes-week-05" title="Copy heading and permalink for Section: Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)" aria-label="Copy heading and permalink for Section: Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="notes-week-04.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -1,0 +1,140 @@
+<diagram>
+  <annotations>
+    <annotation id="figure" speech2="The graphs of the first few partial sums of the series">
+      <grouped>figure</grouped>
+      <position>1</position>
+      <children>
+        <active>grid-axes</active>
+        <active>graph-group</active>
+      </children>
+      <components>
+        <active>grid-axes</active>
+        <active>graph-group</active>
+      </components>
+    </annotation>
+    <annotation id="grid-axes" speech2="The coordinate grid and axes">
+      <grouped>grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>grid</active>
+        <active>axes</active>
+      </children>
+      <components>
+        <active>grid</active>
+        <active>axes</active>
+      </components>
+      <parents>
+        <grouped>figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="grid" speech2="The coordinate grid">
+      <active>grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="axes" speech2="The coordinate axes">
+      <active>axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="graph-group" speech2="The graph of the partial sums s0, s1, s2, s3, s4, and s19 as well as the limit f(x)">
+      <grouped>graph-group</grouped>
+      <position>2</position>
+      <children>
+        <active>graph1</active>
+        <active>graph2</active>
+        <active>graph3</active>
+        <active>graph4</active>
+        <active>graph5</active>
+        <active>graph20</active>
+        <active>graph</active>
+      </children>
+      <components>
+        <active>graph1</active>
+        <active>graph2</active>
+        <active>graph3</active>
+        <active>graph4</active>
+        <active>graph5</active>
+        <active>graph20</active>
+        <active>graph</active>
+      </components>
+      <parents>
+        <grouped>figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="graph1" speech2="The graph of the function s0" sonify="yes">
+      <active>graph1</active>
+      <position>1</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph1</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="graph2" speech2="The graph of the function s1" sonify="yes">
+      <active>graph2</active>
+      <position>2</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph2</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="graph3" speech2="The graph of the function s2" sonify="yes">
+      <active>graph3</active>
+      <position>3</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph3</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="graph4" speech2="The graph of the function s3" sonify="yes">
+      <active>graph4</active>
+      <position>4</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph4</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="graph5" speech2="The graph of the function s4" sonify="yes">
+      <active>graph5</active>
+      <position>5</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph5</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="graph20" speech2="The graph of the function s19" sonify="yes">
+      <active>graph20</active>
+      <position>6</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph20</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="graph" speech2="The graph of the function f(x)" sonify="yes">
+      <active>graph</active>
+      <position>7</position>
+      <parents>
+        <grouped>graph-group</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>graph</ACTIVE>
+      </sonification>
+    </annotation>
+  </annotations>
+</diagram>

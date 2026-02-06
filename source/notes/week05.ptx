@@ -300,6 +300,182 @@
 
     </subsection>
 
-   
+   <subsection xml:id="subsec-Kerala-School">
+    <title>The Kerala School of Astronomy and Mathematics</title>
+    
+    <p>
+      Kerala is a region of southwest India. During the 14th century A.D. a group of astronomers and mathematicians led by Madhava of Sangamagrama founded a school which today is known as the Kerala School of Astronomy and Mathematics.
+    </p>
+
+    <p>
+      While they were focused on solving astronomical problems, they discovered a number of important mathematical results including formulas for calculating sines and cosines.
+    </p>
+
+    <p>
+      The remarkable feature of these formulas is that they involve infinite sums.
+    </p>
+
+    <p>  Madhava (died 1425 A.D.) gave the following instructions for calculating the sine function.
+      <blockquote>
+        <p>
+          "Multiply the arc by the square of the arc, and take the result of repeating that (any number of times). Divide (each of the above numerators) by the squares of the successive even numbers increased by that number and multiplied by the square of the radius. Place the arc and the successive results so obtained one below the other, and subtract each from the one above. These together give the jiva, as collected together in the verse beginning with "vidvan" etc."
+        </p>
+      </blockquote>
+    </p>
+
+    <p>
+      In Indian mathematics at the time the jiva referred to the function $r \sin \theta$ where $r$ is a fixed radius of a circle.
+    </p>
+
+    <p>
+      In modern mathematical notation, Madhava's formula is as follows.
+      <md>
+        \sin(x) = \sum_{n=0}^{\infty} (-1)^n\dfrac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\ldots
+      </md>
+      where $n!$ is the product of $n$, $n-1$, \ldots 1.
+    </p>
+
+    <p>
+      Another remarkable formula due to Madhava is a method for calculating the arctangent function. In the passage below sine and cosine refer to the Indian sine ($r \sin \theta$) and Indian cosine ($r\cos \theta)$
+      <blockquote>
+        <p>
+          "The first term is the product of the given sine and radius of the desired arc divided by the cosine of the arc. The succeeding terms are obtained by a process of iteration when the first term is repeatedly multiplied by the square of the sine and divided by the square of the cosine. All the terms are then divided by the odd numbers 1, 3, 5, .... The arc is obtained by adding and subtracting respectively the terms of odd rank and those of even rank. It is laid down that the sine of the arc or that of its complement whichever is the smaller should be taken here as the given sine. Otherwise the terms obtained by this above iteration will not tend to the vanishing magnitude"
+        </p>
+      </blockquote>
+    </p>
+
+    <p>
+      In modern notation this would be written as
+      <md>
+        \arctan(x) = \sum_{n=0}^{\infty} \frac{(-1)^nx^{2n+1}}{2n+1} = x-\frac{x^3}{3}+ \frac{x^5}{5}-\frac{x^7}{7} + \ldots
+      </md>
+      
+    </p>
+
+    <p>
+      By letting $x=1$ Madhava came up with a formula for calculating $\frac{\pi}{4}$
+      <md>
+        \frac{\pi}{4} = 1-\frac{1}{3}+ \frac{1}{5}- \frac{1}{7} + \ldots
+      </md>
+      
+    </p>
+
+    <p>
+      Madhava's formula's demonstrate that a series of simple functions can be a powerful tool for approximating more complicated functions. However, there are a number of issues that we need to address.
+      <ol>
+        <li>
+          <p>
+            In what sense do Madhava's series converge to the desired function?
+          </p>
+        </li>
+        <li>
+          <p>
+            In general, if a series of continuous functions converges, is the limit function also continuous?
+          </p>
+        </li>
+        <li>
+          <p>
+            In general, if a series of differentiable functions converges, is the limit function also differentiable?
+          </p>
+        </li>
+        <li>
+          <p>
+            Are we justified in substituting $x=1$ into Madhava's series for $\arctan(x)$ to get a formula for $\frac{\pi}{4}$?
+          </p>
+        </li>
+      </ol>
+    </p>
+
+
+   </subsection>
+
+   <subsection xml:id="subsec-series-of-functions">
+    <title>Series of Functions</title>
+    
+    <p>
+      We start our investigation into series of functions by defining what it means for a series of functions to converge.
+    </p>
+
+    <definition xml:id="def-series-convergence">
+      <statement>
+        <p>
+          For each $n \in \mathbf{N}$, let $f_n$ and $f$ be functions defined on a set $A \subseteq \mathbf{R}$. The infinite series 
+          <md>
+            \sum_{n=1}^{\infty} f_n(x) = f_1(x) + f_2(x) + f_3(x) + \ldots 
+          </md>
+          converges pointwise on $A$ to $f(x)$ if the sequence $s_k(x)$ of partial sums defined by
+
+          <md>
+            s_k(x) = f_1(x) + f_2(x) + \ldots + f_k(x)
+          </md>
+          
+          converges pointwise to $f(x)$.
+
+        </p>
+
+        <p>
+          The series converges uniformly on $A$ to $f(x)$ if the sequence $s_k(x)$ converges uniformly on $A$ to $f(x)$.
+        </p>
+
+        <p>
+          In either case we write
+          <md>
+            f = \sum_{n=1}^{\infty} f_n
+          </md>
+          or
+          <md>
+            f(x) = \sum_{n=1}^{\infty} f_n(x)
+          </md>
+          always being explicit about the type of convergence involved.
+        </p>
+      </statement>
+    </definition>
+
+<p>
+  Example: Show that $\displaystyle \sum_{n=0}^{\infty} \frac{x}{2^n}$ converges uniformly to $f(x) = 2x$ on the interval $[-1,1]$.
+</p>
+
+<p>
+  The following image shows the graph of $s_k(x)$
+</p>
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-xn-series-1">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f1(x)=x</definition>
+  <definition>f2(x)=x+x/2</definition>
+  <definition>f3(x)=x+x/2+x/4</definition>
+  <definition>f4(x)=x+x/2+x/4+x/8</definition>
+  <definition>f5(x)=x+x/2+x/4+x/8+x/16</definition>
+    <definition>f20(x)=2x</definition>
+  <coordinates bbox="(-2,4,-2,4)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="f1" stroke = "blue"/>
+    <graph at="graph2" function="f2" stroke = "red"/>
+    <graph at="graph3" function="f3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph5" function="f5" stroke = "yellow"/>
+    <graph at="graph20" function="f20" stroke = "teal"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few partial sums of the series">
+      <annotation ref="graph-group" text="The graph of the partial sums s0, s1, s2, s3, s4, and s19">
+        <annotation ref="graph1" text="The graph of the function s0" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function s1" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function s2" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function s3" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function s4" sonify="yes"/>
+        <annotation ref="graph20" text="The graph of the function s19" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+   </subsection>
 
     </section>

@@ -591,8 +591,8 @@ var ptx_lunr_docs = [
   "url": "hw3.html",
   "type": "Worksheet",
   "number": "",
-  "title": "MTH 428\/528 Homework 3 Due February 12",
-  "body": " MTH 428\/528 Homework 3 Due February 12     Let     Find the pointwise limit of for all .    Is the convergence uniform on ?    Is the convergence uniform on ?    Is the convergence uniform on       Let be a sequence of continuous functions that converges uniformly to on a compact set . If on , show converges uniformly to     Suppose and are uniformly convergent sequences of functions.   Show that is a uniformly convergent sequence of functions.    Give an example to show that the product may not converge uniformly.       Suppose that uniformly on a set . Show that if each is bounded, then is also bounded.    Suppose that uniformly on a set . Show that if each is uniformly continuous, then is also uniformly continuous.     "
+  "title": "MTH 428\/528 Homework 3 Due February 16",
+  "body": " MTH 428\/528 Homework 3 Due February 16     Let     Find the pointwise limit of for all .    Is the convergence uniform on ?    Is the convergence uniform on ?    Is the convergence uniform on       Let be a sequence of continuous functions that converges uniformly to on a compact set . If on , show converges uniformly to     Suppose and are uniformly convergent sequences of functions.   Show that is a uniformly convergent sequence of functions.    Give an example to show that the product may not converge uniformly.       Suppose that uniformly on a set . Show that if each is bounded, then is also bounded.    Suppose that uniformly on a set . Show that if each is uniformly continuous, then is also uniformly continuous.     "
 }
 ]
 

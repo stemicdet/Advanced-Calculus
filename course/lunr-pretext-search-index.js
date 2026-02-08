@@ -568,6 +568,141 @@ var ptx_lunr_docs = [
   "body": " Choose . Because converges and all terms are positive, it follows from the Cauchy criterion that there exists such that for    But by the triangle inequality for    Hence by the Cauchy criterion converges uniformly on .  "
 },
 {
+  "id": "notes-week-06",
+  "level": "1",
+  "url": "notes-week-06.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 6: Power Series (6.5)",
+  "body": " Week 6: Power Series (6.5)   The Binomial Series  The Binomial Theorem demonstrates the correct way to expand the powers of a binomial. where   It is sometimes written as the special case   Around 1665 Newton generalized the Binomial Theorem for the case when is not an integer. When this happens the sum becomes an infinite series. where   However, Newton never provided a proof of this result!  In his 1821 book Cours d'analyse Cauchy gave a proof that the binomial series converges to . Abel was interested in further generalizing the Binomial Theorem to complex exponents and carefully studied Cauchy's proof, which led him to discover a flaw in the proof.  Cauchy's proof relies on the fact that is a continuous function on , which he claimed followed because the limit of a sum of continuous functions is continuous.  In an 1826 paper Abel presented an example that the showed that the limit of a sum of continuous functions is not always continuous and thus Cauchy's proof is incomplete unless the sum converges uniformly. Abel also showed a way to fix Cauchy's proof if this isn't the case.    Power Series  To determine whether the Binomials series is uniformly convergent or not we need to build up some theory involving power series. A power series is a function of the form   The binomial series is an example of a power series.  Another example is the series   Show that converges when . What happens if ? What if ?  In the previous example, the set of points where the series converges was the interval . As it turns out the set where a power series converges is always an interval centered at or the single point .In the previous example, the set of points where the series converges was the interval . As it turns out the set where a power series converges is always an interval centered at or the single point .    If a power series converges at some point , then it converges absolutely for any satisfying .     Suppose converges. Then the sequence of terms converges to and thus is bounded.  Hence there exists such that for all .  Suppose . Then,   Hence it follows from the comparison test that   Since this is a geometric series with and thus converges.  Hence converges absolutely.   As previously mentioned a consequence of this theorem is that the set of points where a power series converges is either an interval of the form , , or or all or .  This set is referred to as the interval of convergence of the power series and the number is called the radius of convergence.  When the interval of convergence is the radius of convergence is said to be and when the interval of convergence is , the radius of convergence is said to be .    The Ratio Test  The Ratio Test is a test for series convergence which is useful for determining the radius of convergence of power series. }  The Ratio Test   Let be a sequence of nonzero real numbers.    If there exists with and such that for , then the series is absolutely convergent.    If there exists such that for , then the series is divergent.       We first prove part 1. Suppose for . Then   Thus and since this is a geometric series with , converges absolutely by the comparison test.  Now we prove part 2. Suppose for . Then   Thus and thus the series diverges.     Let be a nonzero sequence in and suppose that the limit exists. Then is absolutely convergent when and divergent when .    If then the ratio test is inconclusive. The series may converge absolutely, converge conditionally, or diverge.  Example: Find the interval of convergence and radius of convergence of the following power series.   Example: Find the interval of convergence and radius of convergence of the following power series.     Uniform Convergence  Let's consider again the problem of proving that the Binomial series converges. Cauchy showed that if the series is a continuous function then it must converge to .  We can show that is continuous by showing that the convergence is uniform.    If a power series converges absolutely at a point , then it converges uniformly on the closed interval where .     Recall the Weierstrass M-test states that if and converges then converges uniformly.  Suppose . Then and since converges absolutely, it follows from the M-test that converges uniformly.   Show that the Binomial Series converges absolutely (and hence uniformly) when and diverges when .  It thus follows that is continuous on and thus by Cauchy's argument it converges to there.  We also know that is undefined when because the series diverges. This leaves open the question of what happens at the endpoints and .  In particular we want to know if is continuous at these endpoints and thus converges to there as well.  Whether the Binomial series converges at the endpoints depends on the value of .  If then the series converges absolutely at both endpoints. Hence the converges is uniform and is continuous at both endpoints.  If then the series converges conditionally at and diverges at .  If the series diverges. Hence is undefined at the endpoints.  If the Binomial series converges conditionally then we can't use the Absolute Convergence Implies Uniform Convergence Theorem to show that the Binomial series converges uniformly at . Instead we will need to use a theorem due to Abel to show that convergence at a point implies uniform convergence there as well.  Abel developed this theorem specifically to fix the flaw in Cauchy's proof that the Binomial series converges to .   Abel's Lemma   Let satisfy , and let be a series for which the partial sums are bounded. In other words, suppose there exists such that for all . Then for all ,      Abel's Theorem   Let be a power series that converges at the point . Then the series converges uniformly on the interval . A similar result holds if the series converges at .     Because we will want to make use of Abel's Lemma, we first write   Let . It follows from the Cauchy criterion that the series converges uniformly if it can be shown that there exists such that whenever we have   The hypothesis of the theorem is that converges. Hence by the Cauchy criterion there exists such that for    We can thus apply Abel's Lemma to with and   This gives    If the Binomial series converges conditionally at . Abel's Theorem tells us that it converges uniformly on and thus is continuous at .  Thus converges to on and in particular at .  The following Theorem summarizes our conclusions about when a power series is a continuous function.    Suppose converges (pointwise) on an interval . Then the function is continuous on .      Derivatives of Power Series  Suppose that defines a continuous function on a set . Is differentiable on and if so what is ?  We first observe that provided that the interchange between the differential operator and the sum is permitted.  We will justify the prior calculations by appealing to the Term-by-term differentiability Theorem. Recall that this required the original series to converge and the series of derivatives to converge uniformly.    If converges for all then the differentiated series converges at each as well. Consequently the convergence is uniform on compact sets contained in .     Choose . Then there exists such that . Since converges, it follows from the ratio test that   Hence it follows that and   Now we apply the ratio test to the series    Hence it follows from the ratio test that converges absolutely at .   Combining the previous result with the Term-by-term differentiability Theorem gives us the following conditions for a power series to be differentiable.    Suppose converges on an interval . The function is continuous on and differentiable on any open interval . The derivative is given by   Moreover, is infinitely differentiable on and the successive derivatives can be obtained via term-by-term differentiation of the appropriate series.     "
+},
+{
+  "id": "thm-interval-of-convergence",
+  "level": "2",
+  "url": "notes-week-06.html#thm-interval-of-convergence",
+  "type": "Theorem",
+  "number": "43",
+  "title": "",
+  "body": "  If a power series converges at some point , then it converges absolutely for any satisfying .   "
+},
+{
+  "id": "subsec-power-series-8",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-power-series-8",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose converges. Then the sequence of terms converges to and thus is bounded.  Hence there exists such that for all .  Suppose . Then,   Hence it follows from the comparison test that   Since this is a geometric series with and thus converges.  Hence converges absolutely.  "
+},
+{
+  "id": "thm-ratio-test",
+  "level": "2",
+  "url": "notes-week-06.html#thm-ratio-test",
+  "type": "Theorem",
+  "number": "44",
+  "title": "The Ratio Test.",
+  "body": " The Ratio Test   Let be a sequence of nonzero real numbers.    If there exists with and such that for , then the series is absolutely convergent.    If there exists such that for , then the series is divergent.     "
+},
+{
+  "id": "subsec-Ratio-Test-4",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Ratio-Test-4",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " We first prove part 1. Suppose for . Then   Thus and since this is a geometric series with , converges absolutely by the comparison test.  Now we prove part 2. Suppose for . Then   Thus and thus the series diverges.  "
+},
+{
+  "id": "cor-ratio",
+  "level": "2",
+  "url": "notes-week-06.html#cor-ratio",
+  "type": "Corollary",
+  "number": "45",
+  "title": "",
+  "body": "  Let be a nonzero sequence in and suppose that the limit exists. Then is absolutely convergent when and divergent when .   "
+},
+{
+  "id": "thm-uniform-convergence",
+  "level": "2",
+  "url": "notes-week-06.html#thm-uniform-convergence",
+  "type": "Theorem",
+  "number": "46",
+  "title": "",
+  "body": "  If a power series converges absolutely at a point , then it converges uniformly on the closed interval where .   "
+},
+{
+  "id": "subsec-Uniform-Convergence-series-5",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Uniform-Convergence-series-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Recall the Weierstrass M-test states that if and converges then converges uniformly.  Suppose . Then and since converges absolutely, it follows from the M-test that converges uniformly.  "
+},
+{
+  "id": "lem-abel",
+  "level": "2",
+  "url": "notes-week-06.html#lem-abel",
+  "type": "Lemma",
+  "number": "47",
+  "title": "Abel’s Lemma.",
+  "body": " Abel's Lemma   Let satisfy , and let be a series for which the partial sums are bounded. In other words, suppose there exists such that for all . Then for all ,    "
+},
+{
+  "id": "thm-abel",
+  "level": "2",
+  "url": "notes-week-06.html#thm-abel",
+  "type": "Theorem",
+  "number": "48",
+  "title": "Abel’s Theorem.",
+  "body": " Abel's Theorem   Let be a power series that converges at the point . Then the series converges uniformly on the interval . A similar result holds if the series converges at .   "
+},
+{
+  "id": "subsec-Uniform-Convergence-series-18",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Uniform-Convergence-series-18",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " Because we will want to make use of Abel's Lemma, we first write   Let . It follows from the Cauchy criterion that the series converges uniformly if it can be shown that there exists such that whenever we have   The hypothesis of the theorem is that converges. Hence by the Cauchy criterion there exists such that for    We can thus apply Abel's Lemma to with and   This gives   "
+},
+{
+  "id": "thm-power-series-continuity",
+  "level": "2",
+  "url": "notes-week-06.html#thm-power-series-continuity",
+  "type": "Theorem",
+  "number": "49",
+  "title": "",
+  "body": "  Suppose converges (pointwise) on an interval . Then the function is continuous on .   "
+},
+{
+  "id": "thm-term-by-term-differentiation",
+  "level": "2",
+  "url": "notes-week-06.html#thm-term-by-term-differentiation",
+  "type": "Theorem",
+  "number": "50",
+  "title": "",
+  "body": "  If converges for all then the differentiated series converges at each as well. Consequently the convergence is uniform on compact sets contained in .   "
+},
+{
+  "id": "subsec-Derivatives-of-Power-Series-6",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Derivatives-of-Power-Series-6",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Choose . Then there exists such that . Since converges, it follows from the ratio test that   Hence it follows that and   Now we apply the ratio test to the series    Hence it follows from the ratio test that converges absolutely at .  "
+},
+{
+  "id": "thm-power-series-derivative",
+  "level": "2",
+  "url": "notes-week-06.html#thm-power-series-derivative",
+  "type": "Theorem",
+  "number": "51",
+  "title": "",
+  "body": "  Suppose converges on an interval . The function is continuous on and differentiable on any open interval . The derivative is given by   Moreover, is infinitely differentiable on and the successive derivatives can be obtained via term-by-term differentiation of the appropriate series.   "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",

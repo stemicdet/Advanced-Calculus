@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 6: Power Series (6.5)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Calculus II">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.13';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/diagcess/diagcess.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced Calculus II</span> <span class="subtitle">MTH 428/528 Spring 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-05.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-01.html" class="internal"><span class="title">Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsection-1" class="internal"><span class="title">A Brief History of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-derivative" class="internal"><span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-3" class="internal"><span class="title">Combinations of differentiable functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsec-4" class="internal"><span class="title">The Intermediate Value Property</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: The Mean Value Theorems (5.3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-2" class="internal"><span class="title">The Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-3" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-4" class="internal"><span class="title">The Generalized Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#subsec-Intermediate-Forms-and-LHopitals-Rule" class="internal"><span class="title">Intermediate Forms and L’Hopital’s Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: A Continuous Nowhere Differentiable Function (5.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsection-3-1" class="internal"><span class="title">Non-differentiability</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="notes-week-03.html#subsubsec-3-2" class="internal"><span class="title">Continuity of <span class="process-math">\(g(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="notes-week-03.html#subsubsec-3-3" class="internal"><span class="title">Non-differentiability of <span class="process-math">\(g(x)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Uniform Convergence of a sequence of functions (6.1-6.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#notes-week-04-2" class="internal"><span class="title">Function Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Pointwise-Convergence" class="internal"><span class="title">Pointwise Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence-and-Continuity" class="internal"><span class="title">Uniform Convergence and Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Cauchy" class="internal"><span class="title">Cauchy Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#notes-week-05-2" class="internal"><span class="title">Convergence of Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Differentiable-Limit" class="internal"><span class="title">Differentiable Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Kerala-School" class="internal"><span class="title">The Kerala School of Astronomy and Mathematics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-series-of-functions" class="internal"><span class="title">Series of Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-06.html" class="internal"><span class="title">Week 6: Power Series (6.5)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#Binomial-series" class="internal"><span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-power-series" class="internal"><span class="title">Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Ratio-Test" class="internal"><span class="title">The Ratio Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Uniform-Convergence-series" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Derivatives-of-Power-Series" class="internal"><span class="title">Derivatives of Power Series</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw1.html" class="internal"><span class="title">MTH 428/528 Homework 1 Due January 22</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw2.html" class="internal"><span class="title">MTH 428/528 Homework 2 Due January 29</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw3.html" class="internal"><span class="title">MTH 428/528 Homework 3 Due February 16</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-06"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 6: Power Series (6.5)</span>
+</h2>
+<section class="subsection" id="Binomial-series"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Binomial Series</span>
+</h3>
+<div class="para logical" id="Binomial-series-2">
+<div class="para">The Binomial Theorem demonstrates the correct way to expand the powers of a binomial.</div>
+<div class="displaymath process-math" id="Binomial-series-2-1">
+\begin{equation*}
+(y+x)^n = \sum_{k=0}^n \binom{n}{k} x^{k} y^{n-k}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\binom{n}{k} = \frac{n!}{(n-k)!k!}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Binomial-series-3">
+<div class="para">It is sometimes written as the special case</div>
+<div class="displaymath process-math" id="Binomial-series-3-1">
+\begin{equation*}
+(1+x)^n = \sum_{k=0}^n \binom{n}{k} x^{k}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Binomial-series-4">
+<div class="para">Around 1665 Newton generalized the Binomial Theorem for the case when <span class="process-math">\(n\)</span> is not an integer. When this happens the sum becomes an infinite series.</div>
+<div class="displaymath process-math" id="Binomial-series-4-2">
+\begin{equation*}
+(1+x)^{\alpha} = \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k
+\end{equation*}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\binom{\alpha}{k} = \frac{\alpha(\alpha-1)(\alpha-2) \ldots (\alpha-k+1)}{k!}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Binomial-series-5">However, Newton never provided a proof of this result!<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Binomial-series-6">In his 1821 book Cours d’analyse Cauchy gave a proof that the binomial series converges to <span class="process-math">\((1+x)^{\alpha}\text{.}\)</span> Abel was interested in further generalizing the Binomial Theorem to complex exponents and carefully studied Cauchy’s proof, which led him to discover a flaw in the proof.<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Binomial-series-7">Cauchy’s proof relies on the fact that <span class="process-math">\(\phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k\)</span> is a continuous function on <span class="process-math">\((-1,1)\text{,}\)</span> which he claimed followed because the limit of a sum of continuous functions is continuous.<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Binomial-series-8">In an 1826 paper Abel presented an example that the showed that the limit of a sum of continuous functions is not always continuous and thus Cauchy’s proof is incomplete unless the sum converges uniformly. Abel also showed a way to fix Cauchy’s proof if this isn’t the case.<div class="autopermalink" data-description="Paragraph"><a href="#Binomial-series-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Binomial Series"><a href="#Binomial-series" title="Copy heading and permalink for Subsection: The Binomial Series" aria-label="Copy heading and permalink for Subsection: The Binomial Series">🔗</a></div></section><section class="subsection" id="subsec-power-series"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Power Series</span>
+</h3>
+<div class="para logical" id="subsec-power-series-2">
+<div class="para">To determine whether the Binomials series is uniformly convergent or not we need to build up some theory involving power series. A power series is a function of the form</div>
+<div class="displaymath process-math" id="subsec-power-series-2-1">
+\begin{equation*}
+f(x) = \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + a_3x^3 + \ldots
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-3">The binomial series is an example of a power series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-power-series-4">
+<div class="para">Another example is the series</div>
+<div class="displaymath process-math" id="subsec-power-series-4-1">
+\begin{equation*}
+g(x) = \sum_{n=1}^{\infty} \frac{x^n}{n} = x+\frac{x^2}{2}+\frac{x^3}{3}+ \ldots
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-5">Show that <span class="process-math">\(\displaystyle g(x) = \sum_{n=1}^{\infty} \frac{x^n}{n} \)</span> converges when <span class="process-math">\(|x| &lt; 1\text{.}\)</span> What happens if <span class="process-math">\(x =1\text{?}\)</span> What if <span class="process-math">\(x = -1\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-6">In the previous example, the set of points where the series converges was the interval <span class="process-math">\([-1,1)\text{.}\)</span> As it turns out the set where a power series converges is always an interval centered at <span class="process-math">\(0\)</span> or the single point <span class="process-math">\(\{0\}\text{.}\)</span>In the previous example, the set of points where the series converges was the interval <span class="process-math">\([-1,1)\text{.}\)</span> As it turns out the set where a power series converges is always an interval centered at <span class="process-math">\(0\)</span> or the single point <span class="process-math">\(\{0\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-interval-of-convergence"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">43</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-interval-of-convergence-1-1">If a power series <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> converges at some point <span class="process-math">\(x_0 \in \mathbf{R}\text{,}\)</span> then it converges absolutely for any <span class="process-math">\(x\)</span> satisfying <span class="process-math">\(|x| &lt; |x_0|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-interval-of-convergence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 43"><a href="#thm-interval-of-convergence" title="Copy heading and permalink for Theorem 43" aria-label="Copy heading and permalink for Theorem 43">🔗</a></div></article><details id="subsec-power-series-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-power-series-8-1">Suppose <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n x_0^n\)</span> converges. Then the sequence of terms <span class="process-math">\((a_n x_0^n)\)</span> converges to <span class="process-math">\(0\)</span> and thus is bounded.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-8-2">Hence there exists <span class="process-math">\(M&gt;0\)</span> such that <span class="process-math">\(|a_n x_0^n| &lt; M\)</span> for all <span class="process-math">\(n \in \mathbf{N}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-power-series-8-3">
+<div class="para">Suppose <span class="process-math">\(|x|&lt; |x_0|\text{.}\)</span> Then,</div>
+<div class="displaymath process-math" id="subsec-power-series-8-3-2">
+\begin{equation*}
+|a_n x^n| = |a_n x_0^n| \left| \frac{x}{x_0} \right|^n \leq M \left| \frac{x}{x_0} \right|^n.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-power-series-8-4">
+<div class="para">Hence it follows from the comparison test that</div>
+<div class="displaymath process-math" id="subsec-power-series-8-4-1">
+\begin{equation*}
+\sum_{n=0}^{\infty} |a_n x^n| \leq \sum_{n=0}^{\infty} M \left| \frac{x}{x_0} \right|^n.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-8-5">Since <span class="process-math">\(|x| &lt; |x_0|\)</span> this is a geometric series with <span class="process-math">\(r = \left|\frac{x}{x_0} \right| &lt; 1\)</span> and thus converges.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-8-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-8-6">Hence <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} |a_n x^n|\)</span> converges absolutely.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-8-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-power-series-8" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-power-series-9">As previously mentioned a consequence of this theorem is that the set of points where a power series converges is either an interval of the form <span class="process-math">\((-R,R)\text{,}\)</span> <span class="process-math">\([-R, R]\text{,}\)</span> <span class="process-math">\((-R,R]\)</span> or <span class="process-math">\([-R,R)\)</span> or all <span class="process-math">\(\mathbf{R}\)</span> or <span class="process-math">\(\{0\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-10">This set is referred to as the interval of convergence of the power series and the number <span class="process-math">\(R\)</span> is called the radius of convergence.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-power-series-11">When the interval of convergence is <span class="process-math">\(\mathbf{R}\)</span> the radius of convergence is said to be <span class="process-math">\(\infty\)</span> and when the interval of convergence is <span class="process-math">\(\{0\}\text{,}\)</span> the radius of convergence is said to be <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-power-series-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Power Series"><a href="#subsec-power-series" title="Copy heading and permalink for Subsection: Power Series" aria-label="Copy heading and permalink for Subsection: Power Series">🔗</a></div></section><section class="subsection" id="subsec-Ratio-Test"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Ratio Test</span>
+</h3>
+<div class="para" id="subsec-Ratio-Test-2">The Ratio Test is a test for series convergence which is useful for determining the radius of convergence of power series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-ratio-test"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">44</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Ratio Test.</span>
+</h4>
+<div class="para" id="thm-ratio-test-2-1">Let <span class="process-math">\((a_n)\)</span> be a sequence of nonzero real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ratio-test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="thm-ratio-test-2-2">
+<li id="thm-ratio-test-2-2-1">
+<div class="para" id="thm-ratio-test-2-2-1-1">If there exists <span class="process-math">\(r \in \mathbf{R}\)</span> with <span class="process-math">\(0 &lt; r &lt; 1\)</span> and <span class="process-math">\(k \in \mathbf{N}\)</span> such that <span class="process-math">\(\left|\frac{a_{n+1}}{a_n} \right| \leq r\)</span> for <span class="process-math">\(n \geq k\text{,}\)</span> then the series <span class="process-math">\(\sum a_n\)</span> is absolutely convergent.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ratio-test-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-ratio-test-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-ratio-test-2-2-2">
+<div class="para" id="thm-ratio-test-2-2-2-1">If there exists <span class="process-math">\(k \in \mathbf{N}\)</span> such that <span class="process-math">\(\left| \frac{a_{n+1}}{a_n}\right| \geq 1\)</span> for <span class="process-math">\(n \geq k\text{,}\)</span> then the series <span class="process-math">\(\sum a_n\)</span> is divergent.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ratio-test-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-ratio-test-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 44: The Ratio Test"><a href="#thm-ratio-test" title="Copy heading and permalink for Theorem 44: The Ratio Test" aria-label="Copy heading and permalink for Theorem 44: The Ratio Test">🔗</a></div></article><details id="subsec-Ratio-Test-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Ratio-Test-4-1">
+<div class="para">We first prove part 1. Suppose <span class="process-math">\(\left|\frac{a_{n+1}}{a_n} \right| \leq r\)</span> for <span class="process-math">\(n \geq k\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Ratio-Test-4-1-3">
+\begin{align*}
+\amp |a_{k+1}| \leq r |a_k|\\
+\amp |a_{k+2}| \leq r|a_{k+1}| \leq r^2 |a_k|\\
+\amp \leq r|a_{k+m-1}| \leq r^2 |a_{k+m-2}| \ldots \leq r^m |a_k|
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Ratio-Test-4-2">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="subsec-Ratio-Test-4-2-1">
+\begin{equation*}
+\sum_{n=k}^{\infty} |a_n| \leq \sum_{n=0}^{\infty} r^n |a_k|
+\end{equation*}
+</div>
+<div class="para">and since this is a geometric series with <span class="process-math">\(r &lt; 1\text{,}\)</span> <span class="process-math">\(\sum a_n\)</span> converges absolutely by the comparison test.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Ratio-Test-4-3">
+<div class="para">Now we prove part 2. Suppose <span class="process-math">\(\left|\frac{a_{n+1}}{a_n} \right| \geq 1\)</span> for <span class="process-math">\(n \geq k\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Ratio-Test-4-3-3">
+\begin{align*}
+\amp |a_{k+1}| \geq  |a_k| \\
+\amp |a_{k+2}| \geq |a_{k+1}| \geq  |a_k| \\
+\amp |a_{k+m}| \geq |a_{k+m-1}| \geq  |a_{k+m-2}| \ldots \geq  |a_k|
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Ratio-Test-4-4">Thus <span class="process-math">\(\displaystyle \lim_{n \to \infty} |a_n| \geq |a_k| &gt; 0\)</span> and thus the series <span class="process-math">\(\sum a_n\)</span> diverges.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Ratio-Test-4" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-ratio"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="cor-ratio-1-1">Let <span class="process-math">\((a_n)\)</span> be a nonzero sequence in <span class="process-math">\(\mathbf{R}\)</span> and suppose that the limit <span class="process-math">\(r = \displaystyle \lim_{n \to \infty} \left| \frac{a{n+1}}{a_n}\right|\)</span> exists. Then <span class="process-math">\(\sum a_n\)</span> is absolutely convergent when <span class="process-math">\(r &lt; 1\)</span> and divergent when <span class="process-math">\(r &gt; 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-ratio-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 45"><a href="#cor-ratio" title="Copy heading and permalink for Corollary 45" aria-label="Copy heading and permalink for Corollary 45">🔗</a></div></article><div class="para" id="subsec-Ratio-Test-6">If <span class="process-math">\(r=1\)</span> then the ratio test is inconclusive. The series may converge absolutely, converge conditionally, or diverge.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Ratio-Test-7">
+<div class="para">Example: Find the interval of convergence and radius of convergence of the following power series.</div>
+<div class="displaymath process-math" id="subsec-Ratio-Test-7-1">
+\begin{equation*}
+\sum_{n=0}^{\infty} \frac{3^n x^n}{n^2}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Ratio-Test-8">
+<div class="para">Example: Find the interval of convergence and radius of convergence of the following power series.</div>
+<div class="displaymath process-math" id="subsec-Ratio-Test-8-1">
+\begin{equation*}
+\sum_{n=0}^{\infty} \frac{x^n}{n!}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Ratio-Test-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Ratio Test"><a href="#subsec-Ratio-Test" title="Copy heading and permalink for Subsection: The Ratio Test" aria-label="Copy heading and permalink for Subsection: The Ratio Test">🔗</a></div></section><section class="subsection" id="subsec-Uniform-Convergence-series"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniform Convergence</span>
+</h3>
+<div class="para logical" id="subsec-Uniform-Convergence-series-2">
+<div class="para">Let’s consider again the problem of proving that the Binomial series converges. Cauchy showed that if the series</div>
+<div class="displaymath process-math" id="subsec-Uniform-Convergence-series-2-1">
+\begin{equation*}
+\phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k
+\end{equation*}
+</div>
+<div class="para">is a continuous function then it must converge to <span class="process-math">\((1+x)^{\alpha}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-3">We can show that <span class="process-math">\(\phi(x)\)</span> is continuous by showing that the convergence is uniform.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-uniform-convergence"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">46</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-uniform-convergence-1-1">If a power series <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> converges absolutely at a point <span class="process-math">\(x_0\text{,}\)</span> then it converges uniformly on the closed interval <span class="process-math">\([-c,c]\)</span> where <span class="process-math">\(c = |x_0|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-uniform-convergence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 46"><a href="#thm-uniform-convergence" title="Copy heading and permalink for Theorem 46" aria-label="Copy heading and permalink for Theorem 46">🔗</a></div></article><details id="subsec-Uniform-Convergence-series-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Uniform-Convergence-series-5-1">Recall the Weierstrass M-test states that if <span class="process-math">\(|f_n| &lt; M_n\)</span> and <span class="process-math">\(\sum M_n\)</span> converges then <span class="process-math">\(\sum f_n\)</span> converges uniformly.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-5-2">Suppose <span class="process-math">\(x \in [-c,c]\text{.}\)</span> Then <span class="process-math">\(|a_n x^n| \leq |a_n| |x_0|^n\)</span> and since <span class="process-math">\(\sum a_n x_0^n\)</span> converges absolutely, it follows from the M-test that <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> converges uniformly.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Uniform-Convergence-series-5" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Uniform-Convergence-series-6">Show that the Binomial Series <span class="process-math">\(\phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k\)</span> converges absolutely (and hence uniformly) when <span class="process-math">\(|x| &lt; 1\)</span> and diverges when <span class="process-math">\(|x| &lt; 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-7">It thus follows that <span class="process-math">\(\phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k\)</span> is continuous on <span class="process-math">\((-1,1)\)</span> and thus by Cauchy’s argument it converges to <span class="process-math">\((1+x)^{\alpha}\)</span> there.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-8">We also know that <span class="process-math">\(\phi(x)\)</span> is undefined when <span class="process-math">\(|x|&gt;1\)</span> because the series diverges. This leaves open the question of what happens at the endpoints <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-9">In particular we want to know if <span class="process-math">\(\phi(x)\)</span> is continuous at these endpoints and thus converges to <span class="process-math">\((1+x)^{\alpha}\)</span> there as well.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-10">Whether the Binomial series converges at the endpoints depends on the value of <span class="process-math">\(\alpha\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-11">If <span class="process-math">\(\alpha \geq 0\)</span> then the series converges absolutely at both endpoints. Hence the converges is uniform and <span class="process-math">\(\phi(x)\)</span> is continuous at both endpoints.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-12">If <span class="process-math">\(-1 &lt; \alpha &lt; 0 \)</span> then the series converges conditionally at <span class="process-math">\(1\)</span> and diverges at <span class="process-math">\(-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-13">If <span class="process-math">\(\alpha \leq -1\)</span> the series diverges. Hence <span class="process-math">\(\phi(x)\)</span> is undefined at the endpoints.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-14">If the Binomial series converges conditionally then we can’t use the Absolute Convergence Implies Uniform Convergence Theorem to show that the Binomial series converges uniformly at <span class="process-math">\(1\text{.}\)</span> Instead we will need to use a theorem due to Abel to show that convergence at a point implies uniform convergence there as well.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-15">Abel developed this theorem specifically to fix the flaw in Cauchy’s proof that the Binomial series converges to <span class="process-math">\((1+x)^{\alpha}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-abel"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">47</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Abel’s Lemma.</span>
+</h4>
+<div class="para logical" id="lem-abel-2-1">
+<div class="para">Let <span class="process-math">\(B_n\)</span> satisfy <span class="process-math">\(B_1 \geq B_2 \geq B_3 \geq \ldots \geq 0\text{,}\)</span> and let <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} A_n\)</span> be a series for which the partial sums are bounded. In other words, suppose there exists <span class="process-math">\(A &gt; 0\)</span> such that</div>
+<div class="displaymath process-math" id="lem-abel-2-1-5">
+\begin{equation*}
+|A_1+A_2+ \ldots + A_n| \leq A
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n \in \mathbf{N}\text{.}\)</span> Then for all <span class="process-math">\(n \in \mathbf{N}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lem-abel-2-1-8">
+\begin{equation*}
+|A_1 B_1 + A_2 B_2 + A_3 B_3 + \ldots + A_n B_n| \leq A B_1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-abel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 47: Abel’s Lemma"><a href="#lem-abel" title="Copy heading and permalink for Lemma 47: Abel’s Lemma" aria-label="Copy heading and permalink for Lemma 47: Abel’s Lemma">🔗</a></div></article><article class="theorem theorem-like" id="thm-abel"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">48</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Abel’s Theorem.</span>
+</h4>
+<div class="para" id="thm-abel-2-1">Let <span class="process-math">\(g(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> be a power series that converges at the point <span class="process-math">\(x = R &gt; 0\text{.}\)</span> Then the series converges uniformly on the interval <span class="process-math">\([0,R]\text{.}\)</span> A similar result holds if the series converges at <span class="process-math">\(x=-R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-abel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 48: Abel’s Theorem"><a href="#thm-abel" title="Copy heading and permalink for Theorem 48: Abel’s Theorem" aria-label="Copy heading and permalink for Theorem 48: Abel’s Theorem">🔗</a></div></article><details id="subsec-Uniform-Convergence-series-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Uniform-Convergence-series-18-1">
+<div class="para">Because we will want to make use of Abel’s Lemma, we first write</div>
+<div class="displaymath process-math" id="subsec-Uniform-Convergence-series-18-1-1">
+\begin{equation*}
+g(x) = \sum_{n=0}^{\infty} a_n x^n = \sum_{n=0}^{\infty} (a_n R_n) \left( \frac{x}{R} \right)^n
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Uniform-Convergence-series-18-2">
+<div class="para">Let <span class="process-math">\(\epsilon &gt; 0\text{.}\)</span> It follows from the Cauchy criterion that the series converges uniformly if it can be shown that there exists <span class="process-math">\(N \in \mathbf{N}\)</span> such that whenever <span class="process-math">\(n &gt; m \geq N\)</span> we have</div>
+<div class="displaymath process-math" id="subsec-Uniform-Convergence-series-18-2-4">
+\begin{equation*}
+\left|(a_{m+1} R_{m+1}) \left( \frac{x}{R} \right)^{m+1} + (a_{m+2} R_{m+2}) \left( \frac{x}{R} \right)^{m+2} + \ldots +  (a_n R_n) \left( \frac{x}{R} \right)^n \right| &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Uniform-Convergence-series-18-3">
+<div class="para">The hypothesis of the theorem is that <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n R^n\)</span> converges. Hence by the Cauchy criterion there exists <span class="process-math">\(N \in \mathbf{N}\)</span> such that for <span class="process-math">\(n &gt; m \geq N\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Uniform-Convergence-series-18-3-4">
+\begin{equation*}
+|a_{m+1}R^{m+1} + a_{m+2}R^{m+2} + \ldots + a_n R^n| &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-18-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Uniform-Convergence-series-18-4">
+<div class="para">We can thus apply Abel’s Lemma to</div>
+<div class="displaymath process-math" id="subsec-Uniform-Convergence-series-18-4-1">
+\begin{equation*}
+\left|(a_{m+1} R_{m+1}) \left( \frac{x}{R} \right)^{m+1} + (a_{m+2} R_{m+2}) \left( \frac{x}{R} \right)^{m+2} + \ldots +  (a_n R_n) \left( \frac{x}{R} \right)^n \right|
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(A_n = a_n R^n\)</span> and <span class="process-math">\(B_n = \left( \frac{x}{R} \right)^n\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-18-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Uniform-Convergence-series-18-5">
+<div class="para">This gives</div>
+<div class="displaymath process-math" id="subsec-Uniform-Convergence-series-18-5-1">
+\begin{align*}
+\left|(a_{m+1} R_{m+1}) \left( \frac{x}{R} \right)^{m+1} + (a_{m+2} R_{m+2}) \left( \frac{x}{R} \right)^{m+2} + \ldots +  (a_n R_n) \left( \frac{x}{R} \right)^n \right| \amp \leq \epsilon \left( \frac{x}{R} \right)^{m+1} \\
+\amp \leq \epsilon 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-18-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Uniform-Convergence-series-18" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="subsec-Uniform-Convergence-series-19">If <span class="process-math">\(-1&lt; \alpha &lt; 0\)</span> the Binomial series converges conditionally at <span class="process-math">\(x=1\text{.}\)</span> Abel’s Theorem tells us that it converges uniformly on <span class="process-math">\((-1,1]\)</span> and thus <span class="process-math">\(\phi(x)= \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k\)</span> is continuous at <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-20">Thus <span class="process-math">\(\phi(x)\)</span> converges to <span class="process-math">\((1+x)^{\alpha}\)</span> on <span class="process-math">\((-1,1]\)</span> and in particular at <span class="process-math">\(x=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Uniform-Convergence-series-21">The following Theorem summarizes our conclusions about when a power series is a continuous function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Convergence-series-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-power-series-continuity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">49</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="thm-power-series-continuity-1-1">
+<div class="para">Suppose</div>
+<div class="displaymath process-math" id="thm-power-series-continuity-1-1-1">
+\begin{equation*}
+f(x) = \sum_{n=0}^{\infty} a_n x^n
+\end{equation*}
+</div>
+<div class="para">converges (pointwise) on an interval <span class="process-math">\(A \subseteq \mathbf{R}\text{.}\)</span> Then the function <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-power-series-continuity-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 49"><a href="#thm-power-series-continuity" title="Copy heading and permalink for Theorem 49" aria-label="Copy heading and permalink for Theorem 49">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Uniform Convergence"><a href="#subsec-Uniform-Convergence-series" title="Copy heading and permalink for Subsection: Uniform Convergence" aria-label="Copy heading and permalink for Subsection: Uniform Convergence">🔗</a></div></section><section class="subsection" id="subsec-Derivatives-of-Power-Series"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Derivatives of Power Series</span>
+</h3>
+<div class="para" id="subsec-Derivatives-of-Power-Series-2">Suppose that <span class="process-math">\(f(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> defines a continuous function on a set <span class="process-math">\(A \subseteq \mathbf{R}\text{.}\)</span> Is <span class="process-math">\(f\)</span> differentiable on <span class="process-math">\(A\)</span> and if so what is <span class="process-math">\(f'(x)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Derivatives-of-Power-Series-3">
+<div class="para">We first observe that</div>
+<div class="displaymath process-math" id="subsec-Derivatives-of-Power-Series-3-1">
+\begin{equation*}
+\frac{d}{dx} f(x) = \frac{d}{dx} \sum_{n=0}^{\infty} a_n x^n = \sum_{n=0}^{\infty} \frac{d}{dx} a_n x^n = \sum_{n=1}^{\infty} n a_n x^{n-1} 
+\end{equation*}
+</div>
+<div class="para">provided that the interchange between the differential operator <span class="process-math">\(\frac{d}{dx}\)</span> and the sum is permitted.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Derivatives-of-Power-Series-4">We will justify the prior calculations by appealing to the Term-by-term differentiability Theorem. Recall that this required the original series to converge and the series of derivatives to converge uniformly.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-term-by-term-differentiation"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">50</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-term-by-term-differentiation-1-1">If <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> converges for all <span class="process-math">\(x \in (-R,R)\)</span> then the differentiated series <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} n a_n x^{n-1}\)</span> converges at each <span class="process-math">\(x \in (-R,R)\)</span> as well. Consequently the convergence is uniform on compact sets contained in <span class="process-math">\((-R,R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-term-by-term-differentiation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 50"><a href="#thm-term-by-term-differentiation" title="Copy heading and permalink for Theorem 50" aria-label="Copy heading and permalink for Theorem 50">🔗</a></div></article><details id="subsec-Derivatives-of-Power-Series-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Derivatives-of-Power-Series-6-1">
+<div class="para">Choose <span class="process-math">\(x \in (-R,R)\text{.}\)</span> Then there exists <span class="process-math">\(t\)</span> such that <span class="process-math">\(|x|&lt; t &lt; R\text{.}\)</span> Since <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} a_n t^n\)</span> converges, it follows from the ratio test that</div>
+<div class="displaymath process-math" id="subsec-Derivatives-of-Power-Series-6-1-5">
+\begin{equation*}
+\lim_{n\to \infty} \left| \frac{a_{n+1}t^{n+1}}{a_n t^n}\right| \leq 1
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Derivatives-of-Power-Series-6-2">
+<div class="para">Hence it follows that</div>
+<div class="displaymath process-math" id="subsec-Derivatives-of-Power-Series-6-2-1">
+\begin{equation*}
+\lim_{n\to \infty} \left| \frac{a_{n+1}}{a_n}\right| |t| \leq 1
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="subsec-Derivatives-of-Power-Series-6-2-2">
+\begin{equation*}
+\lim_{n\to \infty} \left| \frac{a_{n+1}}{a_n}\right|  \leq \frac{1}{|t|}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Derivatives-of-Power-Series-6-3">
+<div class="para">Now we apply the ratio test to the series <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty}n a_n x^{n-1}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Derivatives-of-Power-Series-6-3-2">
+\begin{align*}
+\lim_{n\to \infty} \left| \frac{(n+1)a_{n+1}x^{n+1}}{n a_n x^n}\right| \leq \amp \lim_{n\to \infty} \left| \frac{n+1}{n} \right| \left| \frac{a_{n+1}}{ a_n}\right| |x|  \\
+\amp \leq \left| \frac{1}{ t}\right| |x|  \\
+\amp &lt; 1 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Derivatives-of-Power-Series-6-4">Hence it follows from the ratio test that <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty}n a_n x^{n-1}\)</span> converges absolutely at <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Derivatives-of-Power-Series-6" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Derivatives-of-Power-Series-7">Combining the previous result with the Term-by-term differentiability Theorem gives us the following conditions for a power series to be differentiable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Derivatives-of-Power-Series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-power-series-derivative"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">51</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="thm-power-series-derivative-1-1">
+<div class="para">Suppose <span class="process-math">\(f(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n\)</span> converges on an interval <span class="process-math">\(A \subseteq \mathbf{R}\text{.}\)</span> The function <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(A\)</span> and differentiable on any open interval <span class="process-math">\((-R,R) \subseteq A\text{.}\)</span> The derivative is given by</div>
+<div class="displaymath process-math" id="thm-power-series-derivative-1-1-6">
+\begin{equation*}
+f'(x) = \sum_{n=1}^{\infty} n a_n x^{n-1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-power-series-derivative-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-power-series-derivative-1-2">Moreover, <span class="process-math">\(f\)</span> is infinitely differentiable on <span class="process-math">\((-R,R)\)</span> and the successive derivatives can be obtained via term-by-term differentiation of the appropriate series.<div class="autopermalink" data-description="Paragraph"><a href="#thm-power-series-derivative-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 51"><a href="#thm-power-series-derivative" title="Copy heading and permalink for Theorem 51" aria-label="Copy heading and permalink for Theorem 51">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Derivatives of Power Series"><a href="#subsec-Derivatives-of-Power-Series" title="Copy heading and permalink for Subsection: Derivatives of Power Series" aria-label="Copy heading and permalink for Subsection: Derivatives of Power Series">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 6: Power Series (6.5)"><a href="#notes-week-06" title="Copy heading and permalink for Section: Week 6: Power Series (6.5)" aria-label="Copy heading and permalink for Section: Week 6: Power Series (6.5)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-05.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script>
+</body>
+</html>

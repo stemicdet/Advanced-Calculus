@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-06">
+  <title>Week 6: Power Series (6.5)</title>
+
+  <subsection xml:id="Binomial-series">
+    <title>The Binomial Series</title>
+
+    <p>
+      The Binomial Theorem demonstrates the correct way to expand the powers of a binomial.
+      <md>
+        (y+x)^n = \sum_{k=0}^n \binom{n}{k} x^{k} y^{n-k}
+      </md>
+      where <m>\binom{n}{k} = \frac{n!}{(n-k)!k!}</m>
+    </p>
+
+    <p>
+      It is sometimes written as the special case 
+      <md>
+        (1+x)^n = \sum_{k=0}^n \binom{n}{k} x^{k}
+      </md>
+      
+    </p>
+
+    <p>
+      Around 1665 Newton generalized the Binomial Theorem for the case when <m>n</m> is not an integer. When this happens the sum becomes an infinite series.
+      <md>
+        (1+x)^{\alpha} = \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k
+\end{equation*}
+      </md>
+      where <m>\binom{\alpha}{k} = \frac{\alpha(\alpha-1)(\alpha-2) \ldots (\alpha-k+1)}{k!}</m>
+    </p>
+
+    <p>
+      However, Newton never provided a proof of this result!
+    </p>
+
+    <p>
+      In his 1821 book <it>Cours d'analyse</it> Cauchy gave a proof that the binomial series converges to <m>(1+x)^{\alpha}</m>. Abel was interested in further generalizing the Binomial Theorem to complex exponents and carefully studied Cauchy's proof, which led him to discover a flaw in the proof.
+    </p>
+
+    <p>
+      Cauchy's proof relies on the fact that <m>\phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k</m> is a continuous function on <m>(-1,1)</m>, which he claimed followed because the limit of a sum of continuous functions is continuous.
+    </p>
+
+    <p>
+      In an 1826 paper Abel presented an example that the showed that the limit of a sum of continuous functions is not always continuous and thus Cauchy's proof is incomplete unless the sum converges uniformly. Abel also showed a way to fix Cauchy's proof if this isn't the case.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-power-series">
+    <title>Power Series</title>
+    
+
+    <p>
+      To determine whether the Binomials series is uniformly convergent or not we need to build up some theory involving power series. A power series is a function of the form
+      <md>
+        f(x) = \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + a_3x^3 + \ldots
+      </md>
+      
+    </p>
+
+    <p>
+      The binomial series is an example of a power series.
+    </p>
+
+    <p>
+      Another example is the series
+      <md>
+        g(x) = \sum_{n=1}^{\infty} \frac{x^n}{n} = x+\frac{x^2}{2}+\frac{x^3}{3}+ \ldots
+      </md>
+      
+    </p>
+
+    <p>
+      Show that <m> \displaystyle g(x) = \sum_{n=1}^{\infty} \frac{x^n}{n} </m> converges when <m>|x| &lt; 1</m>. What happens if <m>x =1</m>? What if <m>x = -1</m>?
+    </p>
+
+    <p>
+      In the previous example, the set of points where the series converges was the interval <m>[-1,1)</m>. As it turns out the set where a power series converges is always an interval centered at <m>0</m> or the single point <m>\{0\}</m>.In the previous example, the set of points where the series converges was the interval <m>[-1,1)</m>. As it turns out the set where a power series converges is always an interval centered at <m>0</m> or the single point <m>\{0\}</m>.
+    </p>
+
+    <theorem xml:id="thm-interval-of-convergence">
+      <statement>
+        <p>
+          If a power series <m>\displaystyle \sum_{n=0}^{\infty} a_n x^n</m> converges at some point <m>x_0 \in \mathbf{R}</m>, then it converges absolutely for any <m>x</m> satisfying <m>|x| &lt; |x_0|</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Suppose <m>\displaystyle \sum_{n=0}^{\infty} a_n x_0^n</m> converges. Then the sequence of terms <m>(a_n x_0^n)</m> converges to <m>0</m> and thus is bounded.
+      </p>
+
+      <p>
+        Hence there exists <m>M>0</m> such that <m>|a_n x_0^n| &lt; M</m> for all <m>n \in \mathbf{N}</m>. 
+      </p>
+
+      <p>
+        Suppose <m>|x|&lt; |x_0|</m>. Then,
+        <md>
+          |a_n x^n| = |a_n x_0^n| \left| \frac{x}{x_0} \right|^n \leq M \left| \frac{x}{x_0} \right|^n.
+        </md>
+        
+      </p>
+
+      <p>
+        Hence it follows from the comparison test that 
+        <md>
+          \sum_{n=0}^{\infty} |a_n x^n| \leq \sum_{n=0}^{\infty} M \left| \frac{x}{x_0} \right|^n.
+        </md>
+        
+      </p>
+
+      <p>
+        Since <m>|x| &lt; |x_0|</m> this is a geometric series with <m>r = \left|\frac{x}{x_0} \right| &lt; 1</m> and thus converges. 
+      </p>
+
+      <p>
+        Hence <m>\displaystyle \sum_{n=0}^{\infty} |a_n x^n|</m> converges absolutely.
+      </p>
+    </proof>
+
+    <p>
+      As previously mentioned a consequence of this theorem is that the set of points where a power series converges is either an interval of the form <m>(-R,R)</m>, <m>[-R, R]</m>, <m>(-R,R]</m> or <m>[-R,R)</m> or all <m>\mathbf{R}</m> or <m>\{0\}</m>.
+    </p>
+
+    <p>
+      This set is referred to as the interval of convergence of the power series and the number <m>R</m> is called the radius of convergence.
+    </p>
+
+    <p>
+      When the interval of convergence is <m>\mathbf{R}</m> the radius of convergence is said to be <m>\infty</m> and when the interval of convergence is <m>\{0\}</m>, the radius of convergence is said to be <m>0</m>.
+    </p>
+    
+
+  </subsection>
+
+  <subsection xml:id="subsec-Ratio-Test">
+    <title>The Ratio Test</title>
+    
+
+    <p>
+      The Ratio Test is a test for series convergence which is useful for determining the radius of convergence of power series.
+    </p>}
+
+    <theorem xml:id="thm-ratio-test">
+      <title>The Ratio Test</title>
+      
+      
+      <statement>
+        <p>
+          Let <m>(a_n)</m> be a sequence of nonzero real numbers.
+        </p>
+        <ol>
+          <li>
+            <p>
+              If there exists <m>r \in \mathbf{R}</m> with <m>0 &lt; r &lt; 1</m> and <m>k \in \mathbf{N}</m> such that <m>\left|\frac{a_{n+1}}{a_n} \right| \leq r</m> for <m>n \geq k</m>, then the series <m>\sum a_n</m> is absolutely convergent.
+            </p>
+          </li>
+          <li>
+            <p>
+              If there exists <m>k \in \mathbf{N}</m> such that <m>\left| \frac{a_{n+1}}{a_n}\right| \geq 1</m> for <m>n \geq k</m>, then the series <m>\sum a_n</m> is divergent.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        We first prove part 1. Suppose <m>\left|\frac{a_{n+1}}{a_n} \right| \leq r</m> for <m>n \geq k</m>. Then
+        <md>
+          <mrow> \amp |a_{k+1}| \leq r |a_k|</mrow>
+          <mrow> \amp |a_{k+2}| \leq r|a_{k+1}| \leq r^2 |a_k|</mrow>
+          <mrow> \amp \leq r|a_{k+m-1}| \leq r^2 |a_{k+m-2}| \ldots \leq r^m |a_k|</mrow>
+        </md>
+      </p>
+
+      <p>
+        Thus
+        <md>
+          \sum_{n=k}^{\infty} |a_n| \leq \sum_{n=0}^{\infty} r^n |a_k|
+        </md>
+        and since this is a geometric series with <m>r &lt; 1</m>, <m>\sum a_n</m> converges absolutely by the comparison test.
+      </p>
+
+      <p>
+        Now we prove part 2. Suppose <m>\left|\frac{a_{n+1}}{a_n} \right| \geq 1</m> for <m>n \geq k</m>. Then
+        <md>
+          <mrow> \amp |a_{k+1}| \geq  |a_k| </mrow>
+          <mrow> \amp |a_{k+2}| \geq |a_{k+1}| \geq  |a_k| </mrow>
+          <mrow> \amp |a_{k+m}| \geq |a_{k+m-1}| \geq  |a_{k+m-2}| \ldots \geq  |a_k|</mrow>
+        </md>
+        
+      </p>
+
+      <p>
+        Thus <m> \displaystyle \lim_{n \to \infty} |a_n| \geq |a_k| &gt; 0</m> and thus the series <m>\sum a_n</m> diverges.
+      </p>
+
+    </proof>
+
+    <corollary xml:id="cor-ratio">
+      <statement>
+        <p>
+          Let <m>(a_n)</m> be a nonzero sequence in <m>\mathbf{R}</m> and suppose that the limit <m>r = \displaystyle \lim_{n \to \infty} \left| \frac{a{n+1}}{a_n}\right|</m> exists. Then <m>\sum a_n</m> is absolutely convergent when <m>r &lt; 1</m> and divergent when <m>r &gt; 1</m>.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      If <m>r=1</m> then the ratio test is inconclusive. The series may converge absolutely, converge conditionally, or diverge.
+    </p>
+
+    <p>
+      Example: Find the interval of convergence and radius of convergence of the following power series.
+      <md>
+        \sum_{n=0}^{\infty} \frac{3^n x^n}{n^2}
+      </md>
+      
+    </p>
+    
+    <p>
+      Example: Find the interval of convergence and radius of convergence of the following power series.
+      <md>
+        \sum_{n=0}^{\infty} \frac{x^n}{n!}
+      </md>
+      
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-Uniform-Convergence-series">
+    <title>Uniform Convergence</title>
+
+    <p>
+      Let's consider again the problem of proving that the Binomial series converges. Cauchy showed that if the series 
+      <md>
+        \phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k
+      </md>
+      is a continuous function then it must converge to <m>(1+x)^{\alpha}</m>. 
+    </p>
+
+    <p>
+      We can show that <m>\phi(x)</m> is continuous by showing that the convergence is uniform.
+    </p>
+
+    <theorem xml:id="thm-uniform-convergence">
+      <statement>
+        <p>
+If a power series <m>\displaystyle \sum_{n=0}^{\infty} a_n x^n</m> converges absolutely at a point <m>x_0</m>, then it converges uniformly on the closed interval <m>[-c,c]</m> where <m>c = |x_0|</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Recall the Weierstrass M-test states that if <m>|f_n| &lt; M_n</m> and <m>\sum M_n</m> converges then <m>\sum f_n</m> converges uniformly.
+      </p>
+
+      <p>
+        Suppose <m>x \in [-c,c]</m>. Then <m>|a_n x^n| \leq |a_n| |x_0|^n</m> and since <m>\sum a_n x_0^n</m> converges absolutely, it follows from the M-test that <m>\displaystyle \sum_{n=0}^{\infty} a_n x^n</m> converges uniformly.
+      </p>
+    </proof>
+
+    <p>
+      Show that the Binomial Series <m> \phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k</m> converges absolutely (and hence uniformly) when <m>|x| &lt; 1</m> and diverges when <m>|x| &lt; 1</m>.
+    </p>
+
+    <p>
+      It thus follows that <m> \phi(x) = \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k</m> is continuous on <m>(-1,1)</m> and thus by Cauchy's argument it converges to <m>(1+x)^{\alpha}</m> there.
+    </p>
+
+    <p>
+      We also know that <m>\phi(x)</m> is undefined when <m>|x|>1</m> because the series diverges. This leaves open the question of what happens at the endpoints <m>1</m> and <m>-1</m>.
+    </p>
+    
+    <p>
+      In particular we want to know if <m>\phi(x)</m> is continuous at these endpoints and thus converges to <m>(1+x)^{\alpha}</m> there as well.
+    </p>
+    
+    <p>
+      Whether the Binomial series converges at the endpoints depends on the value of <m>\alpha</m>.
+    </p>
+
+    <p>
+      If <m>\alpha \geq 0</m> then the series converges absolutely at both endpoints. Hence the converges is uniform and <m>\phi(x)</m> is continuous at both endpoints.
+    </p>
+
+    <p>
+      If <m>-1 &lt; \alpha &lt; 0 </m> then the series converges conditionally at <m>1</m> and diverges at <m>-1</m>.
+    </p>
+
+    <p>
+      If <m>\alpha \leq -1</m> the series diverges. Hence <m>\phi(x)</m> is undefined at the endpoints.
+    </p>
+
+    <p>
+      If the Binomial series converges conditionally then we can't use the Absolute Convergence Implies Uniform Convergence Theorem to show that the Binomial series converges uniformly at <m>1</m>. Instead we will need to use a theorem due to Abel to show that convergence at a point implies uniform convergence there as well.
+    </p>
+
+    <p>
+      Abel developed this theorem specifically to fix the flaw in Cauchy's proof that the Binomial series converges to <m>(1+x)^{\alpha}</m>.
+    </p>
+
+    <lemma xml:id="lem-abel">
+      <title>Abel's Lemma</title>
+      
+      
+      <statement>
+        <p>
+          Let <m>B_n</m> satisfy <m>B_1 \geq B_2 \geq B_3 \geq \ldots \geq 0</m>, and let <m>\displaystyle \sum_{n=1}^{\infty} A_n</m> be a series for which the partial sums are bounded. In other words, suppose there exists <m>A &gt; 0</m> such that 
+          <md>
+            |A_1+A_2+ \ldots + A_n| \leq A
+          </md>
+          for all <m>n \in \mathbf{N}</m>. Then for all <m>n \in \mathbf{N}</m>,
+          <md>
+            |A_1 B_1 + A_2 B_2 + A_3 B_3 + \ldots + A_n B_n| \leq A B_1.
+          </md>
+          
+        </p>
+      </statement>
+    </lemma>
+
+    <theorem xml:id="thm-abel">
+      <title>Abel's Theorem</title>
+      
+      
+      <statement>
+        <p>
+          Let <m>g(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n</m> be a power series that converges at the point <m>x = R &gt; 0</m>. Then the series converges uniformly on the interval <m>[0,R]</m>. A similar result holds if the series converges at <m>x=-R</m>.
+        </p>
+      </statement>
+    </theorem>
+    
+    <proof>
+      <p>
+        Because we will want to make use of Abel's Lemma, we first write
+        <md>
+          g(x) = \sum_{n=0}^{\infty} a_n x^n = \sum_{n=0}^{\infty} (a_n R_n) \left( \frac{x}{R} \right)^n
+        </md>
+        
+      </p>
+
+      <p>
+        Let <m>\epsilon &gt; 0</m>. It follows from the Cauchy criterion that the series converges uniformly if it can be shown that there exists <m>N \in \mathbf{N}</m> such that whenever <m>n &gt; m \geq N</m> we have
+        <md>
+          \left|(a_{m+1} R_{m+1}) \left( \frac{x}{R} \right)^{m+1} + (a_{m+2} R_{m+2}) \left( \frac{x}{R} \right)^{m+2} + \ldots +  (a_n R_n) \left( \frac{x}{R} \right)^n \right| &lt; \epsilon.
+        </md>
+        
+      </p>
+
+      <p>
+        The hypothesis of the theorem is that <m>\displaystyle \sum_{n=0}^{\infty} a_n R^n</m> converges. Hence by the Cauchy criterion there exists <m>N \in \mathbf{N}</m> such that for <m>n &gt; m \geq N</m>
+        <md>
+           |a_{m+1}R^{m+1} + a_{m+2}R^{m+2} + \ldots + a_n R^n| &lt; \epsilon.
+        </md>
+        
+      </p>
+
+      <p>
+        We can thus apply Abel's Lemma to 
+        <md>
+          \left|(a_{m+1} R_{m+1}) \left( \frac{x}{R} \right)^{m+1} + (a_{m+2} R_{m+2}) \left( \frac{x}{R} \right)^{m+2} + \ldots +  (a_n R_n) \left( \frac{x}{R} \right)^n \right|
+        </md>
+        with <m>A_n = a_n R^n</m> and <m>B_n = \left( \frac{x}{R} \right)^n</m>
+      </p>
+      <p>
+        This gives
+        <md>
+          <mrow> \left|(a_{m+1} R_{m+1}) \left( \frac{x}{R} \right)^{m+1} + (a_{m+2} R_{m+2}) \left( \frac{x}{R} \right)^{m+2} + \ldots +  (a_n R_n) \left( \frac{x}{R} \right)^n \right| \amp \leq \epsilon \left( \frac{x}{R} \right)^{m+1} </mrow>
+          <mrow> \amp \leq \epsilon </mrow>
+        </md>
+      </p>
+    </proof>
+
+    <p>
+      If <m>-1&lt; \alpha &lt; 0</m> the Binomial series converges conditionally at <m>x=1</m>. Abel's Theorem tells us that it converges uniformly on <m>(-1,1]</m> and thus <m>\phi(x)= \displaystyle \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k</m> is continuous at <m>1</m>.
+    </p>
+
+    <p>
+      Thus <m>\phi(x)</m> converges to <m>(1+x)^{\alpha}</m> on <m>(-1,1]</m> and in particular at <m>x=1</m>.
+    </p>
+
+    <p>
+      The following Theorem summarizes our conclusions about when a power series is a continuous function.
+    </p>
+
+    <theorem xml:id="thm-power-series-continuity">
+      <statement>
+        <p>
+          Suppose
+          <md>
+            f(x) = \sum_{n=0}^{\infty} a_n x^n
+          </md>
+          converges (pointwise) on an interval <m>A \subseteq \mathbf{R}</m>. Then the function <m>f</m> is continuous on <m>A</m>.
+        </p>
+      </statement>
+    </theorem>
+    
+
+  </subsection>
+
+  <subsection xml:id="subsec-Derivatives-of-Power-Series">
+    <title>Derivatives of Power Series</title>
+
+    <p>
+      Suppose that <m>f(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n</m> defines a continuous function on a set <m>A \subseteq \mathbf{R}</m>. Is <m>f</m> differentiable on <m>A</m> and if so what is <m>f'(x)</m>?
+    </p>
+
+    <p>
+      We first observe that
+      <md>
+        \frac{d}{dx} f(x) = \frac{d}{dx} \sum_{n=0}^{\infty} a_n x^n = \sum_{n=0}^{\infty} \frac{d}{dx} a_n x^n = \sum_{n=1}^{\infty} n a_n x^{n-1} 
+      </md>
+      provided that the interchange between the differential operator <m>\frac{d}{dx}</m> and the sum is permitted.
+    </p>
+
+    <p>
+      We will justify the prior calculations by appealing to the Term-by-term differentiability Theorem. Recall that this required the original series to converge and the series of derivatives to converge uniformly.
+    </p>
+    
+    <theorem xml:id="thm-term-by-term-differentiation">
+      <statement>
+        <p>
+          If <m>\displaystyle \sum_{n=0}^{\infty} a_n x^n</m> converges for all <m>x \in (-R,R)</m> then the differentiated series <m>\displaystyle \sum_{n=1}^{\infty} n a_n x^{n-1}</m> converges at each <m>x \in (-R,R)</m> as well. Consequently the convergence is uniform on compact sets contained in <m>(-R,R)</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Choose <m>x \in (-R,R)</m>. Then there exists <m>t</m> such that <m>|x|&lt; t &lt; R</m>. Since <m>\displaystyle \sum_{n=0}^{\infty} a_n t^n</m> converges, it follows from the ratio test that
+        <md>
+          \lim_{n\to \infty} \left| \frac{a_{n+1}t^{n+1}}{a_n t^n}\right| \leq 1
+        </md>
+        
+      </p>
+
+      <p>
+        Hence it follows that
+        <md>
+          \lim_{n\to \infty} \left| \frac{a_{n+1}}{a_n}\right| |t| \leq 1
+        </md>
+        and
+        <md>
+          \lim_{n\to \infty} \left| \frac{a_{n+1}}{a_n}\right|  \leq \frac{1}{|t|}
+        </md>
+        
+      </p>
+
+      <p>
+        Now we apply the ratio test to the series <m>\displaystyle \sum_{n=0}^{\infty}n a_n x^{n-1}</m>
+        <md>
+          <mrow> \lim_{n\to \infty} \left| \frac{(n+1)a_{n+1}x^{n+1}}{n a_n x^n}\right| \leq \amp \lim_{n\to \infty} \left| \frac{n+1}{n} \right| \left| \frac{a_{n+1}}{ a_n}\right| |x|  </mrow>
+          <mrow> \amp \leq \left| \frac{1}{ t}\right| |x|  </mrow>
+          <mrow> \amp &lt; 1 </mrow>
+        </md>
+        
+      </p>
+
+      <p>
+        Hence it follows from the ratio test that <m>\displaystyle \sum_{n=0}^{\infty}n a_n x^{n-1}</m> converges absolutely at <m>x</m>.
+      </p>
+    </proof>
+
+    <p>
+      Combining the previous result with the Term-by-term differentiability Theorem gives us the following conditions for a power series to be differentiable.
+    </p>
+
+    <theorem xml:id="thm-power-series-derivative">
+      <statement>
+        <p>
+          Suppose <m>f(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n</m> converges on an interval <m>A \subseteq \mathbf{R}</m>. The function <m>f</m> is continuous on <m>A</m> and differentiable on any open interval <m>(-R,R) \subseteq A</m>. The derivative is given by 
+          <md>
+            f'(x) = \sum_{n=1}^{\infty} n a_n x^{n-1}.
+          </md>
+          
+        </p>
+
+        <p>
+          Moreover, <m>f</m> is infinitely differentiable on <m>(-R,R)</m> and the successive derivatives can be obtained via term-by-term differentiation of the appropriate series.
+        </p>
+      </statement>
+    </theorem>
+    
+    
+  </subsection>
+</section>

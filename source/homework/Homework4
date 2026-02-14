@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw4">
+  <title>MTH 428/528 Homework 4 Due February 23</title>
+
+  <p>
+    <ol marker="(1)">
+      <li>
+        <p>
+          Let <md>g_n(x) = \frac{nx+x^2}{2n}</md>
+          and set <m>g(x) = \lim g_n(x)</m>. Show that <m>g</m> is differentiable in two ways:
+        </p>
+        <ol marker="(A)">
+          <li>
+            <p>
+              Compute <m>g(x)</m> by algebraically taking the limit as <m>n\to \infty</m> and then find <m>g'(x)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>g_n'(x)</m> for each <m>n \in \mathbf{N}</m> and show the sequence of derivatives <m>(g_n')</m> converges uniformly on every interval <m>[-M,M]</m>. Use the Differentiable Limit Theorem to conclude <m>g'(x) = \lim g_n'(x)</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Consider the sequence of functions
+          <md>
+            h_n(x) = \sqrt{x^2 + \frac{1}{n}}
+          </md>
+        </p>
+        <ol marker="(A)">
+          <li>
+            <p>
+              Compute the pointwise limit of <m>(h_n)</m> and then prove that the convergence is uniform on <m>\mathbf{R}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Note that each <m>h_n</m> is differentiable. Show <m>g(x) = \lim h_n'(x)</m> exists for all <m>x</m>, and explain how we can be certain that the convergence is \textbf{not} uniform on any neighborhood of <m>0</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+       <p>
+         We constructed a nowhere differentiable function in the following way: define <m>h(x) = |x|</m> on the interval <m>[-1,1]</m> and extend <m>h(x)</m> to all <m>\mathbf{R}</m> by requiring that <m>h(x+2) = h(x)</m> and define
+        <md>
+          g(x) = \sum_{n=0}^{\infty} \frac{1}{2^n} h(2^n x)
+        </md>
+        In class we showed that <m>g(x)</m> is not differentiable at any point. Show that <m>g(x)</m> is continuous on <m>\mathbf{R}</m>.
+       </p>
+      </li>
+      <li>
+        <p>
+          Prove that 
+          <md>
+            h(x) = \sum_{n=1}^{\infty} \frac{x^n}{n^2} = x+\frac{x^2}{4}+ \frac{x^3}{9} + \ldots
+          </md>
+          is continuous on <m>[-1,1]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that
+          <md>
+             f(x) = \sum_{n=1}^{\infty} \frac{x^n}{n^3}= x+\frac{x^2}{8}+ \frac{x^3}{27} + \ldots
+          </md>
+          is differentiable on <m>[-1,1]</m> and its derivative is given by
+          <md>
+             f'(x) = \sum_{n=1}^{\infty} \frac{x^{n-1}}{n^2} = 1+\frac{x}{4}+ \frac{x^2}{9} + \ldots
+          </md>
+        </p>
+      </li>
+  </ol>
+  </p>
+  
+
+
+    
+</worksheet>

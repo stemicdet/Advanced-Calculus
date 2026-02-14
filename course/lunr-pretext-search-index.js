@@ -728,6 +728,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 3 Due February 16",
   "body": " MTH 428\/528 Homework 3 Due February 16     Let     Find the pointwise limit of for all .    Is the convergence uniform on ?    Is the convergence uniform on ?    Is the convergence uniform on       Let be a sequence of continuous functions that converges uniformly to on a compact set . If on , show converges uniformly to     Suppose and are uniformly convergent sequences of functions.   Show that is a uniformly convergent sequence of functions.    Give an example to show that the product may not converge uniformly.       Suppose that uniformly on a set . Show that if each is bounded, then is also bounded.    Suppose that uniformly on a set . Show that if each is uniformly continuous, then is also uniformly continuous.     "
+},
+{
+  "id": "hw4",
+  "level": "1",
+  "url": "hw4.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 4 Due February 23",
+  "body": " MTH 428\/528 Homework 4 Due February 23     Let and set . Show that is differentiable in two ways:    Compute by algebraically taking the limit as and then find .    Compute for each and show the sequence of derivatives converges uniformly on every interval . Use the Differentiable Limit Theorem to conclude .      Consider the sequence of functions     Compute the pointwise limit of and then prove that the convergence is uniform on .    Note that each is differentiable. Show exists for all , and explain how we can be certain that the convergence is \\textbf{not} uniform on any neighborhood of .      We constructed a nowhere differentiable function in the following way: define on the interval and extend to all by requiring that and define In class we showed that is not differentiable at any point. Show that is continuous on .    Prove that is continuous on .    Prove that is differentiable on and its derivative is given by      "
 }
 ]
 

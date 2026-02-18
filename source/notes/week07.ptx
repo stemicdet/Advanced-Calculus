@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-07">
+  <title>Week 7: Taylor Series (6.6)</title>
+
+  <subsection xml:id="subsec-Taylor-series">
+    <title>Taylor Series</title>
+
+    <p>
+        Although calculators contain a number of functions, at its most basic a calculator can only add, subtract, multiply, and divide numbers together. Every operation that a calculator performs must come from one of those four elementary operations.
+    </p>
+
+    <p>
+        For example, to calculate $3^5$ the calculator actually performs $3*3*3*3*3 = 243$
+    </p>
+
+    <p>
+        How then can the calculator determine the sine of an angle such as $\sin(1)$?
+    </p>
+
+    <p>
+        The solution to this problem is to use power series. Recall that Madhava determined the following power series for sine during the 15th century.
+        <md>
+             \sin(x) = \sum_{n=0}^{\infty} (-1)^n\dfrac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\ldots
+        </md>
+        
+    </p>
+
+    <p>
+        Since this formula only involves sums, differences, products, and quotients a calculator could be programmed to run the formula with a sufficiently large number of terms to find the value of the sine function. For example using $n=20$ terms,
+        <md>
+            \sin(1) \approx  1-\frac{1}{3!}+\frac{1}{5!}-\frac{1}{7!}+\ldots + \frac{1}{41!} \approx 0.84147
+        </md>
+        
+    </p>
+
+    <p>
+        The difference between the full decimal expansion of this series and $\sin(1)$ occurs in the 53rd decimal place.
+    </p>
+
+    <p>
+        The previous example illustrates the usefulness of having a power series representation for the Sine function. A natural question is whether all functions can be represented by power series.
+    </p>
+
+    <p>
+        Madhava obtained power series representations for the cosine and arctangent functions as well as the sine function.
+    </p>
+
+    <p>
+        Newton discovered that the Binomial series
+        <md>
+            \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k
+        </md>
+        is the power series representation of the function $(1+x)^{\alpha}$ for $|x| &lt; 1$.
+    </p>
+
+    <p>
+        It follows from the formula for geometric series that for $|x| &lt; 1$
+        <md>
+            \frac{1}{1-x} = \sum_{k=0}^{\infty} x^k
+        </md>
+        
+    </p>
+
+    <p>
+        In 1715 Brook Taylor published a formula for determining the power series expansion of an infinitely differentiable function. The formula was known beforehand however.
+    </p>
+
+    <theorem xml:id="thm-taylor">
+        <title>Taylor's Formula</title>
+        
+        
+        <statement>
+            <p>
+                Let 
+                <md>
+                    f(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + a_3 (x-x_0)^3 + \ldots
+                </md>
+                be defined on some nontrivial interval centered at a real number $x_0$. Then $a_n = \frac{f^{(n)}(x_0)}{n!}$
+            </p>
+        </statement>
+    </theorem>
+    
+<p>
+    The series in Taylor's formula is called a Taylor Series.
+</p>
+
+<p>
+    The special case of $x_0 = 0$ in Taylor's formula is called a Maclaurin series after Scottish Mathematician Colin Maclaurin who made extensive use of them.
+</p>
+
+<p>
+    Maclaurin enrolled in the University of Glasgow at age 11 and received the equivalent of a Bachelor's degree at age 14. As a requirement for his degree he wrote a thesis on Newton's theory of gravity. 
+</p>
+
+<p>
+    At age 19 he was appointed professor at the University of Aberdeen. He held the record for world's youngest professor until 2008 when Alia Sabur was appointed professor at Konkuk University in South Korea.
+</p>
+
+<theorem xml:id="thm-Maclaurin">
+    <title>Maclaurin's Formula</title>
+    
+    
+    <statement>
+        <p>
+            Let
+            <md>
+                f(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \ldots
+            </md>
+            be defined on some nontrivial interval centered at $0$. Then $a_n = \frac{f^{(n)}(0)}{n!}$
+        </p>
+    </statement>
+</theorem>
+
+<p>
+    The series in Maclaurin's formula is called a Maclaurin Series.
+</p>
+
+<p>
+    Example: Determine the Maclaurin Series for the function $f(x) = \sin(x)$.
+</p>
+
+<p>
+    It is not yet clear that the Maclaurin Series actually converges to the function $f(x) = \sin(x)$. 
+</p>
+
+<p>
+    This is because in Taylor's formula we assumed that the infinite series converged to $f(x)$ and then calculated what the coefficients would have to be, but it may not be the case that the series with the correct coefficients actually converges to $f(x)$
+</p>
+
+<p>
+    Consider the function
+    <md>
+        g(x) = \begin{cases} 
+      \hfill  e^{-\frac{1}{x^2}} \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} 
+  \end{cases}
+    </md>
+    
+</p>
+
+<p>
+    Let's determine the Maclaurin series for $g(x)$.
+
+    <md>
+        a_0 = g(0) = 0
+    </md>
+    
+</p>
+
+<p>
+    Since $a_1 = g'(0)$ we compute 
+    <md>
+        g'(0) = \lim_{x\to 0} \frac{g(x)-g(0)}{x-0} = \lim_{x\to 0} \frac{e^{-1/x^2}}{x} = \lim_{x\to 0} \frac{\frac{1}{x}}{e^{1/x^2}}
+    </md>
+    
+</p>
+
+<p>
+    It follows from L'hopital's rule that 
+    <md>
+        g'(0) = \lim_{x\to 0} \frac{\frac{-1}{x^2}}{e^{1/x^2} \cdot \frac{-2}{x^3}} = \lim_{x\to 0} \frac{x}{2e^{1/x^2}} =0
+    </md>
+    Thus $a_1 = 0$.
+</p>
+
+<p>
+    A similar calculation shows that $g''(0) =0$. In fact for each positive integer $n$, $g^{(n)}(0) = 0$.
+</p>
+
+<p>
+    Thus $a_0 = a_1 = a_2 = \ldots a_n = \ldots = 0$.
+</p>
+
+<p>
+    Thus the Maclaurin series for $g(x)$ converges to the zero function, not to $g(x)$.
+</p>
+
+<p>
+    This shows that not every Taylor series converges to the original function.
+</p>
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-not-taylor">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>g(x)=e^(-x^(-2))</definition>
+  <definition>a = 1</definition>
+  <coordinates bbox="(-1,-1,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph" function="g"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graph of a function that is not equal to its Taylor series at 0. The graph appears like the zero function near 0, but is not the zero function">
+        <annotation ref="graph" text="The graph of the function g" sonify="yes"/>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+<p>
+    The example of a function whose Taylor series does not converge back to it was discovered by Cauchy in 1821. Prior to this it was believed that every infinitely differentiable function could be represented by a Taylor Series.
+</p>
+
+<p>
+    If this were the case then this would imply that if two functions with Taylor series agree on some small neighborhood $(-\epsilon, \epsilon)$ then they are identical. Cauchy's example shows that this is not the case for real valued functions.
+</p>
+
+<p>
+    However this is the case for functions of a complex variable. Holomorphic (complex differentiable) functions possess the property that the values of the function on a small neighborhood $|z| &lt; \epsilon$ uniquely determine the values of the function everywhere.
+</p>
+
+    </subsection>
+
+    <subsection xml:id="subsec-Lagranges-Remainder-Theorem">
+        <title>Lagrange's Remainder Theorem</title>
+
+        <p>
+            Because not every Taylor series converges to its original function, it is helpful to have a way to determine whether a Taylor series converges back to its original function or not.
+        </p>
+
+        <p>
+            One way to check this is to use Lagrange's Remainder Theorem, which provides an estimate for the maximum error between the Taylor series and the original function.
+        </p>
+
+        <p>
+            Lagrange's Remainder Theorem can also be used to determine how many terms of the Taylor series one needs to take to approximate a function within a desired accuracy.
+        </p>
+
+        <p>
+            Let $S_N(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \ldots + a_N (x-x_0)^N$ be the $N$th partial sum of the Taylor Series expansion of $f(x)$. Then $E_N = f(x)-S_N$ represents the error between $f(x)$ and the partial sum.
+        </p>
+
+        <theorem xml:id="thm-Lagrange">
+            <title>Lagrange's Remainder Theorem</title>
+            
+            
+            <statement>
+                <p>
+                    Let $f$ be differentiable $N+1$ times on $(x_0-R,x_0+R)$, define $a_n = f^{(n)}(0)/ n!$ for $n = 0, 1, \ldots N$ and let
+                    <md>
+                        S_N(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \ldots + a_N (x-x_0)^N.
+                    </md>
+                    Given $x\neq x_0$ in $(x_0-R,x_0+R)$ there exists a point $c$ between $x$ and $x_0$ where the error function $E_N(x) = f(x) - S_N(x)$ satisfies
+                    <md>
+                        E_N(x) = \frac{f^{(N+1)}(c)}{(N+1)!} (x-x_0)^{N+1}.
+                    </md>
+                    
+                </p>
+            </statement>
+        </theorem>
+
+        <p>
+            If $E_N \to 0$ as $N \to \infty$ then it means that $S_N \to f$ as $N \to \infty$ and thus the Taylor series converges to $f$.  
+        </p>
+
+        <p>
+            According to Lagrange's Remainder Theorem, we can show that $E_N \to 0$ by showing that
+            <md>
+                \frac{f^{(N+1)}(c)}{(N+1)!} (x-x_0)^{N+1} \to 0
+            </md>
+            as $N\to \infty$
+        </p>
+
+        <p>
+            The $(N+1)!$ term in the denominator helps make $E_N$ small as $N \to \infty$.
+        </p>
+
+        <p>
+            If $x$ is far from $x_0$ then the term $(x-x_0)^{N+1}$ grows large as $N\to \infty$ but if $x$ is close to $x_0$ then this term will also become small as $N \to \infty$.
+        </p>
+        
+        <p>
+            Thus the Taylor series is less likely to converge the further $x$ is from $x_0$.
+        </p>
+
+        <p>
+            Finally the term $f^{(N+1)}(c)$ depends on the function $f$ and in general we cannot say whether it will be large or small.
+        </p>
+
+        <p>
+            This is why we cannot conclude that in general the Taylor series always converges back to the original function. In fact there are infinitely differentiable functions with divergent Taylor series.
+        </p>
+
+        <p>
+            Example: Use Lagrange's Remainder Theorem to find the error in approximation of the partial sum $S_5 = x - \frac{1}{3!}x^3+\frac{1}{5!}x^5$ of the Maclaurin series for $\sin(x)$ on the interval $[-1,1]$
+        </p>
+
+        <p>
+            Use Lagrange's Remainder Theorem to show that the Maclaurin series for $\sin(x)$ converges uniformly on the interval $[-R,R]$ where $R$ is a positive real number.
+        </p>
+
+        <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-taylor">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>f(x)=sin(x)</definition>
+  <definition>g(x)= x - (x^3)/(6)+(x^5)/(120)-(x^7)/5040+(x^9)/36288-(x^11)/39916800</definition>
+  <coordinates bbox="(-4,-4,4,4)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph" function="f"/>
+    <graph at="graph2" function="g"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graph of the sine function and the first eleven terms of its Maclaurin series">
+      <annotation ref="graph-group" text="The graph and the first eleven terms of its Maclaurin series">
+        <annotation ref="graph" text="The graph of the sine function" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the first eleven terms of its Maclaurin series" sonify="yes"/>
+
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+        
+    </subsection>
+
+    </section>

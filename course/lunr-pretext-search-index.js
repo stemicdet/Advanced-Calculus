@@ -703,6 +703,42 @@ var ptx_lunr_docs = [
   "body": "  Suppose converges on an interval . The function is continuous on and differentiable on any open interval . The derivative is given by   Moreover, is infinitely differentiable on and the successive derivatives can be obtained via term-by-term differentiation of the appropriate series.   "
 },
 {
+  "id": "notes-week-07",
+  "level": "1",
+  "url": "notes-week-07.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 7: Taylor Series (6.6)",
+  "body": " Week 7: Taylor Series (6.6)   Taylor Series  Although calculators contain a number of functions, at its most basic a calculator can only add, subtract, multiply, and divide numbers together. Every operation that a calculator performs must come from one of those four elementary operations.  For example, to calculate $3^5$ the calculator actually performs $3*3*3*3*3 = 243$  How then can the calculator determine the sine of an angle such as $\\sin(1)$?  The solution to this problem is to use power series. Recall that Madhava determined the following power series for sine during the 15th century.   Since this formula only involves sums, differences, products, and quotients a calculator could be programmed to run the formula with a sufficiently large number of terms to find the value of the sine function. For example using $n=20$ terms,   The difference between the full decimal expansion of this series and $\\sin(1)$ occurs in the 53rd decimal place.  The previous example illustrates the usefulness of having a power series representation for the Sine function. A natural question is whether all functions can be represented by power series.  Madhava obtained power series representations for the cosine and arctangent functions as well as the sine function.  Newton discovered that the Binomial series is the power series representation of the function $(1+x)^{\\alpha}$ for $|x| < 1$.  It follows from the formula for geometric series that for $|x| < 1$   In 1715 Brook Taylor published a formula for determining the power series expansion of an infinitely differentiable function. The formula was known beforehand however.   Taylor's Formula   Let be defined on some nontrivial interval centered at a real number $x_0$. Then $a_n = \\frac{f^{(n)}(x_0)}{n!}$    The series in Taylor's formula is called a Taylor Series.  The special case of $x_0 = 0$ in Taylor's formula is called a Maclaurin series after Scottish Mathematician Colin Maclaurin who made extensive use of them.  Maclaurin enrolled in the University of Glasgow at age 11 and received the equivalent of a Bachelor's degree at age 14. As a requirement for his degree he wrote a thesis on Newton's theory of gravity.  At age 19 he was appointed professor at the University of Aberdeen. He held the record for world's youngest professor until 2008 when Alia Sabur was appointed professor at Konkuk University in South Korea.   Maclaurin's Formula   Let be defined on some nontrivial interval centered at $0$. Then $a_n = \\frac{f^{(n)}(0)}{n!}$    The series in Maclaurin's formula is called a Maclaurin Series.  Example: Determine the Maclaurin Series for the function $f(x) = \\sin(x)$.  It is not yet clear that the Maclaurin Series actually converges to the function $f(x) = \\sin(x)$.  This is because in Taylor's formula we assumed that the infinite series converged to $f(x)$ and then calculated what the coefficients would have to be, but it may not be the case that the series with the correct coefficients actually converges to $f(x)$  Consider the function   Let's determine the Maclaurin series for $g(x)$.   Since $a_1 = g'(0)$ we compute   It follows from L'hopital's rule that Thus $a_1 = 0$.  A similar calculation shows that $g''(0) =0$. In fact for each positive integer $n$, $g^{(n)}(0) = 0$.  Thus $a_0 = a_1 = a_2 = \\ldots a_n = \\ldots = 0$.  Thus the Maclaurin series for $g(x)$ converges to the zero function, not to $g(x)$.  This shows that not every Taylor series converges to the original function.     g(x)=e^(-x^(-2))  a = 1              The example of a function whose Taylor series does not converge back to it was discovered by Cauchy in 1821. Prior to this it was believed that every infinitely differentiable function could be represented by a Taylor Series.  If this were the case then this would imply that if two functions with Taylor series agree on some small neighborhood $(-\\epsilon, \\epsilon)$ then they are identical. Cauchy's example shows that this is not the case for real valued functions.  However this is the case for functions of a complex variable. Holomorphic (complex differentiable) functions possess the property that the values of the function on a small neighborhood $|z| < \\epsilon$ uniquely determine the values of the function everywhere.    Lagrange's Remainder Theorem  Because not every Taylor series converges to its original function, it is helpful to have a way to determine whether a Taylor series converges back to its original function or not.  One way to check this is to use Lagrange's Remainder Theorem, which provides an estimate for the maximum error between the Taylor series and the original function.  Lagrange's Remainder Theorem can also be used to determine how many terms of the Taylor series one needs to take to approximate a function within a desired accuracy.  Let $S_N(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \\ldots + a_N (x-x_0)^N$ be the $N$th partial sum of the Taylor Series expansion of $f(x)$. Then $E_N = f(x)-S_N$ represents the error between $f(x)$ and the partial sum.   Lagrange's Remainder Theorem   Let $f$ be differentiable $N+1$ times on $(x_0-R,x_0+R)$, define $a_n = f^{(n)}(0)\/ n!$ for $n = 0, 1, \\ldots N$ and let Given $x\\neq x_0$ in $(x_0-R,x_0+R)$ there exists a point $c$ between $x$ and $x_0$ where the error function $E_N(x) = f(x) - S_N(x)$ satisfies     If $E_N \\to 0$ as $N \\to \\infty$ then it means that $S_N \\to f$ as $N \\to \\infty$ and thus the Taylor series converges to $f$.  According to Lagrange's Remainder Theorem, we can show that $E_N \\to 0$ by showing that as $N\\to \\infty$  The $(N+1)!$ term in the denominator helps make $E_N$ small as $N \\to \\infty$.  If $x$ is far from $x_0$ then the term $(x-x_0)^{N+1}$ grows large as $N\\to \\infty$ but if $x$ is close to $x_0$ then this term will also become small as $N \\to \\infty$.  Thus the Taylor series is less likely to converge the further $x$ is from $x_0$.  Finally the term $f^{(N+1)}(c)$ depends on the function $f$ and in general we cannot say whether it will be large or small.  This is why we cannot conclude that in general the Taylor series always converges back to the original function. In fact there are infinitely differentiable functions with divergent Taylor series.  Example: Use Lagrange's Remainder Theorem to find the error in approximation of the partial sum $S_5 = x - \\frac{1}{3!}x^3+\\frac{1}{5!}x^5$ of the Maclaurin series for $\\sin(x)$ on the interval $[-1,1]$  Use Lagrange's Remainder Theorem to show that the Maclaurin series for $\\sin(x)$ converges uniformly on the interval $[-R,R]$ where $R$ is a positive real number.     f(x)=sin(x)  g(x)= x - (x^3)\/(6)+(x^5)\/(120)-(x^7)\/5040+(x^9)\/36288-(x^11)\/39916800                   "
+},
+{
+  "id": "thm-taylor",
+  "level": "2",
+  "url": "notes-week-07.html#thm-taylor",
+  "type": "Theorem",
+  "number": "52",
+  "title": "Taylor’s Formula.",
+  "body": " Taylor's Formula   Let be defined on some nontrivial interval centered at a real number $x_0$. Then $a_n = \\frac{f^{(n)}(x_0)}{n!}$   "
+},
+{
+  "id": "thm-Maclaurin",
+  "level": "2",
+  "url": "notes-week-07.html#thm-Maclaurin",
+  "type": "Theorem",
+  "number": "53",
+  "title": "Maclaurin’s Formula.",
+  "body": " Maclaurin's Formula   Let be defined on some nontrivial interval centered at $0$. Then $a_n = \\frac{f^{(n)}(0)}{n!}$   "
+},
+{
+  "id": "thm-Lagrange",
+  "level": "2",
+  "url": "notes-week-07.html#thm-Lagrange",
+  "type": "Theorem",
+  "number": "54",
+  "title": "Lagrange’s Remainder Theorem.",
+  "body": " Lagrange's Remainder Theorem   Let $f$ be differentiable $N+1$ times on $(x_0-R,x_0+R)$, define $a_n = f^{(n)}(0)\/ n!$ for $n = 0, 1, \\ldots N$ and let Given $x\\neq x_0$ in $(x_0-R,x_0+R)$ there exists a point $c$ between $x$ and $x_0$ where the error function $E_N(x) = f(x) - S_N(x)$ satisfies    "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",
@@ -737,6 +773,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 4 Due February 23",
   "body": " MTH 428\/528 Homework 4 Due February 23     Let and set . Show that is differentiable in two ways:    Compute by algebraically taking the limit as and then find .    Compute for each and show the sequence of derivatives converges uniformly on every interval . Use the Differentiable Limit Theorem to conclude .      Consider the sequence of functions     Compute the pointwise limit of and then prove that the convergence is uniform on .    Note that each is differentiable. Show exists for all , and explain how we can be certain that the convergence is \\textbf{not} uniform on any neighborhood of .      We constructed a nowhere differentiable function in the following way: define on the interval and extend to all by requiring that and define In class we showed that is not differentiable at any point. Show that is continuous on .    Prove that is continuous on .    Prove that is differentiable on and its derivative is given by      "
+},
+{
+  "id": "hw5",
+  "level": "1",
+  "url": "hw5.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 5 Due March 2",
+  "body": " MTH 428\/528 Homework 5 Due March 2     Consider the function defined by the power series    Determine the interval of convergence and radius of convergence of the power series.    Where is continuous and where is it differentiable?       Find suitable coefficients so that the resulting power series has the given properties, or explain why the request is impossible.   Converges absolutely for all and diverges off of this set.    Converges absolutely at and diverges at    Converges conditionally at and diverges at .      Consider the function defined by the power series Determine the interval where is differentiable and find a power series for .    Show that power series representations are unique. That is, if for all in an interval , prove that for all .    A series is said to be Abel-summable to if the power series converges for all and .   Show that any series that converges to a limit is also Abel-summable to .    (MTH 528 Only) Show that is Abel-summable and find the sum.        "
 }
 ]
 

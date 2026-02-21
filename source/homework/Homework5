@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw5">
+  <title>MTH 428/528 Homework 5 Due March 2</title>
+
+  <p>
+    <ol marker="(1)">
+      <li>
+        <p>
+            Consider the function <m>g(x)</m> defined by the power series
+        <md>
+          g(x) = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{x^n}{n} = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+ \ldots
+        </md>
+        <ol marker="(A)">
+          <li>
+            <p>
+              Determine the interval of convergence and radius of convergence of the power series.
+            </p>
+          </li>
+          <li>
+            <p>
+              Where is <m>g(x)</m> continuous and where is it differentiable?
+            </p>
+          </li>
+        </ol>
+        </p>
+    </li>
+    <li>
+      <p>
+        Find suitable coefficients <m>(a_n)</m> so that the resulting power series <m>\sum a_n x^n</m> has the given properties, or explain why the request is impossible.
+        <ol marker="(A)">
+          <li>
+            <p>
+              Converges absolutely for all <m>x \in [-1,1]</m> and diverges off of this set.
+            </p>
+          </li>
+          <li>
+            <p>
+              Converges absolutely at <m>x=2</m> and diverges at <m>x=-1</m>
+            </p>
+          </li>
+          <li>
+            Converges conditionally at <m>x = 1</m> and diverges at <m>x=-1</m>.
+          </li>
+        </ol>
+      </p>
+    </li>
+    <li>
+      <p>
+        Consider the function <m>f(x)</m> defined by the power series
+        <md>
+           f(x) = \sum_{n=1}^{\infty} \frac{x^n}{\sqrt{n}} = x+ \frac{x^2}{\sqrt{2}}+ \frac{x^3}{\sqrt{3}}+ \frac{x^4}{2}+ \ldots
+        </md>
+         Determine the interval where <m>f(x)</m> is differentiable and find a power series for <m>f'(x)</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Show that power series representations are unique. That is, if 
+      <md>
+        \sum_{n=0}^{\infty} a_n x^n = \sum_{n=0}^{\infty} b_n x^n
+      </md>
+      for all <m>x</m> in an interval <m>(-R,R)</m>, prove that <m>a_n = b_n</m> for all <m>n = 0, 1, 2, \ldots</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        A series <m>\displaystyle \sum_{n=0}^{\infty} a_n</m> is said to be Abel-summable to <m>L</m> if the power series
+        <md>
+          f(x) = \sum_{n=0}^{\infty} a_n x^n
+        </md>
+        converges for all <m>x\in [0,1)</m> and <m>\displaystyle L = \lim_{x\to 1^-} f(x)</m>.
+        <ol marker="(A">
+          <li>
+            <p>
+              Show that any series that converges to a limit <m>L</m> is also Abel-summable to <m>L</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              (MTH 528 Only) Show that <m>\displaystyle \sum_{n=0}^{\infty} (-1)^n</m> is Abel-summable and find the sum.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+</ol>
+</p>
+</worksheet>

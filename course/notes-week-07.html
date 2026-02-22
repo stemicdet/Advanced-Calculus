@@ -215,6 +215,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Taylor-series" class="internal"><span class="title">Taylor Series</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Lagranges-Remainder-Theorem" class="internal"><span class="title">Lagrange’s Remainder Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Finding" class="internal"><span class="title">Finding Taylor Series Via Algebraic Manipulation</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -226,7 +227,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw2.html" class="internal"><span class="title">MTH 428/528 Homework 2 Due January 29</span></a></div></li>
 <li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw3.html" class="internal"><span class="title">MTH 428/528 Homework 3 Due February 16</span></a></div></li>
 <li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw4.html" class="internal"><span class="title">MTH 428/528 Homework 4 Due February 23</span></a></div></li>
-<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw5.html" class="internal"><span class="title">MTH 428/528 Homework 4 Due February 23</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw5.html" class="internal"><span class="title">MTH 428/528 Homework 5 Due March 2</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -238,9 +239,9 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para" id="subsec-Taylor-series-2">Although calculators contain a number of functions, at its most basic a calculator can only add, subtract, multiply, and divide numbers together. Every operation that a calculator performs must come from one of those four elementary operations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-3">For example, to calculate $3^5$ the calculator actually performs $3*3*3*3*3 = 243$<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-3">For example, to calculate <span class="process-math">\(3^5\)</span> the calculator actually performs <span class="process-math">\(3*3*3*3*3 = 243\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-4">How then can the calculator determine the sine of an angle such as $\sin(1)$?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-4">How then can the calculator determine the sine of an angle such as <span class="process-math">\(\sin(1)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Taylor-series-5">
 <div class="para">The solution to this problem is to use power series. Recall that Madhava determined the following power series for sine during the 15th century.</div>
@@ -252,15 +253,15 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Taylor-series-6">
-<div class="para">Since this formula only involves sums, differences, products, and quotients a calculator could be programmed to run the formula with a sufficiently large number of terms to find the value of the sine function. For example using $n=20$ terms,</div>
-<div class="displaymath process-math" id="subsec-Taylor-series-6-1">
+<div class="para">Since this formula only involves sums, differences, products, and quotients a calculator could be programmed to run the formula with a sufficiently large number of terms to find the value of the sine function. For example using <span class="process-math">\(n=20\)</span> terms,</div>
+<div class="displaymath process-math" id="subsec-Taylor-series-6-2">
 \begin{equation*}
 \sin(1) \approx  1-\frac{1}{3!}+\frac{1}{5!}-\frac{1}{7!}+\ldots + \frac{1}{41!} \approx 0.84147
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-7">The difference between the full decimal expansion of this series and $\sin(1)$ occurs in the 53rd decimal place.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-7">The difference between the full decimal expansion of this series and <span class="process-math">\(\sin(1)\)</span> occurs in the 53rd decimal place.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Taylor-series-8">The previous example illustrates the usefulness of having a power series representation for the Sine function. A natural question is whether all functions can be represented by power series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -273,12 +274,14 @@ eBookConfig.enable_chatcodes =  false;
 \sum_{k=0}^{\infty} \binom{\alpha}{k} x^k
 \end{equation*}
 </div>
-<div class="para">is the power series representation of the function $(1+x)^{\alpha}$ for $|x| &lt; 1$.</div>
+<div class="para">is the power series representation of the function <span class="process-math">\((1+x)^{\alpha}\)</span> for <span class="process-math">\(|x| &lt; 1\text{.}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Taylor-series-11">
-<div class="para">It follows from the formula for geometric series that for $|x| &lt; 1$</div>
-<div class="displaymath process-math" id="subsec-Taylor-series-11-1">
+<div class="para">It follows from the formula for geometric series that for <span class="process-math">\(|x| &lt; 1\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Taylor-series-11-2">
 \begin{equation*}
 \frac{1}{1-x} = \sum_{k=0}^{\infty} x^k
 \end{equation*}
@@ -297,12 +300,13 @@ eBookConfig.enable_chatcodes =  false;
 f(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + a_3 (x-x_0)^3 + \ldots
 \end{equation*}
 </div>
-<div class="para">be defined on some nontrivial interval centered at a real number $x_0$. Then $a_n = \frac{f^{(n)}(x_0)}{n!}$</div>
+<div class="para">be defined on some nontrivial interval centered at a real number <span class="process-math">\(x_0\text{.}\)</span> Then <span class="process-math">\(a_n = \frac{f^{(n)}(x_0)}{n!}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-taylor-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Theorem 52: Taylor’s Formula"><a href="#thm-taylor" title="Copy heading and permalink for Theorem 52: Taylor’s Formula" aria-label="Copy heading and permalink for Theorem 52: Taylor’s Formula">🔗</a></div></article><div class="para" id="subsec-Taylor-series-14">The series in Taylor’s formula is called a Taylor Series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-15">The special case of $x_0 = 0$ in Taylor’s formula is called a Maclaurin series after Scottish Mathematician Colin Maclaurin who made extensive use of them.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-15">The special case of <span class="process-math">\(x_0 = 0\)</span> in Taylor’s formula is called a Maclaurin series after Scottish Mathematician Colin Maclaurin who made extensive use of them.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Taylor-series-16">Maclaurin enrolled in the University of Glasgow at age 11 and received the equivalent of a Bachelor’s degree at age 14. As a requirement for his degree he wrote a thesis on Newton’s theory of gravity.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -318,16 +322,17 @@ f(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + a_3 (x-x_0)^3 + \ldots
 f(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \ldots
 \end{equation*}
 </div>
-<div class="para">be defined on some nontrivial interval centered at $0$. Then $a_n = \frac{f^{(n)}(0)}{n!}$</div>
+<div class="para">be defined on some nontrivial interval centered at <span class="process-math">\(0\text{.}\)</span> Then <span class="process-math">\(a_n = \frac{f^{(n)}(0)}{n!}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-Maclaurin-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Theorem 53: Maclaurin’s Formula"><a href="#thm-Maclaurin" title="Copy heading and permalink for Theorem 53: Maclaurin’s Formula" aria-label="Copy heading and permalink for Theorem 53: Maclaurin’s Formula">🔗</a></div></article><div class="para" id="subsec-Taylor-series-19">The series in Maclaurin’s formula is called a Maclaurin Series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-20">Example: Determine the Maclaurin Series for the function $f(x) = \sin(x)$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-20">Example: Determine the Maclaurin Series for the function <span class="process-math">\(f(x) = \sin(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-21">It is not yet clear that the Maclaurin Series actually converges to the function $f(x) = \sin(x)$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-21">It is not yet clear that the Maclaurin Series actually converges to the function <span class="process-math">\(f(x) = \sin(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-22">This is because in Taylor’s formula we assumed that the infinite series converged to $f(x)$ and then calculated what the coefficients would have to be, but it may not be the case that the series with the correct coefficients actually converges to $f(x)$<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-22">This is because in Taylor’s formula we assumed that the infinite series converged to <span class="process-math">\(f(x)\)</span> and then calculated what the coefficients would have to be, but it may not be the case that the series with the correct coefficients actually converges to <span class="process-math">\(f(x)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Taylor-series-23">
 <div class="para">Consider the function</div>
@@ -342,8 +347,9 @@ g(x) = \begin{cases}
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Taylor-series-24">
-<div class="para">Let’s determine the Maclaurin series for $g(x)$.</div>
-<div class="displaymath process-math" id="subsec-Taylor-series-24-1">
+<div class="para">Let’s determine the Maclaurin series for <span class="process-math">\(g(x)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Taylor-series-24-2">
 \begin{equation*}
 a_0 = g(0) = 0
 \end{equation*}
@@ -351,8 +357,8 @@ a_0 = g(0) = 0
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Taylor-series-25">
-<div class="para">Since $a_1 = g’(0)$ we compute</div>
-<div class="displaymath process-math" id="subsec-Taylor-series-25-1">
+<div class="para">Since <span class="process-math">\(a_1 = g'(0)\)</span> we compute</div>
+<div class="displaymath process-math" id="subsec-Taylor-series-25-2">
 \begin{equation*}
 g'(0) = \lim_{x\to 0} \frac{g(x)-g(0)}{x-0} = \lim_{x\to 0} \frac{e^{-1/x^2}}{x} = \lim_{x\to 0} \frac{\frac{1}{x}}{e^{1/x^2}}
 \end{equation*}
@@ -366,14 +372,15 @@ g'(0) = \lim_{x\to 0} \frac{g(x)-g(0)}{x-0} = \lim_{x\to 0} \frac{e^{-1/x^2}}{x}
 g'(0) = \lim_{x\to 0} \frac{\frac{-1}{x^2}}{e^{1/x^2} \cdot \frac{-2}{x^3}} = \lim_{x\to 0} \frac{x}{2e^{1/x^2}} =0
 \end{equation*}
 </div>
-<div class="para">Thus $a_1 = 0$.</div>
+<div class="para">Thus <span class="process-math">\(a_1 = 0\text{.}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-27">A similar calculation shows that $g’’(0) =0$. In fact for each positive integer $n$, $g^{(n)}(0) = 0$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-27">A similar calculation shows that <span class="process-math">\(g''(0) =0\text{.}\)</span> In fact for each positive integer <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(g^{(n)}(0) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-28">Thus $a_0 = a_1 = a_2 = \ldots a_n = \ldots = 0$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-28">Thus <span class="process-math">\(a_0 = a_1 = a_2 = \ldots a_n = \ldots = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-29">Thus the Maclaurin series for $g(x)$ converges to the zero function, not to $g(x)$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-29">Thus the Maclaurin series for <span class="process-math">\(g(x)\)</span> converges to the zero function, not to <span class="process-math">\(g(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Taylor-series-30">This shows that not every Taylor series converges to the original function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -474,9 +481,9 @@ g'(0) = \lim_{x\to 0} \frac{\frac{-1}{x^2}}{e^{1/x^2} \cdot \frac{-2}{x^3}} = \l
 </div>
 <div class="para" id="subsec-Taylor-series-32">The example of a function whose Taylor series does not converge back to it was discovered by Cauchy in 1821. Prior to this it was believed that every infinitely differentiable function could be represented by a Taylor Series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-33">If this were the case then this would imply that if two functions with Taylor series agree on some small neighborhood $(-\epsilon, \epsilon)$ then they are identical. Cauchy’s example shows that this is not the case for real valued functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-33">If this were the case then this would imply that if two functions with Taylor series agree on some small neighborhood <span class="process-math">\((-\epsilon, \epsilon)\)</span> then they are identical. Cauchy’s example shows that this is not the case for real valued functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Taylor-series-34">However this is the case for functions of a complex variable. Holomorphic (complex differentiable) functions possess the property that the values of the function on a small neighborhood $|z| &lt; \epsilon$ uniquely determine the values of the function everywhere.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Taylor-series-34">However this is the case for functions of a complex variable. Holomorphic (complex differentiable) functions possess the property that the values of the function on a small neighborhood <span class="process-math">\(|z| &lt; \epsilon\)</span> uniquely determine the values of the function everywhere.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Taylor-series-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection: Taylor Series"><a href="#subsec-Taylor-series" title="Copy heading and permalink for Subsection: Taylor Series" aria-label="Copy heading and permalink for Subsection: Taylor Series">🔗</a></div></section><section class="subsection" id="subsec-Lagranges-Remainder-Theorem"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lagrange’s Remainder Theorem</span>
@@ -487,51 +494,54 @@ g'(0) = \lim_{x\to 0} \frac{\frac{-1}{x^2}}{e^{1/x^2} \cdot \frac{-2}{x^3}} = \l
 </div>
 <div class="para" id="subsec-Lagranges-Remainder-Theorem-4">Lagrange’s Remainder Theorem can also be used to determine how many terms of the Taylor series one needs to take to approximate a function within a desired accuracy.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-5">Let $S_N(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \ldots + a_N (x-x_0)^N$ be the $N$th partial sum of the Taylor Series expansion of $f(x)$. Then $E_N = f(x)-S_N$ represents the error between $f(x)$ and the partial sum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-5">Let <span class="process-math">\(S_N(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \ldots + a_N (x-x_0)^N\)</span> be the <span class="process-math">\(N\)</span>th partial sum of the Taylor Series expansion of <span class="process-math">\(f(x)\text{.}\)</span> Then <span class="process-math">\(E_N = f(x)-S_N\)</span> represents the error between <span class="process-math">\(f(x)\)</span> and the partial sum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-Lagrange"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">54</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lagrange’s Remainder Theorem.</span>
 </h4>
 <div class="para logical" id="thm-Lagrange-2-1">
-<div class="para">Let $f$ be differentiable $N+1$ times on $(x_0-R,x_0+R)$, define $a_n = f^{(n)}(0)/ n!$ for $n = 0, 1, \ldots N$ and let</div>
-<div class="displaymath process-math" id="thm-Lagrange-2-1-1">
+<div class="para">Let <span class="process-math">\(f\)</span> be differentiable <span class="process-math">\(N+1\)</span> times on <span class="process-math">\((x_0-R,x_0+R)\text{,}\)</span> define <span class="process-math">\(a_n = f^{(n)}(0)/ n!\)</span> for <span class="process-math">\(n = 0, 1, \ldots N\)</span> and let</div>
+<div class="displaymath process-math" id="thm-Lagrange-2-1-6">
 \begin{equation*}
 S_N(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \ldots + a_N (x-x_0)^N.
 \end{equation*}
 </div>
-<div class="para">Given $x\neq x_0$ in $(x_0-R,x_0+R)$ there exists a point $c$ between $x$ and $x_0$ where the error function $E_N(x) = f(x) - S_N(x)$ satisfies</div>
-<div class="displaymath process-math" id="thm-Lagrange-2-1-2">
+<div class="para">Given <span class="process-math">\(x\neq x_0\)</span> in <span class="process-math">\((x_0-R,x_0+R)\)</span> there exists a point <span class="process-math">\(c\)</span> between <span class="process-math">\(x\)</span> and <span class="process-math">\(x_0\)</span> where the error function <span class="process-math">\(E_N(x) = f(x) - S_N(x)\)</span> satisfies</div>
+<div class="displaymath process-math" id="thm-Lagrange-2-1-13">
 \begin{equation*}
 E_N(x) = \frac{f^{(N+1)}(c)}{(N+1)!} (x-x_0)^{N+1}.
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-Lagrange-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 54: Lagrange’s Remainder Theorem"><a href="#thm-Lagrange" title="Copy heading and permalink for Theorem 54: Lagrange’s Remainder Theorem" aria-label="Copy heading and permalink for Theorem 54: Lagrange’s Remainder Theorem">🔗</a></div></article><div class="para" id="subsec-Lagranges-Remainder-Theorem-7">If $E_N \to 0$ as $N \to \infty$ then it means that $S_N \to f$ as $N \to \infty$ and thus the Taylor series converges to $f$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 54: Lagrange’s Remainder Theorem"><a href="#thm-Lagrange" title="Copy heading and permalink for Theorem 54: Lagrange’s Remainder Theorem" aria-label="Copy heading and permalink for Theorem 54: Lagrange’s Remainder Theorem">🔗</a></div></article><div class="para" id="subsec-Lagranges-Remainder-Theorem-7">If <span class="process-math">\(E_N \to 0\)</span> as <span class="process-math">\(N \to \infty\)</span> then it means that <span class="process-math">\(S_N \to f\)</span> as <span class="process-math">\(N \to \infty\)</span> and thus the Taylor series converges to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Lagranges-Remainder-Theorem-8">
-<div class="para">According to Lagrange’s Remainder Theorem, we can show that $E_N \to 0$ by showing that</div>
-<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-8-1">
+<div class="para">According to Lagrange’s Remainder Theorem, we can show that <span class="process-math">\(E_N \to 0\)</span> by showing that</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-8-2">
 \begin{equation*}
 \frac{f^{(N+1)}(c)}{(N+1)!} (x-x_0)^{N+1} \to 0
 \end{equation*}
 </div>
-<div class="para">as $N\to \infty$</div>
+<div class="para">as <span class="process-math">\(N\to \infty\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-9">The $(N+1)!$ term in the denominator helps make $E_N$ small as $N \to \infty$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-9">The <span class="process-math">\((N+1)!\)</span> term in the denominator helps make <span class="process-math">\(E_N\)</span> small as <span class="process-math">\(N \to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-10">If $x$ is far from $x_0$ then the term $(x-x_0)^{N+1}$ grows large as $N\to \infty$ but if $x$ is close to $x_0$ then this term will also become small as $N \to \infty$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-10">If <span class="process-math">\(x\)</span> is far from <span class="process-math">\(x_0\)</span> then the term <span class="process-math">\((x-x_0)^{N+1}\)</span> grows large as <span class="process-math">\(N\to \infty\)</span> but if <span class="process-math">\(x\)</span> is close to <span class="process-math">\(x_0\)</span> then this term will also become small as <span class="process-math">\(N \to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-11">Thus the Taylor series is less likely to converge the further $x$ is from $x_0$.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-11">Thus the Taylor series is less likely to converge the further <span class="process-math">\(x\)</span> is from <span class="process-math">\(x_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-12">Finally the term $f^{(N+1)}(c)$ depends on the function $f$ and in general we cannot say whether it will be large or small.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-12">Finally the term <span class="process-math">\(f^{(N+1)}(c)\)</span> depends on the function <span class="process-math">\(f\)</span> and in general we cannot say whether it will be large or small.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Lagranges-Remainder-Theorem-13">This is why we cannot conclude that in general the Taylor series always converges back to the original function. In fact there are infinitely differentiable functions with divergent Taylor series.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-14">Example: Use Lagrange’s Remainder Theorem to find the error in approximation of the partial sum $S_5 = x - \frac{1}{3!}x^3+\frac{1}{5!}x^5$ of the Maclaurin series for $\sin(x)$ on the interval $[-1,1]$<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-14">Example: Use Lagrange’s Remainder Theorem to find the error in approximation of the partial sum <span class="process-math">\(S_5 = x - \frac{1}{3!}x^3+\frac{1}{5!}x^5\)</span> of the Maclaurin series for <span class="process-math">\(\sin(x)\)</span> on the interval <span class="process-math">\([-1,1]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Lagranges-Remainder-Theorem-15">Use Lagrange’s Remainder Theorem to show that the Maclaurin series for $\sin(x)$ converges uniformly on the interval $[-R,R]$ where $R$ is a positive real number.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-15">Use Lagrange’s Remainder Theorem to show that the Maclaurin series for <span class="process-math">\(\sin(x)\)</span> converges uniformly on the interval <span class="process-math">\([-R,R]\)</span> where <span class="process-math">\(R\)</span> is a positive real number.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-16">The graph show the graph of <span class="process-math">\(\sin(x)\)</span> in blue and the first eleven terms of the Maclaurin series in red.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
 <div class="ChemAccess-element" data-src="generated/prefigure/prefigure-taylor.svg" data-cml="generated/prefigure/prefigure-taylor-annotations.xml"></div>
@@ -628,7 +638,121 @@ E_N(x) = \frac{f^{(N+1)}(c)}{(N+1)!} (x-x_0)^{N+1}.
 </tbody>
 </table></div></details>
 </div>
-<div class="autopermalink" data-description="Subsection: Lagrange’s Remainder Theorem"><a href="#subsec-Lagranges-Remainder-Theorem" title="Copy heading and permalink for Subsection: Lagrange’s Remainder Theorem" aria-label="Copy heading and permalink for Subsection: Lagrange’s Remainder Theorem">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 7: Taylor Series (6.6)"><a href="#notes-week-07" title="Copy heading and permalink for Section: Week 7: Taylor Series (6.6)" aria-label="Copy heading and permalink for Section: Week 7: Taylor Series (6.6)">🔗</a></div></section></div>
+<details id="subsec-Lagranges-Remainder-Theorem-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Lagranges-Remainder-Theorem-18-1">We will prove the Maclaurin series case. The general Taylor series case is similar.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-2">
+<div class="para">The <span class="process-math">\(N\)</span>th partial sum of the Maclaurin series is given by the formula</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-2-2">
+\begin{equation*}
+S_N(x) = f(0) + f'(0) x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \ldots + \frac{f^{(N)}(0)}{N!} x^N
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-18-3">Thus <span class="process-math">\(S_N(0) = f(0)\text{,}\)</span> <span class="process-math">\(S_N'(0) = f'(0)\text{,}\)</span> and so on through <span class="process-math">\(S_N^{(N)}(0) = f^{(N)}(0)\text{.}\)</span> After that <span class="process-math">\(S_N^{(N+1)}(0)\)</span> and all higher derivatives are <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-4">
+<div class="para">In other words <span class="process-math">\(S_N^{(n)}(0) = f^{(n)}(0)\)</span> for <span class="process-math">\(0 \leq n \leq N\)</span> which implies that the error function <span class="process-math">\(E_N(x) = f(x) - S_N(x)\)</span> satisfies</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-4-4">
+\begin{equation*}
+E_N^{(n)}(0) = 0 \textnormal{ for all } n = 0, 1, 2, \ldots, N
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-4-5">
+\begin{equation*}
+E_N^{(n)}(0) = f^{(n)}(0) \textnormal{ for } n &gt;N
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lagranges-Remainder-Theorem-18-5">Recall the Generalized Mean Value Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-6">
+<div class="para">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are continuous on the closed interval <span class="process-math">\([a,b]\)</span> and differentiable on the open interval <span class="process-math">\((a,b)\)</span> then there exists a point <span class="process-math">\(c\in(a,b)\)</span> where</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-6-6">
+\begin{equation*}
+[f(b)-f(a)]g'(c) = [g(b)-g(a)]f'(c).
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(g'\)</span> is never zero on <span class="process-math">\((a,b)\)</span> then the conclusion can be stated as</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-6-9">
+\begin{equation*}
+\frac{f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-7">
+<div class="para">Apply the GMVT to the functions <span class="process-math">\(E_N(x)\)</span> and <span class="process-math">\(x^{N+1}\)</span> on the interval <span class="process-math">\([0,x]\text{.}\)</span> Then there exists a point <span class="process-math">\(x_1 \in (0,x)\)</span> where</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-7-5">
+\begin{equation*}
+\frac{E_N'(x_1)}{(N+1)x_1^N} = \frac{E_N(x) -E_N(0)}{x^{N+1}-0} 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-8">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-8-1">
+\begin{equation*}
+\frac{E_N(x)}{x^{N+1}} =  \frac{E_N'(x_1)}{(N+1)x_1^N}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-9">
+<div class="para">Now apply the GMVT to the functions <span class="process-math">\(E_N'(x_1)\)</span> and <span class="process-math">\((N+1)x_1^N\)</span> on the interval <span class="process-math">\([0,x_1]\text{.}\)</span> Then there exists a point <span class="process-math">\(x_2 \in (0,x_1)\)</span> where</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-9-5">
+\begin{equation*}
+\frac{E_N''(x_2)}{(N+1)Nx_2^{N-1}} = \frac{E_N'(x_1) -E_N'(0)}{(N+1)x_1^N-0}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-10">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-10-1">
+\begin{equation*}
+\frac{E_N(x)}{x^{N+1}} =  \frac{E_N'(x_1)}{(N+1)x_1^N} = \frac{E_N''(x_2)}{(N+1)Nx_2^{N-1}}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-11">
+<div class="para">Continuing in this way we find that there exists a point <span class="process-math">\(x_{N+1} \in (0, x_n) \subseteq \ldots \subseteq (0,x)\)</span> where</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-11-2">
+\begin{equation*}
+\frac{E_N(x)}{x^{N+1}} = \frac{E_N^{(N+1)}(x_{N+1})}{(N+1)!}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lagranges-Remainder-Theorem-18-12">
+<div class="para">Now let <span class="process-math">\(c=x_{N+1}\)</span> and recall that because <span class="process-math">\(S_N^{(N+1)}(x) = 0\text{,}\)</span> we have <span class="process-math">\(E_N^{(N+1)}(x) = f^{(N+1)}(x)\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="subsec-Lagranges-Remainder-Theorem-18-12-4">
+\begin{equation*}
+E_N(x) = \frac{f^{(N+1)}(c)}{(N+1)!} x^{N+1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lagranges-Remainder-Theorem-18-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Lagranges-Remainder-Theorem-18" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Lagrange’s Remainder Theorem"><a href="#subsec-Lagranges-Remainder-Theorem" title="Copy heading and permalink for Subsection: Lagrange’s Remainder Theorem" aria-label="Copy heading and permalink for Subsection: Lagrange’s Remainder Theorem">🔗</a></div></section><section class="subsection" id="subsec-Finding"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding Taylor Series Via Algebraic Manipulation</span>
+</h3>
+<div class="para" id="subsec-Finding-2">Taylor’s formula for determining the coefficients of Taylor series can be a lengthy process. Oftentimes one can derive the Taylor series expansion of a function from the Taylor series expansion of another.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Finding-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Finding-3">One must be careful when performing such manipulations to check that the derived series still converges. It is possible for the interval of convergence to change under algebraic manipulations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Finding-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Finding-4">Example: Determine the Maclaurin series for <span class="process-math">\(f(x) = \cos(x)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Finding-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Finding-5">Example: Determine the Maclaurin series for <span class="process-math">\(f(x) = \arctan(x)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Finding-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Finding-6">Example: Determine the Maclaurin series for <span class="process-math">\(f(x) = \frac{x^3}{1-2x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Finding-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Finding-7">Example: Determine the Maclaurin series for <span class="process-math">\(f(x) = e^{ix}\)</span> where <span class="process-math">\(i = \sqrt{-1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Finding-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Finding Taylor Series Via Algebraic Manipulation"><a href="#subsec-Finding" title="Copy heading and permalink for Subsection: Finding Taylor Series Via Algebraic Manipulation" aria-label="Copy heading and permalink for Subsection: Finding Taylor Series Via Algebraic Manipulation">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 7: Taylor Series (6.6)"><a href="#notes-week-07" title="Copy heading and permalink for Section: Week 7: Taylor Series (6.6)" aria-label="Copy heading and permalink for Section: Week 7: Taylor Series (6.6)">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="notes-week-06.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

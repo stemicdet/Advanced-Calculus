@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-08">
+  <title>Week 8: The Weierstrass Approximation Theorem (6.7)</title>
+
+  <subsection xml:id="subsec-Weiestrass">
+    <title>Weierstrass Approximation Theorem</title>
+
+    <p>
+      Polynomials have a number of properties that make them convenient to work with. They are relatively easy to differentiate and integrate, there are a number of methods for finding the zeros of polynomials, and polynomials are smooth continuous functions that are infinitely differentiable. For these reasons it is often convenient to approximate functions by polynomials.
+    </p>
+
+    <p>
+      Taylor series are one example of a type of polynomial approximation. However Taylor series have a couple of drawbacks. First the function needs to be infinitely differentiable to have a Taylor series and second the Taylor series need not converge to the original function.
+    </p>
+
+    <p>
+      What conditions (continuous, differentiable, etc.) are required for a function to be uniformly approximated by polynomials?
+    </p>
+
+    <p>
+      In 1885 Karl Weierstrass answered this question by proving a remarkable theorem.
+    </p>
+
+    <theorem xml:id="thm-weiestrass">
+      <statement>
+        <p>
+          Let <m>f:[a,b] \to \mathbf{R}</m> be continuous. Given <m>\epsilon>0</m>, there exists a polynomial <m>p(x)</m> satisfying
+          <md>
+            |f(x)-p(x)| &lt; \epsilon
+          </md>
+          for all <m>x \in [a,b]</m>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Essentially the WAT says that every continuous function on a closed interval can be uniformly approximated by a polynomial.
+    </p>
+
+    <p>
+      Weierstrass also discovered that there is a function that is everywhere continuous but nowhere differentiable. According to the WAT it is possible to find a polynomial that uniformly approximates this function to any desired degree of accuracy.
+    </p>
+
+    <p>
+      The original proof of the WAT due to Weierstrass only showed that for every continuous function and <m>\epsilon>0</m> there is a polynomial within a distance of <m>\epsilon</m> of the function, but it didn't provide a formula for the polynomial.
+    </p>
+    
+    <p>
+      In 1912, as part of his second doctoral thesis, the Ukrainian Jewish Mathematician Sergei Bernstein gave a proof of the WAT using ideas from probability which gives an explicit formula for the approximating polynomials. 
+    </p>
+
+    <p>
+      Bernstein's proof shows that any continuous function can be uniformly approximated by a family of polynomials called Bernstein polynomials.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-Bernstein">
+    <title>Bernstein Polynomials</title>
+
+    <p>
+      The <m>n+1</m> Bernstein basis polynomials of degree <m>n</m> are defined by 
+      <md>
+        b_{k,n}(x) = \binom{n}{k}x^k (1-x)^{n-k}
+      </md>
+      where <m>k = 0, 1, 2, \ldots, n</m> and <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m>
+    </p>
+
+    <p>
+      A Bernstein polynomial is a linear combination of Bernstein basis polynomials. That is, a Bernstein polynomial is a polynomial of the form
+      <md>
+         \sum_{k = 0}^n B_k b_{k,n}(x)
+      </md>
+      where the <m>B_k</m> are real numbers.
+    </p>
+
+    <p>
+      The graph below shows the Bernstein polynomials <m>b_{k,4}</m> on the interval <m>[0,1]</m>
+    </p>
+
+    <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-Bernstein">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>g1(x)=4*x*(1-x)^3</definition>
+  <definition>g2(x)=6*x^2*(1-x)^2</definition>
+  <definition>g3(x)=4*x^3*(1-x)</definition>
+  <definition>f4(x)=x^4</definition>
+  <definition>f0(x)=(1-x)^4</definition>
+  <coordinates bbox="(0,0,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="g1" stroke = "blue"/>
+    <graph at="graph2" function="g2" stroke = "red"/>
+    <graph at="graph3" function="g3" stroke = "green"/>
+    <graph at="graph4" function="f4" stroke = "purple"/>
+    <graph at="graph0" function="f0" stroke = "yellow"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first Bernstein polynomials of degree 4">
+      <annotation ref="graph-group" text="The graph of the Bernstein polynomials of degree 4">
+        <annotation ref="graph1" text="The graph of the Bernstein Polynomial B sub 1 comma 4" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the Bernstein Polynomial B sub 2 comma 4" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the Bernstein Polynomial B sub 3 comma 4" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the Bernstein Polynomial B sub 4 comma 4" sonify="yes"/>
+        <annotation ref="graph0" text="The graph of the Bernstein Polynomial B sub 0 comma 4" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+<p>
+  The following theorem lists some important properties of the Bernstein basis polynomials
+</p>
+
+<theorem xml:id="thm-bernstein-basis">
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <md>
+               \sum_{k=0}^n b_{k,n} = \sum_{k=0}^n \binom{n}{k}x^k (1-x)^{n-k} = 1
+            </md>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              \sum_{k=0}^n \frac{k}{n} b_{k,n} = \sum_{k=0}^n \frac{k}{n} \binom{n}{k}x^k (1-x)^{n-k} = x
+            </md>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              \sum_{k=0}^n \left(x - \frac{k}{n} \right)^2  b_{k,n} = \sum_{k=0}^n  \left(x - \frac{k}{n} \right)^2 \binom{n}{k}x^k (1-x)^{n-k} = \frac{x(1-x)}{n}
+            </md>
+            
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Proof of 1. : Recall that the Binomial Theorem states that
+    <md xml:id="bb1">
+      (1+t)^n = \sum_{k=0}^n \binom{n}{k} t^k
+    </md>
+    Substitute <m>t = \frac{x}{1-x}</m> to obtain property 1.
+  </p>
+
+  <p>
+    Proof of 2. : Differentiate both sides of <xref ref="bb1"/> with respect to <m>t</m> then multiply the resulting equation by <m>t</m> to obtain
+    <md xml:id="bb2">
+      tn(1+t)^{n-1} = \sum_{k=0}^n \binom{n}{k} k t^k
+    </md>
+    Substitute <m>t = \frac{x}{1-x}</m> to obtain property 2.
+  </p>
+
+  <p>
+    Proof of 3. : Differentiate both sides of <xref ref="bb2"/> with respect to <m>t</m> then multiply the resulting equation by <m>t</m> to obtain
+    <md>
+      tn(1+t)^{n-1} + t^2(n-1)n(1+t)^{n-2} = \sum_{k=0}^n \binom{n}{k} k^2 t^k
+    </md>
+    Substitute <m>t = \frac{x}{1-x}</m> to obtain
+    <md xml:id="bb3">
+      \frac{x(1-x)}{n} +x^2 = \sum_{k=0}^n \binom{n}{k} \left(\frac{k}{n} \right)^2 x^k (1-x)^{n-k}.
+    </md>
+    
+  </p>
+
+  <p>
+    Apply properties 1 and 2 and <xref ref="bb3"/> to
+<md>
+  \sum_{k=0}^{n} \left(x - \frac{k}{n} \right)^2 \binom{n}{k}x^k (1-x)^{n-k}
+</md>
+to obtain property 3.
+  </p>
+</proof>
+
+
+    
+  </subsection>
+
+  <subsection xml:id="subsec-proof">
+    <title>Proof of WAT</title>
+
+    <proof>
+      <p>
+        It is enough to suppose that <m>f</m> is continuous on <m>[0,1]</m>. Let 
+        <md>
+          f_n(x) = \sum_{k=0}^n f\left(\frac{k}{n}\right) b_{k,n}(x)
+        </md>
+        
+      </p>
+
+      <p>
+        We will show that <m>\{f_n\}</m> converges uniformly to <m>f</m>. This implies WAT.
+      </p>
+
+      <p>
+        It follows from Property 1 that
+        <md>
+          <mrow> f_n(x)-f(x) \amp = \sum_{k=0}^n f\left(\frac{k}{n}\right) b_{k,n}(x) - \sum_{k=0}^n f\left(x\right) b_{k,n}(x) </mrow>
+          <mrow> \amp \sum_{k=0}^n \left[f\left(\frac{k}{n}\right) - f(x) \right]b_{k,n}(x) </mrow>
+        </md>
+      </p>
+
+      <p>
+        Hence
+        <md>
+          |f_n(x) -f(x)| \leq \sum_{k=0}^n \left|f\left(\frac{k}{n}\right) - f(x) \right|b_{k,n}(x)
+        </md>
+        
+      </p>
+
+      <p>
+        Let <m>\epsilon &gt; 0</m>. Since <m>f</m> is uniformly continuous on <m>[0,1]</m> (why?) there exists <m>\delta &gt; 0</m> such that <m>|f(a)-f(b)| &lt; \epsilon</m> whenever <m>|a-b| &lt; \delta</m>.
+      </p>
+
+      <p>
+        Also the continuity of <m>f</m> implies that <m>f</m> is bounded on <m>[0,1]</m> so there exists <m>M</m> such that <m>|f(x)| &lt; M</m> on <m>[0,1]</m>.
+      </p>
+
+      <p>
+        We split up the sum as follows.
+        <md>
+           |f_n(x)-f(x)|  \leq \sum_{|x-\frac{k}{n}| &lt; \delta} \left|f\left(\frac{k}{n}\right) - f(x) \right|b_{k,n}(x) +  \sum_{|x-\frac{k}{n}|\geq \delta} \left|f\left(\frac{k}{n}\right) - f(x) \right|b_{k,n}(x)
+        </md>
+      </p>
+
+      <p>
+        The first sum is less than
+        <md>
+          \epsilon \sum_{|x-\frac{k}{n}| &lt; \delta} b_{k,n}(x) &lt; \epsilon
+        </md>
+        by property 1.
+      </p>
+
+      <p>
+        It follows from the triangle inequality and the boundedness of <m>f</m> that the second sum is less than or equal to
+        <md>
+          2M \sum_{|x-\frac{k}{n}|\geq \delta} b_{k,n}(x)
+        </md>
+        
+      </p>
+
+      <p>
+        Because we are summing over the values of <m>k</m> where <m>|x-\frac{k}{n}|\geq \delta</m> it follows that
+        <md>
+          <mrow> 2M \sum_{|x-\frac{k}{n}|\geq \delta} b_{k,n}(x) \amp \leq 2M \sum_{|x-\frac{k}{n}|\geq \delta} \delta^{-2} \left(x-\frac{k}{n}\right)^2 b_{k,n}(x)</mrow>
+          <mrow> \amp \leq 2M \delta^{-2} \sum_{k=0}^n \left(x-\frac{k}{n}\right)^2 b_{k,n}(x)</mrow>
+        </md>
+      </p>
+
+      <p>
+        It follows from property 3 that 
+        <md>
+          2M \delta^{-2} \sum_{k=0}^n \left(x-\frac{k}{n}\right)^2 b_{k,n}(x) = 2M \delta^{-2} \frac{x(1-x)}{n} \to 0 
+        </md>
+        as <m>n \to \infty</m>.
+      </p>
+
+      <p>
+        Thus <m>|f_n(x)-f(x)| \to 0</m> uniformly and <m>f_n(x) \to f(x)</m> uniformly.
+      </p>
+
+    </proof>
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Examples-2">
+    <title>Examples</title>
+    <p>
+      Let <m>f(x) = |x-\frac{1}{2}|</m> on <m>[0,1]</m>. Find the fourth degree Bernstein polynomial that approximates <m>f(x)</m> from Bernstein's proof of WAT.
+    </p>
+
+    <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-Bernstein-example">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>g1(x)=sqrt((x-1/2)^2)</definition>
+  <definition>g2(x)=(1/2)*(1-x)^4+ x*(1-x)^3+x^3*(1-x)+(1/2)*x^4</definition>
+  <coordinates bbox="(0,0,1,1)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="g1" stroke = "blue"/>
+    <graph at="graph2" function="g2" stroke = "red"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of f(x) and its 4th degree Bernstein polynomial">
+      <annotation ref="graph-group" text="The graphs of f(x) and its 4th degree Bernstein polynomial">
+        <annotation ref="graph1" text="The graph of f(x)" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the 4th degree Bernstein polynomial" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+  </image>
+
+  <p>
+    Let <m>f(x) = \sin(2\pi x)</m> on <m>[0,1]</m>. Find the fourth degree Bernstein polynomial that approximates <m>f(x)</m> from Bernstein's proof of WAT.
+  </p>
+
+  <p>
+    Let <m>f(x) = \sin(2\pi x)</m> on <m>[0,1]</m>. Find the fourth degree Taylor polynomial of <m>f(x)</m> at <m>x=\frac{1}{2}</m>.
+  </p>
+
+  <p>
+    In the graph below <m>f(x)</m> is black, the Bernstein polynomial is red and the Taylor polynomial is blue. The Taylor polynomial is more accurate close to <m>\frac{1}{2}</m> but is less accurate away from <m>\frac{1}{2}</m>. In contrast, the Bernstein polynomial has about the same degree of accuracy on the entire interval.
+  </p>
+
+  <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-Bernstein-example-2">
+    <diagram dimensions="(300,300)" margins="5">
+  <definition>g1(x)=(-2)*pi*(x-1/2)+(8/6)*(pi^3)*(x-1/2)^3</definition>
+  <definition>g2(x)=4*x*(1-x)^3-4*x^3*(1-x)</definition>
+  <definition>g3(x)=sin(2*pi*x)</definition>
+  <coordinates bbox="(0,-2,1,2)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph1" function="g1" stroke = "blue"/>
+    <graph at="graph2" function="g2" stroke = "red"/>
+    <graph at="graph3" function="g3" stroke = "black"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the 4th degree Taylor polynomial of f(x) and its 4th degree Bernstein polynomial">
+      <annotation ref="graph-group" text="The graphs of the 4th degree Taylor polynomial of f(x) and its 4th degree Bernstein polynomial">
+        <annotation ref="graph1" text="The graph of the 4th degree Taylor polynomial" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the 4th degree Bernstein polynomial" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of f(x)" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+  </image>
+
+
+  </subsection>
+</section>

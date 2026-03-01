@@ -748,6 +748,51 @@ var ptx_lunr_docs = [
   "body": " We will prove the Maclaurin series case. The general Taylor series case is similar.  The th partial sum of the Maclaurin series is given by the formula   Thus , , and so on through . After that and all higher derivatives are .  In other words for which implies that the error function satisfies and   Recall the Generalized Mean Value Theorem.  If and are continuous on the closed interval and differentiable on the open interval then there exists a point where If is never zero on then the conclusion can be stated as   Apply the GMVT to the functions and on the interval . Then there exists a point where   Hence   Now apply the GMVT to the functions and on the interval . Then there exists a point where   Hence   Continuing in this way we find that there exists a point where   Now let and recall that because , we have . Thus   "
 },
 {
+  "id": "notes-week-08",
+  "level": "1",
+  "url": "notes-week-08.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 8: The Weierstrass Approximation Theorem (6.7)",
+  "body": " Week 8: The Weierstrass Approximation Theorem (6.7)   Weierstrass Approximation Theorem  Polynomials have a number of properties that make them convenient to work with. They are relatively easy to differentiate and integrate, there are a number of methods for finding the zeros of polynomials, and polynomials are smooth continuous functions that are infinitely differentiable. For these reasons it is often convenient to approximate functions by polynomials.  Taylor series are one example of a type of polynomial approximation. However Taylor series have a couple of drawbacks. First the function needs to be infinitely differentiable to have a Taylor series and second the Taylor series need not converge to the original function.  What conditions (continuous, differentiable, etc.) are required for a function to be uniformly approximated by polynomials?  In 1885 Karl Weierstrass answered this question by proving a remarkable theorem.    Let be continuous. Given , there exists a polynomial satisfying for all     Essentially the WAT says that every continuous function on a closed interval can be uniformly approximated by a polynomial.  Weierstrass also discovered that there is a function that is everywhere continuous but nowhere differentiable. According to the WAT it is possible to find a polynomial that uniformly approximates this function to any desired degree of accuracy.  The original proof of the WAT due to Weierstrass only showed that for every continuous function and there is a polynomial within a distance of of the function, but it didn't provide a formula for the polynomial.  In 1912, as part of his second doctoral thesis, the Ukrainian Jewish Mathematician Sergei Bernstein gave a proof of the WAT using ideas from probability which gives an explicit formula for the approximating polynomials.  Bernstein's proof shows that any continuous function can be uniformly approximated by a family of polynomials called Bernstein polynomials.    Bernstein Polynomials  The Bernstein basis polynomials of degree are defined by where and   A Bernstein polynomial is a linear combination of Bernstein basis polynomials. That is, a Bernstein polynomial is a polynomial of the form where the are real numbers.  The graph below shows the Bernstein polynomials on the interval      g1(x)=4*x*(1-x)^3  g2(x)=6*x^2*(1-x)^2  g3(x)=4*x^3*(1-x)  f4(x)=x^4  f0(x)=(1-x)^4                        The following theorem lists some important properties of the Bernstein basis polynomials                          Proof of 1. : Recall that the Binomial Theorem states that Substitute to obtain property 1.  Proof of 2. : Differentiate both sides of with respect to then multiply the resulting equation by to obtain Substitute to obtain property 2.  Proof of 3. : Differentiate both sides of with respect to then multiply the resulting equation by to obtain Substitute to obtain   Apply properties 1 and 2 and to to obtain property 3.     Proof of WAT   It is enough to suppose that is continuous on . Let   We will show that converges uniformly to . This implies WAT.  It follows from Property 1 that   Hence   Let . Since is uniformly continuous on (why?) there exists such that whenever .  Also the continuity of implies that is bounded on so there exists such that on .  We split up the sum as follows.   The first sum is less than by property 1.  It follows from the triangle inequality and the boundedness of that the second sum is less than or equal to   Because we are summing over the values of where it follows that   It follows from property 3 that as .  Thus uniformly and uniformly.     Examples  Let on . Find the fourth degree Bernstein polynomial that approximates from Bernstein's proof of WAT.     g1(x)=sqrt((x-1\/2)^2)  g2(x)=(1\/2)*(1-x)^4+ x*(1-x)^3+x^3*(1-x)+(1\/2)*x^4                  Let on . Find the fourth degree Bernstein polynomial that approximates from Bernstein's proof of WAT.  Let on . Find the fourth degree Taylor polynomial of at .  In the graph below is black, the Bernstein polynomial is red and the Taylor polynomial is blue. The Taylor polynomial is more accurate close to but is less accurate away from . In contrast, the Bernstein polynomial has about the same degree of accuracy on the entire interval.     g1(x)=(-2)*pi*(x-1\/2)+(8\/6)*(pi^3)*(x-1\/2)^3  g2(x)=4*x*(1-x)^3-4*x^3*(1-x)  g3(x)=sin(2*pi*x)                     "
+},
+{
+  "id": "thm-weiestrass",
+  "level": "2",
+  "url": "notes-week-08.html#thm-weiestrass",
+  "type": "Theorem",
+  "number": "55",
+  "title": "",
+  "body": "  Let be continuous. Given , there exists a polynomial satisfying for all    "
+},
+{
+  "id": "thm-bernstein-basis",
+  "level": "2",
+  "url": "notes-week-08.html#thm-bernstein-basis",
+  "type": "Theorem",
+  "number": "56",
+  "title": "",
+  "body": "                      "
+},
+{
+  "id": "subsec-Bernstein-8",
+  "level": "2",
+  "url": "notes-week-08.html#subsec-Bernstein-8",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Proof of 1. : Recall that the Binomial Theorem states that Substitute to obtain property 1.  Proof of 2. : Differentiate both sides of with respect to then multiply the resulting equation by to obtain Substitute to obtain property 2.  Proof of 3. : Differentiate both sides of with respect to then multiply the resulting equation by to obtain Substitute to obtain   Apply properties 1 and 2 and to to obtain property 3.  "
+},
+{
+  "id": "subsec-proof-2",
+  "level": "2",
+  "url": "notes-week-08.html#subsec-proof-2",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " It is enough to suppose that is continuous on . Let   We will show that converges uniformly to . This implies WAT.  It follows from Property 1 that   Hence   Let . Since is uniformly continuous on (why?) there exists such that whenever .  Also the continuity of implies that is bounded on so there exists such that on .  We split up the sum as follows.   The first sum is less than by property 1.  It follows from the triangle inequality and the boundedness of that the second sum is less than or equal to   Because we are summing over the values of where it follows that   It follows from property 3 that as .  Thus uniformly and uniformly.  "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",
@@ -791,6 +836,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 5 Due March 2",
   "body": " MTH 428\/528 Homework 5 Due March 2     Consider the function defined by the power series    Determine the interval of convergence and radius of convergence of the power series.    Where is continuous and where is it differentiable?       Find suitable coefficients so that the resulting power series has the given properties, or explain why the request is impossible.   Converges absolutely for all and diverges off of this set.    Converges absolutely at and diverges at    Converges conditionally at and diverges at .      Consider the function defined by the power series Determine the interval where is differentiable and find a power series for .    Show that power series representations are unique. That is, if for all in an interval , prove that for all .    A series is said to be Abel-summable to if the power series converges for all and .   Show that any series that converges to a limit is also Abel-summable to .    (MTH 528 Only) Show that is Abel-summable and find the sum.        "
+},
+{
+  "id": "hw6",
+  "level": "1",
+  "url": "hw6.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 6 Due March 9",
+  "body": " MTH 428\/528 Homework 6 Due March 9     Determine the Maclaurin series representation for . What is the interval of convergence for this power series?    Suppose converges on , where is a positive real number. Show is defined on and satisfies .      Use the result of Problem 2 to determine the Maclaurin series for .         Determine the maximum possible error in approximating by the partial sum of its Maclaurin series on the interval .    Use Lagrange's Remainder Theorem to show that the Maclaurin series for converges to on the interval where is a positive real number.     "
 }
 ]
 

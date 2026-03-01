@@ -153,15 +153,15 @@
 <proof>
   <p>
     Proof of 1. : Recall that the Binomial Theorem states that
-    <md xml:id="bb1">
+    <men xml:id="bb1" number="yes">
       (1+t)^n = \sum_{k=0}^n \binom{n}{k} t^k
-    </md>
+    </men>
     Substitute <m>t = \frac{x}{1-x}</m> to obtain property 1.
   </p>
 
   <p>
     Proof of 2. : Differentiate both sides of <xref ref="bb1"/> with respect to <m>t</m> then multiply the resulting equation by <m>t</m> to obtain
-    <md xml:id="bb2">
+    <md xml:id="bb2" number="yes">
       tn(1+t)^{n-1} = \sum_{k=0}^n \binom{n}{k} k t^k
     </md>
     Substitute <m>t = \frac{x}{1-x}</m> to obtain property 2.
@@ -173,7 +173,7 @@
       tn(1+t)^{n-1} + t^2(n-1)n(1+t)^{n-2} = \sum_{k=0}^n \binom{n}{k} k^2 t^k
     </md>
     Substitute <m>t = \frac{x}{1-x}</m> to obtain
-    <md xml:id="bb3">
+    <md xml:id="bb3" number="yes">
       \frac{x(1-x)}{n} +x^2 = \sum_{k=0}^n \binom{n}{k} \left(\frac{k}{n} \right)^2 x^k (1-x)^{n-k}.
     </md>
     

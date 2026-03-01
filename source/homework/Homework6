@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw6">
+  <title>MTH 428/528 Homework 6 Due March 9</title>
+
+<p>
+  <ol marker="(1)">
+<li>
+  <p>
+    Determine the Maclaurin series representation for <m>f(x) = \frac{x^2}{1+3x}</m>. What is the interval of convergence for this power series?
+  </p>
+</li>
+<li>
+  <p>
+    Suppose <m>f(x) = \displaystyle \sum_{n=0}^{\infty} a_n x^n</m> converges on <m>(-M,M)</m>, where <m>M</m> is a positive real number. Show
+    <md>
+      F(x) = \sum_{n=0}^{\infty} \frac{a_n}{n+1} x^{n+1}
+    </md>
+    is defined on <m>(-M,M)</m> and satisfies <m>F'(x) = f(x)</m>.
+  </p>
+</li>
+<li>
+  <ol marker="(A)">
+    <li>
+      <p>
+        Use the result of Problem 2 to determine the Maclaurin series for <m>f(x) = \ln(1+x)</m>.
+      </p>
+    </li>
+    <li>
+      <md>
+        \ln(2) = \sum_{n=0}^{\infty} \frac{(-1)^n}{n+1} =1- \frac{1}{2}+\frac{1}{3}-\frac{1}{4}+ \ldots
+      </md>
+    </li>
+  </ol>
+</li>
+<li>
+  <p>
+    Determine the maximum possible error in approximating <m>f(x) = e^x</m> by the partial sum <m>S_4 = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}</m> of its Maclaurin series on the interval <m>[0,1]</m>.
+  </p>
+</li>
+<li>
+  <p>
+    Use Lagrange's Remainder Theorem to show that the Maclaurin series for <m>e^x</m> converges to <m>e^x</m> on the interval <m>[-M,M]</m> where <m>M</m> is a positive real number.
+  </p>
+</li>
+  </ol>
+
+</p>
+</worksheet>

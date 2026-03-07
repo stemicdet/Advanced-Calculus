@@ -19,7 +19,7 @@
     </p>
 
     <p>
-       <term> Newton-Leibniz Integral</term>: The integral of the function $f$ is the function $F$ such that $F'(x) = f(x)$.
+       <term> Newton-Leibniz Integral</term>: The integral of the function <m>f</m> is the function <m>F</m> such that <m>F'(x) = f(x)</m>.
     </p>
 
     <p>
@@ -35,7 +35,7 @@
     </p>
 
     <p>
-        A <term>partition</term> of $[a,b]$ is a finite set of points from $[a,b]$ that includes both $a$ and $b$. The notational convention is to list the points of a partition $P = \{x_0, x_1, x_2, \ldots, x_n\}$ in increasing order; thus
+        A <term>partition</term> of <m>[a,b]</m> is a finite set of points from <m>[a,b]</m> that includes both <m>a</m> and <m>b</m>. The notational convention is to list the points of a partition <m>P = \{x_0, x_1, x_2, \ldots, x_n\}</m> in increasing order; thus
 
         <md>
             a=x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b
@@ -44,11 +44,11 @@
     </p>
 
     <p>
-        <term>Cauchy Integral</term>: Let $f(x)$ be a continuous function on $[a,b]$ and let $a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b$, and $\Delta x_k = x_k-x_{k-1}$ for $k = 1,2, \ldots n$. The limit
+        <term>Cauchy Integral</term>: Let <m>f(x)</m> be a continuous function on <m>[a,b]</m> and let <m>a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b</m>, and <m>\Delta x_k = x_k-x_{k-1}</m> for <m>k = 1,2, \ldots n</m>. The limit
         <md>
             \lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(x_{k-1}) \Delta x_k
         </md>
-        is called the Cauchy integral of $f(x)$ over $[a,b]$ and is denoted by
+        is called the Cauchy integral of <m>f(x)</m> over <m>[a,b]</m> and is denoted by
         <md>
             \int_a^b f(x) dx.
         </md>
@@ -56,11 +56,11 @@
     </p>
 
     <p>
-        Geometrically the Cauchy integral determines the area under the curve $f(x)$ by dividing $[a,b]$ into rectangles of width $\Delta x_i$. The height of the rectangle is chosen to be the height of $f(x)$ at the left endpoint of the rectangle.
+        Geometrically the Cauchy integral determines the area under the curve <m>f(x)</m> by dividing <m>[a,b]</m> into rectangles of width <m>\Delta x_i</m>. The height of the rectangle is chosen to be the height of <m>f(x)</m> at the left endpoint of the rectangle.
     </p>
 
     <p>
-        In taking the limit as the maximum width of the rectangles goes to $0$ more rectangles are required to cover the area beneath the curve and as the maximum width of the rectangles tends to $0$ the limit converges to the area under the curve.
+        In taking the limit as the maximum width of the rectangles goes to <m>0</m> more rectangles are required to cover the area beneath the curve and as the maximum width of the rectangles tends to <m>0</m> the limit converges to the area under the curve.
     </p>
 
     <!-- ToDo: include a section on salamanders and their life-cycle -->
@@ -75,11 +75,11 @@
     </p>
 
     <p>
-        <term>Riemann Integral</term>: Let $f(x)$ be a function on $[a,b]$ and let $a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b$, and $\Delta x_k = x_i-x_{i-1}$ for $i = 1,2, \ldots n$. On each subinterval $[x_{k-1}, x_k]$ choose a point $c_k \in [x_{k-1}, x_k]$ The limit
+        <term>Riemann Integral</term>: Let <m>f(x)</m> be a function on <m>[a,b]</m> and let <m>a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b</m>, and <m>\Delta x_k = x_i-x_{i-1}</m> for <m>i = 1,2, \ldots n</m>. On each subinterval <m>[x_{k-1}, x_k]</m> choose a point <m>c_k \in [x_{k-1}, x_k]</m> The limit
         <md>
             \lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(c_k) \Delta x_k
         </md>
-        is called the Riemann integral of $f(x)$ over $[a,b]$ and is denoted by
+        is called the Riemann integral of <m>f(x)</m> over <m>[a,b]</m> and is denoted by
 
         <md>
              \int_a^b f(x) dx.
@@ -93,11 +93,11 @@
     </p>
 
     <p>
-        The difference between the Riemann integral and the Cauchy integral is that in the Cauchy integral the height of the rectangle is given by value of $f(x)$ at the left endpoint, while in the Riemann integral the height of the rectangle is determined by the value of $f(c_k)$ which can be any point in the subinterval $[x_{k-1}, x_k]$
+        The difference between the Riemann integral and the Cauchy integral is that in the Cauchy integral the height of the rectangle is given by value of <m>f(x)</m> at the left endpoint, while in the Riemann integral the height of the rectangle is determined by the value of <m>f(c_k)</m> which can be any point in the subinterval <m>[x_{k-1}, x_k]</m>
     </p>
 
     <p>
-        The value of the Riemann integral if it exists is independent of the choice of the points $c_k$. No matter what points you choose you will get the same value for the limit of the Riemann sum.
+        The value of the Riemann integral if it exists is independent of the choice of the points <m>c_k</m>. No matter what points you choose you will get the same value for the limit of the Riemann sum.
     </p>
 
     <p>
@@ -145,7 +145,7 @@
     </p>
 
     <p>
-        Recall that a partition $P$ of $[a,b]$ is a finite set of points that includes $a$ and $b$. For each subinterval $[x_{k-1},x_k]$ of $P$, let 
+        Recall that a partition <m>P</m> of <m>[a,b]</m> is a finite set of points that includes <m>a</m> and <m>b</m>. For each subinterval <m>[x_{k-1},x_k]</m> of <m>P</m>, let 
         <md>
              m_k = \inf\{f(x): x \in [x_{k-1}, x_k] \} \textnormal{ and } M_k = \sup\{f(x): x \in [x_{k-1}, x_k] \}.
         </md>
@@ -153,7 +153,7 @@
     </p>
 
     <p>
-        The <term>lower sum</term> of $f$ with respect to $P$ is given by
+        The <term>lower sum</term> of <m>f</m> with respect to <m>P</m> is given by
         <md>
             L(f,p) = \sum_{k=1}^n m_k(x_k-x_{k-1}).
         </md>
@@ -161,7 +161,7 @@
     </p>
 
     <p>
-        The <term>upper sum</term> of $f$ with respect to $P$ is given by
+        The <term>upper sum</term> of <m>f</m> with respect to <m>P</m> is given by
         <md>
             U(f,p) = \sum_{k=1}^n M_k(x_k-x_{k-1}).
         </md>
@@ -169,17 +169,17 @@
     </p>
 
     <p>
-        Example: Find the upper and lower sums of $f(x) = 4x-x^2$ on the interval $[0,4]$ with respect to the partition $P = \{0, 1, 3, 4\}$
+        Example: Find the upper and lower sums of <m>f(x) = 4x-x^2</m> on the interval <m>[0,4]</m> with respect to the partition <m>P = \{0, 1, 3, 4\}</m>
     </p>
 
     <p>
-        A partition $Q$ is a <term>refinement</term> of a partition $P$ if $Q$ contains all the points of $P$; that is, $P \subseteq Q$.
+        A partition <m>Q</m> is a <term>refinement</term> of a partition <m>P</m> if <m>Q</m> contains all the points of <m>P</m>; that is, <m>P \subseteq Q</m>.
     </p>
 
     <lemma xml:id="lem-refinement">
         <statement>
             <p>
-                If $P \subseteq Q$ then
+                If <m>P \subseteq Q</m> then
                 <md>
                     L(f,P) \leq L(f,Q) \leq U(f,Q) \leq U(f,P).
                 </md>
@@ -190,11 +190,11 @@
 
     <proof>
         <p>
-            The upper sum of $f$ with respect to $Q$ is the supremum of a set whose infimum is the lower sum of $f$ with respect to $Q$, so $L(f,Q) \leq U(f,Q)$.
+            The upper sum of <m>f</m> with respect to <m>Q</m> is the supremum of a set whose infimum is the lower sum of <m>f</m> with respect to <m>Q</m>, so <m>L(f,Q) \leq U(f,Q)</m>.
         </p>
 
          <p>
-        Suppose $Q$ is a refinement of $P$ obtained by adding an additional point $z$. Further suppose $z \in [x_{K-1},x_K]$ for some $K$.
+        Suppose <m>Q</m> is a refinement of <m>P</m> obtained by adding an additional point <m>z</m>. Further suppose <m>z \in [x_{K-1},x_K]</m> for some <m>K</m>.
     </p>
 
     <p>
@@ -216,7 +216,7 @@
              m_K' = \inf\{f(x): x \in [x_{K-1}, z]\} \textnormal{ and } m_K'' = \inf\{f(x): x \in [z, x_K]\}
         </md>
         
-        Then $m_K \leq m_K'$ and $m_K \leq m_K''$.
+        Then <m>m_K \leq m_K'</m> and <m>m_K \leq m_K''</m>.
         
     </p>
 
@@ -234,14 +234,14 @@
     <lemma xml:id="lem-partition-2">
         <statement>
             <p>
-                If $P_1$ and $P_2$ are any two partitions of $[a,b]$ then $L(f,P_1) \leq U(f, P_2)$
+                If <m>P_1</m> and <m>P_2</m> are any two partitions of <m>[a,b]</m> then <m>L(f,P_1) \leq U(f, P_2)</m>
             </p>
         </statement>
     </lemma>
 
     <proof>
         <p>
-            Let $P = P_1 \cup P_2$, which is a refinement of both $P_1$ and $P_2$. Thus by the previous result, 
+            Let <m>P = P_1 \cup P_2</m>, which is a refinement of both <m>P_1</m> and <m>P_2</m>. Thus by the previous result, 
             <md>
                  L(f,P_1) \leq L(f,P) \leq U(f,P) \leq U(f, P_2)
             </md>
@@ -262,7 +262,7 @@
     </p>
 
     <p>
-        Let $\mathcal{P}$ be the collection of all possible partitions of the interval $[a,b]$. The <term>upper integral</term> of $f$ is defined to be 
+        Let <m>\mathcal{P}</m> be the collection of all possible partitions of the interval <m>[a,b]</m>. The <term>upper integral</term> of <m>f</m> is defined to be 
         <md>
             U(f) = \inf\{U(f,P): P \in \mathcal{P}\}
         </md>
@@ -270,7 +270,7 @@
     </p>
 
     <p>
-        Similarly the <term>lower integral</term> of $f$ on $[a,b]$ is defined to be
+        Similarly the <term>lower integral</term> of <m>f</m> on <m>[a,b]</m> is defined to be
         <md>
              L(f) = \sup\{L(f,P): P \in \mathcal{P}\}
         </md>
@@ -280,13 +280,13 @@
     <lemma xml:id="lem-upper-lower-integral">
         <statement>
             <p>
-                For any bounded function $f$ on $[a,b]$, it is always the case that $U(f) \geq L(f)$.
+                For any bounded function <m>f</m> on <m>[a,b]</m>, it is always the case that <m>U(f) \geq L(f)</m>.
             </p>
         </statement>
     </lemma>
 
     <p>
-        A bounded function $f$ defined on the interval $[a,b]$ is <term>Darboux Integrable</term> if $U(f) = L(f)$. In this case we define $\int_a^b f(x)dx$ to be this common value; that is,
+        A bounded function <m>f</m> defined on the interval <m>[a,b]</m> is <term>Darboux Integrable</term> if <m>U(f) = L(f)</m>. In this case we define <m>\int_a^b f(x)dx</m> to be this common value; that is,
         <md>
            \int_a^b f(x) dx = U(f) = L(f) 
         </md>
@@ -298,7 +298,7 @@
     </p>
 
     <p>
-        To show that a function is Darboux integrable we must show that $U(f) = L(f)$. The difficulty is that computing $U(f)$ and $L(f)$ requires taking the supremum and infimum over all possible partitions. The next result allows us to show that $U(f)= L(f)$ without needing to consider all possible partitions.
+        To show that a function is Darboux integrable we must show that <m>U(f) = L(f)</m>. The difficulty is that computing <m>U(f)</m> and <m>L(f)</m> requires taking the supremum and infimum over all possible partitions. The next result allows us to show that <m>U(f)= L(f)</m> without needing to consider all possible partitions.
     </p>
 
     <theorem xml:id="thm-integrability-criteria">
@@ -307,7 +307,7 @@
         
         <statement>
             <p>
-                A bounded function is Darboux integrable on $[a,b]$ if and only if, for every $\epsilon>0$, there exists a partition $P_{\epsilon}$ of $[a,b]$ such that
+                A bounded function is Darboux integrable on <m>[a,b]</m> if and only if, for every <m>\epsilon>0</m>, there exists a partition <m>P_{\epsilon}</m> of <m>[a,b]</m> such that
                 <md>
                     U(f, P_{\epsilon}) - L(f, P_{\epsilon}) &lt; \epsilon.
                 </md>
@@ -318,7 +318,7 @@
 
     <proof>
         <p>
-            We first prove the reverse direction. Let $\epsilon>0$ be arbitrary. Then there exists $P_{\epsilon}$ such that $U(f,P_{\epsilon}) - L(f,P_{\epsilon}) &lt; \epsilon$.
+            We first prove the reverse direction. Let <m>\epsilon>0</m> be arbitrary. Then there exists <m>P_{\epsilon}</m> such that <m>U(f,P_{\epsilon}) - L(f,P_{\epsilon}) &lt; \epsilon</m>.
         </p>
 
         <p>
@@ -331,23 +331,23 @@
         </p>
 
         <p>
-            Since $\epsilon>0$ is arbitrary this means that $U(f) = L(f)$ and thus $f$ is Darboux integrable.
+            Since <m>\epsilon>0</m> is arbitrary this means that <m>U(f) = L(f)</m> and thus <m>f</m> is Darboux integrable.
         </p>
 
         <p>
-            To prove the forward direction we will use a triangle inequality argument. However since $U(f) \geq L(f)$ we will not need absolute values.
+            To prove the forward direction we will use a triangle inequality argument. However since <m>U(f) \geq L(f)</m> we will not need absolute values.
         </p>
 
         <p>
-            Because $U(f)$ is the supremum of all upper sums, given $\epsilon &gt; 0$ there exists a partition $P_1$ such that $U(f,P_1) &lt; U(f) + \frac{\epsilon}{2}$
+            Because <m>U(f)</m> is the supremum of all upper sums, given <m>\epsilon &gt; 0</m> there exists a partition <m>P_1</m> such that <m>U(f,P_1) &lt; U(f) + \frac{\epsilon}{2}</m>
         </p>
 
         <p>
-            Likewise, there is a partition $P_2$ such that $L(f,P_2) &gt; L(f) - \frac{\epsilon}{2}$.
+            Likewise, there is a partition <m>P_2</m> such that <m>L(f,P_2) &gt; L(f) - \frac{\epsilon}{2}</m>.
         </p>
 
         <p>
-            Let $P_{\epsilon} = P_1 \cup P_2$ which is a refinement of both $P_1$ and $P_2$ and recall that since $f$ is integrable $U(f) = L(f)$.
+            Let <m>P_{\epsilon} = P_1 \cup P_2</m> which is a refinement of both <m>P_1</m> and <m>P_2</m> and recall that since <m>f</m> is integrable <m>U(f) = L(f)</m>.
         </p>
 
         <p>
@@ -362,28 +362,51 @@
     </proof>
 
     <p>
-        Example: Show that $f(x) = 2x$ is Darboux integrable on the interval $[0,3]$
+        Example: Show that <m>f(x) = 2x</m> is Darboux integrable on the interval <m>[0,3]</m>
     </p>
 
     <theorem xml:id="thm-darboux-integrable">
         <statement>
             <p>
-                If $f$ is continuous on $[a,b]$ then it is Darboux integrable on $[a,b]$.
+                If <m>f</m> is continuous on <m>[a,b]</m> then it is Darboux integrable on <m>[a,b]</m>.
             </p>
         </statement>
     </theorem>
 
     <proof>
         <p>
-            Since $f$ is continuous on a compact set, it must be uniformly continuous on $[a,b]$.
+            Since <m>f</m> is continuous on a compact set, it must be uniformly continuous on <m>[a,b]</m>.
         </p>
 
         <p>
-            Let $\epsilon>0$ be arbitrarily chosen. Then there exists $\delta>0$ such that $|f(y)-f(z)| &lt; \frac{\epsilon}{b-a}$ whenever $|y-z| &lt; \delta$.
+            Let <m>\epsilon>0</m> be arbitrarily chosen. Then there exists <m>\delta>0</m> such that <m>|f(y)-f(z)| &lt; \frac{\epsilon}{b-a}</m> whenever <m>|y-z| &lt; \delta</m>.
         </p>
 
         <p>
-            Now let $P$ be a partition of $[a,b]$ where $x_k - x_{k-1} &lt; \delta$ on every subinterval $[x_{k-1}, x_k]$ of $[a,b]$.
+            Now let <m>P</m> be a partition of <m>[a,b]</m> where <m>x_k - x_{k-1} &lt; \delta</m> on every subinterval <m>[x_{k-1}, x_k]</m> of <m>[a,b]</m>.
+        </p>
+
+        <p>
+            On the subinterval <m>[x_{k-1},x_k]</m> the supremum <m>M_k</m> occurs at some point <m>y_k</m> and the infimum <m>m_k</m> occurs at some point <m>z_k</m>.
+        </p>
+
+        <p>
+            Since <m>|y_k-z_k| &lt; \delta</m>, <m>M_k-m_k &lt; \frac{\epsilon}{b-a}</m>.
+        </p>
+
+        <p>
+            Thus 
+
+            <md>
+                <mrow> U(f,P) - L(f,P) \amp = \sum_{k=1}^n M_k (x_k-x_{k-1}) - \sum_{k=1}^n m_k (x_k-x_{k-1})</mrow>
+                <mrow> \amp = \sum_{k=1}^n (M_k-m_k) (x_k-x_{k-1})</mrow>
+                <mrow> \amp &lt; \frac{\epsilon}{b-a} \sum_{k=1}^n (x_k-x_{k-1})</mrow>
+                <mrow> \amp = \frac{\epsilon}{b-a} (x_n-x_1) = \frac{\epsilon}{b-a} (b-a) = \epsilon </mrow>
+            </md>
+        </p>
+
+        <p>
+            Hence <m>f</m> is Darboux integrable by the Integrability Criterion.
         </p>
     </proof>
     

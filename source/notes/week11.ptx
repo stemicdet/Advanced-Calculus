@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-11">
+  <title>Week 11: Integrating Functions with Discontinuities and Integral Properties (7.3-7.4)</title>
+
+  <subsection xml:id="subsec-discontinuities-integral">
+    <title>Integrals of Discontinuous Functions</title>
+
+    <p>
+        The Riemann integral was designed so that it would be possible to integrate discontinuous functions; however, not every function is Riemann integrable.
+    </p>
+
+    <p>
+        We will investigate just how discontinuous a Riemann integrable function can be as well as examine techniques for determining the integral of certain types of discontinuous functions.
+    </p>
+
+    <p>
+        Consider the function
+        <md>
+            f(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x =0$} \\
+      \hfill  0 \hfill \amp \text{ if $x \neq 0$} 
+  \end{cases}
+        </md>
+        
+    </p>
+
+    <p>
+        This function is $0$ everywhere except for a single point. Because there is no area under a single point, it is reasonable to suppose that the integral of $f(x)$ is $0$ on every interval.
+    </p>
+
+    <p>
+        Let's show that the integral of $f(x)$ is $0$ on the interval $[-1,1]$. If $P$ is a partition of this interval then $M_k = m_k = 0$ on any subinterval that does not contain $0$, but on the subinterval that does contain $0$, $M_k = 1$ while $m_k = 0$.
+    </p>
+
+    <p>
+        To minimize the difference between the upper sum and the lower sum, we should make the subinterval containing $0$ as small as possible.
+    </p>
+
+    <p>
+        Let $\epsilon>0$ and let $P_{\epsilon}$ be the partition $\{-1,-\frac{\epsilon}{2}, \frac{\epsilon}{2}, 1\}$
+    </p>
+
+    <p>
+        Then
+        <md>
+             L(f,P_{\epsilon}) = 0(-\frac{\epsilon}{2} - 1) + 0 ( \frac{\epsilon}{2}-\frac{-\epsilon}{2}) + 0 (1-\frac{\epsilon}{2}) = 0
+        </md>
+        
+    </p>
+
+    <p>
+        On the other hand
+        <md>
+            U(f,P_{\epsilon}) = 0(-\frac{\epsilon}{2} - 1) + 1 ( \frac{\epsilon}{2}-\frac{-\epsilon}{2}) + 0 (1-\frac{\epsilon}{2}) = \epsilon
+        </md>
+        
+    </p>
+
+    <p>
+        Thus $U(f,P_{\epsilon}) - L(f,P_{\epsilon}) = \epsilon$ and $f(x)$ is integrable with integral $0$.
+    </p>
+
+    <p>
+        The strategy employed to show that $f(x)$ was integrable can be used to show that any bounded function with a single discontinuity is integrable.
+    </p>
+
+    <theorem xml:id="thm-one-discontinuity">
+        <statement>
+            <p>
+                If $f: [a,b] \to \mathbf{R}$ is bounded, and $f$ is integrable on $[c,b]$ for all $c \in (a,b)$ Then $f$ is integrable on $[a,b]$. An analogous result holds at the other endpoint.
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        Since continuous functions are integrable, the above theorem implies that a function that is continuous everywhere except for one point is integrable.
+    </p>
+
+    <proof>
+        <p>
+            Let $\epsilon>0$. We need to find a partition $P$ for which $U(f,P)-L(f,P) &lt; \epsilon$.
+        </p>
+
+        <p>
+            For any partition $P$ we can write
+            <md>
+                <mrow> U(f,P)-L(f,P) \amp \sum_{k=1}^n M_k (x_k-x_{k-1}) - \sum_{k=1}^n m_k (x_k-x_{k-1})</mrow>
+                <mrow> \amp = \sum_{k=1}^n (M_k-m_k) (x_k-x_{k-1}) </mrow>
+                <mrow> \amp =(M_1-m_1) (x_1-a) + \sum_{k=2}^n (M_k-m_k) (x_k-x_{k-1}) </mrow>
+            </md>
+        </p>
+
+        <p>
+            We want to choose $x_1$ close enough to $a$ so that $(M_1-m_1) (x_1-a) &lt; \frac{\epsilon}{2}$.
+        </p>
+
+        <p>
+            Because $f$ is bounded, there exists $M$ such that $|f(x)| &lt; M$. Hence $M_1-m_1 &lt; 2M$.
+        </p>
+
+        <p>
+            If we choose $x_1$ so that $x_1-a &lt; \frac{\epsilon}{4M}$, then
+            <md>
+                (M_1-m_1)(x_1-a) &lt; 2M \frac{\epsilon}{4M} = \frac{\epsilon}{2}
+            </md>
+            
+        </p>
+
+        <p>
+            Now it follows from the hypothesis that $f$ is integrable on the interval $[x_1,b]$. Thus there is a partition $P_1$ such that $U(f,P_1) - L(f,P_1) &lt; \frac{\epsilon}{2}$.
+        </p>
+
+        <p>
+            Let $P$ be the partition of $[a,b]$ obtained by attaching $a$ to $P_1$. That is $P = \{a\} \cup P_1$.
+        </p>
+
+        <p>
+            Thus
+            <md>
+                U(f,P)-L(f,P) = (M_1-m_1)(x_1-a) + U(f,P_1)-L(f,P_1) &lt; \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon
+            </md>
+            and hence $f$ is integrable on $[a,b]$.
+        </p>
+    </proof>
+
+    <p>
+        The previous theorem shows that a bounded function on a closed interval with a discontinuity at an endpoint is integrable. This can be used to prove that a function on a closed interval with a finite number of discontinuities is Darboux integrable.
+    </p>
+
+    <p>
+        To integrate such a function you split it up into subintervals where the function is continuous on each subinterval.
+    </p>
+
+    <p>
+       For example if you want to integrate $f(x)$ on the interval $[0,5]$ but $f(x)$ is discontinuous at $x=1,3,$ and $4$, you would integrate $f(x)$ on $[0,1]$, $[1,3]$, $[3,4]$ and $[4,5]$ and then add up all those integrals. 
+    </p>
+
+    <p>
+        A function with an infinite number of discontinuities may not be Darboux integrable.
+    </p>
+
+    <p>
+        Dirichlet's function has has infinitely many discontinuities.
+        <md>
+            f(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+        </md>
+        
+    </p>
+
+    <p>
+        Because the rationals are dense in the irrationals and vice versa. Any subinterval of any partition $P$ will contain rational and irrational numbers. Hence $U(f,P) = 1$ and $L(f,P) = 0$ for all partitions $P$ and Dirichlet's function is not Darboux integrable.
+    </p>
+
+    <p>
+        A function with infinitely many discontinuities may still be Darboux integrable.
+    </p>
+
+    <p>
+        Recall that Thomae's function is discontinuous at all rational numbers.
+        <md>
+            t(x) = \begin{cases} 
+    \hfill  1 \amp \text{ if $x =0$} \\
+      \hfill  1/n \amp \text{ if $x = \frac{m}{n} \in \mathbf{Q} \setminus \{0\}$ is in lowest terms with $n>0$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+        </md>
+        
+    </p>
+
+    <p>
+        Thomae's function is Darboux integrable with integral $0$. To show this you create a partition in which rational numbers with small denominators are contained in vary narrow subintervals, so that the upper sum of the partition can be made as small as desired.
+    </p>
+    
+
+    </subsection>
+
+    <subsection xml:id="subsec-Properties-of-The-Integral">
+        <title>Properties of The Integral</title>
+
+            <p>
+        We now prove some familiar properties of integrals. The next theorem is used to show that a function with a finite number of discontinuities is Darboux integrable.
+    </p>
+
+   <theorem xml:id="thm-integral-sum">
+    <statement>
+        <p>
+            Suppose $f:[a,b] \to \mathbf{R}$ is bounded and let $c \in (a,b)$. Then $f$ is integrable on $[a,b]$ if and only if $f$ is integrable on $[a,c]$ and $[c,b]$. In this case, we have
+        <md>
+            \int_a^b f(x) dx = \int_a^c f(x)dx + \int_c^b f(x) dx
+        </md>
+        </p>
+    </statement>
+   </theorem>
+   
+   <proof>
+    <p>
+        This is an ``if and only if'' proof so we must prove both direction. First we will prove that if $f$ is integrable on $[a,b]$ then $f$ is integrable on $[a,c]$ and $[c,b]$.
+    </p>
+
+    <p>
+      Let $\epsilon &gt; 0$. Since $f$ is integrable on $[a,b]$ there is a partition $P$ of $[a,b]$ such that $U(f,P) -L(f,P) &lt; \epsilon$.  
+    </p>
+
+    <p>
+        Because refining a partition brings the upper and lower sums closer together we can add the point $c$ to $P$ if its not already there.
+    </p>
+
+    <p>
+        Now let $P_1 = P \cap [a,c]$ and let $P_2 = P \cap [c,b]$. Thus $P_1$ is a partition of $[a,c]$ and $P_2$ is a partition of $[c,b]$.
+    </p>
+
+    <p>
+        Moreover because $P_1 = P$ on $[a,c]$ and $P_2 = P$ on $[c,b]$ it follows that $U(f,P_1)-L(f,P_1) &lt; \epsilon$ and $U(f,P_2)-L(f,P_2) &lt; \epsilon$.
+    </p>
+
+    <p>
+      Since $\epsilon>0$ was arbitrarily chosen this means that $f$ is integrable on $[a,c]$ and $[c,b]$.  
+    </p>
+
+    <p>
+        Next we will show that if $f$ is integrable on $[a,c]$ and $[c,b]$ then $f$ is integrable on $[a,b]$.
+    </p>
+
+    <p>
+        Let $\epsilon &gt; 0$ be arbitrarily chosen. Then there are partitions $P_1$ of $[a,c]$ and $P_2$ of $[c,b]$ such that $U(f,P_1)-L(f,P_2) &lt; \epsilon$ and $U(f,P_2)-L(f,P_2) &lt; \epsilon$. 
+    </p>
+
+    <p>
+        Now let $P = P_1 \cup P_2$. Then $P$ is a partition of $[a,b]$ and
+        <md>
+            <mrow>  U(f,P)-L(f,P) \amp = U(f,P_1)+U(f,P_2) - L(f,P_1)-L(f,P_2) </mrow>
+            <mrow> \amp = U(f,P_1)-L(f,P_1) + U(f,P_2)-L(f,P_2) </mrow>
+            <mrow> \amp &lt; \epsilon + \epsilon = 2 \epsilon, </mrow>
+        </md>
+        
+    </p>
+
+    <p>
+        Since $\epsilon &gt; 0$ is arbitrary, $2 \epsilon$ can be made arbitrarily small and thus $f$ is integrable on $[a,b]$.
+    </p>
+
+    <p>
+        Finally we will show that
+        <md>
+            \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+        </md>
+        
+    </p>
+
+    <p>
+        Let $P = P_1 \cup P_2$ as before. Then
+        <md>
+            <mrow> \int_a^b f(x) dx \leq U(f,P) \amp &lt; L(f,P)+ \epsilon </mrow>
+            <mrow> \amp =L(f,P_1)+L(f,P_2) + \epsilon </mrow>
+            <mrow> \amp &lt; \int_a^c f(x) dx + \int_c^b f(x) dx + \epsilon </mrow>
+        </md>
+        
+    </p>
+
+    <p>
+        Because $\epsilon>0$ is arbitrary this implies that 
+        <md>
+            \int_a^b f(x) dx \leq \int_a^c f(x) dx + \int_c^b f(x) dx
+        </md>
+        
+    </p>
+
+    <p>
+        To prove the other direction of the inequality, note that
+        <md>
+            <mrow> \int_a^c f(x) dx + \int_c^b f(x) dx \amp \leq U(f,P_1) + U(f,P_2)</mrow>
+            <mrow> \amp &lt; L(f,P_1) + L(f,P_2) + 2\epsilon </mrow>
+            <mrow> \amp = L(f,P) + 2\epsilon </mrow>
+            <mrow> \amp \leq \int_a^b f(x)dx + 2\epsilon </mrow>
+        </md>
+    </p>
+
+    <p>
+        Since $\epsilon &gt; 0$ is arbitrary it follows that
+        <md>
+            \int_a^c f(x)dx + \int_c^b f(x)dx \leq \int_a^b f(x)dx
+        </md>
+        and combining both inequalities leads to
+
+        <md>
+            \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+        </md>
+        as desired.
+    </p>
+
+   </proof>
+        
+    </subsection>
+
+    </section>

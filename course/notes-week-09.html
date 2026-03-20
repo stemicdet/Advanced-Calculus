@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 9: The Reimann Integral (7.1-7.2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Calculus II">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/diagcess/diagcess.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced Calculus II</span> <span class="subtitle">MTH 428/528 Spring 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-08.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="notes-week-11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-01.html" class="internal"><span class="title">Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsection-1" class="internal"><span class="title">A Brief History of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-derivative" class="internal"><span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-3" class="internal"><span class="title">Combinations of differentiable functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsec-4" class="internal"><span class="title">The Intermediate Value Property</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: The Mean Value Theorems (5.3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-2" class="internal"><span class="title">The Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-3" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-4" class="internal"><span class="title">The Generalized Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#subsec-Intermediate-Forms-and-LHopitals-Rule" class="internal"><span class="title">Intermediate Forms and L’Hopital’s Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: A Continuous Nowhere Differentiable Function (5.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsection-3-1" class="internal"><span class="title">Non-differentiability</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="notes-week-03.html#subsubsec-3-2" class="internal"><span class="title">Continuity of <span class="process-math">\(g(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="notes-week-03.html#subsubsec-3-3" class="internal"><span class="title">Non-differentiability of <span class="process-math">\(g(x)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Uniform Convergence of a sequence of functions (6.1-6.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#notes-week-04-2" class="internal"><span class="title">Function Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Pointwise-Convergence" class="internal"><span class="title">Pointwise Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence-and-Continuity" class="internal"><span class="title">Uniform Convergence and Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Cauchy" class="internal"><span class="title">Cauchy Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#notes-week-05-2" class="internal"><span class="title">Convergence of Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Differentiable-Limit" class="internal"><span class="title">Differentiable Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Kerala-School" class="internal"><span class="title">The Kerala School of Astronomy and Mathematics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-series-of-functions" class="internal"><span class="title">Series of Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-06.html" class="internal"><span class="title">Week 6: Power Series (6.5)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#Binomial-series" class="internal"><span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-power-series" class="internal"><span class="title">Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Ratio-Test" class="internal"><span class="title">The Ratio Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Uniform-Convergence-series" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Derivatives-of-Power-Series" class="internal"><span class="title">Derivatives of Power Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-07.html" class="internal"><span class="title">Week 7: Taylor Series (6.6)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Taylor-series" class="internal"><span class="title">Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Lagranges-Remainder-Theorem" class="internal"><span class="title">Lagrange’s Remainder Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Finding" class="internal"><span class="title">Finding Taylor Series Via Algebraic Manipulation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-08.html" class="internal"><span class="title">Week 8: The Weierstrass Approximation Theorem (6.7)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Weiestrass" class="internal"><span class="title">Weierstrass Approximation Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Bernstein" class="internal"><span class="title">Bernstein Polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-proof" class="internal"><span class="title">Proof of WAT</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Examples-2" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-09.html" class="internal"><span class="title">Week 9: The Reimann Integral (7.1-7.2)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-history" class="internal"><span class="title">History of the Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-Darboux-Integral" class="internal"><span class="title">The Darboux Integral</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-11.html" class="internal"><span class="title">Week 11: Integrating Functions with Discontinuities and Integral Properties (7.3-7.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-discontinuities-integral" class="internal"><span class="title">Integrals of Discontinuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Properties-of-The-Integral" class="internal"><span class="title">Properties of The Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Convergence-and-Integration" class="internal"><span class="title">Convergence and Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw1.html" class="internal"><span class="title">MTH 428/528 Homework 1 Due January 22</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw2.html" class="internal"><span class="title">MTH 428/528 Homework 2 Due January 29</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw3.html" class="internal"><span class="title">MTH 428/528 Homework 3 Due February 16</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw4.html" class="internal"><span class="title">MTH 428/528 Homework 4 Due February 23</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw5.html" class="internal"><span class="title">MTH 428/528 Homework 5 Due March 2</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw6.html" class="internal"><span class="title">MTH 428/528 Homework 6 Due March 9</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-09"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 9: The Reimann Integral (7.1-7.2)</span>
+</h2>
+<section class="subsection" id="subsec-history"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">History of the Integral</span>
+</h3>
+<div class="para" id="subsec-history-2">The ancient Greek mathematicians found the areas of geometric figures using the ``method of exhaustion’’. They found the areas of polygons by dividing them into triangles and adding the areas of the triangles together.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-3">The area of a circle was approximated by dividing the circle into a large number of triangles, finding the areas of the triangles and adding them together.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-4">The integral of a function as opposed to the area of a geometric figure was first considered by the early founders of calculus such as Newton and Leibniz. They viewed the integral as the inverse process of differentiation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-5">
+<dfn class="terminology">Newton-Leibniz Integral</dfn>: The integral of the function <span class="process-math">\(f\)</span> is the function <span class="process-math">\(F\)</span> such that <span class="process-math">\(F'(x) = f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-6">This definition has several shortcomings. First it means that the only functions that can be differentiated are derivatives, which is a relatively small class of functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-7">Second since derivatives satisfy the Intermediate Value Property this means that any function with a jump discontinuity cannot be integrated.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-8">In 1823 Cauchy developed a more rigorous definition based on the idea of finding areas under a curve. It uses the concept of a partition of an interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-history-9">
+<div class="para">A <dfn class="terminology">partition</dfn> of <span class="process-math">\([a,b]\)</span> is a finite set of points from <span class="process-math">\([a,b]\)</span> that includes both <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> The notational convention is to list the points of a partition <span class="process-math">\(P = \{x_0, x_1, x_2, \ldots, x_n\}\)</span> in increasing order; thus</div>
+<div class="displaymath process-math" id="subsec-history-9-7">
+\begin{equation*}
+a=x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-history-10">
+<div class="para">
+<dfn class="terminology">Cauchy Integral</dfn>: Let <span class="process-math">\(f(x)\)</span> be a continuous function on <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b\text{,}\)</span> and <span class="process-math">\(\Delta x_k = x_k-x_{k-1}\)</span> for <span class="process-math">\(k = 1,2, \ldots n\text{.}\)</span> The limit</div>
+<div class="displaymath process-math" id="subsec-history-10-7">
+\begin{equation*}
+\lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(x_{k-1}) \Delta x_k
+\end{equation*}
+</div>
+<div class="para">is called the Cauchy integral of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\([a,b]\)</span> and is denoted by</div>
+<div class="displaymath process-math" id="subsec-history-10-10">
+\begin{equation*}
+\int_a^b f(x) dx.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-11">Geometrically the Cauchy integral determines the area under the curve <span class="process-math">\(f(x)\)</span> by dividing <span class="process-math">\([a,b]\)</span> into rectangles of width <span class="process-math">\(\Delta x_i\text{.}\)</span> The height of the rectangle is chosen to be the height of <span class="process-math">\(f(x)\)</span> at the left endpoint of the rectangle.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-12">In taking the limit as the maximum width of the rectangles goes to <span class="process-math">\(0\)</span> more rectangles are required to cover the area beneath the curve and as the maximum width of the rectangles tends to <span class="process-math">\(0\)</span> the limit converges to the area under the curve.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-13">Because the Cauchy integral is not defined in terms of antiderivatives it allows for a larger number of functions to be integrated compared to the Newton-Leibniz integral. However, it requires that the function to be integrated be continuous which is still rather restrictive.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-14">In 1868 Bernhard Riemann developed a new way to define integration based off Cauchy’s ideas that would allow for the integration of some discontinuous functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-history-15">
+<div class="para">
+<dfn class="terminology">Riemann Integral</dfn>: Let <span class="process-math">\(f(x)\)</span> be a function on <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b\text{,}\)</span> and <span class="process-math">\(\Delta x_k = x_i-x_{i-1}\)</span> for <span class="process-math">\(i = 1,2, \ldots n\text{.}\)</span> On each subinterval <span class="process-math">\([x_{k-1}, x_k]\)</span> choose a point <span class="process-math">\(c_k \in [x_{k-1}, x_k]\)</span> The limit</div>
+<div class="displaymath process-math" id="subsec-history-15-9">
+\begin{equation*}
+\lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(c_k) \Delta x_k
+\end{equation*}
+</div>
+<div class="para">is called the Riemann integral of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\([a,b]\)</span> and is denoted by</div>
+<div class="displaymath process-math" id="subsec-history-15-12">
+\begin{equation*}
+\int_a^b f(x) dx.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-16">The sum that appears in the definition of the Riemann integral is called a Riemann sum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-17">The difference between the Riemann integral and the Cauchy integral is that in the Cauchy integral the height of the rectangle is given by value of <span class="process-math">\(f(x)\)</span> at the left endpoint, while in the Riemann integral the height of the rectangle is determined by the value of <span class="process-math">\(f(c_k)\)</span> which can be any point in the subinterval <span class="process-math">\([x_{k-1}, x_k]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-18">The value of the Riemann integral if it exists is independent of the choice of the points <span class="process-math">\(c_k\text{.}\)</span> No matter what points you choose you will get the same value for the limit of the Riemann sum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-19">The Riemann integral makes it possible to integrate a much larger set of functions than the Cauchy integral, including functions with a finite number of discontinuities; however, the Riemann integral still has a few drawbacks.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-history-20">
+<div class="para">The Riemann integral can’t be used to integrate some functions with uncountably many discontinuities such as Dirichlet’s function</div>
+<div class="displaymath process-math" id="subsec-history-20-1">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+\hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-21">A sequence of Riemann integrable functions can converge pointwise to a function that is not Riemann integrable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-22">In 1904 Henri Lebesgue introduced a new definition of the integral which is now known as the Lebesgue integral. With the Lebesgue integral it is possible to integrate functions with uncountably many discontinuities, like Dirichlet’s function, and the limit of a sequence of Lebesgue integrable functions is always a Lebesgue integrable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-23">Lebesgue integration is based on a branch of mathematics called measure theory. In order to understand the Lebesgue integral one needs to be familiar with the concepts of measure theory. For more information take MTH 650: Real Variables I.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-24">In 1875 Gaston Darboux developed his version of the Riemann integral which is now called the Darboux integral. The Darboux integral is equivalent to the Riemann integral; that is, a function is Darboux integrable if and only if it is Riemann integrable, and both integrals yield the same value.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-history-25">The advantage of the Darboux integral over the Riemann integral is that it is simpler to state and does not require the use of a limit.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: History of the Integral"><a href="#subsec-history" title="Copy heading and permalink for Subsection: History of the Integral" aria-label="Copy heading and permalink for Subsection: History of the Integral">🔗</a></div></section><section class="subsection" id="subsec-Darboux-Integral"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Darboux Integral</span>
+</h3>
+<div class="para" id="subsec-Darboux-Integral-2">The Darboux integral is defined using lower and upper sums.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-3">
+<div class="para">Recall that a partition <span class="process-math">\(P\)</span> of <span class="process-math">\([a,b]\)</span> is a finite set of points that includes <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> For each subinterval <span class="process-math">\([x_{k-1},x_k]\)</span> of <span class="process-math">\(P\text{,}\)</span> let</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-3-7">
+\begin{equation*}
+m_k = \inf\{f(x): x \in [x_{k-1}, x_k] \} \textnormal{ and } M_k = \sup\{f(x): x \in [x_{k-1}, x_k] \}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-4">
+<div class="para">The <dfn class="terminology">lower sum</dfn> of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(P\)</span> is given by</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-4-4">
+\begin{equation*}
+L(f,p) = \sum_{k=1}^n m_k(x_k-x_{k-1}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-5">
+<div class="para">The <dfn class="terminology">upper sum</dfn> of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(P\)</span> is given by</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-5-4">
+\begin{equation*}
+U(f,p) = \sum_{k=1}^n M_k(x_k-x_{k-1}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-6">Example: Find the upper and lower sums of <span class="process-math">\(f(x) = 4x-x^2\)</span> on the interval <span class="process-math">\([0,4]\)</span> with respect to the partition <span class="process-math">\(P = \{0, 1, 3, 4\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-7">A partition <span class="process-math">\(Q\)</span> is a <dfn class="terminology">refinement</dfn> of a partition <span class="process-math">\(P\)</span> if <span class="process-math">\(Q\)</span> contains all the points of <span class="process-math">\(P\text{;}\)</span> that is, <span class="process-math">\(P \subseteq Q\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-refinement"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="lem-refinement-1-1">
+<div class="para">If <span class="process-math">\(P \subseteq Q\)</span> then</div>
+<div class="displaymath process-math" id="lem-refinement-1-1-2">
+\begin{equation*}
+L(f,P) \leq L(f,Q) \leq U(f,Q) \leq U(f,P).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-refinement-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 57"><a href="#lem-refinement" title="Copy heading and permalink for Lemma 57" aria-label="Copy heading and permalink for Lemma 57">🔗</a></div></article><details id="subsec-Darboux-Integral-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-9-1">The upper sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(Q\)</span> is the supremum of a set whose infimum is the lower sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(Q\text{,}\)</span> so <span class="process-math">\(L(f,Q) \leq U(f,Q)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-9-2">Suppose <span class="process-math">\(Q\)</span> is a refinement of <span class="process-math">\(P\)</span> obtained by adding an additional point <span class="process-math">\(z\text{.}\)</span> Further suppose <span class="process-math">\(z \in [x_{K-1},x_K]\)</span> for some <span class="process-math">\(K\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-9-3">
+<div class="para">Then</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-9-3-1">
+\begin{equation*}
+m_K = \inf\{f(x): x \in [x_{K-1}, x_K] \}  \leq  \inf\{f(x): x \in [x_{K-1}, z]\}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-9-3-2">
+\begin{equation*}
+m_K = \inf\{f(x): x \in [x_{K-1}, x_K] \} \leq \inf\{f(x): x \in [z, x_K]\}
+\end{equation*}
+</div>
+<div class="para">Let</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-9-3-3">
+\begin{equation*}
+m_K' = \inf\{f(x): x \in [x_{K-1}, z]\} \textnormal{ and } m_K'' = \inf\{f(x): x \in [z, x_K]\}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(m_K \leq m_K'\)</span> and <span class="process-math">\(m_K \leq m_K''\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-9-4">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-9-4-1">
+\begin{align*}
+L(f,P) \amp = \sum_{k=1}^n m_k (x_k - x_{k-1}) = \sum_{k=1}^{K-1} m_k (x_k - x_{k-1}) + m_K(x_K-x_{K-1}) + \sum_{k=K+1}^n m_k (x_k - x_{k-1})\\
+\amp = \sum_{k=1}^{K-1} m_k (x_k - x_{k-1}) + m_K(x_K-z)+ m_K(z-x_{K-1}) + \sum_{k=K+1}^n m_k (x_k - x_{k-1})\\
+\amp \leq  \sum_{k=1}^{K-1} m_k (x_k - x_{k-1}) + m_K'(x_K-z)+ m_K''(z-x_{K-1}) + \sum_{k=K+1}^n m_k (x_k - x_{k-1}) = L(f,Q).
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Darboux-Integral-9" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="lemma theorem-like" id="lem-partition-2"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">58</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="lem-partition-2-1-1">If <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\)</span> are any two partitions of <span class="process-math">\([a,b]\)</span> then <span class="process-math">\(L(f,P_1) \leq U(f, P_2)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-partition-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 58"><a href="#lem-partition-2" title="Copy heading and permalink for Lemma 58" aria-label="Copy heading and permalink for Lemma 58">🔗</a></div></article><details id="subsec-Darboux-Integral-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Darboux-Integral-11-1">
+<div class="para">Let <span class="process-math">\(P = P_1 \cup P_2\text{,}\)</span> which is a refinement of both <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{.}\)</span> Thus by the previous result,</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-11-1-4">
+\begin{equation*}
+L(f,P_1) \leq L(f,P) \leq U(f,P) \leq U(f, P_2)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Darboux-Integral-11" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="subsec-Darboux-Integral-12">An upper sum always overestimates the exact value of the integral, but by taking a refinement of the partition the upper sum decreases, meaning that it overestimates the integral by a lesser amount.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-13">Likewise a lower sum always underestimates the exact value of the integral, but by taking a refinement of the partition the lower sum decreasing so that it underestimates the integral by a lesser amount.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-14">The idea behind the Darboux integral is that a function is integrable when the upper and lower sums converge to a common value.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-15">
+<div class="para">Let <span class="process-math">\(\mathcal{P}\)</span> be the collection of all possible partitions of the interval <span class="process-math">\([a,b]\text{.}\)</span> The <dfn class="terminology">upper integral</dfn> of <span class="process-math">\(f\)</span> is defined to be</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-15-5">
+\begin{equation*}
+U(f) = \inf\{U(f,P): P \in \mathcal{P}\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-16">
+<div class="para">Similarly the <dfn class="terminology">lower integral</dfn> of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span> is defined to be</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-16-4">
+\begin{equation*}
+L(f) = \sup\{L(f,P): P \in \mathcal{P}\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-upper-lower-integral"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">59</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="lem-upper-lower-integral-1-1">For any bounded function <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> it is always the case that <span class="process-math">\(U(f) \geq L(f)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-upper-lower-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 59"><a href="#lem-upper-lower-integral" title="Copy heading and permalink for Lemma 59" aria-label="Copy heading and permalink for Lemma 59">🔗</a></div></article><div class="para logical" id="subsec-Darboux-Integral-18">
+<div class="para">A bounded function <span class="process-math">\(f\)</span> defined on the interval <span class="process-math">\([a,b]\)</span> is <dfn class="terminology">Darboux Integrable</dfn> if <span class="process-math">\(U(f) = L(f)\text{.}\)</span> In this case we define <span class="process-math">\(\int_a^b f(x)dx\)</span> to be this common value; that is,</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-18-6">
+\begin{equation*}
+\int_a^b f(x) dx = U(f) = L(f) 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-19">Note: The textbook uses the term Riemann integrability instead of Darboux integrability. This is not wrong because the Riemann integral and the Darboux integral are equivalent, but it is more precise to use the term Darboux integrability.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-20">To show that a function is Darboux integrable we must show that <span class="process-math">\(U(f) = L(f)\text{.}\)</span> The difficulty is that computing <span class="process-math">\(U(f)\)</span> and <span class="process-math">\(L(f)\)</span> requires taking the supremum and infimum over all possible partitions. The next result allows us to show that <span class="process-math">\(U(f)= L(f)\)</span> without needing to consider all possible partitions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-integrability-criteria"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">60</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integrability Criteria.</span>
+</h4>
+<div class="para logical" id="thm-integrability-criteria-2-1">
+<div class="para">A bounded function is Darboux integrable on <span class="process-math">\([a,b]\)</span> if and only if, for every <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> there exists a partition <span class="process-math">\(P_{\epsilon}\)</span> of <span class="process-math">\([a,b]\)</span> such that</div>
+<div class="displaymath process-math" id="thm-integrability-criteria-2-1-5">
+\begin{equation*}
+U(f, P_{\epsilon}) - L(f, P_{\epsilon}) &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-integrability-criteria-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 60: Integrability Criteria"><a href="#thm-integrability-criteria" title="Copy heading and permalink for Theorem 60: Integrability Criteria" aria-label="Copy heading and permalink for Theorem 60: Integrability Criteria">🔗</a></div></article><details id="subsec-Darboux-Integral-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-22-1">We first prove the reverse direction. Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then there exists <span class="process-math">\(P_{\epsilon}\)</span> such that <span class="process-math">\(U(f,P_{\epsilon}) - L(f,P_{\epsilon}) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-22-2">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-22-2-1">
+\begin{equation*}
+U(f)-L(f) \leq U(f,P_{\epsilon}) - L(f,P_{\epsilon}) &lt; \epsilon
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-22-3">Since <span class="process-math">\(\epsilon&gt;0\)</span> is arbitrary this means that <span class="process-math">\(U(f) = L(f)\)</span> and thus <span class="process-math">\(f\)</span> is Darboux integrable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-22-4">To prove the forward direction we will use a triangle inequality argument. However since <span class="process-math">\(U(f) \geq L(f)\)</span> we will not need absolute values.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-22-5">Because <span class="process-math">\(U(f)\)</span> is the supremum of all upper sums, given <span class="process-math">\(\epsilon &gt; 0\)</span> there exists a partition <span class="process-math">\(P_1\)</span> such that <span class="process-math">\(U(f,P_1) &lt; U(f) + \frac{\epsilon}{2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-22-6">Likewise, there is a partition <span class="process-math">\(P_2\)</span> such that <span class="process-math">\(L(f,P_2) &gt; L(f) - \frac{\epsilon}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-22-7">Let <span class="process-math">\(P_{\epsilon} = P_1 \cup P_2\)</span> which is a refinement of both <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\)</span> and recall that since <span class="process-math">\(f\)</span> is integrable <span class="process-math">\(U(f) = L(f)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-22-8">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-22-8-1">
+\begin{align*}
+U(f,P_{\epsilon}) - L(f,P_{\epsilon}) \amp \leq U(f,P_1) - L(f,P_2)\\
+\amp &lt; \left(U(f)+ \frac{\epsilon}{2} \right) - \left( L(f) - \frac{\epsilon}{2} \right)\\
+\amp = \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-Darboux-Integral-22" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="para" id="subsec-Darboux-Integral-23">Example: Show that <span class="process-math">\(f(x) = 2x\)</span> is Darboux integrable on the interval <span class="process-math">\([0,3]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-darboux-integrable"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">61</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-darboux-integrable-1-1">If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\)</span> then it is Darboux integrable on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-darboux-integrable-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 61"><a href="#thm-darboux-integrable" title="Copy heading and permalink for Theorem 61" aria-label="Copy heading and permalink for Theorem 61">🔗</a></div></article><details id="subsec-Darboux-Integral-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-25-1">Since <span class="process-math">\(f\)</span> is continuous on a compact set, it must be uniformly continuous on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-25-2">Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrarily chosen. Then there exists <span class="process-math">\(\delta&gt;0\)</span> such that <span class="process-math">\(|f(y)-f(z)| &lt; \frac{\epsilon}{b-a}\)</span> whenever <span class="process-math">\(|y-z| &lt; \delta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-25-3">Now let <span class="process-math">\(P\)</span> be a partition of <span class="process-math">\([a,b]\)</span> where <span class="process-math">\(x_k - x_{k-1} &lt; \delta\)</span> on every subinterval <span class="process-math">\([x_{k-1}, x_k]\)</span> of <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-25-4">On the subinterval <span class="process-math">\([x_{k-1},x_k]\)</span> the supremum <span class="process-math">\(M_k\)</span> occurs at some point <span class="process-math">\(y_k\)</span> and the infimum <span class="process-math">\(m_k\)</span> occurs at some point <span class="process-math">\(z_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-25-5">Since <span class="process-math">\(|y_k-z_k| &lt; \delta\text{,}\)</span> <span class="process-math">\(M_k-m_k &lt; \frac{\epsilon}{b-a}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Darboux-Integral-25-6">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="subsec-Darboux-Integral-25-6-1">
+\begin{align*}
+U(f,P) - L(f,P) \amp = \sum_{k=1}^n M_k (x_k-x_{k-1}) - \sum_{k=1}^n m_k (x_k-x_{k-1})\\
+\amp = \sum_{k=1}^n (M_k-m_k) (x_k-x_{k-1})\\
+\amp &lt; \frac{\epsilon}{b-a} \sum_{k=1}^n (x_k-x_{k-1})\\
+\amp = \frac{\epsilon}{b-a} (x_n-x_1) = \frac{\epsilon}{b-a} (b-a) = \epsilon 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Darboux-Integral-25-7">Hence <span class="process-math">\(f\)</span> is Darboux integrable by the Integrability Criterion.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4"><a href="#subsec-Darboux-Integral-25" title="Copy heading and permalink for Proof 4" aria-label="Copy heading and permalink for Proof 4">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: The Darboux Integral"><a href="#subsec-Darboux-Integral" title="Copy heading and permalink for Subsection: The Darboux Integral" aria-label="Copy heading and permalink for Subsection: The Darboux Integral">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 9: The Reimann Integral (7.1-7.2)"><a href="#notes-week-09" title="Copy heading and permalink for Section: Week 9: The Reimann Integral (7.1-7.2)" aria-label="Copy heading and permalink for Section: Week 9: The Reimann Integral (7.1-7.2)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-08.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="notes-week-11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script>
+</body>
+</html>

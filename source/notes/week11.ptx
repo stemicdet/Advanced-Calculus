@@ -26,19 +26,19 @@
     </p>
 
     <p>
-        This function is $0$ everywhere except for a single point. Because there is no area under a single point, it is reasonable to suppose that the integral of $f(x)$ is $0$ on every interval.
+        This function is <m>0</m> everywhere except for a single point. Because there is no area under a single point, it is reasonable to suppose that the integral of <m>f(x)</m> is <m>0</m> on every interval.
     </p>
 
     <p>
-        Let's show that the integral of $f(x)$ is $0$ on the interval $[-1,1]$. If $P$ is a partition of this interval then $M_k = m_k = 0$ on any subinterval that does not contain $0$, but on the subinterval that does contain $0$, $M_k = 1$ while $m_k = 0$.
+        Let's show that the integral of <m>f(x)</m> is <m>0</m> on the interval <m>[-1,1]</m>. If <m>P</m> is a partition of this interval then <m>M_k = m_k = 0</m> on any subinterval that does not contain <m>0</m>, but on the subinterval that does contain <m>0</m>, <m>M_k = 1</m> while <m>m_k = 0</m>.
     </p>
 
     <p>
-        To minimize the difference between the upper sum and the lower sum, we should make the subinterval containing $0$ as small as possible.
+        To minimize the difference between the upper sum and the lower sum, we should make the subinterval containing <m>0</m> as small as possible.
     </p>
 
     <p>
-        Let $\epsilon>0$ and let $P_{\epsilon}$ be the partition $\{-1,-\frac{\epsilon}{2}, \frac{\epsilon}{2}, 1\}$
+        Let <m>\epsilon>0</m> and let <m>P_{\epsilon}</m> be the partition <m>\{-1,-\frac{\epsilon}{2}, \frac{\epsilon}{2}, 1\}</m>
     </p>
 
     <p>
@@ -58,17 +58,17 @@
     </p>
 
     <p>
-        Thus $U(f,P_{\epsilon}) - L(f,P_{\epsilon}) = \epsilon$ and $f(x)$ is integrable with integral $0$.
+        Thus <m>U(f,P_{\epsilon}) - L(f,P_{\epsilon}) = \epsilon</m> and <m>f(x)</m> is integrable with integral <m>0</m>.
     </p>
 
     <p>
-        The strategy employed to show that $f(x)$ was integrable can be used to show that any bounded function with a single discontinuity is integrable.
+        The strategy employed to show that <m>f(x)</m> was integrable can be used to show that any bounded function with a single discontinuity is integrable.
     </p>
 
     <theorem xml:id="thm-one-discontinuity">
         <statement>
             <p>
-                If $f: [a,b] \to \mathbf{R}$ is bounded, and $f$ is integrable on $[c,b]$ for all $c \in (a,b)$ Then $f$ is integrable on $[a,b]$. An analogous result holds at the other endpoint.
+                If <m>f: [a,b] \to \mathbf{R}</m> is bounded, and <m>f</m> is integrable on <m>[c,b]</m> for all <m>c \in (a,b)</m> Then <m>f</m> is integrable on <m>[a,b]</m>. An analogous result holds at the other endpoint.
             </p>
         </statement>
     </theorem>
@@ -79,11 +79,11 @@
 
     <proof>
         <p>
-            Let $\epsilon>0$. We need to find a partition $P$ for which $U(f,P)-L(f,P) &lt; \epsilon$.
+            Let <m>\epsilon>0</m>. We need to find a partition <m>P</m> for which <m>U(f,P)-L(f,P) &lt; \epsilon</m>.
         </p>
 
         <p>
-            For any partition $P$ we can write
+            For any partition <m>P</m> we can write
             <md>
                 <mrow> U(f,P)-L(f,P) \amp \sum_{k=1}^n M_k (x_k-x_{k-1}) - \sum_{k=1}^n m_k (x_k-x_{k-1})</mrow>
                 <mrow> \amp = \sum_{k=1}^n (M_k-m_k) (x_k-x_{k-1}) </mrow>
@@ -92,15 +92,15 @@
         </p>
 
         <p>
-            We want to choose $x_1$ close enough to $a$ so that $(M_1-m_1) (x_1-a) &lt; \frac{\epsilon}{2}$.
+            We want to choose <m>x_1</m> close enough to <m>a</m> so that <m>(M_1-m_1) (x_1-a) &lt; \frac{\epsilon}{2}</m>.
         </p>
 
         <p>
-            Because $f$ is bounded, there exists $M$ such that $|f(x)| &lt; M$. Hence $M_1-m_1 &lt; 2M$.
+            Because <m>f</m> is bounded, there exists <m>M</m> such that <m>|f(x)| &lt; M</m>. Hence <m>M_1-m_1 &lt; 2M</m>.
         </p>
 
         <p>
-            If we choose $x_1$ so that $x_1-a &lt; \frac{\epsilon}{4M}$, then
+            If we choose <m>x_1</m> so that <m>x_1-a &lt; \frac{\epsilon}{4M}</m>, then
             <md>
                 (M_1-m_1)(x_1-a) &lt; 2M \frac{\epsilon}{4M} = \frac{\epsilon}{2}
             </md>
@@ -108,11 +108,11 @@
         </p>
 
         <p>
-            Now it follows from the hypothesis that $f$ is integrable on the interval $[x_1,b]$. Thus there is a partition $P_1$ such that $U(f,P_1) - L(f,P_1) &lt; \frac{\epsilon}{2}$.
+            Now it follows from the hypothesis that <m>f</m> is integrable on the interval <m>[x_1,b]</m>. Thus there is a partition <m>P_1</m> such that <m>U(f,P_1) - L(f,P_1) &lt; \frac{\epsilon}{2}</m>.
         </p>
 
         <p>
-            Let $P$ be the partition of $[a,b]$ obtained by attaching $a$ to $P_1$. That is $P = \{a\} \cup P_1$.
+            Let <m>P</m> be the partition of <m>[a,b]</m> obtained by attaching <m>a</m> to <m>P_1</m>. That is <m>P = \{a\} \cup P_1</m>.
         </p>
 
         <p>
@@ -120,7 +120,7 @@
             <md>
                 U(f,P)-L(f,P) = (M_1-m_1)(x_1-a) + U(f,P_1)-L(f,P_1) &lt; \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon
             </md>
-            and hence $f$ is integrable on $[a,b]$.
+            and hence <m>f</m> is integrable on <m>[a,b]</m>.
         </p>
     </proof>
 
@@ -133,7 +133,7 @@
     </p>
 
     <p>
-       For example if you want to integrate $f(x)$ on the interval $[0,5]$ but $f(x)$ is discontinuous at $x=1,3,$ and $4$, you would integrate $f(x)$ on $[0,1]$, $[1,3]$, $[3,4]$ and $[4,5]$ and then add up all those integrals. 
+       For example if you want to integrate <m>f(x)</m> on the interval <m>[0,5]</m> but <m>f(x)</m> is discontinuous at <m>x=1,3,</m> and <m>4</m>, you would integrate <m>f(x)</m> on <m>[0,1]</m>, <m>[1,3]</m>, <m>[3,4]</m> and <m>[4,5]</m> and then add up all those integrals. 
     </p>
 
     <p>
@@ -152,7 +152,7 @@
     </p>
 
     <p>
-        Because the rationals are dense in the irrationals and vice versa. Any subinterval of any partition $P$ will contain rational and irrational numbers. Hence $U(f,P) = 1$ and $L(f,P) = 0$ for all partitions $P$ and Dirichlet's function is not Darboux integrable.
+        Because the rationals are dense in the irrationals and vice versa. Any subinterval of any partition <m>P</m> will contain rational and irrational numbers. Hence <m>U(f,P) = 1</m> and <m>L(f,P) = 0</m> for all partitions <m>P</m> and Dirichlet's function is not Darboux integrable.
     </p>
 
     <p>
@@ -172,7 +172,7 @@
     </p>
 
     <p>
-        Thomae's function is Darboux integrable with integral $0$. To show this you create a partition in which rational numbers with small denominators are contained in vary narrow subintervals, so that the upper sum of the partition can be made as small as desired.
+        Thomae's function is Darboux integrable with integral <m>0</m>. To show this you create a partition in which rational numbers with small denominators are contained in vary narrow subintervals, so that the upper sum of the partition can be made as small as desired.
     </p>
     
 
@@ -188,7 +188,7 @@
    <theorem xml:id="thm-integral-sum">
     <statement>
         <p>
-            Suppose $f:[a,b] \to \mathbf{R}$ is bounded and let $c \in (a,b)$. Then $f$ is integrable on $[a,b]$ if and only if $f$ is integrable on $[a,c]$ and $[c,b]$. In this case, we have
+            Suppose <m>f:[a,b] \to \mathbf{R}</m> is bounded and let <m>c \in (a,b)</m>. Then <m>f</m> is integrable on <m>[a,b]</m> if and only if <m>f</m> is integrable on <m>[a,c]</m> and <m>[c,b]</m>. In this case, we have
         <md>
             \int_a^b f(x) dx = \int_a^c f(x)dx + \int_c^b f(x) dx
         </md>
@@ -198,39 +198,39 @@
    
    <proof>
     <p>
-        This is an ``if and only if'' proof so we must prove both direction. First we will prove that if $f$ is integrable on $[a,b]$ then $f$ is integrable on $[a,c]$ and $[c,b]$.
+        This is an ``if and only if'' proof so we must prove both direction. First we will prove that if <m>f</m> is integrable on <m>[a,b]</m> then <m>f</m> is integrable on <m>[a,c]</m> and <m>[c,b]</m>.
     </p>
 
     <p>
-      Let $\epsilon &gt; 0$. Since $f$ is integrable on $[a,b]$ there is a partition $P$ of $[a,b]$ such that $U(f,P) -L(f,P) &lt; \epsilon$.  
+      Let <m>\epsilon &gt; 0</m>. Since <m>f</m> is integrable on <m>[a,b]</m> there is a partition <m>P</m> of <m>[a,b]</m> such that <m>U(f,P) -L(f,P) &lt; \epsilon</m>.  
     </p>
 
     <p>
-        Because refining a partition brings the upper and lower sums closer together we can add the point $c$ to $P$ if its not already there.
+        Because refining a partition brings the upper and lower sums closer together we can add the point <m>c</m> to <m>P</m> if its not already there.
     </p>
 
     <p>
-        Now let $P_1 = P \cap [a,c]$ and let $P_2 = P \cap [c,b]$. Thus $P_1$ is a partition of $[a,c]$ and $P_2$ is a partition of $[c,b]$.
+        Now let <m>P_1 = P \cap [a,c]</m> and let <m>P_2 = P \cap [c,b]</m>. Thus <m>P_1</m> is a partition of <m>[a,c]</m> and <m>P_2</m> is a partition of <m>[c,b]</m>.
     </p>
 
     <p>
-        Moreover because $P_1 = P$ on $[a,c]$ and $P_2 = P$ on $[c,b]$ it follows that $U(f,P_1)-L(f,P_1) &lt; \epsilon$ and $U(f,P_2)-L(f,P_2) &lt; \epsilon$.
+        Moreover because <m>P_1 = P</m> on <m>[a,c]</m> and <m>P_2 = P</m> on <m>[c,b]</m> it follows that <m>U(f,P_1)-L(f,P_1) &lt; \epsilon</m> and <m>U(f,P_2)-L(f,P_2) &lt; \epsilon</m>.
     </p>
 
     <p>
-      Since $\epsilon>0$ was arbitrarily chosen this means that $f$ is integrable on $[a,c]$ and $[c,b]$.  
+      Since <m>\epsilon>0</m> was arbitrarily chosen this means that <m>f</m> is integrable on <m>[a,c]</m> and <m>[c,b]</m>.  
     </p>
 
     <p>
-        Next we will show that if $f$ is integrable on $[a,c]$ and $[c,b]$ then $f$ is integrable on $[a,b]$.
+        Next we will show that if <m>f</m> is integrable on <m>[a,c]</m> and <m>[c,b]</m> then <m>f</m> is integrable on <m>[a,b]</m>.
     </p>
 
     <p>
-        Let $\epsilon &gt; 0$ be arbitrarily chosen. Then there are partitions $P_1$ of $[a,c]$ and $P_2$ of $[c,b]$ such that $U(f,P_1)-L(f,P_2) &lt; \epsilon$ and $U(f,P_2)-L(f,P_2) &lt; \epsilon$. 
+        Let <m>\epsilon &gt; 0</m> be arbitrarily chosen. Then there are partitions <m>P_1</m> of <m>[a,c]</m> and <m>P_2</m> of <m>[c,b]</m> such that <m>U(f,P_1)-L(f,P_2) &lt; \epsilon</m> and <m>U(f,P_2)-L(f,P_2) &lt; \epsilon</m>. 
     </p>
 
     <p>
-        Now let $P = P_1 \cup P_2$. Then $P$ is a partition of $[a,b]$ and
+        Now let <m>P = P_1 \cup P_2</m>. Then <m>P</m> is a partition of <m>[a,b]</m> and
         <md>
             <mrow>  U(f,P)-L(f,P) \amp = U(f,P_1)+U(f,P_2) - L(f,P_1)-L(f,P_2) </mrow>
             <mrow> \amp = U(f,P_1)-L(f,P_1) + U(f,P_2)-L(f,P_2) </mrow>
@@ -240,7 +240,7 @@
     </p>
 
     <p>
-        Since $\epsilon &gt; 0$ is arbitrary, $2 \epsilon$ can be made arbitrarily small and thus $f$ is integrable on $[a,b]$.
+        Since <m>\epsilon &gt; 0</m> is arbitrary, <m>2 \epsilon</m> can be made arbitrarily small and thus <m>f</m> is integrable on <m>[a,b]</m>.
     </p>
 
     <p>
@@ -252,7 +252,7 @@
     </p>
 
     <p>
-        Let $P = P_1 \cup P_2$ as before. Then
+        Let <m>P = P_1 \cup P_2</m> as before. Then
         <md>
             <mrow> \int_a^b f(x) dx \leq U(f,P) \amp &lt; L(f,P)+ \epsilon </mrow>
             <mrow> \amp =L(f,P_1)+L(f,P_2) + \epsilon </mrow>
@@ -262,7 +262,7 @@
     </p>
 
     <p>
-        Because $\epsilon>0$ is arbitrary this implies that 
+        Because <m>\epsilon>0</m> is arbitrary this implies that 
         <md>
             \int_a^b f(x) dx \leq \int_a^c f(x) dx + \int_c^b f(x) dx
         </md>
@@ -280,7 +280,7 @@
     </p>
 
     <p>
-        Since $\epsilon &gt; 0$ is arbitrary it follows that
+        Since <m>\epsilon &gt; 0</m> is arbitrary it follows that
         <md>
             \int_a^c f(x)dx + \int_c^b f(x)dx \leq \int_a^b f(x)dx
         </md>
@@ -293,6 +293,400 @@
     </p>
 
    </proof>
+
+   <p>
+    Next we will prove some familiar properties of integrals.
+   </p>
+
+   <theorem xml:id="thm-integral-properties">
+    <statement>
+        <p>
+            Suppose <m>f</m> and <m>g</m> are integrable functions on the interval <m>[a,b]</m>.
+            <ol>
+                <li>
+                    <p>
+                        The function <m>f+g</m> is integrable on <m>[a,b]</m> with <m>\int_a^b (f+g) = \int_a^b f + \int_a^b g</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        For <m>k \in \mathbf{R}</m>, the function <m>kf</m> is integrable with <m>\int_a^b kf = k \int_a^b f</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>m \leq f(x) \leq M</m> on <m>[a,b]</m>, then <m>m(b-a) \leq \int_a^b f \leq M(b-a)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>f(x) \leq g(x)</m> on <m>[a,b]</m>, then <m>\int_a^b f \leq \int_a^b g</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The function <m>|f|</m> is integrable and <m>\left|\int_a^b f\right| \leq \int_a^b |f|</m>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+   </theorem>
+
+   <proof>
+    <p>
+        (1) is a homework problem.
+    </p>
+
+<p>
+    (2) It follows from the integrability criteria that a function is integrable if and only if there is a sequence of partitions <m>(P_n)</m> such that
+    <md>
+        \lim_{n\to \infty} [U(f,P_n) - L(f,P_n)] = 0.
+    </md>
+    
+</p>
+
+<p>
+    In this case
+    <md>
+         \int_a^b f(x) dx = \lim_{n\to \infty} U(f,P_n) = \lim_{n\to \infty} L(f,P_n)
+    </md>
+    
+</p>
+
+<p>
+    Recall the following property of supremums: If <m>A \subseteq \mathbf{R}</m> is nonempty and bounded above and <m>k\geq 0</m> define the set <m>kA = \{ka: a \in A\}</m>. Then <m>\sup(kA) = k\sup A</m>
+</p>
+
+<p>
+    Let <m>k\geq 0</m> and let <m>P</m> be a partition. Then <m>U(kf,P) = k U(f,P)</m> and <m>L(kf,P) = kL(f,P)</m>.
+</p>
+
+<p>
+    Because <m>f</m> is integrable there exists a sequence of partitions <m>(P_n)</m> such that 
+    <md>
+        \lim_{n\to \infty} [U(f,P_n) - L(f,P_n)] = 0.
+    </md>
+    
+</p>
+
+<p>
+    If we apply these partitions to the function <m>kf</m> we have
+    <md>
+         \lim_{n\to \infty} [U(kf,P_n) - L(kf,P_n)]=  \lim_{n\to \infty}k[U(f,P_n) - L(f,P_n)] = 0.
+    </md>
+    
+</p>
+
+<p>
+    Thus <m>kf</m> is integrable and 
+    <md>
+        \int_a^b kf(x) dx = \lim_{n\to \infty} U(kf,P_n) = k \lim_{n\to \infty} U(f,P_n) = k \int_a^b f(x)dx.
+    </md>
+    
+</p>
+
+<p>
+    (3) Because the upper sum is always an overestimate and the lower sum is always an underestimate, for any partition <m>P</m> we have
+    <md>
+        L(f,P) \leq \int_a^b f(x) dx \leq U(f,P)
+    </md>
+    
+</p>
+
+<p>
+    Let <m>P</m> be the partition consisting only of endpoints <m>a</m> and <m>b</m>. Then because <m>m \leq f(x) \leq M</m>, <m>L(f,P) = m(b-a)</m> and <m>U(f,P) = M(b-a)</m>.
+</p>
+
+<p>
+    Thus
+
+    <md>
+        m(b-a) \leq \int_a^b f(x) dx \leq M(b-a)
+    </md>
+    
+</p>
+
+<p>
+    (4) Let <m>h(x) = g(x)-f(x)</m>. Then <m>h(x)\geq 0</m> on <m>[a,b]</m> so it follows from (3) that
+    <md>
+         0 \leq \int_a^b h(x) dx = \int_a^b g(x)-f(x)dx = \int_a^b g(x) dx - \int_a^b f(x) dx
+    </md>
+    where the last equality follows from (1) and (2).
+    
+</p>
+
+<p>
+    Hence
+    <md>
+        \int_a^b f(x)dx \leq \int_a^b g(x) dx.
+    </md>
+    
+</p>
+
+<p>
+    (5) Observe that <m>-|f(x)| \leq f(x) \leq |f(x)|</m> for all <m>x \in [a,b]</m>. Hence, assuming that <m>|f|</m> is integrable, it follows from (4) that
+    <md>
+        \int_a^b -|f(x)|dx \leq \int_a^b f(x) dx \leq \int_a^b |f(x)|dx.
+    </md>
+    
+</p>
+
+<p>
+    Hence by the definition of absolute value,
+    <md>
+        \left| \int_a^b f(x) dx \right| \leq \left|\int_a^b |f(x)|dx\right| = \int_a^b |f(x)|dx.
+    </md>
+    
+</p>
+
+<p>
+    It remains to show that <m>|f|</m> is integrable. Let 
+    <ol>
+        <li>
+            <p>
+                <m>M = \sup \{f(x): x\in A\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>m = \inf \{f(x): x\in A\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>M' = \sup \{|f(x)|: x\in A\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>m' = \inf \{|f(x)|: x\in A\}</m>
+            </p>
+        </li>
+    </ol>
+</p>
+
+<p>
+    Since <m>M'</m> and <m>m'</m> are always positive, while <m>M</m> and <m>m</m> can be either positive or negative, it follows that
+    <md>
+         M'-m' \leq M-m.
+    </md>
+    
+</p>
+
+<p>
+    Because <m>f</m> is integrable there exists a sequence of partitions <m>(P_n)</m> such that 
+    <md>
+        \lim_{n\to \infty} [U(f,P_n) - L(f,P_n)] = 0.
+    </md>
+    
+</p>
+
+<p>
+    Applying these partitions to the function <m>|f|</m> yields
+    <md>
+        \lim_{n\to \infty} [U(|f|,P_n)-L(|f|,P_n)] \leq \lim_{n\to \infty} [U(f,P_n) - L(f,P_n)] = 0.
+    </md>
+    
+</p>
+
+<p>
+    Hence <m>|f|</m> is integrable on <m>[a,b]</m> and (5) is proven.
+</p>
+
+   </proof>
+   
+        
+    </subsection>
+
+    <subsection xml:id="subsec-Convergence-and-Integration">
+        <title>Convergence and Integration</title>
+
+        <p>
+            Suppose <m>(f_n)</m> is a sequence of Darboux integrable functions on <m>[a,b]</m> and <m>f_n \to f</m>. Is <m>f</m> also integrable on <m>[a,b]</m> and if so, is it the case that <m>\int_a^b f_n \to \int_a^b f</m>?
+        </p>
+
+        <p>
+            If convergence is merely pointwise then this is not necessarily the case as the following example shows.
+        </p>
+
+        <p>
+            Let
+            <md>
+                f_n(x) = \begin{cases} 
+      \hfill  n \amp \text{ if $0 &lt; x &lt; \frac{1}{n}$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $ or $x \geq \frac{1}{n}$} 
+  \end{cases}
+            </md>
+            
+        </p>
+
+        <p>
+            Show that <m>f_n(x)</m> converges pointwise to <m>f(x) = 0</m> but <m>\int_0^1 f_n(x) = 1</m> for all <m>n</m> and hence 
+            <md>
+                \lim_{n \to \infty} \int_0^1 f_n(x) dx = 1 \neq \int_0^1 f(x) dx
+            </md>
+            
+        </p>
+
+        <p>
+            The following graph shows the first few functions of this sequence.
+        </p>
+
+        <image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-sequence-int">
+    <diagram dimensions="(300,300)" margins="5">
+  <coordinates bbox="(0,0,7,7)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <line at="graph1" endpoints="((0,1), (1,1))" stroke="red"/>
+    <line at="graph2" endpoints="((0,2), (1/2,2))" stroke="blue"/>
+    <line at="graph3" endpoints="((0,3), (1/3,3))" stroke="green"/>
+    <line at="graph4" endpoints="((0,4), (1/4,4))" stroke="purple"/>
+    <line at="graph5" endpoints="((0,5), (1/5,5))" stroke="orange"/>
+    <line at="graph6" endpoints="((0,6), (1/6,6))" stroke="brown"/>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graphs of the first few functions in the sequence">
+      <annotation ref="graph-group" text="The graph of the functions f1, f2, f3, f4, f5, and f6">
+        <annotation ref="graph1" text="The graph of the function f1" sonify="yes"/>
+        <annotation ref="graph2" text="The graph of the function f2" sonify="yes"/>
+        <annotation ref="graph3" text="The graph of the function f3" sonify="yes"/>
+        <annotation ref="graph4" text="The graph of the function f4" sonify="yes"/>
+        <annotation ref="graph5" text="The graph of the function f5" sonify="yes"/>
+        <annotation ref="graph6" text="The graph of the function f6" sonify="yes"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+  </prefigure>
+</image>
+
+<p>
+    Another example shows that its possible for <m>(f_n)</m> to be a sequence of Darboux integrable functions that converge pointwise to a limit function <m>f</m>, but <m>f</m> is not Darboux integrable.
+</p>
+
+<p>
+    Let <m>r_n</m> be a (countable) list of the rational numbers and define functions <m>f_n(x)</m> by 
+    <md>
+        f_n(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \{r_1, r_2, \ldots, r_n\}$} \\
+      \hfill  0 \hfill \amp \text{ otherwise} 
+  \end{cases}
+    </md>
+    
+</p>
+
+<p>
+    Each <m>f_n</m> has only a finite number of discontinuities, so it is Darboux integrable, but <m>f_n</m> converges pointwise to Dirichlet's function 
+    <md>
+        f(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+    </md>
+    which is not Darboux integrable.
+</p>
+
+<p>
+    However, if the convergence is uniform then <m>\int_a^b f_n \to \int_a^b f </m>.
+</p>
+
+<theorem xml:id="thm-Integrable-Limit-Theorem">
+    <title>Integrable Limit Theorem</title>
+    
+    
+    <statement>
+        <p>
+            Suppose that <m>f_n \to f</m> uniformly on <m>[a,b]</m> and that each <m>f_n</m> is integrable. Then <m>f</m> is integrable and 
+    <md>
+        \lim_{n\to \infty} \int_a^b f_n(x) dx = \int_a^b f(x) dx.
+    </md>
+        </p>
+    </statement>
+</theorem>
+
+<proof>
+    <p>
+        We first show that <m>f</m> is integrable. Let <m>\epsilon &gt; 0</m>, then there exists <m>N</m> so that <m>|f_N(x)-f(x)| &lt; \epsilon</m> for all <m>x \in [a,b]</m>. 
+    </p>
+
+    <p>
+        Because <m>f_N</m> is integrable, there is a partition <m>P</m> of <m>[a,b]</m> such that <m>U(f_N, P) - L(f_N,P) &lt; \epsilon</m>.
+    </p>
+
+    <p>
+        We will show that <m>U(f,P)-L(f,P) &lt; 3\epsilon</m>.
+    </p>
+
+    <p>
+        By the triangle inequality,
+        <md>
+            <mrow> |U(f,P)-L(f,P)| \amp = |U(f,P)-U(f_N,P) + U(f_N,P) -L(f_N,P) +  L(f_N,P)-L(f,P)| </mrow>
+            <mrow> \amp \leq |U(f,P)-U(f_N,P)| + |U(f_N,P)-L(f_N,P)|+ |L(f_N,P)-L(f,P)| </mrow>
+        </md>
+    </p>
+
+    <p>
+        Suppose that on the subinterval <m>[x_{k-1}, x_k]</m> the maximum of <m>f(x)</m> occurs at <m>x_k^*</m>. Then <m>|\sup f(x) - \sup f_n(x)| &lt; |f(x_k^*)-f_n(x_k^*)| &lt; \epsilon</m>. Hence <m>|U(f,P)-U(f_n,P)| &lt; \epsilon</m>.
+    </p>
+
+    <p>
+        Similarly <m>|\inf f(x)-\inf f_n(x)| &lt; \epsilon</m> and thus <m>|L(f,P)-L(f_n,P)| &lt; \epsilon</m>.
+    </p>
+
+    <p>
+        Thus
+        <md>
+            |U(f,P)-L(f,P)| \leq |U(f,P)-U(f_N,P)| + |U(f_N,P)-L(f_N,P)| + |L(f_N,P)-L(f,P)| &lt; \epsilon + \epsilon + \epsilon = 3\epsilon
+        </md>
+        
+    </p>
+
+    <p>
+        Since <m>\epsilon &gt; 0</m> was arbitrarily chosen, <m>3 \epsilon</m> can be made as small as we want. Thus <m>f</m> is integrable.
+    </p>
+
+    <p>
+        Now we will prove that <m>\displaystyle \lim_{n\to \infty} \int_a^b f_n = \int_a^b f</m>.
+    </p>
+
+    <p>
+        It follows from the properties that we proved about integrals that 
+        <md>
+            <mrow> \left| \int_a^b f_n(x)dx - \int_a^b f(x) dx \right| \amp = \left| \int_a^b f_n(x) -f(x) dx \right|</mrow>
+            <mrow> \amp \leq  \int_a^b |f_n(x) -  f(x)| dx  </mrow>
+        </md>
+    </p>
+
+    <p>
+        Let <m>\epsilon &gt; 0</m> be chosen arbitrarily. Since <m>f_n \to f</m> uniformly there exists <m>N \in \mathbf{N}</m> such that for all <m>n\geq N</m> and <m>x \in [a,b]</m>
+        <md>
+            |f_n(x) - f(x)| &lt; \frac{\epsilon}{b-a}
+        </md>
+        
+    </p>
+
+    <p>
+        Thus if <m>n \geq N</m>,
+        <md>
+            <mrow> \left| \int_a^b f_n(x)dx - \int_a^b f(x) dx \right| \amp \leq  \int_a^b |f_n(x) -  f(x)| dx </mrow>
+            <mrow> \amp \leq \int_a^b \frac{\epsilon}{b-a} = \epsilon. </mrow>
+        </md>
+        
+    </p>
+
+    <p>
+        Since <m>\epsilon &gt; 0</m> was arbitrarily chosen, this shows that 
+        <md>
+            \lim_{n\to \infty} \int_a^b f_n(x) dx = \int_a^b f(x) dx.
+        </md>
+        
+    </p>
+</proof>
+
         
     </subsection>
 

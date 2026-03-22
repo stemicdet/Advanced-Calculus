@@ -18,9 +18,15 @@
         The integral of a function as opposed to the area of a geometric figure was first considered by the early founders of calculus such as Newton and Leibniz. They viewed the integral as the inverse process of differentiation. 
     </p>
 
-    <p>
+    <definition xml:id="def-newton-integral">
+        <statement>
+            <p>
        <term> Newton-Leibniz Integral</term>: The integral of the function <m>f</m> is the function <m>F</m> such that <m>F'(x) = f(x)</m>.
     </p>
+        </statement>
+    </definition>
+
+    
 
     <p>
         This definition has several shortcomings. First it means that the only functions that can be differentiated are derivatives, which is a relatively small class of functions.
@@ -34,7 +40,9 @@
         In 1823 Cauchy developed a more rigorous definition based on the idea of finding areas under a curve. It uses the concept of a partition of an interval.
     </p>
 
-    <p>
+    <definition xml:id="def-partition">
+        <statement>
+            <p>
         A <term>partition</term> of <m>[a,b]</m> is a finite set of points from <m>[a,b]</m> that includes both <m>a</m> and <m>b</m>. The notational convention is to list the points of a partition <m>P = \{x_0, x_1, x_2, \ldots, x_n\}</m> in increasing order; thus
 
         <md>
@@ -42,8 +50,12 @@
         </md>
         
     </p>
+        </statement>
+    </definition>
 
-    <p>
+    <definition xml:id="def-cauchy-integral">
+        <statement>
+             <p>
         <term>Cauchy Integral</term>: Let <m>f(x)</m> be a continuous function on <m>[a,b]</m> and let <m>a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b</m>, and <m>\Delta x_k = x_k-x_{k-1}</m> for <m>k = 1,2, \ldots n</m>. The limit
         <md>
             \lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(x_{k-1}) \Delta x_k
@@ -55,6 +67,11 @@
         
     </p>
 
+        </statement>
+    </definition>
+    
+
+   
     <p>
         Geometrically the Cauchy integral determines the area under the curve <m>f(x)</m> by dividing <m>[a,b]</m> into rectangles of width <m>\Delta x_i</m>. The height of the rectangle is chosen to be the height of <m>f(x)</m> at the left endpoint of the rectangle.
     </p>
@@ -74,7 +91,9 @@
         In 1868 Bernhard Riemann developed a new way to define integration based off Cauchy's ideas that would allow for the integration of some discontinuous functions.
     </p>
 
-    <p>
+    <definition xml:id="def-reimann-integral">
+        <statement>
+            <p>
         <term>Riemann Integral</term>: Let <m>f(x)</m> be a function on <m>[a,b]</m> and let <m>a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b</m>, and <m>\Delta x_k = x_i-x_{i-1}</m> for <m>i = 1,2, \ldots n</m>. On each subinterval <m>[x_{k-1}, x_k]</m> choose a point <m>c_k \in [x_{k-1}, x_k]</m> The limit
         <md>
             \lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(c_k) \Delta x_k
@@ -87,6 +106,10 @@
         
         
     </p>
+        </statement>
+    </definition>
+
+    
 
     <p>
         The sum that appears in the definition of the Riemann integral is called a Riemann sum.
@@ -152,29 +175,43 @@
         
     </p>
 
-    <p>
-        The <term>lower sum</term> of <m>f</m> with respect to <m>P</m> is given by
+    <definition xml:id="def-lower-sum">
+        <statement>
+            <p>
+                The <term>lower sum</term> of <m>f</m> with respect to <m>P</m> is given by
         <md>
             L(f,p) = \sum_{k=1}^n m_k(x_k-x_{k-1}).
         </md>
-        
-    </p>
+            </p>
+        </statement>
+    </definition>
 
-    <p>
-        The <term>upper sum</term> of <m>f</m> with respect to <m>P</m> is given by
+<definition xml:id="def-upper-sum">
+    <statement>
+        <p>
+            The <term>upper sum</term> of <m>f</m> with respect to <m>P</m> is given by
         <md>
             U(f,p) = \sum_{k=1}^n M_k(x_k-x_{k-1}).
         </md>
-        
-    </p>
+        </p>
+    </statement>
+</definition>
+
+    
 
     <p>
         Example: Find the upper and lower sums of <m>f(x) = 4x-x^2</m> on the interval <m>[0,4]</m> with respect to the partition <m>P = \{0, 1, 3, 4\}</m>
     </p>
 
-    <p>
+    <definition xml:id="def-refinement">
+        <statement>
+            <p>
         A partition <m>Q</m> is a <term>refinement</term> of a partition <m>P</m> if <m>Q</m> contains all the points of <m>P</m>; that is, <m>P \subseteq Q</m>.
     </p>
+        </statement>
+    </definition>
+
+   
 
     <lemma xml:id="lem-refinement">
         <statement>
@@ -285,13 +322,18 @@
         </statement>
     </lemma>
 
-    <p>
-        A bounded function <m>f</m> defined on the interval <m>[a,b]</m> is <term>Darboux Integrable</term> if <m>U(f) = L(f)</m>. In this case we define <m>\int_a^b f(x)dx</m> to be this common value; that is,
+    <definition xml:id="def-Darboux-integral">
+        <statement>
+            <p>
+                A bounded function <m>f</m> defined on the interval <m>[a,b]</m> is <term>Darboux Integrable</term> if <m>U(f) = L(f)</m>. In this case we define <m>\int_a^b f(x)dx</m> to be this common value; that is,
         <md>
            \int_a^b f(x) dx = U(f) = L(f) 
         </md>
-        
-    </p>
+            </p>
+        </statement>
+    </definition>
+
+    
 
     <p>
         Note: The textbook uses the term Riemann integrability instead of Darboux integrability. This is not wrong because the Riemann integral and the Darboux integral are equivalent, but it is more precise to use the term Darboux integrability.

@@ -268,41 +268,50 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="subsec-history-4">The integral of a function as opposed to the area of a geometric figure was first considered by the early founders of calculus such as Newton and Leibniz. They viewed the integral as the inverse process of differentiation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-history-5">
-<dfn class="terminology">Newton-Leibniz Integral</dfn>: The integral of the function <span class="process-math">\(f\)</span> is the function <span class="process-math">\(F\)</span> such that <span class="process-math">\(F'(x) = f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="definition definition-like" id="def-newton-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-newton-integral-1-1">
+<dfn class="terminology">Newton-Leibniz Integral</dfn>: The integral of the function <span class="process-math">\(f\)</span> is the function <span class="process-math">\(F\)</span> such that <span class="process-math">\(F'(x) = f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-newton-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-history-6">This definition has several shortcomings. First it means that the only functions that can be differentiated are derivatives, which is a relatively small class of functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 57"><a href="#def-newton-integral" title="Copy heading and permalink for Definition 57" aria-label="Copy heading and permalink for Definition 57">🔗</a></div></article><div class="para" id="subsec-history-6">This definition has several shortcomings. First it means that the only functions that can be differentiated are derivatives, which is a relatively small class of functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-history-7">Second since derivatives satisfy the Intermediate Value Property this means that any function with a jump discontinuity cannot be integrated.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-history-8">In 1823 Cauchy developed a more rigorous definition based on the idea of finding areas under a curve. It uses the concept of a partition of an interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-history-9">
+<article class="definition definition-like" id="def-partition"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">58</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-partition-1-1">
 <div class="para">A <dfn class="terminology">partition</dfn> of <span class="process-math">\([a,b]\)</span> is a finite set of points from <span class="process-math">\([a,b]\)</span> that includes both <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> The notational convention is to list the points of a partition <span class="process-math">\(P = \{x_0, x_1, x_2, \ldots, x_n\}\)</span> in increasing order; thus</div>
-<div class="displaymath process-math" id="subsec-history-9-7">
+<div class="displaymath process-math" id="def-partition-1-1-7">
 \begin{equation*}
 a=x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-partition-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-history-10">
+<div class="autopermalink" data-description="Definition 58"><a href="#def-partition" title="Copy heading and permalink for Definition 58" aria-label="Copy heading and permalink for Definition 58">🔗</a></div></article><article class="definition definition-like" id="def-cauchy-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">59</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-cauchy-integral-1-1">
 <div class="para">
 <dfn class="terminology">Cauchy Integral</dfn>: Let <span class="process-math">\(f(x)\)</span> be a continuous function on <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b\text{,}\)</span> and <span class="process-math">\(\Delta x_k = x_k-x_{k-1}\)</span> for <span class="process-math">\(k = 1,2, \ldots n\text{.}\)</span> The limit</div>
-<div class="displaymath process-math" id="subsec-history-10-7">
+<div class="displaymath process-math" id="def-cauchy-integral-1-1-7">
 \begin{equation*}
 \lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(x_{k-1}) \Delta x_k
 \end{equation*}
 </div>
 <div class="para">is called the Cauchy integral of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\([a,b]\)</span> and is denoted by</div>
-<div class="displaymath process-math" id="subsec-history-10-10">
+<div class="displaymath process-math" id="def-cauchy-integral-1-1-10">
 \begin{equation*}
 \int_a^b f(x) dx.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-cauchy-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-history-11">Geometrically the Cauchy integral determines the area under the curve <span class="process-math">\(f(x)\)</span> by dividing <span class="process-math">\([a,b]\)</span> into rectangles of width <span class="process-math">\(\Delta x_i\text{.}\)</span> The height of the rectangle is chosen to be the height of <span class="process-math">\(f(x)\)</span> at the left endpoint of the rectangle.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 59"><a href="#def-cauchy-integral" title="Copy heading and permalink for Definition 59" aria-label="Copy heading and permalink for Definition 59">🔗</a></div></article><div class="para" id="subsec-history-11">Geometrically the Cauchy integral determines the area under the curve <span class="process-math">\(f(x)\)</span> by dividing <span class="process-math">\([a,b]\)</span> into rectangles of width <span class="process-math">\(\Delta x_i\text{.}\)</span> The height of the rectangle is chosen to be the height of <span class="process-math">\(f(x)\)</span> at the left endpoint of the rectangle.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-history-12">In taking the limit as the maximum width of the rectangles goes to <span class="process-math">\(0\)</span> more rectangles are required to cover the area beneath the curve and as the maximum width of the rectangles tends to <span class="process-math">\(0\)</span> the limit converges to the area under the curve.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -310,23 +319,26 @@ a=x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b
 </div>
 <div class="para" id="subsec-history-14">In 1868 Bernhard Riemann developed a new way to define integration based off Cauchy’s ideas that would allow for the integration of some discontinuous functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-history-15">
+<article class="definition definition-like" id="def-reimann-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">60</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-reimann-integral-1-1">
 <div class="para">
 <dfn class="terminology">Riemann Integral</dfn>: Let <span class="process-math">\(f(x)\)</span> be a function on <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_n = b\text{,}\)</span> and <span class="process-math">\(\Delta x_k = x_i-x_{i-1}\)</span> for <span class="process-math">\(i = 1,2, \ldots n\text{.}\)</span> On each subinterval <span class="process-math">\([x_{k-1}, x_k]\)</span> choose a point <span class="process-math">\(c_k \in [x_{k-1}, x_k]\)</span> The limit</div>
-<div class="displaymath process-math" id="subsec-history-15-9">
+<div class="displaymath process-math" id="def-reimann-integral-1-1-9">
 \begin{equation*}
 \lim_{\textnormal{ max } \Delta x_k \to 0} \sum_{k=1}^n f(c_k) \Delta x_k
 \end{equation*}
 </div>
 <div class="para">is called the Riemann integral of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\([a,b]\)</span> and is denoted by</div>
-<div class="displaymath process-math" id="subsec-history-15-12">
+<div class="displaymath process-math" id="def-reimann-integral-1-1-12">
 \begin{equation*}
 \int_a^b f(x) dx.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-reimann-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-history-16">The sum that appears in the definition of the Riemann integral is called a Riemann sum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 60"><a href="#def-reimann-integral" title="Copy heading and permalink for Definition 60" aria-label="Copy heading and permalink for Definition 60">🔗</a></div></article><div class="para" id="subsec-history-16">The sum that appears in the definition of the Riemann integral is called a Riemann sum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-history-17">The difference between the Riemann integral and the Cauchy integral is that in the Cauchy integral the height of the rectangle is given by value of <span class="process-math">\(f(x)\)</span> at the left endpoint, while in the Riemann integral the height of the rectangle is determined by the value of <span class="process-math">\(f(c_k)\)</span> which can be any point in the subinterval <span class="process-math">\([x_{k-1}, x_k]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-history-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -370,30 +382,39 @@ m_k = \inf\{f(x): x \in [x_{k-1}, x_k] \} \textnormal{ and } M_k = \sup\{f(x): x
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Darboux-Integral-4">
+<article class="definition definition-like" id="def-lower-sum"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">61</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-lower-sum-1-1">
 <div class="para">The <dfn class="terminology">lower sum</dfn> of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(P\)</span> is given by</div>
-<div class="displaymath process-math" id="subsec-Darboux-Integral-4-4">
+<div class="displaymath process-math" id="def-lower-sum-1-1-4">
 \begin{equation*}
 L(f,p) = \sum_{k=1}^n m_k(x_k-x_{k-1}).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-lower-sum-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Darboux-Integral-5">
+<div class="autopermalink" data-description="Definition 61"><a href="#def-lower-sum" title="Copy heading and permalink for Definition 61" aria-label="Copy heading and permalink for Definition 61">🔗</a></div></article><article class="definition definition-like" id="def-upper-sum"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">62</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-upper-sum-1-1">
 <div class="para">The <dfn class="terminology">upper sum</dfn> of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(P\)</span> is given by</div>
-<div class="displaymath process-math" id="subsec-Darboux-Integral-5-4">
+<div class="displaymath process-math" id="def-upper-sum-1-1-4">
 \begin{equation*}
 U(f,p) = \sum_{k=1}^n M_k(x_k-x_{k-1}).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-upper-sum-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Darboux-Integral-6">Example: Find the upper and lower sums of <span class="process-math">\(f(x) = 4x-x^2\)</span> on the interval <span class="process-math">\([0,4]\)</span> with respect to the partition <span class="process-math">\(P = \{0, 1, 3, 4\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 62"><a href="#def-upper-sum" title="Copy heading and permalink for Definition 62" aria-label="Copy heading and permalink for Definition 62">🔗</a></div></article><div class="para" id="subsec-Darboux-Integral-6">Example: Find the upper and lower sums of <span class="process-math">\(f(x) = 4x-x^2\)</span> on the interval <span class="process-math">\([0,4]\)</span> with respect to the partition <span class="process-math">\(P = \{0, 1, 3, 4\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Darboux-Integral-7">A partition <span class="process-math">\(Q\)</span> is a <dfn class="terminology">refinement</dfn> of a partition <span class="process-math">\(P\)</span> if <span class="process-math">\(Q\)</span> contains all the points of <span class="process-math">\(P\text{;}\)</span> that is, <span class="process-math">\(P \subseteq Q\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="definition definition-like" id="def-refinement"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">63</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-refinement-1-1">A partition <span class="process-math">\(Q\)</span> is a <dfn class="terminology">refinement</dfn> of a partition <span class="process-math">\(P\)</span> if <span class="process-math">\(Q\)</span> contains all the points of <span class="process-math">\(P\text{;}\)</span> that is, <span class="process-math">\(P \subseteq Q\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-refinement-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="lemma theorem-like" id="lem-refinement"><h4 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 63"><a href="#def-refinement" title="Copy heading and permalink for Definition 63" aria-label="Copy heading and permalink for Definition 63">🔗</a></div></article><article class="lemma theorem-like" id="lem-refinement"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">64</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="lem-refinement-1-1">
 <div class="para">If <span class="process-math">\(P \subseteq Q\)</span> then</div>
@@ -404,7 +425,7 @@ L(f,P) \leq L(f,Q) \leq U(f,Q) \leq U(f,P).
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-refinement-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 57"><a href="#lem-refinement" title="Copy heading and permalink for Lemma 57" aria-label="Copy heading and permalink for Lemma 57">🔗</a></div></article><details id="subsec-Darboux-Integral-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-9-1">The upper sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(Q\)</span> is the supremum of a set whose infimum is the lower sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(Q\text{,}\)</span> so <span class="process-math">\(L(f,Q) \leq U(f,Q)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 64"><a href="#lem-refinement" title="Copy heading and permalink for Lemma 64" aria-label="Copy heading and permalink for Lemma 64">🔗</a></div></article><details id="subsec-Darboux-Integral-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-9-1">The upper sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(Q\)</span> is the supremum of a set whose infimum is the lower sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(Q\text{,}\)</span> so <span class="process-math">\(L(f,Q) \leq U(f,Q)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Darboux-Integral-9-2">Suppose <span class="process-math">\(Q\)</span> is a refinement of <span class="process-math">\(P\)</span> obtained by adding an additional point <span class="process-math">\(z\text{.}\)</span> Further suppose <span class="process-math">\(z \in [x_{K-1},x_K]\)</span> for some <span class="process-math">\(K\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -443,11 +464,11 @@ L(f,P) \amp = \sum_{k=1}^n m_k (x_k - x_{k-1}) = \sum_{k=1}^{K-1} m_k (x_k - x_{
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 1"><a href="#subsec-Darboux-Integral-9" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="lemma theorem-like" id="lem-partition-2"><h4 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">58</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">65</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="lem-partition-2-1-1">If <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\)</span> are any two partitions of <span class="process-math">\([a,b]\)</span> then <span class="process-math">\(L(f,P_1) \leq U(f, P_2)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-partition-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 58"><a href="#lem-partition-2" title="Copy heading and permalink for Lemma 58" aria-label="Copy heading and permalink for Lemma 58">🔗</a></div></article><details id="subsec-Darboux-Integral-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Darboux-Integral-11-1">
+<div class="autopermalink" data-description="Lemma 65"><a href="#lem-partition-2" title="Copy heading and permalink for Lemma 65" aria-label="Copy heading and permalink for Lemma 65">🔗</a></div></article><details id="subsec-Darboux-Integral-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Darboux-Integral-11-1">
 <div class="para">Let <span class="process-math">\(P = P_1 \cup P_2\text{,}\)</span> which is a refinement of both <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{.}\)</span> Thus by the previous result,</div>
 <div class="displaymath process-math" id="subsec-Darboux-Integral-11-1-4">
 \begin{equation*}
@@ -481,25 +502,28 @@ L(f) = \sup\{L(f,P): P \in \mathcal{P}\}
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-upper-lower-integral"><h4 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">59</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">66</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="lem-upper-lower-integral-1-1">For any bounded function <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> it is always the case that <span class="process-math">\(U(f) \geq L(f)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-upper-lower-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 59"><a href="#lem-upper-lower-integral" title="Copy heading and permalink for Lemma 59" aria-label="Copy heading and permalink for Lemma 59">🔗</a></div></article><div class="para logical" id="subsec-Darboux-Integral-18">
+<div class="autopermalink" data-description="Lemma 66"><a href="#lem-upper-lower-integral" title="Copy heading and permalink for Lemma 66" aria-label="Copy heading and permalink for Lemma 66">🔗</a></div></article><article class="definition definition-like" id="def-Darboux-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">67</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-Darboux-integral-1-1">
 <div class="para">A bounded function <span class="process-math">\(f\)</span> defined on the interval <span class="process-math">\([a,b]\)</span> is <dfn class="terminology">Darboux Integrable</dfn> if <span class="process-math">\(U(f) = L(f)\text{.}\)</span> In this case we define <span class="process-math">\(\int_a^b f(x)dx\)</span> to be this common value; that is,</div>
-<div class="displaymath process-math" id="subsec-Darboux-Integral-18-6">
+<div class="displaymath process-math" id="def-Darboux-integral-1-1-6">
 \begin{equation*}
 \int_a^b f(x) dx = U(f) = L(f) 
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-Darboux-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Darboux-Integral-19">Note: The textbook uses the term Riemann integrability instead of Darboux integrability. This is not wrong because the Riemann integral and the Darboux integral are equivalent, but it is more precise to use the term Darboux integrability.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 67"><a href="#def-Darboux-integral" title="Copy heading and permalink for Definition 67" aria-label="Copy heading and permalink for Definition 67">🔗</a></div></article><div class="para" id="subsec-Darboux-Integral-19">Note: The textbook uses the term Riemann integrability instead of Darboux integrability. This is not wrong because the Riemann integral and the Darboux integral are equivalent, but it is more precise to use the term Darboux integrability.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Darboux-Integral-20">To show that a function is Darboux integrable we must show that <span class="process-math">\(U(f) = L(f)\text{.}\)</span> The difficulty is that computing <span class="process-math">\(U(f)\)</span> and <span class="process-math">\(L(f)\)</span> requires taking the supremum and infimum over all possible partitions. The next result allows us to show that <span class="process-math">\(U(f)= L(f)\)</span> without needing to consider all possible partitions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-integrability-criteria"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">60</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integrability Criteria.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">68</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integrability Criteria.</span>
 </h4>
 <div class="para logical" id="thm-integrability-criteria-2-1">
 <div class="para">A bounded function is Darboux integrable on <span class="process-math">\([a,b]\)</span> if and only if, for every <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> there exists a partition <span class="process-math">\(P_{\epsilon}\)</span> of <span class="process-math">\([a,b]\)</span> such that</div>
@@ -510,7 +534,7 @@ U(f, P_{\epsilon}) - L(f, P_{\epsilon}) &lt; \epsilon.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-integrability-criteria-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 60: Integrability Criteria"><a href="#thm-integrability-criteria" title="Copy heading and permalink for Theorem 60: Integrability Criteria" aria-label="Copy heading and permalink for Theorem 60: Integrability Criteria">🔗</a></div></article><details id="subsec-Darboux-Integral-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-22-1">We first prove the reverse direction. Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then there exists <span class="process-math">\(P_{\epsilon}\)</span> such that <span class="process-math">\(U(f,P_{\epsilon}) - L(f,P_{\epsilon}) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 68: Integrability Criteria"><a href="#thm-integrability-criteria" title="Copy heading and permalink for Theorem 68: Integrability Criteria" aria-label="Copy heading and permalink for Theorem 68: Integrability Criteria">🔗</a></div></article><details id="subsec-Darboux-Integral-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-22-1">We first prove the reverse direction. Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then there exists <span class="process-math">\(P_{\epsilon}\)</span> such that <span class="process-math">\(U(f,P_{\epsilon}) - L(f,P_{\epsilon}) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Darboux-Integral-22-2">
 <div class="para">Hence</div>
@@ -545,11 +569,11 @@ U(f,P_{\epsilon}) - L(f,P_{\epsilon}) \amp \leq U(f,P_1) - L(f,P_2)\\
 <div class="autopermalink" data-description="Proof 3"><a href="#subsec-Darboux-Integral-22" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="para" id="subsec-Darboux-Integral-23">Example: Show that <span class="process-math">\(f(x) = 2x\)</span> is Darboux integrable on the interval <span class="process-math">\([0,3]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-darboux-integrable"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">61</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">69</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="thm-darboux-integrable-1-1">If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\)</span> then it is Darboux integrable on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-darboux-integrable-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 61"><a href="#thm-darboux-integrable" title="Copy heading and permalink for Theorem 61" aria-label="Copy heading and permalink for Theorem 61">🔗</a></div></article><details id="subsec-Darboux-Integral-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-25-1">Since <span class="process-math">\(f\)</span> is continuous on a compact set, it must be uniformly continuous on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 69"><a href="#thm-darboux-integrable" title="Copy heading and permalink for Theorem 69" aria-label="Copy heading and permalink for Theorem 69">🔗</a></div></article><details id="subsec-Darboux-Integral-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Darboux-Integral-25-1">Since <span class="process-math">\(f\)</span> is continuous on a compact set, it must be uniformly continuous on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Darboux-Integral-25-2">Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrarily chosen. Then there exists <span class="process-math">\(\delta&gt;0\)</span> such that <span class="process-math">\(|f(y)-f(z)| &lt; \frac{\epsilon}{b-a}\)</span> whenever <span class="process-math">\(|y-z| &lt; \delta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Darboux-Integral-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>

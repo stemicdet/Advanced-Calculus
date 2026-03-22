@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw7">
+  <title>MTH 428/528 Homework 7 Due April 2</title>
+
+ <p>
+  <ol marker="(1)">
+    <li>
+      <p>
+        Find the upper and lower sums of <m>f(x) = x^3-9x^2+24x-18</m> with respect to the partition <m>P = \{0, 1, 3, 6\}</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        Use the Integrability Criterion to show that <m>g(x) = 3x</m> is Darboux integrable on <m>[0,1]</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>g</m> be bounded on <m>[a,b]</m> and suppose there exists a partition <m>P</m> with <m>L(g,P) = U(g,P)</m>. Describe <m>g</m>. Is it integrable? If so, what is the value of <m>\int_a^b g</m>?
+      </p>
+    </li>
+    <li>
+      <p>
+        Suppose that <m>f</m> is non-negative on <m>[a,b]</m> and that for every <m>\epsilon &gt; 0</m> there is a partition <m>P_{\epsilon}</m> on <m>[a,b]</m> such that <m>U(f,P_{\epsilon}) &lt; \epsilon</m>. Show that <m>f</m> is integrable on <m>[a,b]</m> and that
+        <md>
+          \int_a^b f(x) dx = 0
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        A <term>tagged partition</term> is one where in addition to a partition <m>P</m> we choose a sampling point <m>c_k</m> in each of the subintervals <m>[x_{k-1}, x_k]</m>. The corresponding <term>Riemann sum</term>
+        <md>
+          R(f,P) = \sum_{k=1}^n f(c_k) \Delta x_k,
+        </md>
+        is discussed in Section 7.1 where the following definition is alluded to.
+      </p>
+
+      <definition xml:id="def-Riemann-sum-hw">
+        <title>Riemann's Definition of the Integral</title>
+        <statement>
+            <p>
+                A bounded function <m>f</m> is integrable on <m>[a,b]</m> with <m>\int_a^b f = A</m> if for all <m>\epsilon &gt; 0</m> there exists a <m>\delta &gt; 0</m> such that for any tagged partition <m>(P, \{c_k\})</m> satisfying <m>\Delta x_k &lt; \delta</m> for all <m>k</m> it follows that 
+                <md>
+                  |R(f,P)-A| &lt; \epsilon.
+                </md>
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+      Show that if <m>f</m> satisfies Riemann's definition above, then <m>f</m> is Darboux integrable in the sense of Definition 7.2.7 in the textbook (Definition 67 in the notes).
+    </p>
+
+    </li>
+  </ol>
+ </p>
+
+  </worksheet>

@@ -1106,6 +1106,24 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 6 Due March 9",
   "body": " MTH 428\/528 Homework 6 Due March 9     Determine the Maclaurin series representation for . What is the interval of convergence for this power series?    Suppose converges on , where is a positive real number. Show is defined on and satisfies .      Use the result of Problem 2 to determine the Maclaurin series for .         Determine the maximum possible error in approximating by the partial sum of its Maclaurin series on the interval .    Use Lagrange's Remainder Theorem to show that the Maclaurin series for converges to on the interval where is a positive real number.     "
+},
+{
+  "id": "hw7",
+  "level": "1",
+  "url": "hw7.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 7 Due April 2",
+  "body": " MTH 428\/528 Homework 7 Due April 2     Find the upper and lower sums of with respect to the partition     Use the Integrability Criterion to show that is Darboux integrable on     Let be bounded on and suppose there exists a partition with . Describe . Is it integrable? If so, what is the value of ?    Suppose that is non-negative on and that for every there is a partition on such that . Show that is integrable on and that     A tagged partition is one where in addition to a partition we choose a sampling point in each of the subintervals . The corresponding Riemann sum  is discussed in Section 7.1 where the following definition is alluded to.   Riemann's Definition of the Integral   A bounded function is integrable on with if for all there exists a such that for any tagged partition satisfying for all it follows that     Show that if satisfies Riemann's definition above, then is Darboux integrable in the sense of Definition 7.2.7 in the textbook (Definition 67 in the notes).     "
+},
+{
+  "id": "hw7-2",
+  "level": "2",
+  "url": "hw7.html#hw7-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "tagged partition Riemann sum "
 }
 ]
 

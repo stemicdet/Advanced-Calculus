@@ -82,6 +82,13 @@
 
     <!-- ToDo: include a section on salamanders and their life-cycle -->
 
+    <figure>
+      <caption>The area under the curve is more accurately approximated by the rectangles as the width of the rectangles shrinks to 0</caption>
+      <image source="area-under-a-curve.jpg" width="50%">
+        <description>Pictures that show how the area under a curve is approximated by rectangles. The first image shows the graph of a polynomial that starts at the origin and increases. Under the graph are six rectangles of equal width that approximate the area under the graph. The second image shows the same function, but with 12 rectangles with half the width as the ones in the previous image underneath the graph. There are less gaps between the areas of the rectangles and the areas under the curve in this picture compared to the first picture. The final picture shows the same graph as the previous two pictures but this time the area under the graph is completely filled in because the width of the rectangles has shrunk to zero.</description>
+      </image>
+    </figure>
+
 
     <p>
         Because the Cauchy integral is not defined in terms of antiderivatives it allows for a larger number of functions to be integrated compared to the Newton-Leibniz integral. However, it requires that the function to be integrated be continuous which is still rather restrictive.

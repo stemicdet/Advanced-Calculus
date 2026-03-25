@@ -799,7 +799,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "",
   "title": "Week 9: The Reimann Integral (7.1-7.2)",
-  "body": " Week 9: The Reimann Integral (7.1-7.2)   History of the Integral  The ancient Greek mathematicians found the areas of geometric figures using the ``method of exhaustion''. They found the areas of polygons by dividing them into triangles and adding the areas of the triangles together.  The area of a circle was approximated by dividing the circle into a large number of triangles, finding the areas of the triangles and adding them together.  The integral of a function as opposed to the area of a geometric figure was first considered by the early founders of calculus such as Newton and Leibniz. They viewed the integral as the inverse process of differentiation.     Newton-Leibniz Integral : The integral of the function is the function such that .    This definition has several shortcomings. First it means that the only functions that can be differentiated are derivatives, which is a relatively small class of functions.  Second since derivatives satisfy the Intermediate Value Property this means that any function with a jump discontinuity cannot be integrated.  In 1823 Cauchy developed a more rigorous definition based on the idea of finding areas under a curve. It uses the concept of a partition of an interval.    A partition of is a finite set of points from that includes both and . The notational convention is to list the points of a partition in increasing order; thus        Cauchy Integral : Let be a continuous function on and let , and for . The limit is called the Cauchy integral of over and is denoted by     Geometrically the Cauchy integral determines the area under the curve by dividing into rectangles of width . The height of the rectangle is chosen to be the height of at the left endpoint of the rectangle.  In taking the limit as the maximum width of the rectangles goes to more rectangles are required to cover the area beneath the curve and as the maximum width of the rectangles tends to the limit converges to the area under the curve.   Because the Cauchy integral is not defined in terms of antiderivatives it allows for a larger number of functions to be integrated compared to the Newton-Leibniz integral. However, it requires that the function to be integrated be continuous which is still rather restrictive.  In 1868 Bernhard Riemann developed a new way to define integration based off Cauchy's ideas that would allow for the integration of some discontinuous functions.     Riemann Integral : Let be a function on and let , and for . On each subinterval choose a point The limit is called the Riemann integral of over and is denoted by     The sum that appears in the definition of the Riemann integral is called a Riemann sum.  The difference between the Riemann integral and the Cauchy integral is that in the Cauchy integral the height of the rectangle is given by value of at the left endpoint, while in the Riemann integral the height of the rectangle is determined by the value of which can be any point in the subinterval   The value of the Riemann integral if it exists is independent of the choice of the points . No matter what points you choose you will get the same value for the limit of the Riemann sum.  The Riemann integral makes it possible to integrate a much larger set of functions than the Cauchy integral, including functions with a finite number of discontinuities; however, the Riemann integral still has a few drawbacks.  The Riemann integral can't be used to integrate some functions with uncountably many discontinuities such as Dirichlet's function   A sequence of Riemann integrable functions can converge pointwise to a function that is not Riemann integrable.  In 1904 Henri Lebesgue introduced a new definition of the integral which is now known as the Lebesgue integral. With the Lebesgue integral it is possible to integrate functions with uncountably many discontinuities, like Dirichlet's function, and the limit of a sequence of Lebesgue integrable functions is always a Lebesgue integrable function.  Lebesgue integration is based on a branch of mathematics called measure theory. In order to understand the Lebesgue integral one needs to be familiar with the concepts of measure theory. For more information take MTH 650: Real Variables I.  In 1875 Gaston Darboux developed his version of the Riemann integral which is now called the Darboux integral. The Darboux integral is equivalent to the Riemann integral; that is, a function is Darboux integrable if and only if it is Riemann integrable, and both integrals yield the same value.  The advantage of the Darboux integral over the Riemann integral is that it is simpler to state and does not require the use of a limit.    The Darboux Integral  The Darboux integral is defined using lower and upper sums.  Recall that a partition of is a finite set of points that includes and . For each subinterval of , let     The lower sum of with respect to is given by       The upper sum of with respect to is given by     Example: Find the upper and lower sums of on the interval with respect to the partition     A partition is a refinement of a partition if contains all the points of ; that is, .      If then      The upper sum of with respect to is the supremum of a set whose infimum is the lower sum of with respect to , so .  Suppose is a refinement of obtained by adding an additional point . Further suppose for some .  Then and Let Then and .  Hence      If and are any two partitions of then      Let , which is a refinement of both and . Thus by the previous result,    An upper sum always overestimates the exact value of the integral, but by taking a refinement of the partition the upper sum decreases, meaning that it overestimates the integral by a lesser amount.  Likewise a lower sum always underestimates the exact value of the integral, but by taking a refinement of the partition the lower sum decreasing so that it underestimates the integral by a lesser amount.  The idea behind the Darboux integral is that a function is integrable when the upper and lower sums converge to a common value.  Let be the collection of all possible partitions of the interval . The upper integral of is defined to be   Similarly the lower integral of on is defined to be     For any bounded function on , it is always the case that .      A bounded function defined on the interval is Darboux Integrable if . In this case we define to be this common value; that is,     Note: The textbook uses the term Riemann integrability instead of Darboux integrability. This is not wrong because the Riemann integral and the Darboux integral are equivalent, but it is more precise to use the term Darboux integrability.  To show that a function is Darboux integrable we must show that . The difficulty is that computing and requires taking the supremum and infimum over all possible partitions. The next result allows us to show that without needing to consider all possible partitions.   Integrability Criteria   A bounded function is Darboux integrable on if and only if, for every , there exists a partition of such that      We first prove the reverse direction. Let be arbitrary. Then there exists such that .  Hence   Since is arbitrary this means that and thus is Darboux integrable.  To prove the forward direction we will use a triangle inequality argument. However since we will not need absolute values.  Because is the supremum of all upper sums, given there exists a partition such that   Likewise, there is a partition such that .  Let which is a refinement of both and and recall that since is integrable .  Hence    Example: Show that is Darboux integrable on the interval     If is continuous on then it is Darboux integrable on .     Since is continuous on a compact set, it must be uniformly continuous on .  Let be arbitrarily chosen. Then there exists such that whenever .  Now let be a partition of where on every subinterval of .  On the subinterval the supremum occurs at some point and the infimum occurs at some point .  Since , .  Thus   Hence is Darboux integrable by the Integrability Criterion.    "
+  "body": " Week 9: The Reimann Integral (7.1-7.2)   History of the Integral  The ancient Greek mathematicians found the areas of geometric figures using the ``method of exhaustion''. They found the areas of polygons by dividing them into triangles and adding the areas of the triangles together.  The area of a circle was approximated by dividing the circle into a large number of triangles, finding the areas of the triangles and adding them together.  The integral of a function as opposed to the area of a geometric figure was first considered by the early founders of calculus such as Newton and Leibniz. They viewed the integral as the inverse process of differentiation.     Newton-Leibniz Integral : The integral of the function is the function such that .    This definition has several shortcomings. First it means that the only functions that can be differentiated are derivatives, which is a relatively small class of functions.  Second since derivatives satisfy the Intermediate Value Property this means that any function with a jump discontinuity cannot be integrated.  In 1823 Cauchy developed a more rigorous definition based on the idea of finding areas under a curve. It uses the concept of a partition of an interval.    A partition of is a finite set of points from that includes both and . The notational convention is to list the points of a partition in increasing order; thus        Cauchy Integral : Let be a continuous function on and let , and for . The limit is called the Cauchy integral of over and is denoted by     Geometrically the Cauchy integral determines the area under the curve by dividing into rectangles of width . The height of the rectangle is chosen to be the height of at the left endpoint of the rectangle.  In taking the limit as the maximum width of the rectangles goes to more rectangles are required to cover the area beneath the curve and as the maximum width of the rectangles tends to the limit converges to the area under the curve.    The area under the curve is more accurately approximated by the rectangles as the width of the rectangles shrinks to 0   Pictures that show how the area under a curve is approximated by rectangles. The first image shows the graph of a polynomial that starts at the origin and increases. Under the graph are six rectangles of equal width that approximate the area under the graph. The second image shows the same function, but with 12 rectangles with half the width as the ones in the previous image underneath the graph. There are less gaps between the areas of the rectangles and the areas under the curve in this picture compared to the first picture. The final picture shows the same graph as the previous two pictures but this time the area under the graph is completely filled in because the width of the rectangles has shrunk to zero.    Because the Cauchy integral is not defined in terms of antiderivatives it allows for a larger number of functions to be integrated compared to the Newton-Leibniz integral. However, it requires that the function to be integrated be continuous which is still rather restrictive.  In 1868 Bernhard Riemann developed a new way to define integration based off Cauchy's ideas that would allow for the integration of some discontinuous functions.     Riemann Integral : Let be a function on and let , and for . On each subinterval choose a point The limit is called the Riemann integral of over and is denoted by     The sum that appears in the definition of the Riemann integral is called a Riemann sum.  The difference between the Riemann integral and the Cauchy integral is that in the Cauchy integral the height of the rectangle is given by value of at the left endpoint, while in the Riemann integral the height of the rectangle is determined by the value of which can be any point in the subinterval   The value of the Riemann integral if it exists is independent of the choice of the points . No matter what points you choose you will get the same value for the limit of the Riemann sum.  The Riemann integral makes it possible to integrate a much larger set of functions than the Cauchy integral, including functions with a finite number of discontinuities; however, the Riemann integral still has a few drawbacks.  The Riemann integral can't be used to integrate some functions with uncountably many discontinuities such as Dirichlet's function   A sequence of Riemann integrable functions can converge pointwise to a function that is not Riemann integrable.  In 1904 Henri Lebesgue introduced a new definition of the integral which is now known as the Lebesgue integral. With the Lebesgue integral it is possible to integrate functions with uncountably many discontinuities, like Dirichlet's function, and the limit of a sequence of Lebesgue integrable functions is always a Lebesgue integrable function.  Lebesgue integration is based on a branch of mathematics called measure theory. In order to understand the Lebesgue integral one needs to be familiar with the concepts of measure theory. For more information take MTH 650: Real Variables I.  In 1875 Gaston Darboux developed his version of the Riemann integral which is now called the Darboux integral. The Darboux integral is equivalent to the Riemann integral; that is, a function is Darboux integrable if and only if it is Riemann integrable, and both integrals yield the same value.  The advantage of the Darboux integral over the Riemann integral is that it is simpler to state and does not require the use of a limit.    The Darboux Integral  The Darboux integral is defined using lower and upper sums.  Recall that a partition of is a finite set of points that includes and . For each subinterval of , let     The lower sum of with respect to is given by       The upper sum of with respect to is given by     Example: Find the upper and lower sums of on the interval with respect to the partition     A partition is a refinement of a partition if contains all the points of ; that is, .      If then      The upper sum of with respect to is the supremum of a set whose infimum is the lower sum of with respect to , so .  Suppose is a refinement of obtained by adding an additional point . Further suppose for some .  Then and Let Then and .  Hence      If and are any two partitions of then      Let , which is a refinement of both and . Thus by the previous result,    An upper sum always overestimates the exact value of the integral, but by taking a refinement of the partition the upper sum decreases, meaning that it overestimates the integral by a lesser amount.  Likewise a lower sum always underestimates the exact value of the integral, but by taking a refinement of the partition the lower sum decreasing so that it underestimates the integral by a lesser amount.  The idea behind the Darboux integral is that a function is integrable when the upper and lower sums converge to a common value.  Let be the collection of all possible partitions of the interval . The upper integral of is defined to be   Similarly the lower integral of on is defined to be     For any bounded function on , it is always the case that .      A bounded function defined on the interval is Darboux Integrable if . In this case we define to be this common value; that is,     Note: The textbook uses the term Riemann integrability instead of Darboux integrability. This is not wrong because the Riemann integral and the Darboux integral are equivalent, but it is more precise to use the term Darboux integrability.  To show that a function is Darboux integrable we must show that . The difficulty is that computing and requires taking the supremum and infimum over all possible partitions. The next result allows us to show that without needing to consider all possible partitions.   Integrability Criteria   A bounded function is Darboux integrable on if and only if, for every , there exists a partition of such that      We first prove the reverse direction. Let be arbitrary. Then there exists such that .  Hence   Since is arbitrary this means that and thus is Darboux integrable.  To prove the forward direction we will use a triangle inequality argument. However since we will not need absolute values.  Because is the supremum of all upper sums, given there exists a partition such that   Likewise, there is a partition such that .  Let which is a refinement of both and and recall that since is integrable .  Hence    Example: Show that is Darboux integrable on the interval     If is continuous on then it is Darboux integrable on .     Since is continuous on a compact set, it must be uniformly continuous on .  Let be arbitrarily chosen. Then there exists such that whenever .  Now let be a partition of where on every subinterval of .  On the subinterval the supremum occurs at some point and the infimum occurs at some point .  Since , .  Thus   Hence is Darboux integrable by the Integrability Criterion.    "
 },
 {
   "id": "def-newton-integral",
@@ -829,11 +829,20 @@ var ptx_lunr_docs = [
   "body": "   Cauchy Integral : Let be a continuous function on and let , and for . The limit is called the Cauchy integral of over and is denoted by    "
 },
 {
+  "id": "subsec-history-13",
+  "level": "2",
+  "url": "notes-week-09.html#subsec-history-13",
+  "type": "Figure",
+  "number": "60",
+  "title": "",
+  "body": " The area under the curve is more accurately approximated by the rectangles as the width of the rectangles shrinks to 0   Pictures that show how the area under a curve is approximated by rectangles. The first image shows the graph of a polynomial that starts at the origin and increases. Under the graph are six rectangles of equal width that approximate the area under the graph. The second image shows the same function, but with 12 rectangles with half the width as the ones in the previous image underneath the graph. There are less gaps between the areas of the rectangles and the areas under the curve in this picture compared to the first picture. The final picture shows the same graph as the previous two pictures but this time the area under the graph is completely filled in because the width of the rectangles has shrunk to zero.   "
+},
+{
   "id": "def-reimann-integral",
   "level": "2",
   "url": "notes-week-09.html#def-reimann-integral",
   "type": "Definition",
-  "number": "60",
+  "number": "61",
   "title": "",
   "body": "   Riemann Integral : Let be a function on and let , and for . On each subinterval choose a point The limit is called the Riemann integral of over and is denoted by    "
 },
@@ -842,7 +851,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#def-lower-sum",
   "type": "Definition",
-  "number": "61",
+  "number": "62",
   "title": "",
   "body": "  The lower sum of with respect to is given by    "
 },
@@ -851,7 +860,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#def-upper-sum",
   "type": "Definition",
-  "number": "62",
+  "number": "63",
   "title": "",
   "body": "  The upper sum of with respect to is given by    "
 },
@@ -860,7 +869,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#def-refinement",
   "type": "Definition",
-  "number": "63",
+  "number": "64",
   "title": "",
   "body": "  A partition is a refinement of a partition if contains all the points of ; that is, .   "
 },
@@ -869,7 +878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#lem-refinement",
   "type": "Lemma",
-  "number": "64",
+  "number": "65",
   "title": "",
   "body": "  If then    "
 },
@@ -887,7 +896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#lem-partition-2",
   "type": "Lemma",
-  "number": "65",
+  "number": "66",
   "title": "",
   "body": "  If and are any two partitions of then    "
 },
@@ -923,7 +932,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#lem-upper-lower-integral",
   "type": "Lemma",
-  "number": "66",
+  "number": "67",
   "title": "",
   "body": "  For any bounded function on , it is always the case that .   "
 },
@@ -932,7 +941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#def-Darboux-integral",
   "type": "Definition",
-  "number": "67",
+  "number": "68",
   "title": "",
   "body": "  A bounded function defined on the interval is Darboux Integrable if . In this case we define to be this common value; that is,    "
 },
@@ -941,7 +950,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#thm-integrability-criteria",
   "type": "Theorem",
-  "number": "68",
+  "number": "69",
   "title": "Integrability Criteria.",
   "body": " Integrability Criteria   A bounded function is Darboux integrable on if and only if, for every , there exists a partition of such that    "
 },
@@ -959,7 +968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-09.html#thm-darboux-integrable",
   "type": "Theorem",
-  "number": "69",
+  "number": "70",
   "title": "",
   "body": "  If is continuous on then it is Darboux integrable on .   "
 },
@@ -986,7 +995,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-11.html#thm-one-discontinuity",
   "type": "Theorem",
-  "number": "70",
+  "number": "71",
   "title": "",
   "body": "  If is bounded, and is integrable on for all Then is integrable on . An analogous result holds at the other endpoint.   "
 },
@@ -1004,7 +1013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-11.html#thm-integral-sum",
   "type": "Theorem",
-  "number": "71",
+  "number": "72",
   "title": "",
   "body": "  Suppose is bounded and let . Then is integrable on if and only if is integrable on and . In this case, we have    "
 },
@@ -1022,7 +1031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-11.html#thm-integral-properties",
   "type": "Theorem",
-  "number": "72",
+  "number": "73",
   "title": "",
   "body": "  Suppose and are integrable functions on the interval .   The function is integrable on with .    For , the function is integrable with .    If on , then .    If on , then .    The function is integrable and .      "
 },
@@ -1040,7 +1049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "notes-week-11.html#thm-Integrable-Limit-Theorem",
   "type": "Theorem",
-  "number": "73",
+  "number": "74",
   "title": "Integrable Limit Theorem.",
   "body": " Integrable Limit Theorem   Suppose that uniformly on and that each is integrable. Then is integrable and    "
 },

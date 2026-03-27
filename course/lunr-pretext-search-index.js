@@ -1232,6 +1232,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "",
   "body": "tagged partition Riemann sum "
+},
+{
+  "id": "hw8",
+  "level": "1",
+  "url": "hw8.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 8 Due April 9",
+  "body": " MTH 428\/528 Homework 8 Due April 9     Suppose that and are Darboux integrable functions on . Prove that the function is Darboux integrable on and that     Suppose that is a bounded function on and that is Darboux integrable on . Must also be Darboux integrable on ? Either provide a proof or exhibit a counterexample.    Consider the function over the interval .   Show that for every partition of .    Construct a partition for which .    Given , construct a partition for which .       Show that if for all and is integrable, then     Although not part of Theorem 7.4.2 (Theorem 73 in the notes), it is true that the product of integrable functions is integrable. Provide the details for each step in the following proof of this fact.   If satisfies on , show     Prove that if is integrable on then so is .    Now show that if and are integrable, then is integrable. (Consider .)        "
 }
 ]
 

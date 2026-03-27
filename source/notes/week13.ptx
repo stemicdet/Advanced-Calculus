@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-13">
+  <title>Week 13: Lebesgue's Criterion for Riemann Integrability (7.6)</title>
+
+  <subsection xml:id="subsec-Riemann-integrable">
+    <title>Riemann Integrability and Continuity</title>
+
+<p>
+    In our study of the Darboux (equivalently Riemann) integral we have proven that the following types of functions are always Darboux integrable.
+    <ol>
+        <li>
+            <p>
+                Continuous functions
+            </p>
+        </li>
+        <li>
+            <p>
+                Functions with a finite number of discontinuities
+            </p>
+        </li>
+    </ol>
+</p>
+
+<p>
+    We also saw that a function with an infinite number of discontinuities may or may not be integrable. Now we will further investigate when we can integrate a function with infinitely many discontinuities.
+</p>
+
+<p>
+    Recall Thomae's function.
+    <md>
+        t(x) = \begin{cases} 
+    \hfill  1 \amp \text{ if $x =0$} \\
+      \hfill  1/n \amp \text{ if $x = \frac{m}{n} \in \mathbf{Q} \setminus \{0\}$ is in lowest terms with $n>0$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+    </md>
+    
+</p>
+
+<p>
+    Thomae's function is continuous on the set of irrational numbers and discontinuous on the set of rational numbers. Thus it is discontinuous on a countably infinite set.
+</p>
+
+<claim xml:id="claim-thomae">
+    <statement>
+        <p>
+            $t(x)$ is Darboux integrable on $[0,1]$ and $\displaystyle \int_0^1 t(x) dx = 0$
+        </p>
+    </statement>
+</claim>
+
+<proof>
+    <p>
+        We will first show that $L(t,P) = 0$ for any partition $P$ of $[0,1]$.
+    </p>
+
+    <p>
+        Let $P$ be a partition of $[0,1]$. Since the irrational numbers are dense in the reals, any subinterval of $P$ contains an irrational point and since $t(x) = 0$ on the irrationals $L(t,P) = 0$.
+    </p>
+
+    <p>
+        Now we will show that for an arbitrary $\epsilon&gt; 0$, we can find a partition $P$ such that $U(t,P) &lt; \epsilon$.
+    </p>
+
+    <p>
+        Let $N$ be a natural number so that $\frac{1}{n} &lt; \frac{\epsilon}{2}$ for all $n &gt; N$. This means that $N &gt; \frac{2}{\epsilon}$.
+    </p>
+
+    <p>
+        Let $\{r_n\}$ be a list of all rational numbers in $(0,1)$ whose denominator is less than $N$. Note that this is a finite set of numbers.
+    </p>
+
+    <p>
+        We will construct the partition $P$ by specifying the subintervals instead of the points of the partition. Let $r_1$ be the first number on the list and construct a subinterval centered at $r_1$ contained in $[0,1]$ with width at most $\frac{\epsilon}{4}$.
+    </p>
+
+    <p>
+        Now construct a second subinterval centered at $r_2$ that is contained in $[0,1]$, doesn't intersect the first subinterval and has width at most $\frac{\epsilon}{8}$.
+    </p>
+
+    <p>
+        We repeat this process until we exhaust all the points on the list. For $r_n$, construct a subinterval centered at $r_n$ contained in $[0,1]$ that doesn't intersect any of the previously constructed subintervals and that has width at most $\frac{\epsilon}{2^{n+1}}$
+    </p>
+
+    <p>
+        Our partition $P$ consists of the endpoints of these subintervals. Note that in addition to the subintervals that we constructed, $P$ also has other subintervals that make up the missing space in $[0,1]$ not part of the subintervals that we constructed.
+    </p>
+
+    <p>
+        We now show that $U(t,P) &lt; \epsilon$. First we consider the upper sum over the intervals centered at the $r_n$'s in the list.
+    </p>
+
+    <p>
+        Since $0 &lt; t(x) &lt; 1$ for all $x$ it follows that the upper sum over the intervals centered at the $r_n$'s is less than
+        <md>
+            \frac{\epsilon}{4} + \frac{\epsilon}{8} + \frac{\epsilon}{16} + \ldots  = \frac{\epsilon}{2}.
+        </md>
+        
+    </p>
+
+    <p>
+        Now we will bound the upper sum over the other subintervals of the partition. Note that these subintervals contain none of the rational numbers with denominator less than $N$.
+    </p>
+
+    <p>
+        This means that on these subintervals $t(x) \leq \frac{1}{N+1} &lt; \frac{\epsilon}{2}$ by our choice of $N$.
+    </p>
+
+    <p>
+        Since the total width of all the subintervals is less than $1$, this means that the upper sum over these subintervals is less than $\frac{\epsilon}{2} \cdot 1 = \frac{\epsilon}{2}$.
+    </p>
+
+    <p>
+        Combining these results gives that $U(t,P) &lt; \epsilon$.
+    </p>
+
+    <p>
+        Since $L(t,P) = 0$ for all partitions $P$ and for every $\epsilon &gt; 0$ we can construct a partition $P$ with $U(t,P) &lt; \epsilon$, it follows that Thomae's function is Darboux integrable and 
+        <md>
+            \int_0^1 t(x) dx = 0.
+        </md>
+        
+    </p>
+
+</proof>
+    </subsection>
+
+    </section>

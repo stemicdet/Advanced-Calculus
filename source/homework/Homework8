@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw8">
+  <title>MTH 428/528 Homework 8 Due April 9</title>
+
+<p>
+  <ol marker="(1)">
+    <li>
+      <p>
+        Suppose that <m>f</m> and <m>g</m> are Darboux integrable functions on <m>[a,b]</m>. Prove that the function <m>f+g</m> is Darboux integrable on <m>[a,b]</m> and that 
+        <md>
+          \int_a^b f(x)+g(x) dx = \int_a^b f(x) dx + \int_a^b g(x) dx
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Suppose that <m>f</m> is a bounded function on <m>[a,b]</m> and that <m>|f|</m> is Darboux integrable on <m>[a,b]</m>. Must <m>f</m> also be Darboux integrable on <m>[a,b]</m>? Either provide a proof or exhibit a counterexample.
+      </p>
+    </li>
+    <li>
+      <p>
+        Consider the function
+        <md>
+          h(x) = \begin{cases} 
+      \hfill  1 \amp \text{ for $0\leq x &lt; 1$ } \\
+      \hfill  2 \hfill \amp \text{ for $x = 1$} 
+  \end{cases}
+        </md>
+        over the interval <m>[0,1]</m>.
+        <ol marker="(A)">
+          <li>
+            <p>
+              Show that <m>L(f,P) = 1</m> for every partition <m>P</m> of <m>[0,1]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Construct a partition <m>P</m> for which <m>U(f,P) &lt; 1 + 1/10</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Given <m>\epsilon &gt; 0</m>, construct a partition <m>P</m> for which <m>U(f,P) &lt; 1 + \epsilon</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+    <li>
+      <p>
+        Show that if <m>f(x) &gt; 0</m> for all <m>x \in [a,b]</m> and <m>f</m> is integrable, then
+        <md>
+          \int_a^b f(x) dx &gt; 0
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Although not part of Theorem 7.4.2 (Theorem 73 in the notes), it is true that the product of integrable functions is integrable. Provide the details for each step in the following proof of this fact.
+        <ol marker="(A)">
+          <li>
+            <p>
+              If <m>f</m> satisfies <m>|f(x)| \leq M</m> on <m>[a,b]</m>, show
+              <md>
+                |f(x)^2-f(y)^2| \leq 2 M |f(x)-f(y)|.
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that if <m>f</m> is integrable on <m>[a,b]</m> then so is <m>f^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Now show that if <m>f</m> and <m>g</m> are integrable, then <m>fg</m> is integrable. (Consider <m>(f+g)^2</m>.)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+  </ol>
+</p>
+
+  </worksheet>

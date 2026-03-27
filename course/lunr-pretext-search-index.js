@@ -1063,6 +1063,105 @@ var ptx_lunr_docs = [
   "body": " We first show that is integrable. Let , then there exists so that for all .  Because is integrable, there is a partition of such that .  We will show that .  By the triangle inequality,   Suppose that on the subinterval the maximum of occurs at . Then . Hence .  Similarly and thus .  Thus   Since was arbitrarily chosen, can be made as small as we want. Thus is integrable.  Now we will prove that .  It follows from the properties that we proved about integrals that   Let be chosen arbitrarily. Since uniformly there exists such that for all and    Thus if ,   Since was arbitrarily chosen, this shows that   "
 },
 {
+  "id": "notes-week-12",
+  "level": "1",
+  "url": "notes-week-12.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 12: The Fundamental Theorem of Calculus (7.5)",
+  "body": " Week 12: The Fundamental Theorem of Calculus (7.5)   The Fundamental Theorem of Calculus  We have rigorously defined derivatives and integrals independently of each other. The derivative was motivated by the question of finding slopes of tangent lines and is given in terms of functional limits of difference quotients. The integral was motivated by the question of finding the area under the curve and is given in terms of a limit of the size of partitions, or equivalently by supremums and infimums of finite sums.  Both derivatives and integrals were studied long before the Fundamental Theorem of Calculus. Integrals can be traced back to the ancient Greeks who used the method of exhaustion to approximate areas of geometric figures, while tangent lines and instantaneous velocity were studied by a group of Medieval scholars known as the Oxford School.  The significance of the Fundamental Theorem of Calculus is that it shows that these seemingly unrelated concepts of derivatives and integrals are actually inverses of each other.  Although the Fundamental Theorem of Calculus is associated with Isaac Newton and Gottfried Leibniz, its origins go further back.  The earliest proof of the FTC is due to James Gregory in 1668. The statement and proof given entirely using Euclidean geometry and make no use of limits at all.  In 1674 Isaac Barrow gave the first published proof of the FTC. Barrow also solved the problem of determining the antiderivative of the secant function. (Gregory had presented a proof earlier, but no one could understand it.)  At around the same time, Barrow's student Isaac Newton gave a proof of the FTC which relied less on geometry and was thus more generalized than Barrow's proof.  In 1693 Gottfried Leibniz published his formulation of the FTC. Although he wasn't the first to formulate the FTC, he invented the modern notation for calculus such as for the derivative, which was an improvement over the notation of Newton and the others.   The Fundamental Theorrem of Calculus      If is integrable and satisfies for all , then     Let be integrable, and for , define Then is continuous on . If is continuous at some point , then is differentiable at and .       Part 1 of FTC is that the definite integral of a derivative is equal to the net change of the original function. Part 1 also provides a method for determining the exact values of definite integrals.  Part 2 of FTC is that the derivative of an integral is equal to the integrand. It also shows that every continuous function is the derivative of its indefinite integral.  We first prove Part 1 of the FTC.   Let be a partition of and let be a subinterval. Then the Mean Value Theorem gives that there is a point such that   It thus follows that   When the terms of the sum are expanded out, all cancel except for the first and last terms. Thus   Since and , we have    Before we prove part 2, we will need the following Lemma.    Let be Darboux integrable on . Then is bounded; that is, there exists such that on .     Note: A function such as on with is unbounded on yet one can determine the value of its integral on by integrating it over and taking the limit as . Such an improper integral is not allowed in the statement of the lemma or FTC part 2.   We will prove the contrapositive: If is unbounded on then is not Darboux integrable on . Assume that is unbounded on . Then for each there exists a point such that .  Let be any partition and let be the width of the smallest subinterval of . Let be an arbitrary positive real number. We will show that which implies that is not Darboux integrable on .  Let . Then there exists with . Thus belongs to some subinterval .  Hence   Since is arbitrary this shows that and hence also are not Darboux integrable.   Now we prove part 2 of the FTC.   We will first show that is continuous. Recall that . This means that   Since is integrable, it is also bounded. Thus there exists such that on and thus   Now let be arbitrary and let .  Then if ,   Thus is continuous (in fact uniformly continuous) on .  Finally we will show that provided that is continuous at . From the limit definition of the derivative we have   Thus to show that we must show that for there exists such that if then   Since is continuous at there exists such that whenever .  Note that we can rewrite as   Hence it follows from that we must show   It follows that if then   Hence is differentiable at and .     Applications of FTC   Integration-by-Parts   Suppose and have continuous derivatives on . Then      The idea behind the proof is to integrate the product rule. Recall that   Integrating both sides of yields   By FTC the left hand side is Hence   Rearranging the above gives    An important application of FTC is to give integral representations of well known functions.  Because , it follows from FTC that the function defined by is the natural logarithm. Notice that , so that we have the correct antiderivative of .  The FTC allows us to define the natural logarithm without first needing to define the base . We can also use it to prove its familiar properties.    F(xy) = F(x) + F(y).     We will treat as a constant and differentiate with respect to .  It follows from the chain rule that . Hence   Since , and differ by a constant. Hence .  Another way to write this is   The above holds for all so to solve for let . Then   Hence      Stokes' Theorem  In multivariable calculus, Stokes' theorem relates the surface integral of the derivative of a function to the contour integral of the function itself.   Stokes' Theorem   Suppose is a surface in with boundary and let be a function on with 1st order partial derivatives. Then     Now let's consider Stokes' Theorem applied to the interval .  Because we just have a single variable, the left hand side reduces to .  The boundary of is made up of just the endpoints, so the right hand side reduces to .  Thus Stokes' theorem reduces to and hence Stokes' theorem is a generalization of the FTC.   "
+},
+{
+  "id": "thm-FTC",
+  "level": "2",
+  "url": "notes-week-12.html#thm-FTC",
+  "type": "Theorem",
+  "number": "75",
+  "title": "The Fundamental Theorrem of Calculus.",
+  "body": " The Fundamental Theorrem of Calculus      If is integrable and satisfies for all , then     Let be integrable, and for , define Then is continuous on . If is continuous at some point , then is differentiable at and .      "
+},
+{
+  "id": "subsec-Fundamental-theorem-14",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Fundamental-theorem-14",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Let be a partition of and let be a subinterval. Then the Mean Value Theorem gives that there is a point such that   It thus follows that   When the terms of the sum are expanded out, all cancel except for the first and last terms. Thus   Since and , we have   "
+},
+{
+  "id": "lem-ftc",
+  "level": "2",
+  "url": "notes-week-12.html#lem-ftc",
+  "type": "Lemma",
+  "number": "76",
+  "title": "",
+  "body": "  Let be Darboux integrable on . Then is bounded; that is, there exists such that on .   "
+},
+{
+  "id": "subsec-Fundamental-theorem-18",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Fundamental-theorem-18",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " We will prove the contrapositive: If is unbounded on then is not Darboux integrable on . Assume that is unbounded on . Then for each there exists a point such that .  Let be any partition and let be the width of the smallest subinterval of . Let be an arbitrary positive real number. We will show that which implies that is not Darboux integrable on .  Let . Then there exists with . Thus belongs to some subinterval .  Hence   Since is arbitrary this shows that and hence also are not Darboux integrable.  "
+},
+{
+  "id": "subsec-Fundamental-theorem-20",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Fundamental-theorem-20",
+  "type": "Proof",
+  "number": "3",
+  "title": "",
+  "body": " We will first show that is continuous. Recall that . This means that   Since is integrable, it is also bounded. Thus there exists such that on and thus   Now let be arbitrary and let .  Then if ,   Thus is continuous (in fact uniformly continuous) on .  Finally we will show that provided that is continuous at . From the limit definition of the derivative we have   Thus to show that we must show that for there exists such that if then   Since is continuous at there exists such that whenever .  Note that we can rewrite as   Hence it follows from that we must show   It follows that if then   Hence is differentiable at and .  "
+},
+{
+  "id": "thm-int-by-parts",
+  "level": "2",
+  "url": "notes-week-12.html#thm-int-by-parts",
+  "type": "Theorem",
+  "number": "77",
+  "title": "Integration-by-Parts.",
+  "body": " Integration-by-Parts   Suppose and have continuous derivatives on . Then    "
+},
+{
+  "id": "subsec-Applications-FTC-3",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Applications-FTC-3",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " The idea behind the proof is to integrate the product rule. Recall that   Integrating both sides of yields   By FTC the left hand side is Hence   Rearranging the above gives   "
+},
+{
+  "id": "thm-log-prop-1",
+  "level": "2",
+  "url": "notes-week-12.html#thm-log-prop-1",
+  "type": "Theorem",
+  "number": "78",
+  "title": "",
+  "body": "  F(xy) = F(x) + F(y).   "
+},
+{
+  "id": "subsec-Applications-FTC-8",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Applications-FTC-8",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " We will treat as a constant and differentiate with respect to .  It follows from the chain rule that . Hence   Since , and differ by a constant. Hence .  Another way to write this is   The above holds for all so to solve for let . Then   Hence   "
+},
+{
+  "id": "thm-Stokes",
+  "level": "2",
+  "url": "notes-week-12.html#thm-Stokes",
+  "type": "Theorem",
+  "number": "79",
+  "title": "Stokes’ Theorem.",
+  "body": " Stokes' Theorem   Suppose is a surface in with boundary and let be a function on with 1st order partial derivatives. Then    "
+},
+{
   "id": "hw1",
   "level": "1",
   "url": "hw1.html",

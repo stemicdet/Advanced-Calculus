@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-12">
+  <title>Week 12: The Fundamental Theorem of Calculus (7.5)</title>
+
+  <subsection xml:id="subsec-Fundamental-theorem">
+    <title>The Fundamental Theorem of Calculus</title>
+
+
+    <p>
+        We have rigorously defined derivatives and integrals independently of each other. The derivative was motivated by the question of finding slopes of tangent lines and is given in terms of functional limits of difference quotients. The integral was motivated by the question of finding the area under the curve and is given in terms of a limit of the size of partitions, or equivalently by supremums and infimums of finite sums.
+    </p>
+
+    <p>
+        Both derivatives and integrals were studied long before the Fundamental Theorem of Calculus. Integrals can be traced back to the ancient Greeks who used the method of exhaustion to approximate areas of geometric figures, while tangent lines and instantaneous velocity were studied by a group of Medieval scholars known as the Oxford School.
+    </p>
+
+    <p>
+        The significance of the Fundamental Theorem of Calculus is that it shows that these seemingly unrelated concepts of derivatives and integrals are actually inverses of each other. 
+    </p>
+
+    <p>
+        Although the Fundamental Theorem of Calculus is associated with Isaac Newton and Gottfried Leibniz, its origins go further back.
+    </p>
+
+    <p>
+        The earliest proof of the FTC is due to James Gregory in 1668. The statement and proof given entirely using Euclidean geometry and make no use of limits at all.
+    </p>
+
+    <p>
+        In 1674 Isaac Barrow gave the first published proof of the FTC. Barrow also solved the problem of determining the antiderivative of the secant function. (Gregory had presented a proof earlier, but no one could understand it.)
+    </p>
+
+    <p>
+        At around the same time, Barrow's student Isaac Newton gave a proof of the FTC which relied less on geometry and was thus more generalized than Barrow's proof.
+    </p>
+
+    <p>
+        In 1693 Gottfried Leibniz published his formulation of the FTC. Although he wasn't the first to formulate the FTC, he invented the modern notation for calculus such as <m>\frac{dy}{dx}</m> for the derivative, which was an improvement over the notation of Newton and the others.
+    </p>
+
+    <theorem xml:id="thm-FTC">
+        <title>The Fundamental Theorrem of Calculus</title>
+        
+        
+        <statement>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            If <m>f: [a,b] \to \mathbf{R}</m> is integrable and <m>F:[a,b] \to \mathbf{R}</m> satisfies <m>F'(x) = f(x)</m> for all <m>x \in [a,b]</m>, then
+                            <md>
+                                \int_a^b f(x) dx = F(b)-F(a).
+                            </md>
+                            
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Let <m>g:[a,b] \to \mathbf{R}</m> be integrable, and for <m>x \in [a,b]</m>, define
+                            <md>
+                                G(x) = \int_a^x g(t) dt.
+                            </md>
+                            Then <m>G</m> is continuous on <m>[a,b]</m>. If <m>g</m> is continuous at some point <m>c \in [a,b]</m>, then <m>G</m> is differentiable at <m>c</m> and <m>G'(c) = g(c)</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        Part 1 of FTC is that the definite integral of a derivative is equal to the net change of the original function. Part 1 also provides a method for determining the exact values of definite integrals.
+    </p>
+
+    <p>
+        Part 2 of FTC is that the derivative of an integral is equal to the integrand. It also shows that every continuous function is the derivative of its indefinite integral.
+    </p>
+
+    <p>
+        We first prove Part 1 of the FTC.
+    </p>
+
+    <proof>
+        <p>
+             Let <m>P</m> be a partition of <m>[a,b]</m> and let <m>[x_{k-1}, x_k]</m> be a subinterval. Then the Mean Value Theorem gives that there is a point <m>t_k \in (x_{k-1}, x_k)</m> such that 
+            <md>
+                <mrow> F(x_k)-F(x_{k-1}) \amp F'(t_k) (x_k-x_{k-1}) </mrow>
+                <mrow> \amp =f(t_k) (x_k-x_{k-1}). </mrow>
+            </md>
+        </p>
+
+        <p>
+            It thus follows that
+            <md>
+                L(f,P) \leq \sum_{k=1}^{n} f(t_k) (x_k-x_{k-1}) \leq U(f,P).
+            </md>
+            
+        </p>
+
+        <p>
+            When the terms of the sum are expanded out, all cancel except for the first and last terms. Thus
+            <md>
+                L(f,P) \leq F(x_n) - F(x_0) \leq U(f,P)
+            </md>
+            
+        </p>
+
+        <p>
+            Since <m>x_n = b</m> and <m>x_0 = a</m>, we have
+            <md>
+                \int_a^b f(x) dx = F(b)-F(a).
+            </md>
+            
+        </p>
+
+    
+
+    </proof>
+
+     <p>
+            Before we prove part 2, we will need the following Lemma.
+        </p>
+
+        <lemma xml:id="lem-ftc">
+            <statement>
+                <p>
+                    Let <m>f</m> be Darboux integrable on <m>[a,b]</m>. Then <m>f</m> is bounded; that is, there exists <m>M &gt; 0</m> such that <m>|f(x)|\leq M</m> on <m>[a,b]</m>.
+                </p>
+            </statement>
+        </lemma>
+
+        <p>
+            <em>Note:</em> A function such as <m>f(x) = \frac{1}{\sqrt{x}}</m> on <m>(0,1]</m> with <m>f(0) = 0</m> is unbounded on <m>[0,1]</m> yet one can determine the value of its integral on <m>[0,1]</m> by integrating it over <m>[a,1]</m> and taking the limit as <m>a \to 0^+</m>. Such an improper integral is not allowed in the statement of the lemma or FTC part 2.
+        </p>
+
+        
+<proof>
+    <p>
+        We will prove the contrapositive: If <m>f</m> is unbounded on <m>[a,b]</m> then <m>f</m> is not Darboux integrable on <m>[a,b]</m>. Assume that <m>f</m> is unbounded on <m>[a,b]</m>. Then for each <m>M&gt; 0</m> there exists a point <m>x_M \in [a,b]</m> such that <m>|f(x_M)| &gt; M</m>. 
+    </p>
+
+    <p>
+        Let <m>P</m> be any partition and let <m>\delta</m> be the width of the smallest subinterval of <m>P</m>. Let <m>N>0</m> be an arbitrary positive real number. We will show that <m>U(|f|,P)&gt; N</m> which implies that <m>f</m> is not Darboux integrable on <m>[a,b]</m>.
+    </p>
+
+    <p>
+        Let <m>M = \frac{N}{\delta}</m>. Then there exists <m>x_M \in [a,b]</m> with <m>f(x_M) &gt; M</m>. Thus <m>x_M</m> belongs to some subinterval <m>[x_{k-1}, x_k]</m>.
+    </p>
+
+    <p>
+        Hence
+        <md>
+            U(|f|,P) \geq f(x_M) (x_k - x_{k-1}) &gt; \frac{N}{\delta} \cdot \delta = N
+        </md>
+        
+    </p>
+
+    <p>
+        Since <m>N &gt; 0</m> is arbitrary this shows that <m>|f|</m> and hence also <m>f</m> are not Darboux integrable.
+    </p>
+</proof>
+
+<p>
+            Now we prove part 2 of the FTC.
+        </p>
+
+        <proof>
+            <p>
+                We will first show that <m>G(x)</m> is continuous. Recall that <m>G(x) = \displaystyle \int_a^x g(t)dt</m>. This means that
+                <md>
+                    <mrow> |G(x)-G(y)| \amp = \left|\int_a^x g(t)dt - \int_a^y g(t) dt \right| </mrow>
+                    <mrow> \amp = \left|\int_y^xg(t)dt \right| </mrow>
+                    <mrow> \amp \leq \int_y^x |g(t)| dt </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Since <m>g</m> is integrable, it is also bounded. Thus there exists <m>M>0</m> such that <m>|g(x)| \leq M</m> on <m>[a,b]</m> and thus
+                <md>
+                    |G(x)-G(y)| \leq \int_y^x |g(t)| dt \leq M|x-y|.
+                </md>
+                
+            </p>
+
+            <p>
+                Now let <m>\epsilon &gt; 0</m> be arbitrary and let <m>\delta = \frac{\epsilon}{M}</m>.
+            </p>
+
+            <p>
+                Then if <m>|x-y| &lt; \delta</m>,
+                <md>
+                    |G(x)-G(y)| \leq M|x-y| \leq M \frac{\epsilon}{M} = \epsilon
+                </md>
+                
+            </p>
+
+            <p>
+                Thus <m>G(x)</m> is continuous (in fact uniformly continuous) on <m>[a,b]</m>.
+            </p>
+
+            <p>
+                Finally we will show that <m>G'(c) = g(c)</m> provided that <m>g</m> is continuous at <m>x=c</m>. From the limit definition of the derivative we have
+                <md>
+                    <mrow> G'(c) = \lim_{x\to c} \frac{G(x)-G(c)}{x-c} \amp = \lim_{x\to c} \frac{1}{x-c} \left( \int_a^x g(t) dt - \int_a^c g(t) \right)</mrow>
+                    <mrow> \amp = \lim_{x\to c} \frac{1}{x-c} \int_c^x g(t) dt</mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Thus to show that <m>G'(c) = g(c)</m> we must show that for <m>\epsilon>0</m> there exists <m>\delta &gt; 0</m> such that if <m>|x-c|&lt; \delta</m> then 
+                <md xml:id="ftc-eq-1" number="yes">
+                    \left|\frac{1}{x-c} \int_c^x g(t) dt - g(c) \right|&lt;  \epsilon
+                </md>
+                
+            </p>
+
+            <p>
+                Since <m>g</m> is continuous at <m>c</m> there exists <m>\delta</m> such that <m>|g(t)-g(c)| &lt; \epsilon</m> whenever <m>|t-c| &lt; \delta</m>.
+            </p>
+
+            <p>
+                Note that we can rewrite <m>g(c)</m> as 
+                <md>
+                    g(c) = \frac{1}{x-c} \int_c^x g(c) dt
+                </md>
+                
+            </p>
+
+            <p>
+                Hence it follows from <xref ref="ftc-eq-1"/> that we must show
+                <md>
+                    <mrow>\left|\frac{1}{x-c} \int_c^x g(t) dt - \frac{1}{x-c} \int_c^x g(c) dt \right| \amp &lt; \epsilon </mrow>
+                    <mrow> \left|\frac{1}{x-c} \int_c^x g(t)-g(c) dt  \right| \amp &lt; \epsilon </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                It follows that if <m>|t-c| &lt; \delta</m> then
+                <md>
+                    <mrow> \left|\frac{1}{x-c} \int_c^x g(t)-g(c) dt  \right| \amp \leq \frac{1}{x-c} \int_c^x |g(t)-g(c)| dt</mrow>
+                    <mrow> \amp \leq \frac{1}{x-c} \int_c^x \epsilon dt</mrow>
+                    <mrow> \amp = \frac{1}{x-c} \epsilon(x-c) </mrow>
+                    <mrow> \amp = \epsilon </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Hence <m>G(x)</m> is differentiable at <m>c</m> and <m>G'(c) = g(c)</m>.
+            </p>
+
+
+
+        </proof>
+    
+
+    </subsection>
+
+    <subsection xml:id="subsec-Applications-FTC">
+        <title>Applications of FTC</title>
+
+        <theorem xml:id="thm-int-by-parts">
+            <title>Integration-by-Parts</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>u(x)</m> and <m>v(x)</m> have continuous derivatives on <m>[a,b]</m>. Then
+                    <md>
+                        \int_a^b u(x)v'(x) dx = u(b)v(b)-u(a)v(a) - \int_a^b u'(x) v(x)dx
+                    </md>
+                    
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                The idea behind the proof is to integrate the product rule. Recall that 
+                <md xml:id="parts-eq-1" number="yes">
+                  (uv)' = u'v + v'u  
+                </md>
+                
+            </p>
+
+        <p>
+            Integrating both sides of <xref ref="parts-eq-1"/> yields
+            <md>
+                \int_a^b [u(x)v(x)]' dx = \int_a^b u'(x)v(x) dx + \int_a^b u(x) v'(x) dx
+            </md>
+            
+        </p>
+
+        <p>
+           By FTC the left hand side is <m>u(b)v(b)-u(a)v(a)</m> Hence
+           <md>
+            u(b)v(b)-u(a)v(a) = \int_a^b u'(x)v(x) dx + \int_a^b u(x) v'(x) dx
+           </md>
+            
+        </p>
+
+        <p>
+            Rearranging the above gives 
+            <md>
+                \int_a^b u(x) v'(x) dx = u(b)v(b)-u(a)v(a) - \int_a^b u'(x)v(x) dx 
+            </md>
+            
+        </p>
+
+              </proof>
+
+        <p>
+            An important application of FTC is to give integral representations of well known functions.
+        </p>
+
+        <p>
+            Because <m>\frac{d}{dx} \ln(x) = \frac{1}{x}</m>, it follows from FTC that the function <m>f(x)</m> defined by
+            <md>
+                 f(x) = \int_1^{x} \frac{1}{t} dt
+            </md>
+            is the natural logarithm. Notice that <m>f(1) = 0</m>, so that we have the correct antiderivative of <m>\frac{1}{x}</m>.
+        </p>
+
+        <p>
+            The FTC allows us to define the natural logarithm without first needing to define the base <m>e</m>. We can also use it to prove its familiar properties.
+        </p>
+
+        <theorem xml:id="thm-log-prop-1">
+            <statement>
+                <p>
+                    F(xy) = F(x) + F(y).
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                We will treat <m>y</m> as a constant and differentiate <m>g(x) = F(xy)</m> with respect to <m>x</m>.
+            </p>
+
+            <p>
+                It follows from the chain rule that <m>g'(x) = F'(xy) \cdot y</m>. Hence
+                <md>
+                    g'(x) = \frac{1}{xy} \cdot y = \frac{1}{x} = F'(x)
+                </md>
+                
+            </p>
+
+            <p>
+                Since <m>g'(x) = F'(x)</m>, <m>g</m> and <m>F</m> differ by a constant. Hence <m>g(x) = F(x) + C</m>.
+            </p>
+
+            <p>
+                Another way to write this is
+                <md>
+                    \int_{1}^{xy}\frac{1}{t}dt = \int_1^x \frac{1}{t} dt + C
+                </md>
+                
+            </p>
+
+            <p>
+                The above holds for all <m>x</m> so to solve for <m>C</m> let <m>x =1</m>. Then
+                <md>
+                    <mrow> \int_{1}^{y}\frac{1}{t}dt \amp = \int_1^1 \frac{1}{t} dt + C </mrow>
+                    <mrow> \int_{1}^{y}\frac{1}{t}dt \amp = C </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Hence
+                <md>
+                    <mrow> \int_{1}^{xy}\frac{1}{t}dt \amp = \int_1^x \frac{1}{t} dt + \int_{1}^{y}\frac{1}{t}dt</mrow>
+                    <mrow> F(xy) \amp = F(x)+F(y). </mrow>
+                </md>
+                
+            </p>
+        </proof>
+        
+    </subsection>
+
+    <subsection xml:id="subsec-Stokes">
+        <title>Stokes' Theorem</title>
+
+        <p>
+            In multivariable calculus, Stokes' theorem relates the surface integral of the derivative of a function to the contour integral of the function itself.
+        </p>
+
+        <theorem xml:id="thm-Stokes">
+            <title>Stokes' Theorem</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>\Omega</m> is a surface in <m>\mathbf{R^n}</m> with boundary <m>\partial \Omega</m> and let <m>F = F(x_1, x_2, \ldots, x_n)</m> be a function on <m>\Omega</m> with 1st order partial derivatives. Then
+                    <md>
+                        \int_{\Omega} \frac{dF}{dx_1} dx_1 + \frac{dF}{dx_2} dx_2 + \ldots + \frac{dF}{dx_n} dx_n = \int_{\partial \Omega} F dx
+                    </md>
+                    
+                </p>
+            </statement>
+        </theorem>
+
+        <p>
+           Now let's consider Stokes' Theorem applied to the interval <m>[a,b] \subseteq \mathbf{R}</m>. 
+        </p>
+
+        <p>
+            Because we just have a single variable, the left hand side reduces to <m>\displaystyle \int_a^b F'(x) dx</m>.
+        </p>
+
+        <p>
+            The boundary of <m>[a,b]</m> is made up of just the endpoints, so the right hand side reduces to <m>F(b)-F(a)</m>.
+        </p>
+
+        <p>
+            Thus Stokes' theorem reduces to <m>\displaystyle \int_a^b F'(x) dx = F(b)-F(a)</m> and hence Stokes' theorem is a generalization of the FTC.
+        </p>
+        
+        
+    </subsection>
+
+    </section>

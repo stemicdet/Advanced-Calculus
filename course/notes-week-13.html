@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 13: Lebesgue’s Criterion for Riemann Integrability (7.6)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Calculus II">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.5a05244a9cd615a2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/diagcess/diagcess.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced Calculus II</span> <span class="subtitle">MTH 428/528 Spring 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-01.html" class="internal"><span class="title">Week 1: Derivatives and the Intermediate Value Property (5.1-5.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsection-1" class="internal"><span class="title">A Brief History of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-derivative" class="internal"><span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#section-3" class="internal"><span class="title">Combinations of differentiable functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#subsec-4" class="internal"><span class="title">The Intermediate Value Property</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: The Mean Value Theorems (5.3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-2" class="internal"><span class="title">The Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-3" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-4" class="internal"><span class="title">The Generalized Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#subsec-Intermediate-Forms-and-LHopitals-Rule" class="internal"><span class="title">Intermediate Forms and L’Hopital’s Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: A Continuous Nowhere Differentiable Function (5.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsection-3-1" class="internal"><span class="title">Non-differentiability</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="notes-week-03.html#subsubsec-3-2" class="internal"><span class="title">Continuity of <span class="process-math">\(g(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="notes-week-03.html#subsubsec-3-3" class="internal"><span class="title">Non-differentiability of <span class="process-math">\(g(x)\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Uniform Convergence of a sequence of functions (6.1-6.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#notes-week-04-2" class="internal"><span class="title">Function Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Pointwise-Convergence" class="internal"><span class="title">Pointwise Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Uniform-Convergence-and-Continuity" class="internal"><span class="title">Uniform Convergence and Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Cauchy" class="internal"><span class="title">Cauchy Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Uniform convergence and differentiation and series of functions (6.3-6.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#notes-week-05-2" class="internal"><span class="title">Convergence of Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Differentiable-Limit" class="internal"><span class="title">Differentiable Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Kerala-School" class="internal"><span class="title">The Kerala School of Astronomy and Mathematics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-series-of-functions" class="internal"><span class="title">Series of Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-06.html" class="internal"><span class="title">Week 6: Power Series (6.5)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#Binomial-series" class="internal"><span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-power-series" class="internal"><span class="title">Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Ratio-Test" class="internal"><span class="title">The Ratio Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Uniform-Convergence-series" class="internal"><span class="title">Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Derivatives-of-Power-Series" class="internal"><span class="title">Derivatives of Power Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-07.html" class="internal"><span class="title">Week 7: Taylor Series (6.6)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Taylor-series" class="internal"><span class="title">Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Lagranges-Remainder-Theorem" class="internal"><span class="title">Lagrange’s Remainder Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Finding" class="internal"><span class="title">Finding Taylor Series Via Algebraic Manipulation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-08.html" class="internal"><span class="title">Week 8: The Weierstrass Approximation Theorem (6.7)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Weiestrass" class="internal"><span class="title">Weierstrass Approximation Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Bernstein" class="internal"><span class="title">Bernstein Polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-proof" class="internal"><span class="title">Proof of WAT</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Examples-2" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-09.html" class="internal"><span class="title">Week 9: The Reimann Integral (7.1-7.2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-history" class="internal"><span class="title">History of the Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-Darboux-Integral" class="internal"><span class="title">The Darboux Integral</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-11.html" class="internal"><span class="title">Week 11: Integrating Functions with Discontinuities and Integral Properties (7.3-7.4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-discontinuities-integral" class="internal"><span class="title">Integrals of Discontinuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Properties-of-The-Integral" class="internal"><span class="title">Properties of The Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Convergence-and-Integration" class="internal"><span class="title">Convergence and Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-12.html" class="internal"><span class="title">Week 12: The Fundamental Theorem of Calculus (7.5)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-12.html#subsec-Fundamental-theorem" class="internal"><span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-12.html#subsec-Applications-FTC" class="internal"><span class="title">Applications of FTC</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-12.html#subsec-Stokes" class="internal"><span class="title">Stokes’ Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-13.html" class="internal"><span class="title">Week 13: Lebesgue’s Criterion for Riemann Integrability (7.6)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-13.html#subsec-Riemann-integrable" class="internal"><span class="title">Riemann Integrability and Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-13.html#subsec-Cantor" class="internal"><span class="title">The Cantor Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-13.html#subsec-Lebesgue-Theorem" class="internal"><span class="title">Lebesgue’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-13.html#subsec-A-non-integrable-derivative" class="internal"><span class="title">A Non-integrable Derivative</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw1.html" class="internal"><span class="title">MTH 428/528 Homework 1 Due January 22</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw2.html" class="internal"><span class="title">MTH 428/528 Homework 2 Due January 29</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw3.html" class="internal"><span class="title">MTH 428/528 Homework 3 Due February 16</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw4.html" class="internal"><span class="title">MTH 428/528 Homework 4 Due February 23</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw5.html" class="internal"><span class="title">MTH 428/528 Homework 5 Due March 2</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw6.html" class="internal"><span class="title">MTH 428/528 Homework 6 Due March 9</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw7.html" class="internal"><span class="title">MTH 428/528 Homework 7 Due April 2</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="hw8.html" class="internal"><span class="title">MTH 428/528 Homework 8 Due April 9</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-13"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 13: Lebesgue’s Criterion for Riemann Integrability (7.6)</span>
+</h2>
+<section class="subsection" id="subsec-Riemann-integrable"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann Integrability and Continuity</span>
+</h3>
+<div class="para logical" id="subsec-Riemann-integrable-2">
+<div class="para">In our study of the Darboux (equivalently Riemann) integral we have proven that the following types of functions are always Darboux integrable.</div>
+<ol class="decimal" id="subsec-Riemann-integrable-2-1">
+<li id="subsec-Riemann-integrable-2-1-1">
+<div class="para" id="subsec-Riemann-integrable-2-1-1-1">Continuous functions<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Riemann-integrable-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Riemann-integrable-2-1-2">
+<div class="para" id="subsec-Riemann-integrable-2-1-2-1">Functions with a finite number of discontinuities<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Riemann-integrable-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-3">We also saw that a function with an infinite number of discontinuities may or may not be integrable. Now we will further investigate when we can integrate a function with infinitely many discontinuities.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Riemann-integrable-4">
+<div class="para">Recall Thomae’s function.</div>
+<div class="displaymath process-math" id="subsec-Riemann-integrable-4-1">
+\begin{equation*}
+t(x) = \begin{cases} 
+\hfill  1 \amp \text{ if $x =0$} \\
+\hfill  1/n \amp \text{ if $x = \frac{m}{n} \in \mathbf{Q} \setminus \{0\}$ is in lowest terms with } \\
+\hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-5">Thomae’s function is continuous on the set of irrational numbers and discontinuous on the set of rational numbers. Thus it is discontinuous on a countably infinite set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="claim theorem-like" id="claim-thomae"><h4 class="heading">
+<span class="type">Claim</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">80</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="claim-thomae-1-1">
+<span class="process-math">\(t(x)\)</span> is Darboux integrable on <span class="process-math">\([0,1]\)</span> and <span class="process-math">\(\displaystyle \int_0^1 t(x) dx = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#claim-thomae-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Claim 80"><a href="#claim-thomae" title="Copy heading and permalink for Claim 80" aria-label="Copy heading and permalink for Claim 80">🔗</a></div></article><details id="subsec-Riemann-integrable-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Riemann-integrable-7-1">We will first show that <span class="process-math">\(L(t,P) = 0\)</span> for any partition <span class="process-math">\(P\)</span> of <span class="process-math">\([0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-2">Let <span class="process-math">\(P\)</span> be a partition of <span class="process-math">\([0,1]\text{.}\)</span> Since the irrational numbers are dense in the reals, any subinterval of <span class="process-math">\(P\)</span> contains an irrational point and since <span class="process-math">\(t(x) = 0\)</span> on the irrationals <span class="process-math">\(L(t,P) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-3">Now we will show that for an arbitrary <span class="process-math">\(\epsilon&gt; 0\text{,}\)</span> we can find a partition <span class="process-math">\(P\)</span> such that <span class="process-math">\(U(t,P) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-4">Let <span class="process-math">\(N\)</span> be a natural number so that <span class="process-math">\(\frac{1}{n} &lt; \frac{\epsilon}{2}\)</span> for all <span class="process-math">\(n &gt; N\text{.}\)</span> This means that <span class="process-math">\(N &gt; \frac{2}{\epsilon}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-5">Let <span class="process-math">\(\{r_n\}\)</span> be a list of all rational numbers in <span class="process-math">\((0,1)\)</span> whose denominator is less than <span class="process-math">\(N\text{.}\)</span> Note that this is a finite set of numbers.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-6">We will construct the partition <span class="process-math">\(P\)</span> by specifying the subintervals instead of the points of the partition. Let <span class="process-math">\(r_1\)</span> be the first number on the list and construct a subinterval centered at <span class="process-math">\(r_1\)</span> contained in <span class="process-math">\([0,1]\)</span> with width at most <span class="process-math">\(\frac{\epsilon}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-7">Now construct a second subinterval centered at <span class="process-math">\(r_2\)</span> that is contained in <span class="process-math">\([0,1]\text{,}\)</span> doesn’t intersect the first subinterval and has width at most <span class="process-math">\(\frac{\epsilon}{8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-8">We repeat this process until we exhaust all the points on the list. For <span class="process-math">\(r_n\text{,}\)</span> construct a subinterval centered at <span class="process-math">\(r_n\)</span> contained in <span class="process-math">\([0,1]\)</span> that doesn’t intersect any of the previously constructed subintervals and that has width at most <span class="process-math">\(\frac{\epsilon}{2^{n+1}}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-9">Our partition <span class="process-math">\(P\)</span> consists of the endpoints of these subintervals. Note that in addition to the subintervals that we constructed, <span class="process-math">\(P\)</span> also has other subintervals that make up the missing space in <span class="process-math">\([0,1]\)</span> not part of the subintervals that we constructed.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-10">We now show that <span class="process-math">\(U(t,P) &lt; \epsilon\text{.}\)</span> First we consider the upper sum over the intervals centered at the <span class="process-math">\(r_n\)</span>’s in the list.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Riemann-integrable-7-11">
+<div class="para">Since <span class="process-math">\(0 &lt; t(x) &lt; 1\)</span> for all <span class="process-math">\(x\)</span> it follows that the upper sum over the intervals centered at the <span class="process-math">\(r_n\)</span>’s is less than</div>
+<div class="displaymath process-math" id="subsec-Riemann-integrable-7-11-4">
+\begin{equation*}
+\frac{\epsilon}{4} + \frac{\epsilon}{8} + \frac{\epsilon}{16} + \ldots  = \frac{\epsilon}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-12">Now we will bound the upper sum over the other subintervals of the partition. Note that these subintervals contain none of the rational numbers with denominator less than <span class="process-math">\(N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-13">This means that on these subintervals <span class="process-math">\(t(x) \leq \frac{1}{N+1} &lt; \frac{\epsilon}{2}\)</span> by our choice of <span class="process-math">\(N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-14">Since the total width of all the subintervals is less than <span class="process-math">\(1\text{,}\)</span> this means that the upper sum over these subintervals is less than <span class="process-math">\(\frac{\epsilon}{2} \cdot 1 = \frac{\epsilon}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Riemann-integrable-7-15">Combining these results gives that <span class="process-math">\(U(t,P) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Riemann-integrable-7-16">
+<div class="para">Since <span class="process-math">\(L(t,P) = 0\)</span> for all partitions <span class="process-math">\(P\)</span> and for every <span class="process-math">\(\epsilon &gt; 0\)</span> we can construct a partition <span class="process-math">\(P\)</span> with <span class="process-math">\(U(t,P) &lt; \epsilon\text{,}\)</span> it follows that Thomae’s function is Darboux integrable and</div>
+<div class="displaymath process-math" id="subsec-Riemann-integrable-7-16-6">
+\begin{equation*}
+\int_0^1 t(x) dx = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-7-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Riemann-integrable-7" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Riemann-integrable-8">This shows that a function with a countable infinite number of discontinuities can be Darboux integrable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Riemann-integrable-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Riemann Integrability and Continuity"><a href="#subsec-Riemann-integrable" title="Copy heading and permalink for Subsection: Riemann Integrability and Continuity" aria-label="Copy heading and permalink for Subsection: Riemann Integrability and Continuity">🔗</a></div></section><section class="subsection" id="subsec-Cantor"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Cantor Set</span>
+</h3>
+<div class="para" id="subsec-Cantor-2">Our next example involves the Cantor set which we studied last semester.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-3">The Cantor set is constructed by starting with the interval <span class="process-math">\([0,1]\)</span> and removing the middle third from this interval. This gives us step 1 of the construction of the Cantor set <span class="process-math">\(C_1 = [0,\frac{1}{3}] \cup [\frac{2}{3}, 1]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-4">Next we remove the middle thirds from the remaining intervals to obtain <span class="process-math">\(C_2 = [0, \frac{1}{9}] \cup [\frac{2}{9}, \frac{1}{3}] \cup [\frac{2}{3}, \frac{7}{9}] \cup [\frac{8}{9}, 1]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-5">The Cantor set is obtained by iterating this construction infinitely many times.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-6">
+<div class="para">We review some of the properties of the Cantor set.</div>
+<ol class="decimal" id="subsec-Cantor-6-1">
+<li id="subsec-Cantor-6-1-1">
+<div class="para" id="subsec-Cantor-6-1-1-1">The Cantor set contains an uncountably infinite number of points but has no length.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-6-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Cantor-6-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Cantor-6-1-2">
+<div class="para" id="subsec-Cantor-6-1-2-1">The Cantor set is a closed nowhere dense set, which means its compliment is dense in <span class="process-math">\([0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-6-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Cantor-6-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-7">
+<div class="para">Let <span class="process-math">\(C\)</span> denote the Cantor set and define</div>
+<div class="displaymath process-math" id="subsec-Cantor-7-2">
+\begin{equation*}
+h(x) = \begin{cases} 
+\hfill  1 \amp \text{ if $x \in C$} \\
+\hfill  0 \amp \text{ if $x \notin C$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-8">We will show that <span class="process-math">\(h(x)\)</span> is discontinuous at each point in <span class="process-math">\(C\)</span> and continuous at each point outside <span class="process-math">\(C\text{.}\)</span> Thus <span class="process-math">\(h(x)\)</span> on an uncountably infinite set of points.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-9">Suppose <span class="process-math">\(x \in C\text{.}\)</span> Because the compliment of the Cantor set is dense in <span class="process-math">\([0,1]\)</span> we can find a sequence <span class="process-math">\(\{x_n\} \notin C\)</span> that converges to <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-10">Thus <span class="process-math">\(h(x_n) \to 0\)</span> as <span class="process-math">\(n\to \infty\)</span> but <span class="process-math">\(h(x) = 1\text{.}\)</span> Thus by the sequential definition of continuity, <span class="process-math">\(h\)</span> is not continuous at <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-11">Now suppose <span class="process-math">\(x \notin C\text{.}\)</span> Since the Cantor set is closed, the compliment of the Cantor set is an open set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-12">
+<div class="para">Thus there exists a <span class="process-math">\(\delta\)</span>-neighborhood <span class="process-math">\(V_{\delta}(x)\)</span> of <span class="process-math">\(x\)</span> that is entirely contained in the compliment of the Cantor set. Hence if <span class="process-math">\(y \in V_{\delta}(x)\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Cantor-12-5">
+\begin{equation*}
+|h(y)-h(x)| = 0 - 0 = 0
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-13">Thus for any <span class="process-math">\(\epsilon\)</span>-neighborhood <span class="process-math">\(V_{\epsilon}(h(x))\)</span> of <span class="process-math">\(h(x)\text{,}\)</span> if <span class="process-math">\(y \in V_{\delta}(x)\)</span> then <span class="process-math">\(f(y) \in V_{\epsilon}(h(x))\)</span> and thus <span class="process-math">\(h\)</span> is continuous at <span class="process-math">\(x\)</span> by the topological characterization of continuity.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="claim theorem-like" id="claim-cantor-integral"><h4 class="heading">
+<span class="type">Claim</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">81</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="claim-cantor-integral-1-1">
+<span class="process-math">\(h(x)\)</span> is Darboux integrable on <span class="process-math">\([0,1]\)</span> and <span class="process-math">\(\displaystyle \int_0^1 h(x)dx = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#claim-cantor-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Claim 81"><a href="#claim-cantor-integral" title="Copy heading and permalink for Claim 81" aria-label="Copy heading and permalink for Claim 81">🔗</a></div></article><details id="subsec-Cantor-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Cantor-15-1">We will first show that <span class="process-math">\(L(h,P) = 0\)</span> for every partition <span class="process-math">\(P\)</span> of <span class="process-math">\([0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-2">Let <span class="process-math">\(P\)</span> be a partition of <span class="process-math">\([0,1]\text{.}\)</span> Since the compliment of the Cantor set is dense in <span class="process-math">\([0,1]\text{,}\)</span> every subinterval of <span class="process-math">\(P\)</span> contains a point in the compliment of the Cantor set and since <span class="process-math">\(h(x) = 0\)</span> outside of <span class="process-math">\(C\text{,}\)</span> <span class="process-math">\(L(h,P) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-3">Now we will show that for an arbitrary <span class="process-math">\(\epsilon &gt; 0\)</span> we can find a partition <span class="process-math">\(P\)</span> of <span class="process-math">\([0,1]\)</span> such that <span class="process-math">\(U(h,P) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-4">The construction of the Cantor set gives us a natural way to choose a partition. Let <span class="process-math">\(C_n\)</span> be the <span class="process-math">\(n\)</span>th stage in constructing the Cantor set. Then <span class="process-math">\(C_n\)</span> contains <span class="process-math">\(2^n\)</span> intervals each of which have length <span class="process-math">\(\left(\frac{1}{3}\right)^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-15-5">
+<div class="para">Hence the total length of <span class="process-math">\(C_n\)</span> is</div>
+<div class="displaymath process-math" id="subsec-Cantor-15-5-2">
+\begin{equation*}
+2^n \cdot \left(\frac{1}{3}\right)^n = \left( \frac{2}{3}\right)^n.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-6">Note that every point of the Cantor set is included in <span class="process-math">\(C_n\text{.}\)</span> Since <span class="process-math">\(\lim_{n\to \infty} \left( \frac{2}{3}\right)^n = 0\text{,}\)</span> we can find a natural number <span class="process-math">\(N\)</span> large enough so that <span class="process-math">\(\left( \frac{2}{3}\right)^N &lt; \epsilon\)</span> and thus the total length of <span class="process-math">\(C_N\)</span> is less than <span class="process-math">\(\epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-7">Let <span class="process-math">\(P\)</span> be the partition given by the endpoints of <span class="process-math">\(C_N\text{.}\)</span> This partitions <span class="process-math">\([0,1]\)</span> into the intervals that make up <span class="process-math">\(C_N\)</span> and the gaps in the middle of those intervals.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-15-8">
+<div class="para">The maximum value of <span class="process-math">\(h(x)\)</span> on the intervals that make up <span class="process-math">\(C_N\)</span> is <span class="process-math">\(1\)</span> and thus the upper sum over those intervals is</div>
+<div class="displaymath process-math" id="subsec-Cantor-15-8-4">
+\begin{equation*}
+1 \cdot \left( \frac{2}{3}\right)^N = \left( \frac{2}{3}\right)^N &lt; \epsilon
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-9">Since the gaps are outside the Cantor set, the upper sum over the gaps is <span class="process-math">\(0\text{.}\)</span> Hence <span class="process-math">\(U(h,P) &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-10">The above proof almost works, but there is one slight flaw with it. Consider the subinterval of the leftmost gap. This is the subinterval <span class="process-math">\([\frac{1}{3^N}, \frac{2}{3^N}]\text{.}\)</span> Since this subinterval contains the endpoints, which are part of the Cantor set, the maximum value of the subinterval is <span class="process-math">\(1\text{,}\)</span> so the upper sum on this subinterval is <span class="process-math">\(\frac{1}{3^N}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-11">The same is true for the subintervals over all the gaps, so the upper sum over the gaps is not <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-12">The problem is with the endpoints since every other point in the subintervals over the gaps is in the compliment of the Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-13">Thus we need to slightly modify our original partition so that the endpoints of <span class="process-math">\(C_N\)</span> are not part of the subintervals that contains the gaps.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-14">We can achieve this by slightly widening the partition so that each piece of <span class="process-math">\(C_N\)</span> is contained in the interior of a subinterval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-15">Let <span class="process-math">\(\delta &gt; 0\)</span> to be determined later, and let <span class="process-math">\(P'\)</span> be the partition <span class="process-math">\(\{0, \frac{1}{3^N} + \frac{\delta}{2}, \frac{2}{3^N} - \frac{\delta}{2}, \frac{3}{3^N} + \frac{\delta}{2}, \ldots, \frac{3^N-1}{3^N} - \frac{\delta}{2}, 1\} \)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-16">
+<span class="process-math">\(P'\)</span> is made by widening each subinterval of <span class="process-math">\(P\)</span> by <span class="process-math">\(\frac{\delta}{2}\)</span> on each side, except for the 1st and last subinterval since those have to contain <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span> as endpoints.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-17">Now that the subintervals over the gaps only contain points in the compliment of the Cantor set, the upper sum over those subintervals is <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-18">We now recalculate the upper sum over those subintervals that contain the pieces of <span class="process-math">\(C_N\text{.}\)</span> This time the length of each subinterval is <span class="process-math">\(\left(\frac{1}{3}\right)^N + \delta\text{,}\)</span> except for the first and last which have length <span class="process-math">\(\left(\frac{1}{3}\right)^N + \frac{\delta}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-15-19">
+<div class="para">Since there are <span class="process-math">\(2^N\)</span> total subintervals, the total length of these subintervals is less than</div>
+<div class="displaymath process-math" id="subsec-Cantor-15-19-2">
+\begin{equation*}
+2^N \cdot \left( \left(\frac{1}{3}\right)^N + \delta \right) = \left(\frac{2}{3}\right)^N + 2^N \delta
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-20">By choosing <span class="process-math">\(\delta = \left(\frac{1}{3}\right)^N\text{,}\)</span> the total length of the subintervals will be less than <span class="process-math">\(2 \left(\frac{2}{3}\right)^N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-15-21">
+<div class="para">Thus the upper sum over these intervals is</div>
+<div class="displaymath process-math" id="subsec-Cantor-15-21-1">
+\begin{equation*}
+1 \cdot 2 \left(\frac{2}{3}\right)^N &lt; 2 \epsilon
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-22">Since the upper sum over the gaps is <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(U(h,P') &lt; 2 \epsilon\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-15-23">Since <span class="process-math">\(\epsilon&gt;0\)</span> can be made arbitrarily small, so can <span class="process-math">\(2 \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-15-24">
+<div class="para">Because <span class="process-math">\(L(h,P) = 0\)</span> for all partitions <span class="process-math">\(P\)</span> and for every <span class="process-math">\(\epsilon &gt; 0\)</span> we can construct a partition <span class="process-math">\(P_{\epsilon}\)</span> with <span class="process-math">\(U(h,P_{\epsilon}) &lt; \epsilon\text{,}\)</span> it follows that <span class="process-math">\(h(x)\)</span> is Darboux integrable and</div>
+<div class="displaymath process-math" id="subsec-Cantor-15-24-7">
+\begin{equation*}
+\int_0^1 h(x) dx = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-15-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Cantor-15" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Cantor-16">This shows that a function with an uncountable number of discontinuities can still be Darboux integrable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Cantor Set"><a href="#subsec-Cantor" title="Copy heading and permalink for Subsection: The Cantor Set" aria-label="Copy heading and permalink for Subsection: The Cantor Set">🔗</a></div></section><section class="subsection" id="subsec-Lebesgue-Theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue’s Theorem</span>
+</h3>
+<div class="para" id="subsec-Lebesgue-Theorem-2">Our two examples show that a function with infinitely many discontinuities can still be Darboux integrable; however, not every function with infinitely many discontinuities is Darboux integrable. Dirichlet’s function is everywhere discontinuous and is not Darboux integrable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Theorem-3">The key is that the set of discontinuities of the previous two examples is still small in the following sense. The set of rational numbers and the Cantor set both have zero length.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Theorem-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Theorem-4">Informally we say that a subset of <span class="process-math">\(\mathbf{R}\)</span> with zero length is a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Theorem-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Lebesgue"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">82</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue’s Theorem.</span>
+</h4>
+<div class="para" id="thm-Lebesgue-2-1">Let <span class="process-math">\(f\)</span> be a bounded function on the interval <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(f\)</span> is Darboux integrable if and only if the set of points where <span class="process-math">\(f\)</span> is not continuous is a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 82: Lebesgue’s Theorem"><a href="#thm-Lebesgue" title="Copy heading and permalink for Theorem 82: Lebesgue’s Theorem" aria-label="Copy heading and permalink for Theorem 82: Lebesgue’s Theorem">🔗</a></div></article><div class="para" id="subsec-Lebesgue-Theorem-6">Dirichlet’s function is not Darboux integrable because it is discontinuous everywhere, and thus the set of points where it is not continuous is not a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Theorem-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Lebesgue’s Theorem"><a href="#subsec-Lebesgue-Theorem" title="Copy heading and permalink for Subsection: Lebesgue’s Theorem" aria-label="Copy heading and permalink for Subsection: Lebesgue’s Theorem">🔗</a></div></section><section class="subsection" id="subsec-A-non-integrable-derivative"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Non-integrable Derivative</span>
+</h3>
+<div class="para" id="subsec-A-non-integrable-derivative-2">Informally part 1 of the FTC states that the definite integral of a derivative is the net change of the original function. However, in the statement of the FTC we needed to assume that the derivative is an integrable function. This is because there are derivatives that cannot be integrated.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-3">More precisely, there exists a function <span class="process-math">\(f(x)\)</span> which is not Darboux integrable and a continuous function <span class="process-math">\(F(x)\)</span> such that <span class="process-math">\(F'(x) = f(x)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-4">The key idea is that we want to construct a derivative whose set of discontinuities is not a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-A-non-integrable-derivative-5">
+<div class="para">We currently only know one example of a function whose derivative contains a discontinuity: Darboux’s function</div>
+<div class="displaymath process-math" id="subsec-A-non-integrable-derivative-5-1">
+\begin{equation*}
+g(x) = \begin{cases} 
+\hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+\hfill  0 \hfill \amp \text{ if $x =0 $} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">is a continuous function whose derivative has a single discontinuity at <span class="process-math">\(x=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-6">We need to modify Darboux’s function so that the set of discontinuities of its derivative is not a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-7">Let’s first focus on what the set of discontinuities is going to look like.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-8">The Cantor set is a set with measure zero because it has length zero, but by modifying the construction of the Cantor set, we can construct a fat Cantor set with the same properties as the Cantor set, but which is not a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-9">In the construction of the Cantor set, we start with the interval <span class="process-math">\([0,1]\)</span> remove the middle third of each interval at each iteration.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-10">This means that at the <span class="process-math">\(n\)</span>th stage we remove <span class="process-math">\(2^{n-1}\)</span> intervals of length <span class="process-math">\(\frac{1}{3^n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-A-non-integrable-derivative-11">
+<div class="para">Thus the total amount removed from <span class="process-math">\([0,1]\)</span> has length</div>
+<div class="displaymath process-math" id="subsec-A-non-integrable-derivative-11-2">
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{2^{n-1}}{3^n} = \sum_{n=0}^{\infty} \frac{1}{3} \left(\frac{2}{3} \right)^n = 1
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-12">To construct the fat Cantor set, at the <span class="process-math">\(n\)</span>th stage we will remove <span class="process-math">\(2^{n-1}\)</span> intervals of length <span class="process-math">\(\frac{1}{3^{n+1}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-A-non-integrable-derivative-13">
+<div class="para">The total length removed from <span class="process-math">\([0,1]\)</span> has length</div>
+<div class="displaymath process-math" id="subsec-A-non-integrable-derivative-13-2">
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{2^{n-1}}{3^{n+1}} = \sum_{n=0}^{\infty} \frac{1}{9} \left(\frac{2}{3} \right)^n = \frac{1}{3}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-14">This means that the fat Cantor set has length <span class="process-math">\(\frac{2}{3}\)</span> and thus is not a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-15">The reason that the derivative of Darboux’s function is not continuous at <span class="process-math">\(0\)</span> is because the function oscillates wildly as it approaches <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-16">Our plan to construct a function with a non-integrable derivative is to modify Darboux’s function so that it has the same oscillatory behavior at every point of the fat Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-17">This will give us a function whose derivative is discontinuous on the fat Cantor set and thus can’t be Darboux integrable since the fat Cantor set does not have measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-18">Let <span class="process-math">\(C_0 = [0,1]\)</span> and let <span class="process-math">\(C_n\)</span> denote the <span class="process-math">\(n\)</span>th stage of the construction of the fat Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-19">Because at the <span class="process-math">\(n\)</span>th stage we remove intervals of width <span class="process-math">\(\frac{1}{3^{n+1}}\)</span> instead of <span class="process-math">\(\frac{1}{3^n}\text{,}\)</span> <span class="process-math">\(C_1 = [0,\frac{4}{9}] \cup [\frac{5}{9}, 1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-A-non-integrable-derivative-20">
+<div class="para">Similarly,</div>
+<div class="displaymath process-math" id="subsec-A-non-integrable-derivative-20-1">
+\begin{align*}
+C_2 \amp= \left[0, \frac{5.5}{27}\right] \cup \left[\frac{6.5}{27}, \frac{4}{9}\right]] \cup \left[\frac{5}{9}, \frac{20.5}{27}\right] \cup \left[\frac{21.5}{27}, 1\right] \\
+\amp= \left[0, \frac{11}{54}\right] \cup \left[\frac{13}{54}, \frac{4}{9}\right] \cup \left[\frac{5}{9}, \frac{41}{54}\right] \cup \left[\frac{43}{54}, 1\right] 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-21">We will construct our function with a non-integrable derivative as the limit of a sequence of continuous functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-22">Let <span class="process-math">\(f_0(x) = 0\)</span> on <span class="process-math">\(C_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-23">To define <span class="process-math">\(f_1(x)\text{,}\)</span> first set <span class="process-math">\(f_1(x) = 0\)</span> on <span class="process-math">\(C_1 = [0,\frac{4}{9}] \cup [\frac{5}{9}, 1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-24">In the gap <span class="process-math">\((\frac{4}{9}, \frac{5}{9})\)</span> we want to put copies of Darboux’s function <span class="process-math">\(g(x)\)</span> oscillating towards the endpoints.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-A-non-integrable-derivative-25">
+<div class="para">The mathematical formula for this looks like</div>
+<div class="displaymath process-math" id="subsec-A-non-integrable-derivative-25-1">
+\begin{equation*}
+f_1(x) = \begin{cases} 
+\hfill  0 \amp \text{ if $x \in [0, \frac{4}{9}]$} \\
+\hfill  g(x-\frac{4}{9}) \amp \text{ if $x$ is just to the right of $\frac{4}{9}$} \\
+\hfill  g(-x + \frac{5}{9}) \amp \text{ if $x$ is just to the left of $\frac{5}{9}$} \\
+\hfill  0 \amp \text{ if $x \in [ \frac{5}{9}, 1]$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-26">We still need to define what happens in the middle of the function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-27">The idea is that we connect the two oscillating pieces together so that <span class="process-math">\(f_1(x)\)</span> will be differentiable and so that <span class="process-math">\(|f_1(x)| \leq (x-\frac{4}{9})^2\)</span> and <span class="process-math">\(|f_1(x)| \leq (-x+\frac{5}{9})^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-28">
+<span class="process-math">\(f_1(x)\)</span> is a continuous function whose derivative is discontinuous at <span class="process-math">\(x = \frac{4}{9}\)</span> and <span class="process-math">\(x= \frac{5}{9}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-29">To define <span class="process-math">\(f_2(x)\)</span> we do the same thing as we did with <span class="process-math">\(f_1(x)\)</span> only this time we use the open intervals <span class="process-math">\((\frac{11}{54}, \frac{13}{54})\)</span> and <span class="process-math">\((\frac{41}{54}, \frac{43}{54})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-30">
+<span class="process-math">\(f_2(x)\)</span> is a continuous function whose derivative is discontinuous at <span class="process-math">\(x= \frac{11}{54}\text{,}\)</span> <span class="process-math">\(x= \frac{13}{54}\text{,}\)</span> <span class="process-math">\(x= \frac{41}{54}\text{,}\)</span> and <span class="process-math">\(x= \frac{43}{54}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-31">Continuing in this way we construct a sequence of functions <span class="process-math">\(f_1\text{,}\)</span> <span class="process-math">\(f_2\text{,}\)</span> <span class="process-math">\(f_3 \ldots\text{.}\)</span> Let <span class="process-math">\(f(x) = \displaystyle \lim_{n\to \infty} f_n(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-32">
+<span class="process-math">\(f(x)\)</span> is a continuous function whose derivative is discontinuous at every point of the fat Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-A-non-integrable-derivative-33">Thus <span class="process-math">\(f'(x)\)</span> is not a Darboux integrable function, despite the fact that it has an antiderivative in <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-A-non-integrable-derivative-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: A Non-integrable Derivative"><a href="#subsec-A-non-integrable-derivative" title="Copy heading and permalink for Subsection: A Non-integrable Derivative" aria-label="Copy heading and permalink for Subsection: A Non-integrable Derivative">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 13: Lebesgue’s Criterion for Riemann Integrability (7.6)"><a href="#notes-week-13" title="Copy heading and permalink for Section: Week 13: Lebesgue’s Criterion for Riemann Integrability (7.6)" aria-label="Copy heading and permalink for Section: Week 13: Lebesgue’s Criterion for Riemann Integrability (7.6)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script>
+</body>
+</html>

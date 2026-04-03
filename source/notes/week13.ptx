@@ -31,7 +31,7 @@
     <md>
         t(x) = \begin{cases} 
     \hfill  1 \amp \text{ if $x =0$} \\
-      \hfill  1/n \amp \text{ if $x = \frac{m}{n} \in \mathbf{Q} \setminus \{0\}$ is in lowest terms with $n>0$} \\
+      \hfill  1/n \amp \text{ if $x = \frac{m}{n} \in \mathbf{Q} \setminus \{0\}$ is in lowest terms with <m>n>0</m>} \\
       \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
   \end{cases}
     </md>
@@ -45,54 +45,54 @@
 <claim xml:id="claim-thomae">
     <statement>
         <p>
-            $t(x)$ is Darboux integrable on $[0,1]$ and $\displaystyle \int_0^1 t(x) dx = 0$
+            <m>t(x)</m> is Darboux integrable on <m>[0,1]</m> and <m>\displaystyle \int_0^1 t(x) dx = 0</m>
         </p>
     </statement>
 </claim>
 
 <proof>
     <p>
-        We will first show that $L(t,P) = 0$ for any partition $P$ of $[0,1]$.
+        We will first show that <m>L(t,P) = 0</m> for any partition <m>P</m> of <m>[0,1]</m>.
     </p>
 
     <p>
-        Let $P$ be a partition of $[0,1]$. Since the irrational numbers are dense in the reals, any subinterval of $P$ contains an irrational point and since $t(x) = 0$ on the irrationals $L(t,P) = 0$.
+        Let <m>P</m> be a partition of <m>[0,1]</m>. Since the irrational numbers are dense in the reals, any subinterval of <m>P</m> contains an irrational point and since <m>t(x) = 0</m> on the irrationals <m>L(t,P) = 0</m>.
     </p>
 
     <p>
-        Now we will show that for an arbitrary $\epsilon&gt; 0$, we can find a partition $P$ such that $U(t,P) &lt; \epsilon$.
+        Now we will show that for an arbitrary <m>\epsilon&gt; 0</m>, we can find a partition <m>P</m> such that <m>U(t,P) &lt; \epsilon</m>.
     </p>
 
     <p>
-        Let $N$ be a natural number so that $\frac{1}{n} &lt; \frac{\epsilon}{2}$ for all $n &gt; N$. This means that $N &gt; \frac{2}{\epsilon}$.
+        Let <m>N</m> be a natural number so that <m>\frac{1}{n} &lt; \frac{\epsilon}{2}</m> for all <m>n &gt; N</m>. This means that <m>N &gt; \frac{2}{\epsilon}</m>.
     </p>
 
     <p>
-        Let $\{r_n\}$ be a list of all rational numbers in $(0,1)$ whose denominator is less than $N$. Note that this is a finite set of numbers.
+        Let <m>\{r_n\}</m> be a list of all rational numbers in <m>(0,1)</m> whose denominator is less than <m>N</m>. Note that this is a finite set of numbers.
     </p>
 
     <p>
-        We will construct the partition $P$ by specifying the subintervals instead of the points of the partition. Let $r_1$ be the first number on the list and construct a subinterval centered at $r_1$ contained in $[0,1]$ with width at most $\frac{\epsilon}{4}$.
+        We will construct the partition <m>P</m> by specifying the subintervals instead of the points of the partition. Let <m>r_1</m> be the first number on the list and construct a subinterval centered at <m>r_1</m> contained in <m>[0,1]</m> with width at most <m>\frac{\epsilon}{4}</m>.
     </p>
 
     <p>
-        Now construct a second subinterval centered at $r_2$ that is contained in $[0,1]$, doesn't intersect the first subinterval and has width at most $\frac{\epsilon}{8}$.
+        Now construct a second subinterval centered at <m>r_2</m> that is contained in <m>[0,1]</m>, doesn't intersect the first subinterval and has width at most <m>\frac{\epsilon}{8}</m>.
     </p>
 
     <p>
-        We repeat this process until we exhaust all the points on the list. For $r_n$, construct a subinterval centered at $r_n$ contained in $[0,1]$ that doesn't intersect any of the previously constructed subintervals and that has width at most $\frac{\epsilon}{2^{n+1}}$
+        We repeat this process until we exhaust all the points on the list. For <m>r_n</m>, construct a subinterval centered at <m>r_n</m> contained in <m>[0,1]</m> that doesn't intersect any of the previously constructed subintervals and that has width at most <m>\frac{\epsilon}{2^{n+1}}</m>
     </p>
 
     <p>
-        Our partition $P$ consists of the endpoints of these subintervals. Note that in addition to the subintervals that we constructed, $P$ also has other subintervals that make up the missing space in $[0,1]$ not part of the subintervals that we constructed.
+        Our partition <m>P</m> consists of the endpoints of these subintervals. Note that in addition to the subintervals that we constructed, <m>P</m> also has other subintervals that make up the missing space in <m>[0,1]</m> not part of the subintervals that we constructed.
     </p>
 
     <p>
-        We now show that $U(t,P) &lt; \epsilon$. First we consider the upper sum over the intervals centered at the $r_n$'s in the list.
+        We now show that <m>U(t,P) &lt; \epsilon</m>. First we consider the upper sum over the intervals centered at the <m>r_n</m>'s in the list.
     </p>
 
     <p>
-        Since $0 &lt; t(x) &lt; 1$ for all $x$ it follows that the upper sum over the intervals centered at the $r_n$'s is less than
+        Since <m>0 &lt; t(x) &lt; 1</m> for all <m>x</m> it follows that the upper sum over the intervals centered at the <m>r_n</m>'s is less than
         <md>
             \frac{\epsilon}{4} + \frac{\epsilon}{8} + \frac{\epsilon}{16} + \ldots  = \frac{\epsilon}{2}.
         </md>
@@ -100,23 +100,23 @@
     </p>
 
     <p>
-        Now we will bound the upper sum over the other subintervals of the partition. Note that these subintervals contain none of the rational numbers with denominator less than $N$.
+        Now we will bound the upper sum over the other subintervals of the partition. Note that these subintervals contain none of the rational numbers with denominator less than <m>N</m>.
     </p>
 
     <p>
-        This means that on these subintervals $t(x) \leq \frac{1}{N+1} &lt; \frac{\epsilon}{2}$ by our choice of $N$.
+        This means that on these subintervals <m>t(x) \leq \frac{1}{N+1} &lt; \frac{\epsilon}{2}</m> by our choice of <m>N</m>.
     </p>
 
     <p>
-        Since the total width of all the subintervals is less than $1$, this means that the upper sum over these subintervals is less than $\frac{\epsilon}{2} \cdot 1 = \frac{\epsilon}{2}$.
+        Since the total width of all the subintervals is less than <m>1</m>, this means that the upper sum over these subintervals is less than <m>\frac{\epsilon}{2} \cdot 1 = \frac{\epsilon}{2}</m>.
     </p>
 
     <p>
-        Combining these results gives that $U(t,P) &lt; \epsilon$.
+        Combining these results gives that <m>U(t,P) &lt; \epsilon</m>.
     </p>
 
     <p>
-        Since $L(t,P) = 0$ for all partitions $P$ and for every $\epsilon &gt; 0$ we can construct a partition $P$ with $U(t,P) &lt; \epsilon$, it follows that Thomae's function is Darboux integrable and 
+        Since <m>L(t,P) = 0</m> for all partitions <m>P</m> and for every <m>\epsilon &gt; 0</m> we can construct a partition <m>P</m> with <m>U(t,P) &lt; \epsilon</m>, it follows that Thomae's function is Darboux integrable and 
         <md>
             \int_0^1 t(x) dx = 0.
         </md>
@@ -124,6 +124,412 @@
     </p>
 
 </proof>
+
+<p>
+    This shows that a function with a countable infinite number of discontinuities can be Darboux integrable.
+</p>
+    </subsection>
+
+    <subsection xml:id="subsec-Cantor">
+        <title>The Cantor Set</title>
+
+        <p>
+            Our next example involves the Cantor set which we studied last semester.
+        </p>
+
+        <p>
+            The Cantor set is constructed by starting with the interval <m>[0,1]</m> and removing the middle third from this interval. This gives us step 1 of the construction of the Cantor set <m>C_1 = [0,\frac{1}{3}] \cup [\frac{2}{3}, 1]</m>
+        </p>
+
+        <p>
+            Next we remove the middle thirds from the remaining intervals to obtain <m>C_2 = [0, \frac{1}{9}] \cup [\frac{2}{9}, \frac{1}{3}] \cup [\frac{2}{3}, \frac{7}{9}] \cup [\frac{8}{9}, 1]</m>
+        </p>
+
+        <p>
+            The Cantor set is obtained by iterating this construction infinitely many times.
+        </p>
+
+        <p>
+            We review some of the properties of the Cantor set.
+            <ol>
+                <li>
+                    <p>
+                        The Cantor set contains an uncountably infinite number of points but has no length.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The Cantor set is a closed nowhere dense set, which means its compliment is dense in <m>[0,1]</m>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <p>
+            Let <m>C</m> denote the Cantor set and define
+            <md>
+                h(x) = \begin{cases} 
+    \hfill  1 \amp \text{ if $x \in C$} \\
+      \hfill  0 \amp \text{ if $x \notin C$} 
+      
+  \end{cases}
+            </md>
+            
+        </p>
+
+        <p>
+            We will show that <m>h(x)</m> is discontinuous at each point in <m>C</m> and continuous at each point outside <m>C</m>. Thus <m>h(x)</m> on an uncountably infinite set of points.
+        </p>
+
+        <p>
+            Suppose <m>x \in C</m>. Because the compliment of the Cantor set is dense in <m>[0,1]</m> we can find a sequence <m>\{x_n\} \notin C</m> that converges to <m>x</m>.
+        </p>
+
+        <p>
+            Thus <m>h(x_n) \to 0</m> as <m>n\to \infty</m> but <m>h(x) = 1</m>. Thus by the sequential definition of continuity, <m>h</m> is not continuous at <m>x</m>.
+        </p>
+
+        <p>
+            Now suppose <m>x \notin C</m>. Since the Cantor set is closed, the compliment of the Cantor set is an open set.
+        </p>
+
+        <p>
+            Thus there exists a <m>\delta</m>-neighborhood <m>V_{\delta}(x)</m> of <m>x</m> that is entirely contained in the compliment of the Cantor set. Hence if <m>y \in V_{\delta}(x)</m> then 
+            <md>
+                |h(y)-h(x)| = 0 - 0 = 0
+            </md>
+            
+        </p>
+
+        <p>
+            Thus for any <m>\epsilon</m>-neighborhood <m>V_{\epsilon}(h(x))</m> of <m>h(x)</m>, if <m>y \in V_{\delta}(x)</m> then <m>f(y) \in V_{\epsilon}(h(x))</m> and thus <m>h</m> is continuous at <m>x</m> by the topological characterization of continuity.
+        </p>
+        
+        <claim xml:id="claim-cantor-integral">
+            <statement>
+                <p>
+                    <m>h(x)</m> is Darboux integrable on <m>[0,1]</m> and <m>\displaystyle \int_0^1 h(x)dx = 0</m>.
+                </p>
+            </statement>
+        </claim>
+
+        <proof>
+            <p>
+                We will first show that <m>L(h,P) = 0</m> for every partition <m>P</m> of <m>[0,1]</m>.
+            </p>
+
+            <p>
+                Let <m>P</m> be a partition of <m>[0,1]</m>. Since the compliment of the Cantor set is dense in <m>[0,1]</m>, every subinterval of <m>P</m> contains a point in the compliment of the Cantor set and since <m>h(x) = 0</m> outside of <m>C</m>, <m>L(h,P) = 0</m>.
+            </p>
+
+            <p>
+                Now we will show that for an arbitrary <m>\epsilon &gt; 0</m> we can find a partition <m>P</m> of <m>[0,1]</m> such that <m>U(h,P) &lt; \epsilon</m>.
+            </p>
+
+            <p>
+                The construction of the Cantor set gives us a natural way to choose a partition. Let <m>C_n</m> be the <m>n</m>th stage in constructing the Cantor set. Then <m>C_n</m> contains <m>2^n</m> intervals each of which have length <m>\left(\frac{1}{3}\right)^n</m>.
+            </p>
+
+            <p>
+                Hence the total length of <m>C_n</m> is
+                <md>
+                    2^n \cdot \left(\frac{1}{3}\right)^n = \left( \frac{2}{3}\right)^n.
+                </md>
+                
+            </p>
+
+            <p>
+                Note that every point of the Cantor set is included in <m>C_n</m>. Since <m>\lim_{n\to \infty} \left( \frac{2}{3}\right)^n = 0</m>, we can find a natural number <m>N</m> large enough so that <m>\left( \frac{2}{3}\right)^N &lt; \epsilon</m> and thus the total length of <m>C_N</m> is less than <m>\epsilon</m>.
+            </p>
+
+            <p>
+                Let <m>P</m> be the partition given by the endpoints of <m>C_N</m>. This partitions <m>[0,1]</m> into the intervals that make up <m>C_N</m> and the gaps in the middle of those intervals.
+            </p>
+
+            <p>
+                The maximum value of <m>h(x)</m> on the intervals that make up <m>C_N</m> is <m>1</m> and thus the upper sum over those intervals is
+                <md>
+                    1 \cdot \left( \frac{2}{3}\right)^N = \left( \frac{2}{3}\right)^N &lt; \epsilon
+                </md>
+                
+            </p>
+
+            <p>
+                Since the gaps are outside the Cantor set, the upper sum over the gaps is <m>0</m>. Hence <m>U(h,P) &lt; \epsilon</m>.
+            </p>
+
+            <p>
+                The above proof almost works, but there is one slight flaw with it. Consider the subinterval of the leftmost gap. This is the subinterval <m>[\frac{1}{3^N}, \frac{2}{3^N}]</m>. Since this subinterval contains the endpoints, which are part of the Cantor set, the maximum value of the subinterval is <m>1</m>, so the upper sum on this subinterval is <m>\frac{1}{3^N}</m>
+            </p>
+
+            <p>
+               The same is true for the subintervals over all the gaps, so the upper sum over the gaps is not <m>0</m>. 
+            </p>
+
+            <p>
+                The problem is with the endpoints since every other point in the subintervals over the gaps is in the compliment of the Cantor set.
+            </p>
+
+            <p>
+                Thus we need to slightly modify our original partition so that the endpoints of <m>C_N</m> are not part of the subintervals that contains the gaps.
+            </p>
+
+            <p>
+                We can achieve this by slightly widening the partition so that each piece of <m>C_N</m> is contained in the interior of a subinterval.
+            </p>
+
+            <p>
+                Let <m>\delta &gt; 0</m> to be determined later, and let <m>P'</m> be the partition <m>\{0, \frac{1}{3^N} + \frac{\delta}{2}, \frac{2}{3^N} - \frac{\delta}{2}, \frac{3}{3^N} + \frac{\delta}{2}, \ldots, \frac{3^N-1}{3^N} - \frac{\delta}{2}, 1\} </m>
+            </p>
+
+            <p>
+                <m>P'</m> is made by widening each subinterval of <m>P</m> by <m>\frac{\delta}{2}</m> on each side, except for the 1st and last subinterval since those have to contain <m>0</m> and <m>1</m> as endpoints.
+            </p>
+
+            <p>
+                Now that the subintervals over the gaps only contain points in the compliment of the Cantor set, the upper sum over those subintervals is <m>0</m>.
+            </p>
+
+            <p>
+                We now recalculate the upper sum over those subintervals that contain the pieces of <m>C_N</m>. This time the length of each subinterval is <m>\left(\frac{1}{3}\right)^N + \delta</m>, except for the first and last which have length <m>\left(\frac{1}{3}\right)^N + \frac{\delta}{2}</m>.
+            </p>
+
+            <p>
+                Since there are <m>2^N</m> total subintervals, the total length of these subintervals is less than
+                <md>
+                    2^N \cdot \left( \left(\frac{1}{3}\right)^N + \delta \right) = \left(\frac{2}{3}\right)^N + 2^N \delta
+                </md>
+                
+            </p>
+
+            <p>
+                By choosing <m>\delta = \left(\frac{1}{3}\right)^N</m>, the total length of the subintervals will be less than <m>2 \left(\frac{2}{3}\right)^N</m>.
+            </p>
+
+            <p>
+                Thus the upper sum over these intervals is 
+                <md>
+                    1 \cdot 2 \left(\frac{2}{3}\right)^N &lt; 2 \epsilon
+                </md>
+                
+            </p>
+
+            <p>
+                Since the upper sum over the gaps is <m>0</m>, <m>U(h,P') &lt; 2 \epsilon</m>
+            </p>
+
+            <p>
+                Since <m>\epsilon>0</m> can be made arbitrarily small, so can <m>2 \epsilon</m>.
+            </p>
+
+            <p>
+                Because <m>L(h,P) = 0</m> for all partitions <m>P</m> and for every <m>\epsilon &gt; 0</m> we can construct a partition <m>P_{\epsilon}</m> with <m>U(h,P_{\epsilon}) &lt; \epsilon</m>, it follows that <m>h(x)</m> is Darboux integrable and 
+                <md>
+                    \int_0^1 h(x) dx = 0.
+                </md>
+                
+            </p>
+
+        </proof>
+
+        <p>
+            This shows that a function with an uncountable number of discontinuities can still be Darboux integrable.
+        </p>
+    </subsection>
+
+    <subsection xml:id="subsec-Lebesgue-Theorem">
+        <title>Lebesgue's Theorem</title>
+
+        <p>
+            Our two examples show that a function with infinitely many discontinuities can still be Darboux integrable; however, not every function with infinitely many discontinuities is Darboux integrable. Dirichlet's function is everywhere discontinuous and is not Darboux integrable.
+        </p>
+
+        <p>
+            The key is that the set of discontinuities of the previous two examples is still small in the following sense. The set of rational numbers and the Cantor set both have zero length.
+        </p>
+
+        <p>
+            Informally we say that a subset of <m>\mathbf{R}</m> with zero length is a set of measure zero.
+        </p>
+
+        <theorem xml:id="thm-Lebesgue">
+            <title>Lebesgue's Theorem</title>
+            
+            
+            <statement>
+                <p>
+                    Let <m>f</m> be a bounded function on the interval <m>[a,b]</m>. Then <m>f</m> is Darboux integrable if and only if the set of points where <m>f</m> is not continuous is a set of measure zero.
+                </p>
+            </statement>
+        </theorem>
+
+        <p>
+            Dirichlet's function is not Darboux integrable because it is discontinuous everywhere, and thus the set of points where it is not continuous is not a set of measure zero.
+        </p>
+        
+        
+    </subsection>
+
+    <subsection xml:id="subsec-A-non-integrable-derivative">
+        <title>A Non-integrable Derivative</title>
+        
+        <p>
+            Informally part 1 of the FTC states that the definite integral of a derivative is the net change of the original function. However, in the statement of the FTC we needed to assume that the derivative is an integrable function. This is because there are derivatives that cannot be integrated.
+        </p>
+
+        <p>
+            More precisely, there exists a function <m>f(x)</m> which is not Darboux integrable and a continuous function <m>F(x)</m> such that <m>F'(x) = f(x)</m>
+        </p>
+
+        <p>
+            The key idea is that we want to construct a derivative whose set of discontinuities is not a set of measure zero.
+        </p>
+
+        <p>
+            We currently only know one example of a function whose derivative contains a discontinuity: Darboux's function
+            <md>
+                g(x) = \begin{cases} 
+      \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} 
+  \end{cases}
+            </md>
+            is a continuous function whose derivative has a single discontinuity at <m>x=0</m>.
+        </p>
+
+        <p>
+            We need to modify Darboux's function so that the set of discontinuities of its derivative is not a set of measure zero.
+        </p>
+
+        <p>
+            Let's first focus on what the set of discontinuities is going to look like.
+        </p>
+
+        <p>
+            The Cantor set is a set with measure zero because it has length zero, but by modifying the construction of the Cantor set, we can construct a fat Cantor set with the same properties as the Cantor set, but which is not a set of measure zero.
+        </p>
+
+        <p>
+            In the construction of the Cantor set, we start with the interval <m>[0,1]</m> remove the middle third of each interval at each iteration.
+        </p>
+
+        <p>
+            This means that at the <m>n</m>th stage we remove <m>2^{n-1}</m> intervals of length <m>\frac{1}{3^n}</m>.
+        </p>
+
+        <p>
+            Thus the total amount removed from <m>[0,1]</m> has length
+            <md>
+                \sum_{n=1}^{\infty} \frac{2^{n-1}}{3^n} = \sum_{n=0}^{\infty} \frac{1}{3} \left(\frac{2}{3} \right)^n = 1
+            </md>
+            
+        </p>
+
+        <p>
+            To construct the fat Cantor set, at the <m>n</m>th stage we will remove <m>2^{n-1}</m> intervals of length <m>\frac{1}{3^{n+1}}</m>.
+        </p>
+
+        <p>
+            The total length removed from <m>[0,1]</m> has length
+            <md>
+                \sum_{n=1}^{\infty} \frac{2^{n-1}}{3^{n+1}} = \sum_{n=0}^{\infty} \frac{1}{9} \left(\frac{2}{3} \right)^n = \frac{1}{3}
+            </md>
+            
+        </p>
+
+        <p>
+            This means that the fat Cantor set has length <m>\frac{2}{3}</m> and thus is not a set of measure zero.
+        </p>
+
+        <p>
+            The reason that the derivative of Darboux's function is not continuous at <m>0</m> is because the function oscillates wildly as it approaches <m>0</m>.
+        </p>
+
+        <p>
+            Our plan to construct a function with a non-integrable derivative is to modify Darboux's function so that it has the same oscillatory behavior at every point of the fat Cantor set.
+        </p>
+
+        <p>
+            This will give us a function whose derivative is discontinuous on the fat Cantor set and thus can't be Darboux integrable since the fat Cantor set does not have measure zero.
+        </p>
+
+        <p>
+            Let <m>C_0 = [0,1]</m> and let <m>C_n</m> denote the <m>n</m>th stage of the construction of the fat Cantor set.
+        </p>
+
+        <p>
+            Because at the <m>n</m>th stage we remove intervals of width <m>\frac{1}{3^{n+1}}</m> instead of <m>\frac{1}{3^n}</m>, <m>C_1 = [0,\frac{4}{9}] \cup [\frac{5}{9}, 1]</m>.
+        </p>
+
+        <p>
+            Similarly,
+            <md>
+                <mrow>C_2 \amp= \left[0, \frac{5.5}{27}\right] \cup \left[\frac{6.5}{27}, \frac{4}{9}\right]] \cup \left[\frac{5}{9}, \frac{20.5}{27}\right] \cup \left[\frac{21.5}{27}, 1\right] </mrow>
+                <mrow> \amp= \left[0, \frac{11}{54}\right] \cup \left[\frac{13}{54}, \frac{4}{9}\right] \cup \left[\frac{5}{9}, \frac{41}{54}\right] \cup \left[\frac{43}{54}, 1\right] </mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            We will construct our function with a non-integrable derivative as the limit of a sequence of continuous functions.
+        </p>
+
+        <p>
+            Let <m>f_0(x) = 0</m> on <m>C_0</m>.
+        </p>
+
+        <p>
+            To define <m>f_1(x)</m>, first set <m>f_1(x) = 0</m> on <m>C_1 = [0,\frac{4}{9}] \cup [\frac{5}{9}, 1]</m>. 
+        </p>
+
+        <p>
+            In the gap <m>(\frac{4}{9}, \frac{5}{9})</m> we want to put copies of Darboux's function <m>g(x)</m> oscillating towards the endpoints.
+        </p>
+
+        <p>
+            The mathematical formula for this looks like 
+            <md>
+                f_1(x) = \begin{cases} 
+      \hfill  0 \amp \text{ if $x \in [0, \frac{4}{9}]$} \\
+      \hfill  g(x-\frac{4}{9}) \amp \text{ if $x$ is just to the right of $\frac{4}{9}$} \\
+      \hfill  g(-x + \frac{5}{9}) \amp \text{ if $x$ is just to the left of $\frac{5}{9}$} \\
+      \hfill  0 \amp \text{ if $x \in [ \frac{5}{9}, 1]$} 
+  \end{cases}
+            </md>
+            
+        </p>
+
+        <p>
+            We still need to define what happens in the middle of the function.
+        </p>
+
+        <p>
+            The idea is that we connect the two oscillating pieces together so that <m>f_1(x)</m> will be differentiable and so that <m>|f_1(x)| \leq (x-\frac{4}{9})^2</m> and <m>|f_1(x)| \leq (-x+\frac{5}{9})^2</m>. 
+        </p>
+
+        <p>
+            <m>f_1(x)</m> is a continuous function whose derivative is discontinuous at <m>x = \frac{4}{9}</m> and <m>x= \frac{5}{9}</m>.
+        </p>
+
+        <p>
+            To define <m>f_2(x)</m> we do the same thing as we did with <m>f_1(x)</m> only this time we use the open intervals <m>(\frac{11}{54}, \frac{13}{54})</m> and <m>(\frac{41}{54}, \frac{43}{54})</m>
+        </p>
+
+        <p>
+            <m>f_2(x)</m> is a continuous function whose derivative is discontinuous at <m>x= \frac{11}{54}</m>, <m>x= \frac{13}{54}</m>, <m>x= \frac{41}{54}</m>, and <m>x= \frac{43}{54}</m>.
+        </p>
+
+        <p>
+            Continuing in this way we construct a sequence of functions <m>f_1</m>, <m>f_2</m>, <m>f_3 \ldots</m>. Let <m>f(x) = \displaystyle \lim_{n\to \infty} f_n(x)</m>.
+        </p>
+
+        <p>
+            <m>f(x)</m> is a continuous function whose derivative is discontinuous at every point of the fat Cantor set.
+        </p>
+
+        <p>
+            Thus <m>f'(x)</m> is not a Darboux integrable function, despite the fact that it has an antiderivative in <m>f(x)</m>.
+        </p>
+
     </subsection>
 
     </section>

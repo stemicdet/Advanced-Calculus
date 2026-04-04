@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Sarah Sparks, Fall 2025 -->
+
+<worksheet xml:id="hw9">
+  <title>MTH 428/528 Homework 9 Due April 16</title>
+
+<p>
+  <ol marker="(1)">
+
+    <li>
+      <p>
+        Suppose that <m>u(x)</m> and <m>v(x)</m> are Darboux integrable functions and that <m>v(a) = v(b) = 0</m>. Show that 
+        <md>
+          \int_a^b u(x) v'(x) dx = -\int_a^b u'(x) v(x) dx
+        </md>
+      </p>
+    </li>
+    <li>
+      <p>
+         Find the mistake in the following ``Counterexample'' of Darboux's Theorem (Theorem 5.2.7 in the textbook, Theorem 13 in the notes):
+      </p>
+
+      <proof>
+      <p>
+        Let
+        <md>
+          g(x) = \begin{cases} 
+      \hfill  1  \amp \text{ if $ 0 \leq x \leq 2$} \\
+      \hfill  -1 \hfill \amp \text{ if $-2 \leq x &lt; 0$} 
+  \end{cases}
+        </md>
+        and define 
+        <md>
+          G(x) = \int_{-2}^x g(t) dt
+        </md>
+        for <m>x \in [-2,2]</m>. Since <m>g(x)</m> has a single discontinuity, it is Darboux integrable and thus by part <m>2</m> of the Fundamental Theorem of Calculus <m>G(x)</m> is a continuous function and <m>G'(x) = g(x)</m>. Hence <m>G'(-2) = -1</m> and <m>G'(2) = 1</m>. However, <m>-1 &lt; 0 &lt; 1</m>, but <m>G'(c) \neq 0</m> for any <m>c \in [-2,2]</m>. Thus <m>G(x)</m> is a counterexample of Darboux's Theorem. 
+      </p>
+      </proof>
+    </li>
+
+    <li>
+      <p>
+      Let
+      <md>
+        L(x) = \int_{1}^x \frac{1}{t}dt
+      </md>
+      where <m>x &gt; 0</m>. Show that <m>L(\frac{x}{y}) = L(x)-L(y)</m>. <alert>Hint: First show that <m>L(\frac{1}{y}) = -L(y)</m> then use the fact that <m>L(xy) = L(x)+L(y)</m>.</alert>
+    </p>
+    </li>
+
+    <li>
+      <p>
+        Using Lebesgue's Theorem (Theorem 7.6.5 in the textbook, Theorem 82 in the notes) show that if <m>f</m> and <m>g</m> are Darboux integrable functions on <m>[a,b]</m> then so is the product <m>fg</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Which of the following functions are Darboux integrable on <m>[0,1]</m>? Give reasons for your choices.
+      </p>
+
+      <ol marker="(A)">
+
+        <li>
+          <md>
+            f(x) = \begin{cases} 
+      \hfill  x  \amp \text{ if $ x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+          </md>
+        </li>
+        <li>
+          <md>
+          g(x) = \begin{cases} 
+      \hfill  1  \amp \text{ if $x$ is an element of the Cantor set} \\
+      \hfill  0 \hfill \amp \text{ if $x$ is not an element of the Cantor set} 
+  \end{cases}
+  </md>
+        </li>
+      </ol>
+    </li>
+
+    </ol>
+    </p>
+    </worksheet>

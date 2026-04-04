@@ -1295,6 +1295,24 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "MTH 428\/528 Homework 8 Due April 9",
   "body": " MTH 428\/528 Homework 8 Due April 9     Suppose that and are Darboux integrable functions on . Prove that the function is Darboux integrable on and that     Suppose that is a bounded function on and that is Darboux integrable on . Must also be Darboux integrable on ? Either provide a proof or exhibit a counterexample.    Consider the function over the interval .   Show that for every partition of .    Construct a partition for which .    Given , construct a partition for which .       Show that if for all and is integrable, then     Although not part of Theorem 7.4.2 (Theorem 73 in the notes), it is true that the product of integrable functions is integrable. Provide the details for each step in the following proof of this fact.   If satisfies on , show     Prove that if is integrable on then so is .    Now show that if and are integrable, then is integrable. (Consider .)        "
+},
+{
+  "id": "hw9",
+  "level": "1",
+  "url": "hw9.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "MTH 428\/528 Homework 9 Due April 16",
+  "body": " MTH 428\/528 Homework 9 Due April 16     Suppose that and are Darboux integrable functions and that . Show that     Find the mistake in the following ``Counterexample'' of Darboux's Theorem (Theorem 5.2.7 in the textbook, Theorem 13 in the notes):   Let and define for . Since has a single discontinuity, it is Darboux integrable and thus by part of the Fundamental Theorem of Calculus is a continuous function and . Hence and . However, , but for any . Thus is a counterexample of Darboux's Theorem.     Let where . Show that . Hint: First show that then use the fact that .     Using Lebesgue's Theorem (Theorem 7.6.5 in the textbook, Theorem 82 in the notes) show that if and are Darboux integrable functions on then so is the product .    Which of the following functions are Darboux integrable on ? Give reasons for your choices.             "
+},
+{
+  "id": "hw9-2-1-2-2",
+  "level": "2",
+  "url": "hw9.html#hw9-2-1-2-2",
+  "type": "Proof",
+  "number": "2.1",
+  "title": "",
+  "body": " Let and define for . Since has a single discontinuity, it is Darboux integrable and thus by part of the Fundamental Theorem of Calculus is a continuous function and . Hence and . However, , but for any . Thus is a counterexample of Darboux's Theorem.  "
 }
 ]
 

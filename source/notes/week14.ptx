@@ -212,4 +212,98 @@
         
     </subsection>
 
+    <subsection xml:id="subsec-Generalized-Riemann-Integral">
+        <title>Generalized Riemann Integrability</title>
+        
+
+        <p>
+            We define the Generalized Riemann Integral by replacing $\delta$ with $\delta(x)$ in the definition of Riemann Integral
+        </p>
+
+        <definition xml:id="def-generalized-riemann">
+            <title>Generalized Riemann Integral</title>
+            
+            
+            <statement>
+                <p>
+                    A function $f$ on $[a,b]$ has generalized Riemann integral $A$ if, for every $\epsilon>0$, there exists a gauge $\delta(x)$ on $[a,b]$ such that for every tagged partition $(P, \{c_k\}_{k=1}^n)$ that is $\delta(x)$-fine, it is true that 
+                    <md>
+                        |R(f,P)-A| &lt; \epsilon.
+                    </md>
+                    In this case we write $A = \int_a^b f(x) dx$
+                </p>
+            </statement>
+        </definition>
+
+        <theorem xml:id="thm-gen-integrability">
+            <statement>
+                <p>
+                    If $f$ is Riemann integrable, then $f$ is generalized Riemann integrable.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                Let $\delta(x) = \delta$.
+            </p>
+        </proof>
+        
+
+        <p>
+            Recall that the Dirichlet function 
+            <md>
+                g(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+            </md>
+            is not Riemann integrable. 
+        </p>
+
+        <theorem xml:id="thm-gen-dirichlet">
+            <statement>
+                <p>
+                    Dirichlet's function $g(x)$ is generalized Riemann integrable on $[0,1]$ with $\displaystyle \int_0^1 g(x) dx = 0$.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                Let $\epsilon &gt; 0$. We must construct a gauge $\delta(x)$ so that whenever $(P, \{c_k\}_{k=1}^n)$ is a $\delta(x)$-fine partition it follows that
+                <md>
+                    \sum_{k=1}^n g(c_k) (x_k-x_{k-1}) - 0 &lt; \epsilon
+                </md>
+                
+            </p>
+
+            <p>
+                Since $g(x) = 0$ when $x$ is irrational, we only need to worry about keeping the rational numbers in sufficiently small subintervals.
+            </p>
+
+            <p>
+                Let $\{r_1, r_2, r_3 \ldots\}$ be a countable listing of the rational numbers. For each $r_k$ set $\delta(r_k) = \frac{\epsilon}{2^{k}}$. For $x$ irrational, set $\delta(x) = 1$.
+            </p>
+
+            <p>
+                Now we will show that if $(P, \{c_k\}_{k=1}^n)$ is a $\delta(x)$-fine partition then 
+                <md>
+                    \sum_{k=1}^n g(c_k) (x_k-x_{k-1}) &lt; \epsilon
+                </md>
+                
+            </p>
+
+            <p>
+                Because $g(c_k) = 0$ when $c_k$ is irrational, we only need to worry about those $c_k$ that are rational.
+            </p>
+
+            <p>
+                The worst case scenario is that every $c_k$ is rational.
+            </p>
+        </proof>
+        
+
+    </subsection>
+
     </section>
